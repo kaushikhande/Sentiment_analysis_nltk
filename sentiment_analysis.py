@@ -13,8 +13,17 @@ POLARITY_DATA_DIR = os.path.join('polarityData', 'rt-polaritydata')
 RT_POLARITY_POS_FILE = os.path.join(POLARITY_DATA_DIR, 'rt-polarity-pos.txt')
 RT_POLARITY_NEG_FILE = os.path.join(POLARITY_DATA_DIR, 'rt-polarity-neg.txt')
 
+listword = ["never","nothing","nowhere","noone","none",
+    #"havent","hasnt","cant","couldnt","shouldnt","wont",
+    "haven't","hasn't","can't","couldn't","shouldn't","won't",
+    #"wouldnt","dont","doesnt","didnt","isnt","arent","aint",
+    "wouldn't","don't","doesn't","didn't","isn't","aren't","ain't",
+    ]
+    
+
 def add_neg(i,word):
     i = i.split()
+    print i
     index = i.index(word)
     index = index + 1
     length_of_sentence = len(i)
@@ -42,16 +51,24 @@ def evaluate_features(feature_select):
 	with open(RT_POLARITY_NEG_FILE, 'r') as negSentences:
 		for i in negSentences:
 		    for word in listword:
-		    
-			    #negWords = re.findall(r"[\w']+|[.,!?;]", i.rstrip())
-			    if i.find(words) != -1:
-			        negWords = add_neg(i,word)
-			        negWords = [feature_select(negWords), 'neg']
-			        negFeatures.append(negWords)
+		        flag = 0
+		        #print i
+		        print i.find(word)
+			#negWords = re.findall(r"[\w']+|[.,!?;]", i.rstrip())
+                        if i.find(word) != -1:
+			    flag = 1
+			    print word
+			    negWords = add_neg(i,word)
+			    negWords = [feature_select(negWords), 'neg']
+			    negFeatures.append(negWords)
+			    print negFeatures[-1]
+                            break
 			    
-			 negWords = re.findall(r"[\w']+|[.,!?;]", i.rstrip())
-             negWords = [feature_select(negWords), 'neg']
-             negFeatures.append(negWords)
+                    if flag != 1:
+			negWords = re.findall(r"[\w']+|[.,!?;]", i.rstrip())
+                        negWords = [feature_select(negWords), 'neg']
+                        negFeatures.append(negWords)
+                        #print negFeatures
 	
 	#selects 3/4 of the features to be used for training and 1/4 to be used for testing
 	posCutoff = int(math.floor(len(posFeatures)*3/4))
