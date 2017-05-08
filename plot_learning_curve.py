@@ -1,19 +1,26 @@
-"""
-========================
-Plotting Learning Curves
-========================
+# You need to install scikit-learn:
+# sudo pip install scikit-learn
+#
+# Dataset: Polarity dataset v2.0
+# http://www.cs.cornell.edu/people/pabo/movie-review-data/
+#
+# Full discussion:
+# https://marcobonzanini.wordpress.com/2015/01/19/sentiment-analysis-with-python-and-scikit-learn
 
-On the left side the learning curve of a naive Bayes classifier is shown for
-the digits dataset. Note that the training score and the cross-validation score
-are both not very good at the end. However, the shape of the curve can be found
-in more complex datasets very often: the training score is very high at the
-beginning and decreases and the cross-validation score is very low at the
-beginning and increases. On the right side we see the learning curve of an SVM
-with RBF kernel. We can see clearly that the training score is still around
-the maximum and the validation score could be increased with more training
-samples.
-"""
-print(__doc__)
+
+import sys
+import os
+import time
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn import svm
+from sklearn.metrics import classification_report
+from sklearn.metrics import accuracy_score
+
+
+
+
+
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -22,7 +29,6 @@ from sklearn.svm import SVC
 from sklearn.datasets import load_digits
 from sklearn.model_selection import learning_curve
 from sklearn.model_selection import ShuffleSplit
-
 
 def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
                         n_jobs=1, train_sizes=np.linspace(.1, 1.0, 5)):
@@ -74,6 +80,10 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     plt.ylabel("Score")
     train_sizes, train_scores, test_scores = learning_curve(
         estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes)
+        
+    print train_sizes
+    print train_scores
+    print test_scores
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
     test_scores_mean = np.mean(test_scores, axis=1)
@@ -94,22 +104,53 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     return plt
 
 
-digits = load_digits()
-X, y = digits.data, digits.target
+
+def usage():
+    print("Usage:")
+    print("python %s <data_dir>" % sys.argv[0])
+
+if __name__ == '__main__':
+
+    if len(sys.argv) < 2:
+        usage()
+        sys.exit(1)
+
+    data_dir = sys.argv[1]
+    classes = ['pos', 'neg']
+
+    # Read the data
+    train_data = []
+    train_labels = []
+    test_data = []
+    test_labels = []
+    for curr_class in classes:
+        dirname = os.path.join(data_dir, curr_class)
+        for fname in os.listdir(dirname):
+            with open(os.path.join(dirname, fname), 'r') as f:
+                content = f.read()
+                if fname.startswith('cv9'):
+                    test_data.append(content)
+                    test_labels.append(curr_class)
+                else:
+                    train_data.append(content)
+                    train_labels.append(curr_class)
+
+    # Create feature vectors
+    vectorizer = TfidfVectorizer(min_df=5,
+                                 max_df = 0.8,
+                                 sublinear_tf=True,
+                                 use_idf=True)
+    train_vectors = vectorizer.fit_transform(train_data)
+    test_vectors = vectorizer.transform(test_data)
+    X = train_vectors
+    y = train_labels
+    title = "Ploting learning Curves (svm.SVC)"
+    # Cross validation with 3 iterations to get smoother mean test and train
+    # score curves, each time with 20% data randomly selected as a validation set.
+    
+    cv = ShuffleSplit(n_splits=3, test_size=0.50, random_state=0)
+    estimator = svm.SVC(kernel='linear')   
+    plot_learning_curve(estimator, title, X, y, ylim=(0.6, 1.01), cv=cv, n_jobs=4)
+    plt.show()
 
 
-title = "Learning Curves (Naive Bayes)"
-# Cross validation with 100 iterations to get smoother mean test and train
-# score curves, each time with 20% data randomly selected as a validation set.
-cv = ShuffleSplit(n_splits=100, test_size=0.2, random_state=0)
-
-estimator = GaussianNB()
-plot_learning_curve(estimator, title, X, y, ylim=(0.7, 1.01), cv=cv, n_jobs=4)
-
-title = "Learning Curves (SVM, RBF kernel, $\gamma=0.001$)"
-# SVC is more expensive so we do a lower number of CV iterations:
-cv = ShuffleSplit(n_splits=10, test_size=0.2, random_state=0)
-estimator = SVC(gamma=0.001)
-plot_learning_curve(estimator, title, X, y, (0.7, 1.01), cv=cv, n_jobs=4)
-
-plt.show()
