@@ -31,29 +31,23 @@ from sklearn.model_selection import learning_curve
 from sklearn.model_selection import ShuffleSplit
 
 def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
-                        n_jobs=1, train_sizes=np.linspace(.1, 1.0, 5)):
+                        n_jobs=1, train_sizes=np.linspace(.1, 1.0, 20)):
     """
     Generate a simple plot of the test and training learning curve.
-
     Parameters
     ----------
     estimator : object type that implements the "fit" and "predict" methods
         An object of that type which is cloned for each validation.
-
     title : string
         Title for the chart.
-
     X : array-like, shape (n_samples, n_features)
         Training vector, where n_samples is the number of samples and
         n_features is the number of features.
-
     y : array-like, shape (n_samples) or (n_samples, n_features), optional
         Target relative to X for classification or regression;
         None for unsupervised learning.
-
     ylim : tuple, shape (ymin, ymax), optional
         Defines minimum and maximum yvalues plotted.
-
     cv : int, cross-validation generator or an iterable, optional
         Determines the cross-validation splitting strategy.
         Possible inputs for cv are:
@@ -61,14 +55,11 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
           - integer, to specify the number of folds.
           - An object to be used as a cross-validation generator.
           - An iterable yielding train/test splits.
-
         For integer/None inputs, if ``y`` is binary or multiclass,
         :class:`StratifiedKFold` used. If the estimator is not a classifier
         or if ``y`` is neither binary nor multiclass, :class:`KFold` is used.
-
         Refer :ref:`User Guide <cross_validation>` for the various
         cross-validators that can be used here.
-
     n_jobs : integer, optional
         Number of jobs to run in parallel (default 1).
     """
@@ -81,6 +72,8 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     train_sizes, train_scores, test_scores = learning_curve(
         estimator, X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes)
         
+    train_sizes1, train_scores1, test_scores1 = learning_curve(
+        svm.LinearSVC(), X, y, cv=cv, n_jobs=n_jobs, train_sizes=train_sizes)
     print train_sizes
     print train_scores
     print test_scores
@@ -88,17 +81,35 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     train_scores_std = np.std(train_scores, axis=1)
     test_scores_mean = np.mean(test_scores, axis=1)
     test_scores_std = np.std(test_scores, axis=1)
+    
+    
+    train_scores_mean1 = np.mean(train_scores1, axis=1)
+    train_scores_std1 = np.std(train_scores1, axis=1)
+
+    test_scores_mean1 = np.mean(test_scores1, axis=1)
+    test_scores_std1 = np.std(test_scores1, axis=1)
     plt.grid()
 
-    plt.fill_between(train_sizes, train_scores_mean - train_scores_std,
-                     train_scores_mean + train_scores_std, alpha=0.1,
-                     color="r")
+    #plt.fill_between(train_sizes, train_scores_mean - train_scores_std,
+    #                 train_scores_mean + train_scores_std, alpha=0.1,
+    #                 color="r")
     plt.fill_between(train_sizes, test_scores_mean - test_scores_std,
                      test_scores_mean + test_scores_std, alpha=0.1, color="g")
-    plt.plot(train_sizes, train_scores_mean, 'o-', color="r",
-             label="Training score")
+    #plt.fill_between(train_sizes1, train_scores_mean1 - train_scores_std1,
+    #                 train_scores_mean1 + train_scores_std1, alpha=0.1,
+    #                 color="r")
+    
+    plt.fill_between(train_sizes1, test_scores_mean1 - test_scores_std1,
+                     test_scores_mean1 + test_scores_std1, alpha=0.1, color="g")
+
+    #plt.plot(train_sizes, train_scores_mean, 'o-', color="r",
+    #         label="Training score")
     plt.plot(train_sizes, test_scores_mean, 'o-', color="g",
              label="Cross-validation score")
+    #plt.plot(train_sizes1, train_scores_mean1, 'o-', color="b",
+    #         label="Training score SVC ")
+    plt.plot(train_sizes1, test_scores_mean1, 'o-', color="y",
+             label="Cross-validation score SVC")
 
     plt.legend(loc="best")
     return plt
@@ -148,9 +159,12 @@ if __name__ == '__main__':
     # Cross validation with 3 iterations to get smoother mean test and train
     # score curves, each time with 20% data randomly selected as a validation set.
     
-    cv = ShuffleSplit(n_splits=3, test_size=0.50, random_state=0)
+    cv = ShuffleSplit(n_splits=3, test_size=0.25, random_state=0)
     estimator = svm.SVC(kernel='linear')   
-    plot_learning_curve(estimator, title, X, y, ylim=(0.6, 1.01), cv=cv, n_jobs=4)
+    plot_learning_curve(estimator, title, X, y, ylim=(0.7, 1.01), cv=cv, n_jobs=4)
+    
     plt.show()
-
-
+    title = "Ploting learning Curves (svm.LinearSVC())"
+    estimator = svm.LinearSVC()
+    plot_learning_curve(estimator, title, X, y, ylim=(0.7, 1.01), cv=cv, n_jobs=4)
+    plt.show()
