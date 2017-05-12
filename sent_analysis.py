@@ -105,9 +105,13 @@ def evaluate_classifier(featx):
  
         for i, (feats, label) in enumerate(testfeats):
                 refsets[label].add(i)
+                print feats
+                #raw_input('> ')
                 observed = classifier.classify(feats)
                 testsets[observed].add(i)
  
+        print refsets['pos']
+        print testsets['pos']
         accuracy = nltk.classify.util.accuracy(classifier, testfeats)
         pos_precision = nltk.precision(refsets['pos'], testsets['pos'])
         pos_recall = nltk.recall(refsets['pos'], testsets['pos'])
