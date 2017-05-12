@@ -1,1 +1,3 @@
 http://www.nltk.org/api/nltk.sentiment.html
+http://www.nltk.org/howto/sentiment.html
+
