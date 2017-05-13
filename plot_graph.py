@@ -16,12 +16,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import svm
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
-
-
-
-
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.naive_bayes import GaussianNB
