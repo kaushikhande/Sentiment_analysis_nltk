@@ -1,7 +1,7 @@
 import collections
-import nltk.classify.util, nltk.metrics
-from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
+import nltk
 import csv
+import nltk.classify.util, nltk.metrics
 from sklearn import cross_validation
 from sklearn.svm import LinearSVC, SVC
 import random
@@ -11,8 +11,9 @@ from nltk.collocations import BigramCollocationFinder
 from nltk.collocations import TrigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
 from nltk.metrics import TrigramAssocMeasures
-import nltk
- 
+from nltk.sentiment.util import mark_negation
+from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
+
 posdata = []
 with open('positive-data.csv', 'rb') as myfile:    
     reader = csv.reader(myfile, delimiter=',')
@@ -89,8 +90,8 @@ def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.mi_like, n=2
 # Calculating Precision, Recall & F-measure
 def evaluate_classifier(featx):
     
-    negfeats = [(featx(f), 'neg') for f in word_split(negdata)]
-    posfeats = [(featx(f), 'pos') for f in word_split(posdata)]
+    negfeats = [(featx(mark_negation(f)), 'neg') for f in word_split(negdata)]
+    posfeats = [(featx(mark_negation(f)), 'pos') for f in word_split(posdata)]
         
     negcutoff = len(negfeats)*3/4
     poscutoff = len(posfeats)*3/4
@@ -125,8 +126,8 @@ def evaluate_classifier(featx):
                 observed = classifier.classify(feats)
                 testsets[observed].add(i)
  
-        print refsets['pos']
-        print testsets['pos']
+        #print refsets['pos']
+        #print testsets['pos']
         accuracy = nltk.classify.util.accuracy(classifier, testfeats)
         pos_precision = nltk.precision(refsets['pos'], testsets['pos'])
         pos_recall = nltk.recall(refsets['pos'], testsets['pos'])
@@ -218,8 +219,8 @@ def evaluate_classifier(featx):
         
     
         
-#evaluate_classifier(word_feats)
+evaluate_classifier(word_feats)
 #evaluate_classifier(stopword_filtered_word_feats)
 #evaluate_classifier(bigram_word_feats)
-evaluate_classifier(trigram_word_feats)    
+#evaluate_classifier(trigram_word_feats)    
 #evaluate_classifier(bigram_word_feats_stopwords)
