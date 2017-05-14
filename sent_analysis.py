@@ -8,7 +8,9 @@ import random
 from nltk.corpus import stopwords
 import itertools
 from nltk.collocations import BigramCollocationFinder
+from nltk.collocations import TrigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
+from nltk.metrics import TrigramAssocMeasures
 import nltk
  
 posdata = []
@@ -57,6 +59,19 @@ def bigram_word_feats(words, score_fn=BigramAssocMeasures.chi_sq, n=200):
     """    
     return dict([(ngram, True) for ngram in itertools.chain(words, bigrams)])
     
+def trigram_word_feats(words, score_fn=TrigramAssocMeasures.chi_sq, n=200):
+    trigram_finder = TrigramCollocationFinder.from_words(words)
+    trigrams = trigram_finder.nbest(score_fn, n)
+    """
+    print words
+    for ngram in itertools.chain(words, bigrams): 
+        if ngram not in stopset: 
+            print ngram
+    exit()
+    """    
+    return dict([(ngram, True) for ngram in itertools.chain(words, trigrams)])
+    
+
 #def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.chi_sq, n=200):
 def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.mi_like, n=200):
     bigram_finder = BigramCollocationFinder.from_words(words)
@@ -81,9 +96,9 @@ def evaluate_classifier(featx):
     poscutoff = len(posfeats)*3/4
  
     trainfeats = negfeats[:negcutoff] + posfeats[:poscutoff]
-    print(len(trainfeats))
+    #print(len(trainfeats))
     testfeats = negfeats[negcutoff:] + posfeats[poscutoff:]
-    print(len(testfeats))
+    #print(len(testfeats))
     
     # using 3 classifiers
     classifier_list = ['nb', 'svm', 'maxent']#     
@@ -105,7 +120,7 @@ def evaluate_classifier(featx):
  
         for i, (feats, label) in enumerate(testfeats):
                 refsets[label].add(i)
-                print feats
+                #print feats
                 #raw_input('> ')
                 observed = classifier.classify(feats)
                 testsets[observed].add(i)
@@ -203,7 +218,8 @@ def evaluate_classifier(featx):
         
     
         
-evaluate_classifier(word_feats)
+#evaluate_classifier(word_feats)
 #evaluate_classifier(stopword_filtered_word_feats)
-#evaluate_classifier(bigram_word_feats)    
+#evaluate_classifier(bigram_word_feats)
+evaluate_classifier(trigram_word_feats)    
 #evaluate_classifier(bigram_word_feats_stopwords)
