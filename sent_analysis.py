@@ -1,16 +1,19 @@
 import collections
-import nltk.classify.util, nltk.metrics
-from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
+import nltk
 import csv
+import nltk.classify.util, nltk.metrics
 from sklearn import cross_validation
 from sklearn.svm import LinearSVC, SVC
 import random
 from nltk.corpus import stopwords
 import itertools
 from nltk.collocations import BigramCollocationFinder
+from nltk.collocations import TrigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
-import nltk
- 
+from nltk.metrics import TrigramAssocMeasures
+from nltk.sentiment.util import mark_negation
+from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
+
 posdata = []
 with open('positive-data.csv', 'rb') as myfile:    
     reader = csv.reader(myfile, delimiter=',')
@@ -57,6 +60,19 @@ def bigram_word_feats(words, score_fn=BigramAssocMeasures.chi_sq, n=200):
     """    
     return dict([(ngram, True) for ngram in itertools.chain(words, bigrams)])
     
+def trigram_word_feats(words, score_fn=TrigramAssocMeasures.chi_sq, n=200):
+    trigram_finder = TrigramCollocationFinder.from_words(words)
+    trigrams = trigram_finder.nbest(score_fn, n)
+    """
+    print words
+    for ngram in itertools.chain(words, bigrams): 
+        if ngram not in stopset: 
+            print ngram
+    exit()
+    """    
+    return dict([(ngram, True) for ngram in itertools.chain(words, trigrams)])
+    
+
 #def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.chi_sq, n=200):
 def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.mi_like, n=200):
     bigram_finder = BigramCollocationFinder.from_words(words)
@@ -74,16 +90,16 @@ def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.mi_like, n=2
 # Calculating Precision, Recall & F-measure
 def evaluate_classifier(featx):
     
-    negfeats = [(featx(f), 'neg') for f in word_split(negdata)]
-    posfeats = [(featx(f), 'pos') for f in word_split(posdata)]
+    negfeats = [(featx(mark_negation(f)), 'neg') for f in word_split(negdata)]
+    posfeats = [(featx(mark_negation(f)), 'pos') for f in word_split(posdata)]
         
     negcutoff = len(negfeats)*3/4
     poscutoff = len(posfeats)*3/4
  
     trainfeats = negfeats[:negcutoff] + posfeats[:poscutoff]
-    print(len(trainfeats))
+    #print(len(trainfeats))
     testfeats = negfeats[negcutoff:] + posfeats[poscutoff:]
-    print(len(testfeats))
+    #print(len(testfeats))
     
     # using 3 classifiers
     classifier_list = ['nb', 'svm', 'maxent']#     
@@ -105,13 +121,13 @@ def evaluate_classifier(featx):
  
         for i, (feats, label) in enumerate(testfeats):
                 refsets[label].add(i)
-                print feats
+                #print feats
                 #raw_input('> ')
                 observed = classifier.classify(feats)
                 testsets[observed].add(i)
  
-        print refsets['pos']
-        print testsets['pos']
+        #print refsets['pos']
+        #print testsets['pos']
         accuracy = nltk.classify.util.accuracy(classifier, testfeats)
         pos_precision = nltk.precision(refsets['pos'], testsets['pos'])
         pos_recall = nltk.recall(refsets['pos'], testsets['pos'])
@@ -205,5 +221,6 @@ def evaluate_classifier(featx):
         
 evaluate_classifier(word_feats)
 #evaluate_classifier(stopword_filtered_word_feats)
-#evaluate_classifier(bigram_word_feats)    
+#evaluate_classifier(bigram_word_feats)
+#evaluate_classifier(trigram_word_feats)    
 #evaluate_classifier(bigram_word_feats_stopwords)

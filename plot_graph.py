@@ -76,15 +76,16 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
     print test_scores
     #train_scores_mean = np.mean(train_scores, axis=1)
     #train_scores_std = np.std(train_scores, axis=1)
+    
     test_scores_mean = np.mean(test_scores, axis=1)
     test_scores_std = np.std(test_scores, axis=1)
-    
     
     #train_scores_mean1 = np.mean(train_scores1, axis=1)
     #train_scores_std1 = np.std(train_scores1, axis=1)
 
     test_scores_mean1 = np.mean(test_scores1, axis=1)
     test_scores_std1 = np.std(test_scores1, axis=1)
+    
     test_scores_mean2 = np.mean(test_scores2, axis=1)
     test_scores_std2 = np.std(test_scores2, axis=1)
     plt.grid()
