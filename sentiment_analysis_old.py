@@ -5,6 +5,7 @@ from nltk.metrics import BigramAssocMeasures
 from nltk.probability import FreqDist, ConditionalFreqDist
 import csv
 import numpy as np
+import matplotlib.pyplot as plt
 posFeatures = []
 negFeatures = []
 
@@ -64,13 +65,16 @@ def evaluate_features(feature_select):
 
 	#prints metrics to show how well the feature selection did
     print 'train on %d instances, test on %d instances' % (len(trainFeatures), len(testFeatures))
+    accuracy = nltk.classify.util.accuracy(classifier, testFeatures)
+    #print accuracy
     print 'accuracy:', nltk.classify.util.accuracy(classifier, testFeatures)
     print 'pos precision:', nltk.precision(referenceSets['pos'], testSets['pos'])
     print 'pos recall:', nltk.recall(referenceSets['pos'], testSets['pos'])
     print 'neg precision:', nltk.precision(referenceSets['neg'], testSets['neg'])
     print 'neg recall:', nltk.recall(referenceSets['neg'], testSets['neg'])
     print classifier.show_most_informative_features(10)
-
+    return accuracy
+    
 #creates a feature selection mechanism that uses all words
 def make_full_dict(words):
 	return dict([(word, True) for word in words])
@@ -145,11 +149,43 @@ def find_best_words(word_scores, number):
 def best_word_features(words):
 	return dict([(word, True) for word in words if word in best_words])
 
+
+def plot_accuracy_curve(accuracy,numbers_to_test):
+
+    plt.figure()
+    title = 'Features vs Accuracy'
+    plt.title(title)
+    ylim=(0.3, 1.01)
+    if ylim is not None:
+        plt.ylim(*ylim)
+    plt.xlabel("No of features used")
+    plt.ylabel("Accuracy Score")
+    train_sizes = numbers_to_test
+    train_scores = accuracy   
+    print train_sizes
+    print train_scores
+    
+    plt.grid()
+
+    
+    plt.plot(train_sizes, train_scores, 'o-', color="r",
+             label="Naive bayes Training score")
+    plt.legend(loc="best")
+    return plt
+
+
+
 #numbers of features to select
-numbers_to_test = [10, 100, 1000, 10000, 15000]
+numbers_to_test = [10, 1000, 5000, 10000 , 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 60000, 70000]
 #tries the best_word_features mechanism with each of the numbers_to_test of features
+accuracy_rates = []
 for num in numbers_to_test:
 	print 'evaluating best %d word features' % (num)
 	best_words = find_best_words(word_scores, num)
-	evaluate_features(best_word_features)
+        accuracy = evaluate_features(best_word_features)
+        accuracy_rates.append(accuracy)
+        
+print accuracy_rates
 
+plot_accuracy_curve(accuracy_rates, numbers_to_test)
+plt.show()
