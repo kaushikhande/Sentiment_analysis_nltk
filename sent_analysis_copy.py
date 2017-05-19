@@ -1,26 +1,28 @@
 import collections
 import nltk
 import csv
-import itertools
-import random
+import numpy as np
 import nltk.classify.util, nltk.metrics
 from sklearn import cross_validation
 from sklearn.svm import LinearSVC, SVC
+import random
 from nltk.corpus import stopwords
+import itertools
+import matplotlib.pyplot as plt
 from nltk.collocations import BigramCollocationFinder
 from nltk.collocations import TrigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
 from nltk.metrics import TrigramAssocMeasures
 from nltk.sentiment.util import mark_negation
 from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
-
-posdata = []
+from nltk.probability import FreqDist, ConditionalFreqDist
+#posdata = []
 #with open('positive-data.csv', 'rb') as myfile:    
 #    reader = csv.reader(myfile, delimiter=',')
 #    for val in reader:
 #        posdata.append(val[0])        
  
-negdata = []
+#negdata = []
 #with open('negative-data.csv', 'rb') as myfile:    
 #    reader = csv.reader(myfile, delimiter=',')
 #    for val in reader:
@@ -46,8 +48,8 @@ def load_file():
         return posdata,negdata
 
 posdata,negdata = load_file()
-#print posdata
-#print negdata
+#print len(posdata)
+#print len(negdata)
 
 def word_split(data):    
     data_new = []
@@ -60,7 +62,7 @@ def word_split_sentiment(data):
     data_new = []
     for (word, sentiment) in data:
         word_filter = [i.lower() for i in word.split()]
-        data_new.append((word_filter, sentiment))
+        data_new.a((word_filter, sentiment))
     return data_new
     
 def word_feats(words):    
@@ -111,16 +113,21 @@ def bigram_word_feats_stopwords(words, score_fn=BigramAssocMeasures.mi_like, n=5
     return dict([(ngram, True) for ngram in itertools.chain(words, bigrams) if ngram not in stopset])
  
 # Calculating Precision, Recall & F-measure
+svm_accuracy = []
+maxent_accuracy = []
+nb_accuracy = []
+
+
 def evaluate_classifier(featx):
     
     #negfeats = [(featx(mark_negation(f)), 'neg') for f in word_split(negdata)]
     #posfeats = [(featx(mark_negation(f)), 'pos') for f in word_split(posdata)]
     negfeats = [(featx(f), 'neg') for f in word_split(negdata)]
-    #print negfeats
+    #print negfeats[1:25]
     #raw_input('>')
     posfeats = [(featx(f), 'pos') for f in word_split(posdata)]    
-    negcutoff = len(negfeats)*4/5
-    poscutoff = len(posfeats)*4/5
+    negcutoff = len(negfeats)*3/4
+    poscutoff = len(posfeats)*3/4
  
     trainfeats = negfeats[:negcutoff] + posfeats[:poscutoff]
     print(len(trainfeats))
@@ -172,7 +179,7 @@ def evaluate_classifier(featx):
         print('recall', (pos_recall + neg_recall) / 2)
         print('f-measure', (pos_fmeasure + neg_fmeasure) / 2)    
                 
-        #classifier.show_most_informative_features()
+        #classifier.show_most_informative_features(50)
     
     print('')
     
@@ -243,11 +250,139 @@ def evaluate_classifier(featx):
         print('precision', (sum(pos_precision)/n + sum(neg_precision)/n) / 2)
         print('recall', (sum(pos_recall)/n + sum(neg_recall)/n) / 2)
         print('f-measure', (sum(pos_fmeasure)/n + sum(neg_fmeasure)/n) / 2)
+        if cl == 'maxent':
+            maxent_accuracy_next = (sum(accuracy) / n)
+            maxent_accuracy.append(maxent_accuracy_next)
+        elif cl == 'svm':
+            svm_accuracy_next = (sum(accuracy) / n)
+            svm_accuracy.append(svm_accuracy_next)
+        else:
+            nb_accuracy_next = (sum(accuracy) / n)
+            nb_accuracy.append(nb_accuracy_next)
         
-    
         
+def create_word_scores():
+	#creates lists of all positive and negative words
+	posWords = []
+	negWords = []
+	posRev,negRev = load_file()
+	#print posWords
+	#raw_input('> ')
+	#posWords = list(itertools.chain(*posWords))
+	#negWords = list(itertools.chain(*negWords))
+	#negWords = [(make_full_dict(f), 'neg') for f in word_split(negWords)]
+        #print len(negfeats)
+        #posWords = [(make_full_dict(f), 'pos') for f in word_split(posWords)]
+        
+        for f in word_split(negRev):
+            posWords.append(f)
+        
+        for f in word_split(posRev):
+            negWords.append(f)
+    #build frequency distibution of all words and then frequency distributions of words within positive and negative labels
+        word_fd = FreqDist()
+	cond_word_fd = ConditionalFreqDist()
+	#print posWords
+	posWords = list(itertools.chain(*posWords))
+	negWords = list(itertools.chain(*negWords))
+	for word in posWords:
+	    word_fd[word.lower()] += 1
+	    #print word
+	    #raw_input('>')
+	    cond_word_fd['pos'][word.lower()] += 1
+        #count = count + 1
+	for word in negWords:
+		word_fd[word.lower()] += 1
+		cond_word_fd['neg'][word.lower()] += 1
+
+	#finds the number of positive and negative words, as well as the total number of words
+	pos_word_count = cond_word_fd['pos'].N()
+	neg_word_count = cond_word_fd['neg'].N()
+	#print count
+	total_word_count = pos_word_count + neg_word_count
+        #print total_word_count
+        #raw_input('>')
+
+	#builds dictionary of word scores based on chi-squared test
+	word_scores = {}
+	for word, freq in word_fd.iteritems():
+		pos_score = BigramAssocMeasures.chi_sq(cond_word_fd['pos'][word], (freq, pos_word_count), total_word_count)
+		neg_score = BigramAssocMeasures.chi_sq(cond_word_fd['neg'][word], (freq, neg_word_count), total_word_count)
+		word_scores[word] = pos_score + neg_score
+
+	return word_scores
+	
+
+#finds word scores
+word_scores = create_word_scores()
+#print (word_scores)
+#raw_input('>')
+
+
+
+#finds the best 'number' words based on word scores
+def find_best_words(word_scores, number):
+	best_vals = sorted(word_scores.iteritems(), key=lambda (w, s): s, reverse=True)[:number]
+	best_words = set([w for w, s in best_vals])
+	return best_words
+
+#creates feature selection mechanism that only uses best words
+def best_word_features(words):
+	return dict([(word, True) for word in words if word in best_words])
+
+
 #evaluate_classifier(word_feats)
+#raw_input('>')
 #evaluate_classifier(stopword_filtered_word_feats)
-evaluate_classifier(bigram_word_feats)
+#evaluate_classifier(bigram_word_feats)
 #evaluate_classifier(trigram_word_feats)    
 #evaluate_classifier(bigram_word_feats_stopwords)
+#raw_input('>')
+#numbers of features to select
+
+def plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy , numbers_to_test):
+
+    plt.figure()
+    title = 'Features vs Accuracy'
+    plt.title(title)
+    ylim=(0.3, 1.01)
+    if ylim is not None:
+        plt.ylim(*ylim)
+    plt.xlabel("No of features used")
+    plt.ylabel("Accuracy Score")
+    train_sizes = numbers_to_test
+    train_scores_nb = nb_accuracy
+    train_scores_svm = svm_accuracy   
+    train_scores_maxent = maxent_accuracy   
+    
+    plt.grid()
+
+    
+    plt.plot(train_sizes, train_scores_nb, 'o-', color="r",
+             label="Naive bayes Training score")
+    plt.plot(train_sizes, train_scores_svm, 'o-', color="y",
+             label="SVM Training score")
+    plt.plot(train_sizes, train_scores_maxent, 'o-', color="b",
+             label="Maximum Entropy Training score")
+
+    plt.legend(loc="best")
+    return plt
+
+
+
+#numbers_to_test = [10, 100, 1000, 10000, 25000]
+numbers_to_test = np.linspace(1000, 100000, 40)
+numbers_to_test = numbers_to_test.astype(int)
+#tries the best_word_features mechanism with each of the numbers_to_test of features
+for num in numbers_to_test:
+	print 'evaluating best %d word features' % (num)
+	best_words = find_best_words(word_scores, num)
+	evaluate_classifier(best_word_features)
+	
+	
+print maxent_accuracy
+print svm_accuracy
+print nb_accuracy
+
+plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy, numbers_to_test)
+plt.show()
