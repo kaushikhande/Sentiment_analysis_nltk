@@ -3,7 +3,6 @@ import nltk, nltk.classify.util, nltk.metrics
 from nltk.classify import NaiveBayesClassifier
 from nltk.metrics import BigramAssocMeasures
 from nltk.probability import FreqDist, ConditionalFreqDist
-
 from nltk import precision
 #from nltk.metrics import precision
 #from nltk.metrics.scores import          (accuracy, precision, recall, f_measure,

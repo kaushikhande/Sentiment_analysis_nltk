@@ -176,8 +176,12 @@ def plot_accuracy_curve(accuracy,numbers_to_test):
 
 
 #numbers of features to select
-numbers_to_test = [10, 1000, 5000, 10000 , 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 60000, 70000]
+#numbers_to_test = [10, 1000, 5000, 10000 , 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 60000, 70000]
+numbers_to_test = np.linspace(1000, 100000, 40)
+#print numbers_to_test
 #tries the best_word_features mechanism with each of the numbers_to_test of features
+numbers_to_test = numbers_to_test.astype(int)
+#print numbers_to_test
 accuracy_rates = []
 for num in numbers_to_test:
 	print 'evaluating best %d word features' % (num)
@@ -185,7 +189,7 @@ for num in numbers_to_test:
         accuracy = evaluate_features(best_word_features)
         accuracy_rates.append(accuracy)
         
-print accuracy_rates
+#print accuracy_rates
 
 plot_accuracy_curve(accuracy_rates, numbers_to_test)
 plt.show()

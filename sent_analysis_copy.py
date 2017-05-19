@@ -1,12 +1,12 @@
 import collections
 import nltk
 import csv
+import itertools
+import random
 import nltk.classify.util, nltk.metrics
 from sklearn import cross_validation
 from sklearn.svm import LinearSVC, SVC
-import random
 from nltk.corpus import stopwords
-import itertools
 from nltk.collocations import BigramCollocationFinder
 from nltk.collocations import TrigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
