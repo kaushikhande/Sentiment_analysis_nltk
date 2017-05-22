@@ -16,6 +16,7 @@ from nltk.metrics import TrigramAssocMeasures
 from nltk.sentiment.util import mark_negation
 from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
 from nltk.probability import FreqDist, ConditionalFreqDist
+
 #posdata = []
 #with open('positive-data.csv', 'rb') as myfile:    
 #    reader = csv.reader(myfile, delimiter=',')
@@ -358,11 +359,11 @@ def plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy , numbers_to_
     plt.grid()
 
     
-    plt.plot(train_sizes, train_scores_nb, 'o-', color="r",
+    plt.plot(train_sizes, train_scores_nb, '.--', color="r",
              label="Naive bayes Training score")
-    plt.plot(train_sizes, train_scores_svm, 'o-', color="y",
+    plt.plot(train_sizes, train_scores_svm, 'v-', color="g",
              label="SVM Training score")
-    plt.plot(train_sizes, train_scores_maxent, 'o-', color="b",
+    plt.plot(train_sizes, train_scores_maxent, '^-.', color="b",
              label="Maximum Entropy Training score")
 
     plt.legend(loc="best")
@@ -371,7 +372,7 @@ def plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy , numbers_to_
 
 
 #numbers_to_test = [10, 100, 1000, 10000, 25000]
-numbers_to_test = np.linspace(1000, 100000, 40)
+numbers_to_test = np.linspace(1000, 100000, 6)
 numbers_to_test = numbers_to_test.astype(int)
 #tries the best_word_features mechanism with each of the numbers_to_test of features
 for num in numbers_to_test:
@@ -386,3 +387,5 @@ print nb_accuracy
 
 plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy, numbers_to_test)
 plt.show()
+
+
