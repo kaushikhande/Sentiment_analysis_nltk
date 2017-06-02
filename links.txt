@@ -1,3 +1,7 @@
 http://www.nltk.org/api/nltk.sentiment.html
 http://www.nltk.org/howto/sentiment.html
 
+
+Seminar
+https://github.com/tarikd/Churn-Prediction/blob/master/Churn.ipynb
+https://github.com/bensadeghi/pyspark-churn-prediction/blob/master/churn-prediction.ipynb
