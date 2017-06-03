@@ -1,3 +1,11 @@
 http://www.nltk.org/api/nltk.sentiment.html
 http://www.nltk.org/howto/sentiment.html
+<<<<<<< HEAD
 https://askubuntu.com/questions/103910/nfs-is-blocked-by-ufw-even-though-ports-are-opened
+=======
+
+
+Seminar
+https://github.com/tarikd/Churn-Prediction/blob/master/Churn.ipynb
+https://github.com/bensadeghi/pyspark-churn-prediction/blob/master/churn-prediction.ipynb
+>>>>>>> b675bee8a798506e1228f0976312832fc4142112
