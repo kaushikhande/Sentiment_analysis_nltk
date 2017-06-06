@@ -1,3 +1,4 @@
 http://www.nltk.org/api/nltk.sentiment.html
 http://www.nltk.org/howto/sentiment.html
-
+https://books.google.co.in/books?id=0J_cDgAAQBAJ&pg=PA212&lpg=PA212&dq=replacing+negations+with+antonyms+python&source=bl&ots=ldxvy0iz0V&sig=6kr1SF2ah49xFUyj85e1PMVsaKs&hl=en&sa=X&ved=0ahUKEwjPh9LrlqnUAhXMRY8KHcBNCnEQ6AEIRzAH#v=onepage&q=replacing%20negations%20with%20antonyms%20python&f=false
+https://github.com/japerk/nltk3-cookbook
