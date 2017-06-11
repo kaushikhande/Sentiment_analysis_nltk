@@ -9,6 +9,7 @@ import random
 from nltk.corpus import stopwords
 import itertools
 import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
 from nltk.collocations import BigramCollocationFinder
 from nltk.collocations import TrigramCollocationFinder
 from nltk.metrics import BigramAssocMeasures
@@ -16,7 +17,7 @@ from nltk.metrics import TrigramAssocMeasures
 from nltk.sentiment.util import mark_negation
 from nltk.classify import NaiveBayesClassifier, MaxentClassifier, SklearnClassifier
 from nltk.probability import FreqDist, ConditionalFreqDist
-
+from sklearn.metrics import confusion_matrix
 #posdata = []
 #with open('positive-data.csv', 'rb') as myfile:    
 #    reader = csv.reader(myfile, delimiter=',')
@@ -138,7 +139,8 @@ def evaluate_classifier(featx):
     
     # using 3 classifiers
     classifier_list = ['nb', 'svm', 'maxent']#     
-        
+    NB_pred = []
+    new_label = []    
     for cl in classifier_list:
         if cl == 'maxent':
             classifierName = 'Maximum Entropy'
@@ -153,17 +155,30 @@ def evaluate_classifier(featx):
             
         refsets = collections.defaultdict(set)
         testsets = collections.defaultdict(set)
+        original_label = []
+        
  
         for i, (feats, label) in enumerate(testfeats):
                 refsets[label].add(i)
+                original_label.append(label)
                 #print feats
-                raw_input('> ')
+                #raw_input('> ')
                 observed = classifier.classify(feats)
-               
+                NB_pred.append(observed)
+                    
+                
+                
+                
                 testsets[observed].add(i)
  
         #print refsets['pos']
-        print testsets['pos']
+        #print testsets['pos']
+        #print original_label
+        #print NB_Pred
+        #cm = confusion_matrix(original_label,NB_pred)
+        #print cm
+        #print "The accuracy score is {:.2%}".format(accuracy_score(original_label,NB_pred))
+        new_label = original_label
         accuracy = nltk.classify.util.accuracy(classifier, testfeats)
         pos_precision = nltk.precision(refsets['pos'], testsets['pos'])
         pos_recall = nltk.recall(refsets['pos'], testsets['pos'])
@@ -185,6 +200,51 @@ def evaluate_classifier(featx):
     
     print('')
     
+    print len(NB_pred)
+    
+    ME_pred = NB_pred[982:]
+    SVM_pred = NB_pred[491:982]
+    NB_pred = NB_pred[0:491]
+    #print NB_pred
+    #print "-----------------------"
+    #print ME_pred
+    #print "-----------------------"
+    #print SVM_pred
+    #print "-----------------------"
+    #cm = confusion_matrix(SVM_pred,NB_pred)
+    #print cm
+    #print "The accuracy score is {:.2%}".format(accuracy_score(SVM_pred,NB_pred))
+    #cm = confusion_matrix(ME_pred,NB_pred)
+    #print cm
+    #print "The accuracy score is {:.2%}".format(accuracy_score(ME_pred,NB_pred))
+    #cm = confusion_matrix(SVM_pred,ME_pred)
+    #print cm
+    #print "The accuracy score is {:.2%}".format(accuracy_score(SVM_pred,ME_pred))
+    
+    final_pred = []
+    for i in range(0,491):
+        c1 = 0
+        if NB_pred[i] == 'pos':
+            c1 = c1 + 1
+        if ME_pred[i] == 'pos':
+            c1 = c1 + 1
+        if SVM_pred[i] == 'pos':
+            c1 = c1 + 1
+        #print i
+        if c1 == 3 or c1 == 2:
+            final_pred.append('pos')
+        else:
+            final_pred.append('neg')
+        
+    print "-----------------------"
+    #print final_pred
+    print "-----------------------"
+    #print new_label
+    cm = confusion_matrix(final_pred,new_label)
+    print cm
+    print "The accuracy score is {:.2%}".format(accuracy_score(final_pred,new_label))
+    
+
     ## CROSS VALIDATION
     
     trainfeats = negfeats + posfeats    
@@ -332,12 +392,17 @@ def find_best_words(word_scores, number):
 def best_word_features(words):
 	return dict([(word, True) for word in words if word in best_words])
 
-
-#evaluate_classifier(word_feats)
+print "----------Unigram features-----------"
+evaluate_classifier(word_feats)
 #raw_input('>')
 #evaluate_classifier(stopword_filtered_word_feats)
-#evaluate_classifier(bigram_word_feats)
-#evaluate_classifier(trigram_word_feats)    
+#raw_input('>')
+print "----------Bigram features----------"
+evaluate_classifier(bigram_word_feats)
+#raw_input('>')
+print "----------Trigram features----------"
+evaluate_classifier(trigram_word_feats)    
+#raw_input('>')
 #evaluate_classifier(bigram_word_feats_stopwords)
 #raw_input('>')
 #numbers of features to select
@@ -362,7 +427,7 @@ def plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy , numbers_to_
     
     plt.plot(train_sizes, train_scores_nb, '.--', color="r",
              label="Naive bayes Training score")
-    plt.plot(train_sizes, train_scores_svm, 'v-', color="g",
+    plt.plot(train_sizes, train_scores_svm, 'v-', color="y",
              label="SVM Training score")
     plt.plot(train_sizes, train_scores_maxent, '^-.', color="b",
              label="Maximum Entropy Training score")
@@ -373,20 +438,20 @@ def plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy , numbers_to_
 
 
 #numbers_to_test = [10, 100, 1000, 10000, 25000]
-numbers_to_test = np.linspace(1000, 100000, 4)
-numbers_to_test = numbers_to_test.astype(int)
+#numbers_to_test = np.linspace(1000, 100000, 4)
+#numbers_to_test = numbers_to_test.astype(int)
 #tries the best_word_features mechanism with each of the numbers_to_test of features
-for num in numbers_to_test:
-	print 'evaluating best %d word features' % (num)
-	best_words = find_best_words(word_scores, num)
-	evaluate_classifier(best_word_features)
+#for num in numbers_to_test:
+#	print 'evaluating best %d word features' % (num)
+#	best_words = find_best_words(word_scores, num)
+#	evaluate_classifier(best_word_features)
 	
 	
-print maxent_accuracy
-print svm_accuracy
-print nb_accuracy
-
-plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy, numbers_to_test)
-plt.show()
+#print maxent_accuracy
+#print svm_accuracy
+#print nb_accuracy
 
 
+
+#plot_accuracy_curve(maxent_accuracy[4:], svm_accuracy[4:], nb_accuracy[4:], numbers_to_test)
+#plt.show()
