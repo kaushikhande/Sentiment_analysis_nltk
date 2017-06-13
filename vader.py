@@ -102,6 +102,8 @@ to pay for it",
 "This movie was actually neither that funny, nor super witty.",
 "This movie doesn't care about cleverness, wit or any other kind of \
 intelligent humor.",
+"This movie cares about cleverness, wit or any other kind of \
+intelligent humor.",
 "Those who find ugly meanings in beautiful things are corrupt without \
 being charming.",
 "There are slow and repetitive parts, BUT it has just enough spice to \
@@ -118,8 +120,10 @@ is EXCELLENT!",
 and the quality of these stands is not what I'm used\
 to with a bose system.",
 "Pleasantly, the speakers attach well,\
-and the quality of these stands is what I'm used to\
+and the quality of these stands is what I'm used to \
 with a bose system.",
+"I don't like this book",
+"I like this book",
 "the twin towers collapsed today",
 "However, Mr. Carter solemnly argues, his client carried out the kidnapping \
 under orders and in the ''least offensive way possible.''"
