@@ -102,6 +102,12 @@ to pay for it",
 "This movie was actually neither that funny, nor super witty.",
 "This movie doesn't care about cleverness, wit or any other kind of \
 intelligent humor.",
+"This movie cares about cleverness, wit or other kind of \
+intelligent humor.",
+"I found that these dvd-rs did not work well in my system, were unreliable\
+ and slow. I cannot recommend them.",
+"I found that these dvd-rs did work well in my system, were reliable\
+ and slow. I can recommend them.",
 "Those who find ugly meanings in beautiful things are corrupt without \
 being charming.",
 "There are slow and repetitive parts, BUT it has just enough spice to \
@@ -116,10 +122,10 @@ is EXCELLENT!",
 "usually around the time the 90 day warranty expires",
 "Sorry, the speakers don't attach well,\
 and the quality of these stands is not what I'm used\
-to with a bose system.",
+ to with a bose system.",
 "Pleasantly, the speakers attach well,\
 and the quality of these stands is what I'm used to\
-with a bose system.",
+ with a bose system.",
 "the twin towers collapsed today",
 "However, Mr. Carter solemnly argues, his client carried out the kidnapping \
 under orders and in the ''least offensive way possible.''"
