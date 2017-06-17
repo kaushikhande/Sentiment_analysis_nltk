@@ -1,0 +1,561 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,left=1.5in,right=1in,top=1in,bottom=1.25in]{geometry}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{enumitem} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Sentiment Analysis with Ensemble Classifiers}
+\fancyfoot[C]{PICT, Department of Computer Engineering\big \langle 2016-17\big \rangle}
+\fancyfoot[R]{\thepage}
+ 
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+
+ 
+
+\textbf {\large A SEMINAR REPORT ON}
+\linebreak 
+\linebreak 
+\textbf {\Large{Sentiment Analysis with Ensemble Classifiers}}
+\linebreak
+\linebreak
+\linebreak 
+
+SUBMITTED TO THE SAVITRIBAI PHULE PUNE UNIVERSITY, PUNE 
+\linebreak 
+IN PARTIAL FULFILLMENT OF THE REQUIREMENTS 
+\linebreak 
+FOR THE AWARD OF THE DEGREE
+\linebreak
+\linebreak 
+\textbf{\large{MASTER OF ENGINEERING (Computer Engineering)}}
+\linebreak
+\linebreak
+\linebreak 
+\textbf{\large{BY}}
+\linebreak
+\linebreak
+ Kaushik S. Hande \hspace{20mm}   Exam No.7296
+\linebreak
+\linebreak
+\linebreak 
+
+\textbf{\large{Under the guidance of}}
+\linebreak
+Prof. A. G. Phakatkar
+\linebreak
+\linebreak 
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[scale=0.6]{pict.jpg}
+\end{center}
+\label{overflow}
+\end{figure}
+\textbf{\linebreak \linebreak  \large{DEPARTMENT OF COMPUTER ENGINEERING}}
+\linebreak
+\linebreak
+\textbf{Pune Institute of Computer Technology}
+\linebreak
+\textbf{Dhankawadi, Pune}
+\linebreak
+\textbf{Maharashtra 411043}
+\linebreak
+\end{center}
+\end{titlepage}
+\pagebreak
+
+\begin{titlepage}
+\begin{center}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[scale=0.6]{pict.jpg}
+\end{center}
+\label{overflow}
+\end{figure}
+
+\textbf{\linebreak \large{DEPARTMENT OF COMPUTER ENGINEERING}}
+\linebreak
+\linebreak
+\textbf{Pune Institute of Computer Technology}
+\linebreak
+\textbf{Dhankawadi, Pune}
+\linebreak
+\textbf{Maharashtra 411043}
+\linebreak
+\linebreak
+\textbf{\Large{CERTIFICATE}}
+\linebreak
+\linebreak
+\linebreak
+ This is to certify that the Seminar report entitled
+\linebreak
+\textbf{“Sentiment Analysis with Ensemble Classifiers”}
+\linebreak
+\linebreak
+Submitted by
+\linebreak
+Kaushik S. Hande \hspace{10mm}   Exam No. 7296 \linebreak
+\linebreak
+is a work carried out by him under the supervision of Prof. A. G. Phakatkar and it is submitted towards the partial fulfillment of the requirement of Savitribai Phule Pune University, Pune for the award of the degree of Master of Engineering (Computer Engineering)
+\linebreak
+\linebreak
+\linebreak
+\linebreak
+\linebreak
+\begin{table}[h]
+\begin{tabular}{ccc}
+Prof. A. G. Phakatkar    &                        &  \hspace{52mm} Dr. R. B. Ingle\\
+Internal Guide      &                     &    \hspace{52mm} Head \\
+PICT, Pune          &                         &       \hspace{47mm} Department of Computer Engineering \\
+                    &                       & \hspace{52mm} PICT, Pune
+\end{tabular}
+\end{table}
+\end{center}
+Place:\\ 
+Date:
+\end{titlepage}
+\pagenumbering{Roman}
+\section*{ACKNOWLEDGEMENT}
+\large{
+I sincerely thank our Seminar Coordinator Dr. S. S. Sonawane and Head of Department Dr. R. B. Ingle
+for their support.\\
+I also sincerely convey my gratitude to my guide Prof. A. G. Phakatkar, Department of Computer Engineering for her constant
+support, providing all the help, motivation and encouragement from beginning till end to make this
+seminar a grand success.\\
+I am also hugely indebted to my friends for all their help and support.\\
+Above all I would like to thank my parents for their wonderful support and blessings, without which
+I would not have been able to accomplish my goal.
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+
+\newpage
+\section*{ABSTRACT}
+	With the ever increasing social networking and online marketing sites, the reviews and blogs obtained
+	from those, act as an important source for further analysis and improved decision making. These reviews
+	are mostly unstructured by nature and thus, need processing like classification or clustering to provide a
+	meaningful information for future uses carrying prediction and classification analysis.
+	This approach is useful for consumers who can use sentiment analysis to
+	search for products, for companies that aim at monitoring the public sentiment of their brands, and for many
+	other applications.Three different machine
+	learning algorithms such as Naive Bayes (NB), Maximum Entropy (ME),
+	and Support Vector Machine (SVM) have been considered for classification of human sentiments.
+	Classifier ensembles formed by Naive Bayes, SVM, and Maximum Entropy improves classification accuracy.
+
+\newpage
+\pagenumbering{arabic}
+\begin{center}
+\section{INTRODUCTION}
+\end{center}
+
+\par Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
+is also known as opinion mining, it involves studing of people’s sentiments towards 
+certain entities. Internet is a resourceful place with respect to sentiment information. From a
+perspective of a user, people are able to express their views through various social media,
+such as forums, micro-blogs, or online social networking sites.
+
+\par With the advent of Web 2.0 techniques,
+users started prefering to share their opinions on the Web. These user-generated and 
+sentiment-rich data are valuable to many applications like 
+credibility analysis of news sites on the Web, recommendation system, business and 
+government intelligence etc. At the same time, it brings
+urgent need for detecting overall sentiment inclinations of
+documents generated by users, which can be treated as a
+classification problem. Sentiment analysis includes several
+subtasks  which have seen a great deal of attention in recent years:
+\begin{enumerate}
+ \item To detect whether a given document is subjective or objective.
+  \item To Identify whether given subjective document express a positive opinion or a negative opinion.
+  \item To determine the sentiment strength of a document,
+such as strongly negative, weakly negative, neutral, weakly
+positive and strongly positive.
+\end{enumerate}
+
+In this work we are focusing on second subtask.
+
+\par Besides individuals on social media marketers also need to monitor all media for information related to their brands —
+whether it’s for public relations activities, fraud violations, or competitive intelligence.
+Thus, aside from individuals, sentiment analysis is also the need of companies which are anxious to understand how
+their products and services are perceived by the public.
+\par The movie reviews are mostly in the text format and unstructured 
+in nature. Thus, the stop words and other unwanted information are 
+removed from the reviews for further analysis. These
+reviews goes through a process of vectorization in which, the text
+data are converted into matrix of numbers. These matrices are
+then given input to different machine learning classifiers for 
+classification of the reviews.
+\par Many researchers have focused on the use of traditional classifiers,
+like Naive Bayes, Maximum Entropy, and Support Vector Machines to
+solve such problems. In this work, we show that the use of ensembles
+of multiple base classifiers can improve the accuracy of review sentiment classification.
+
+\newpage
+\begin{center}
+
+\section{MOTIVATION}
+
+\end{center}
+
+\par In traditional document classification tasks, the
+input to the machine learning algorithm is a free text, from which a
+bag-of-words representation is constructed — the individual tokens
+are extracted, counted, and stored as vectors.
+\begin{enumerate}[label=(\roman*)]
+\item Most of the authors apart from Pang et al., and
+Matsumoto et al., have used unigram approach to classify the reviews. 
+This approach provides comparatively better
+result, but fail in some cases. The comment “The item is not
+good,” when analyzed using unigram approach, provides the
+polarity of sentence as neutral with the presence of one positive 
+polarity word ‘good’ and one negative polarity word ‘not’.
+But when the statement is analyzed using bigram approach, it
+gives the polarity of sentence as negative due to the presence
+of words ‘not good’, which is correct. Therefore, when a higher
+level of n-gram is considered, the result is expected to be 
+better. Thus, analyzing the research outcome of several authors,
+this study makes an attempt to extend the sentiment classification
+cation using unigram, bigram, trigram, and their combinations
+for classification of movie reviews.
+\item Also a number of authors have used Part-of-Speech (POS) tags
+for classification purpose. But it is observed that the POS tag
+for a word is not fixed and it changes as per the context of
+their use. For example, the word 'book' can have the POS 'noun'
+when used as reading material where as in case 
+of ``ticket booking'' the POS is verb. Thus, in order to avoid confusion, instead
+of using POS as a parameter for classification, the word as a
+whole may be considered for classification.
+\item Most of the machine learning algorithms work on the data 
+represented as matrix of numbers. But the sentiment data are 
+always in text format. Therefore, it needs to be converted to
+number matrix. Different authors have considered TF or TF-IDF
+to convert the text into matrix on numbers. But in this paper,
+in order to convert the text data into matrix of numbers, the
+combination of TF-IDF and CountVectorizer have been applied.
+The rows of the matrix of numbers represents a particular text
+file where as its column represent each word / feature present
+in that respective file.
+\end{enumerate}
+\newpage
+\begin{center}
+ \section{LITERATURE SURVEY}
+\end{center}
+%\begin{comment}
+The Following table shows the literature survey by comparing techniques proposed in various refferences:
+
+\begin{center}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|l|}
+\hline
+No. & Reference                                                                                                                                                                           & Techniques                                                                                                                                   & Desciption                                                                                                                                                                                                                                                                           \\
+\hline
+1   & \begin{tabular}[c]{@{}l@{}}Thumbs up?sentiment\\ classification using \\machine learning \\techniques\end{tabular}                                                             & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\Maximum Entropy\\Support Vector machine,\end{tabular}                                                                    & \begin{tabular}[c]{@{}l@{}}Classify the dataset \\using different machine \\learning algorithms and\\ n-gram model\end{tabular}                                                                                                                                                                                         \\
+\hline
+2   & \begin{tabular}[c]{@{}l@{}}Automatic opinion \\polarity classification \\of movie.\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Naive Bayes (NB) and\\Markov Model (MM)\end{tabular}                                  & \begin{tabular}[c]{@{}l@{}}Accessed overall opinion\\ polarity(OvOp)concept \\using machine learning \\algorithms\end{tabular}                                                                                                                                                                      \\
+\hline
+3   & \begin{tabular}[c]{@{}l@{}}The sentimental \\factor: improving
+\\review classification\\ via human-provided\\ information.\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Naive Bayes\end{tabular}            & \begin{tabular}[c]{@{}l@{}}Linearly combinable paired\\ feature are used to\\ predict the sentiment\end{tabular}                                                                                                                                                          \\
+\hline
+4   & \begin{tabular}[c]{@{}l@{}}Sentiment analysis \\using support vector\\ machines
+with \\diverse information \\sources\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}} Support Vector Machine\\(SVM)\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}Values assigned to \\selected words then \\combined to form a \\model for classification\end{tabular}                                                                                                                                                                                        \\
+\hline
+5   & \begin{tabular}[c]{@{}l@{}}Mining the peanut\\ gallery: opinion
+extraction \\and semantic classification \\of product reviews\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}SVM, Machine \\learning using Rainbow,\\ Naive Bayes\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}Information retrieval \\techniques used for \\feature retrieval and \\result of various metrics\\ are tested\end{tabular}                                                                                                                                                                                        \\
+\hline
+6   & \begin{tabular}[c]{@{}l@{}}Sentiment classification \\using
+word \\sub-sequences and \\dependency sub-trees\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Support Vector Machine \\(SVM)\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}Syntactic relationship \\among words used as\\ a basis of document \\level sentiment analysis\end{tabular}                                                                                                                                                                                        \\
+\hline
+
+7   & \begin{tabular}[c]{@{}l@{}}Chinese comments \\sentiment classification\\ based on word2vec \\and svm perf\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Support Vector Machine \\(SVM)\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}Use word2vec to\\ capture similar\\ features then classify\\ reviews using SVM\end{tabular}                                                                                                                                                                                        \\
+\hline
+
+\end{tabular}
+\\
+\caption{\textbf{LITERATURE SURVEY}}
+\end{table}
+\end{center}
+%\end{comment}
+
+
+\newpage
+\begin{center}
+
+\section{PROBLEM DEFINITION AND OBJECTIVE}
+
+\end{center}
+\subsection{Problem Statement}
+
+\hspace{5mm}
+To increase accuracy and efficiency of classification of reviews using ensemble classifiers.
+\hspace{5mm}
+
+
+\subsection{Proposed Objective}
+To improve the accuracy of classification of reviews by  using
+\begin{enumerate}
+\item Bag-of-words representation of text.
+\item Unigram, bigram, trigram and combination of these.
+\item Removing stopwords, Numeric and special character from text as they do not play any significant role.
+\item Using combination of three different classifiers for text review classification. 
+
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+
+\section{PROPOSED SOLUTION}
+
+\end{center}
+
+The reviews of IMDb dataset is processed to remove the stop
+words and unwanted information from dataset. The textual data is
+then transformed to a matrix of number using vectorization 
+techniques. Further, training of the dataset is carried out using machine
+learning algorithm.
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 1in]{flow.png}
+\caption{Diagrammatic view of the approach}
+\end{figure}
+
+\subsection{Preprocessing}
+The text reviews sometimes consist of absurd data, which
+need to be removed, before considered for classification.
+The usually identified absurd data are:
+\begin{enumerate}
+ \item Stop words: They do not play any role in determining
+the sentiment.
+  \item Numeric and special character: In the text reviews, it is
+often observed that there are different numeric (1,2,...5
+etc.) and special characters %$(@, #, ,etc.)$ present,
+which do not have any effect on the analysis. But they
+often create confusion during conversion of text file to
+numeric vector.
+\end{enumerate}
+
+\subsection{Bag of Words}
+After the preprocessing of text reviews, reviews are represented by a table in which the columns
+represent the terms (or existing words) in the reviews and the values
+represent their frequencies. Therefore, a collection of reviews after
+the preprocessing step addressed later can be represented as illustrated in 
+Table 2, in which there are n reviews and m terms.Each
+review is represented as $review_i$ = $(a_{i1} , a_{i2} ,...,a_{im} )$, where $a_{ij}$ is the 
+frequency of term $t_j$ in the $review_i$ . This value can be calculated in various
+ways.
+\begin{enumerate}
+ \item CountVectorizer: It converts the text reviews into a matrix of token counts. It implements both tokenization
+and occurrence counting. The output matrix obtained
+after this process is a sparse matrix.
+  \item Calculation of CountVectorizer Matrix: An example 
+  is considered to explain the steps of calculating 
+elements of the matrix Garreta and Moncecchi
+(2013) which helps in improving the understandability. 
+Suppose, three different documents 
+containing following sentences are taken for analysis:
+\begin{enumerate}
+ \item Sentence 1: ``Movie is nice''.
+ \item Sentence 2: ``Movie is Awful''.
+ \item Sentence 3: ``Movie is fine''.
+\end{enumerate}
+
+A matrix may be formed with different values for its
+elements size 4 * 6, as there exists 3 documents and
+5 distinct features. In the matrix given in Table 3 ,
+the elements are assigned with value of ‘1’, if the
+feature is present or else in case of the absence of
+any feature, the element is assigned with value ‘0’.
+
+\end{enumerate}
+
+\begin{comment}
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 3.5in]{arch1.png}
+\caption{Dual Sentiment Analysis System Architecture}
+\end{figure}
+\end{comment}
+\subsection{Classifiers}
+Naive Bayes, Support vector machine and Maximum Entropy are used as classifiers for sentiment analysis .
+
+\begin{itemize}
+ \item Naive Bayes (NB) method: This method is used for both classification as 
+ well as training purposes. This is a probabilistic classifier method 
+ based on Bayes’ theorem. In this work, multinomial Naive Bayes classification technique is used. Multinomial
+model considers word frequency information in document for
+analysis, where a document is considered to be an ordered 
+sequence of words obtained from vocabulary ‘V’. The probability
+of a word event is independent of word context and it’s position in the document.
+\end{itemize}
+\begin{itemize}
+\item Support vector machine (SVM) method: This method analyzes
+data and defines decision boundaries by having hyper-planes.
+In binary classification problem, the hyper-plane separates the
+document vector in one class from other class, where the separation between hyper-planes is desired to be kept as large as
+possible.
+\end{itemize}
+\begin{itemize}
+\item Maximum entropy (ME) method: In this method, the training
+data is used to set constraint on conditional distribution. Each constraint is used to 
+express characteristics of training data. In Maximum Entropy (ME)
+if a word occurs frequently in a class,
+the weight of word-class pair becomes higher in comparison to
+other pairs. These highest frequency word-class pairs are 
+considered for classification purpose.
+\end{itemize}
+
+The movie reviews of acl IMDb
+dataset is considered for analysis, using the machine learning algorithms discussed. Then different variation
+of the n-gram methods i.e., unigram, bigram, trigram, unigram + bigram, unigram + trigram, and unigram + bigram
++ trigram are applied to obtain the result.
+\subsection{Ensemble Classifiers}
+\begin{figure}[!h]
+\centering
+\includegraphics[width = 4in]{ensemble.png}
+\caption{Diagrammatic view of the ensmble approach}
+\end{figure}
+In practice, classifiers are built to classify unseen data, usually referred 
+to as a target dataset. In a controlled experimental setting, a validation set represents the target
+set. Actually, in controlled experimental settings the target set is frequently 
+referred to as either a test or a validation set. These two terms
+have been used interchangeably, sometimes causing confusion. In our
+study, we assume that the target/validation set has not been used at
+all in the process of building the classifier ensembles. Once the base
+ classifiers have been trained, a classifier ensemble is formed by the
+average of the class probabilities obtained by each classifier or the
+majority voting.
+
+
+\subsection{Mathematical Model}
+%\begin{equation*}
+$S=\{s,e,I,O,fmain|\phi\}$\\\\ 
+%\end{equation*}
+where,\\
+s = start state\\
+e = end state\\
+I = Inputs to the system\\
+I = \{y,D\}\\\\
+D = \{ d1, d2, d3 ...... dn \}=set of n different reviews\\
+y $\epsilon$ \{ 0 , 1 \} = The class label of the reviews\\
+0 = Negative reviews\\
+1 = Positive reviews\\
+O = Output of the system\\
+O = \{$D_o$, y \}\\
+where\\\\
+$D_o = { d_1, d_2, d_3 ...... d_n }$=set of n different test reviews\\
+y $\epsilon$ { 0 , 1 } = The class label of the test reviews\\
+$f_{main} = \{f_{vectorizer} , f_{tf-idf} ,f_{classifier} \}$\\
+$f_{vectorizer}$ = function for vectorising each review\\
+$f_{tf-idf}$ = function for tf-idf\\
+$f_{classifier}$ = classifier for the prediction of class of review\\
+O$\Leftarrow$ $f_{vectorizer} \cup f_{classifier}$\\
+O$\Leftarrow$ $f_{tf-idf} \cup f_{classifier}$\\
+
+
+\newpage
+\begin{center}
+
+\section{CONCLUSION}
+
+\end{center}
+
+
+It makes an attempt to classify movie reviews using different supervised machine learning algorithm.
+We also used CountVectorizer to improve the accuracy of classification.
+This algorithm is further applied using n-gram approach on IMDb dataset. It is
+observed that as the value of 'n' in n-gram increases the classification 
+accuracy decreases i.e., for unigram and bigram, the result
+obtained using the algorithm is remarkably better; but when trigram classification are carried out, the value
+of accuracy decreases. Also ensemble approach increases the classification accuracy.
+\hspace{5mm}
+
+
+
+\newpage
+
+
+ \begin{thebibliography}{21}
+
+\bibitem{Base} A Tripathy, A Agrawal, SK Rath , “Classification of sentiment reviews using 
+n-gram machine learning approach”, in Expert Systems with Applications
+Volume 57, 15 September 2016, Pages 117–126.
+
+  \bibitem{yahoo} S. Das and M. Chen,``Yahoo! for Amazon: Extracting market 
+  sentiment from stock message boards,'' {\em Proceedings of the Asia Pacific 
+  Finance Association Annual Conference,}  2001.
+
+  
+  
+  \bibitem{pang}Pang, L. Lee, and S. Vaithyanathan, ``Thumbs up?: sentiment 
+  classification using machine learning techniques,'' {\em Proceedings of the 
+  Conference on Empirical Methods in Natural Language Processing (EMNLP),}
+  pp. 79-86, 2002.
+  
+  \bibitem{pang2008}B. Pang and L. Lee,``Opinion mining and sentiment analysis,'' {\em Foundations
+  and Trends in Information Retrieval,vol. 2, no. 1-2, pp. 1-135,
+2008}.
+  
+  \bibitem{Beineke}Beineke, P. , Hastie, T. ,Vaithyanathan, S., ``The sentimental factor: improving
+review classification via human-provided information.,'' {\em In Proceedings of the 42nd
+annual meeting on association for computational linguistics (p. 263). Association
+for Computational Linguistics 2004}.
+  \bibitem{Dave} Dave, K. , Lawrence, S. ,Pennock, D. M., ``Mining the peanut gallery: opinion
+extraction and semantic classification of product reviews,'' {\em Proceedings of the
+12th international conference on World Wide Web (pp. 519–528). ACM}.
+
+  
+  \bibitem{Matsumoto} Matsumoto, S. , Takamura, H. ,Okumura, M., ``Sentiment classification using
+word sub-sequences and dependency sub-trees,'' {\em n Advances in knowledge dis-
+covery and data mining (pp. 301–311). Berlin Heidelberg: Springer} 2005.
+
+
+  \bibitem{Mullen} Mullen, T. , \& Collier, N.  ``Sentiment analysis using support vector machines
+with diverse information sources.'' {\em  In EMNLP: 4 (pp. 412–418) .,} (2004).
+  
+  \bibitem{Nui}Niu, T. , Zhu, S. , Pang, L. , \& El Saddik, A. .  
+  I .``Sentiment analysis on multi-view
+social data.''{\em n Multimedia modeling (pp. 15–27). Springer,} 2016.
+  
+  \bibitem{Salvetti} Salvetti, F. , Lewis, S. , \& Reichenbach, C.  
+   . ``Automatic opinion polarity classification of movie.''{\em Colorado research in linguistics, 17 , 2} 2004.
+
+  \bibitem{vector} Yuan Wang , Zhaohui Li, Jie Liu , Zhicheng He  , Yalou Huang  , and Dong Li 
+  ``Word Vector Modeling for Sentiment Analysis
+of Product Reviews'' {\em NLPCC 2014,}496, pp. 168-180, 2014.
+
+
+\bibitem{Zhang} Zhang, D. , Xu, H. , Su, Z. , \& Xu, Y.  
+  `` Chinese comments sentiment classification based on word2vec and svm perf.''
+  {\em Expert Systems with Applications, 42 (4),
+1857–1863 .}2015
+  
+\bibitem{na} Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y.``Effectiveness of Simple Linguistic Processing in Automatic 
+Sentiment Classification of Product Reviews ''{\em Proceedings 
+of the Eighth International ISKO Conference
+ (pp. 49-54)} 2004.
+ 
+ 
+\bibitem{ruiEnssemble} Rui Xia , Chengqing Zong  , Shoushan Li ,``Ensemble of feature sets and classification algorithms
+for sentiment classification''{\em Information Sciences 181 1138–1152(2011) }
+  \bibitem{turney} P. Turney, ``Thumbs up or thumbs down? Semantic orientation applied to unsupervised classification of reviews,'' {\em Proceedings of the 
+Annual Meeting of the Association for Computational Linguistics (ACL),} 2002.
+
+
+    \end{thebibliography}
+}
+\end{document}

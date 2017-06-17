@@ -102,12 +102,17 @@ to pay for it",
 "This movie was actually neither that funny, nor super witty.",
 "This movie doesn't care about cleverness, wit or any other kind of \
 intelligent humor.",
+<<<<<<< HEAD
 "This movie cares about cleverness, wit or other kind of \
 intelligent humor.",
 "I found that these dvd-rs did not work well in my system, were unreliable\
  and slow. I cannot recommend them.",
 "I found that these dvd-rs did work well in my system, were reliable\
  and slow. I can recommend them.",
+=======
+"This movie cares about cleverness, wit or any other kind of \
+intelligent humor.",
+>>>>>>> 1924fa42cc7bfa1fe4b0383b3405531c41d2f1e8
 "Those who find ugly meanings in beautiful things are corrupt without \
 being charming.",
 "There are slow and repetitive parts, BUT it has just enough spice to \
@@ -124,8 +129,15 @@ is EXCELLENT!",
 and the quality of these stands is not what I'm used\
  to with a bose system.",
 "Pleasantly, the speakers attach well,\
+<<<<<<< HEAD
 and the quality of these stands is what I'm used to\
  with a bose system.",
+=======
+and the quality of these stands is what I'm used to \
+with a bose system.",
+"I don't like this book",
+"I like this book",
+>>>>>>> 1924fa42cc7bfa1fe4b0383b3405531c41d2f1e8
 "the twin towers collapsed today",
 "However, Mr. Carter solemnly argues, his client carried out the kidnapping \
 under orders and in the ''least offensive way possible.''"
