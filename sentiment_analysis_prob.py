@@ -51,7 +51,7 @@ def preprocess():
 
 
 
-
+predicted_values = []
 def learn_model(data,target):
     # preparing data for split validation. 60% training, 40% test
     data_train,data_test,target_train,target_test = cross_validation.train_test_split(data,target,test_size=0.20,random_state=43)
@@ -66,6 +66,9 @@ def learn_model(data,target):
     print np.shape(cross_ref)
     
     predicted_prob = classifier.predict_proba(data_test)
+    for i in predicted_prob:
+        predicted_values.append(i)
+    #raw_input('>')
     predicted_prob_log = classifier.predict_log_proba(data_test)
     #print data_test
     
@@ -139,11 +142,12 @@ def main():
     data1, target1 = load_file()
     data_train1,data_test1,target_train1,target_test1 = cross_validation.train_test_split(data1,target1,test_size=0.20,random_state=43)
     print np.shape(data_test1)
-    for i in con_rev:
+    for i in range(0,25):
     	print "==========================="
-    	print data_test1[i],
-    	print target_test1[i],
-    	print cross_ref[i]
+    	print data_test1[i],         # ########## reviews containing with opposite predicted and correct labels
+    	print target_test1[i],      ##############  correct labled values
+    	print cross_ref[i]     ########### predicted values
+    	print predicted_values[i]
     	
     #print "cross_ref"
     #print cross_ref[0:6]
