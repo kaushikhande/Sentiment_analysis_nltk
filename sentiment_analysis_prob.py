@@ -142,7 +142,7 @@ def main():
     data1, target1 = load_file()
     data_train1,data_test1,target_train1,target_test1 = cross_validation.train_test_split(data1,target1,test_size=0.20,random_state=43)
     print np.shape(data_test1)
-    for i in range(0,25):
+    for i in range(0,50):
     	print "==========================="
     	print data_test1[i],         # ########## reviews containing with opposite predicted and correct labels
     	print target_test1[i],      ##############  correct labled values
