@@ -118,7 +118,7 @@ is submitted towards the partial fulfillment of the requirement of Savitribai Ph
 \bgroup
 \def\arraystretch{0.7}
 \begin{tabular}{c c c}
- #4 &  Dr. Rajesh Ingle &  Dr. P.T. Kulkarni \\								
+ #4 &  Dr. Rajesh Ingle &  Dr. P. T. Kulkarni \\								
 Internal Guide   &  H.O.D &  Principal\\
 Dept. of Computer Engg.  &	Dept. of Computer Engg. &  \\
 PICT, Pune-43 &  PICT, Pune-43 & PICT, Pune-43\\

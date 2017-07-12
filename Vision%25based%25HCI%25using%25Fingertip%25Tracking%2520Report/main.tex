@@ -76,9 +76,18 @@
 \listoftables
 		
 \begin{pictabstract}
-Human Computer Interaction(HCI) is an active focus of research. Considering the motivation, need and challenges, we are proposing fingertip detection system with vision approach for Desktop handling operation.
+Bag of words is used for modeling in machine learning algorithms. 
+However, BOW is not able to handle negation well
+because of its fundamental deficiencies . Many ways are used
+to handle the problem of negation which results into polarity
+shift . They require either knowledge about language constructs
+or extra human interventions which eventually increases the
+complexity. In this paper, a data expansion technique, called dual
+sentiment analysis (DSA), is used to address the polarity shift
+problem due to negation in sentiment classification. Original and
+reversed training reviews are used for learning in a sentiment
+classifier and prediction is done on test reviews.
 
-The advantages of such system will be to avoid physical devices such as keyboard, mouse etc.
 \end{pictabstract}
 
 
@@ -120,70 +129,50 @@ Prof. A. G. Phakatkar
 
 \section{Problem Statement}
 \label{sec:problem_def}
-``To develop Vision based Human Computer Interaction System using Fingertip Tracking for Desktop Handling operation.''
+"To make use of the original and reversed review samples in pairs for training a
+statistical classifier and make predictions."
 
 \section{Objectives}
 \begin{itemize}
-    \item Design and implement fingertip detection algorithm. 
-    \item Design and implement fingertip tracking algorithm. 
-    \item Design and implement virtual keyboard. 
-    \item Execute Windows API for execution. 
-    \item Test and analyze the system. 
-    \item 
-    \item 
-    \item 
+    \item To obtain reversed reviews from each corresponding original reviews.
+    \item To train the classifiers  using these reviews.
+    \item To obtain the predictions of labels(positive review or negative review) for test data.
 \end{itemize}
 
 \section{Hypothesis}
 
-Vision based Hand detection and tracking can determine cursor movements using operating system's system calls. Gestures determined by using computer vision techniques can be utilized to generate callback functions to implement various system functions. CamShift algorithm with Kalman filter can be used to determine accurate and exact location of cursor to give better Human Computer Interaction using virtual keyboard with web-cam.
+Original review and corresponding opposite review can be used to increase the accuracy of 
+review class label prediction.
 
 \section{Relevant Mathematics Associated with Dissertation}
 
 \subsection{Mathematical Model}
-$S=\{s,e,I,F,F_{s},F_{t},F_{f},O|\phi\}$\\\\
+
+%\begin{equation*}
+$S=\{s,e,I,O,fmain|\phi\}$\\ 
 %\end{equation*}
 where,\\
 s = start state\\
 e = end state\\
-F = Feature Vector for G\\
-G = set of Gestures\\
-$F_{s} =$ Fingertip detection function\\
-$F_{t} =$ Fingertip tracking function\\
-$F_{f} =$ Feature Extraction and Matching function\\
-I = set of Inputs\\
-I = \{M,G\}\\\\
+I = Inputs to the system\\
+I = \{x,x${'}$,y,$y{'}$,D,D${'}$\}\\
 where,\\
-M = \{RC,LC,MC..Drag\}\\
-RC = Right Click\\
-LC = Left Click\\
-MC = Middle Click\\
-G = \{VK,M,SG\}\\\\
-where\\
-VK = Virtual Keyboard System\\
-$SG = \{VK_{0},VK_{1},RCG,LCG,MCG,DragG,G1..G10\}$\\
-where
-SG  = Special Gestures\\
-$VK_{0} =$ Virtual Keyboard off\\
-$VK_{1} =$ Virtual Keyboard on\\
-RCG = Right Click Gesture\\
-LCG = Left Click Gesture\\
-
-F = \{KS,MS,GF\}\\\\
-where\\
-KS = System Keyboard functions mapped to K\\
-MS = System mouse functions mapped to M\\
-GF = Gesture functions mapped to G\\
+x = original sample\\
+x${'}$ = reversed sample\\
+y $\in$ \{0,1\} = The class label of the original sample\\
+y${'}$ = \(1-y\) = The class label of the reversed sample\\
+$
+D = {(x_i,y_i )}_{i=1}^{n}$ = original training set\\
+$ D{'}= {(x_i{'},y_i{'} )}_{i=1}^{n}$ = The reversed training set\\
 O = Output \\
-O = \{KSe,MSe,GFe,EMd\}\\\\
+O = \{ p(x),p(x${'}$),p(x,x${'}$)\}\\
 where\\
-KSe = API execution of Keyboard\\
-MSe = API execution of Mouse\\
-GFe = API execution of Gesture Functions\\
-EMd = Display of Error Messages\\
-
-Success: If $I_{i} = F_{j},1<i<=|I|,1<j<=|F| Then Execute O_{i}$\\
-Failure: Else No Execution (or print Error Messages)\\
+p(x) = Prediction for the original sample\\
+p(x${'}$) = Prediction for the reversed sample\\
+p(x,x${'}$) = Dual prediction based on a pair of sample\\
+$f_{main} =\{f_{reverse},f_{classifier}\}$\\
+$f_{reverse} =$ function for reversing the corresponding each review\\
+$f_{classifier} =$ classifier for the prediction of class of review
 
 
 \subsection{Metrics for Performance Evaluation}
@@ -213,35 +202,24 @@ Several statistical measures are used for performance evaluation -
 
 \chapter{TECHNICAL KEYWORDS}
 \section{Area of Dissertation}
-Computer Vision, Human Computer Interaction, Fingertip detection, Hand tracking and Segmentation, Hand Gesture Recognition.
+Natural language processing, machine learning, sentiment analysis, opinion mining.
 
 \section{ACM Keywords}
 \begin{enumerate}[label=\Alph*]
     \item Information Systems
+    \begin{enumerate}[label*=.\arabic*]
+    \item Information Retrievals
     \begin{enumerate}[label*=.\arabic*]
         \item Retrieval tasks and goals
         \begin{enumerate}[label*=.\arabic*]
             \item Sentiment analysis
             \item Clustering and classification
         \end{enumerate}
+        \end{enumerate}
     \end{enumerate}
-    \item Information storage systems
-        \begin{enumerate}[label*=.\arabic*]
-            \item Storage architectures
-            \begin{enumerate}[label*=.\arabic*]
-                \item Distributed storage
-            \end{enumerate} 
-        \end{enumerate}
-    \item Information systems applications 
-        \begin{enumerate}[label*=.\arabic*]
-            \item Data Mining
-            \begin{enumerate}[label*=.\arabic*]
-                \item Emotion Mining
-            \end{enumerate}
-        \end{enumerate}
     \item Computing methodologies
         \begin{enumerate}[label*=.\arabic*]
-            \item Parallel computing methodologies
+            
             \item Machine learning
             \begin{enumerate}[label*=.\arabic*]
                 \item Supervised learning by classification
@@ -252,67 +230,116 @@ Computer Vision, Human Computer Interaction, Fingertip detection, Hand tracking 
                 \end{enumerate}
             \end{enumerate}
         \end{enumerate}
-    \item Security and privacy
-    \begin{enumerate}[label*=.\arabic*]
-        \item Cryptography
-        \begin{enumerate}[label*=.\arabic*]
-            \item Kerberos Authentication Protocol
-        \end{enumerate}
     \end{enumerate}
-\end{enumerate}
 \chapter{INTRODUCTION}
 
 \section{Dissertation Idea}
 
-\hspace{1.1cm} Today's organizations assess their external candidates, candidates they want to recruit and internal candidates or employees currently working, based on their compatibility to organization's culture and fitness in role associated to them. They use multiple tests that consists of several roles scenarios as well as capability questions for assessment. Assessing candidate’s behavior is equally important to determine mindset and thoughts to recent and trending topics. This can be done in two ways:
+\par Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
+is also known as opinion mining, it involves studing of people’s sentiments towards 
+certain entities. Internet is a resourceful place with respect to sentiment information. From a
+perspective of a user, people are able to express their views through various social media,
+such as forums, micro-blogs, or online social networking sites.
 
-\begin{itemize}
-\item Behavioral assessment test that comprises of some questions that is used to observe, describe and predict candidate’s behavior.
-\item Building a iterative behavioral profile by analyzing candidate’s profile on social media sites, their reaction to recent trending topics. Reactions can be mapped to emotion classes, which then give a more precise in-depth understanding of candidate’s behavior.
-\end{itemize}
-Assessment results along with inclusion of behavioral profiling of candidates is recorded by HR. This helps organizations in forming proper structure, planning, management, allocation of candidate to proper product development and operational efficiency.\\\\
-Predictive analytics combined with proposed behavioral model gives organization essential information regarding internal candidates and helps in making key decisions like customized employment value proposition. Tweets from Twitter of candidates are collected, that becomes our input dataset for a particular candidate. Dataset persists in HDFS, thus provides information availability even if one of the connected node goes down. Only selective data from dataset is brought down to Alluxio, virtual distributed storage system. \\\\
-Alluxio storage system stores in-memory data, so only limited data can be stored in the storage system. Therefore, Alluxio makes use of a optimized allocators and evictors like Max Free Allocator or Greedy Allocator to move data between memory and underFS storage layer like HDFS. Candidate is classified to emotion classes based on sentiment analysis’s results. We can see difference in the behavior of candidates as we are analyzing social media profile by month’s usage. t helps organizations to see patterns in behavior of candidate.\\\\
-Our proposed model uses Naive Bayes Classifier for classification. Classifier's execution occurs as a Spark job which runs distributively on several connected commodity hardware configured nodes. Hadoop and Spark does not provide any authentication among its components while running spark job. Therefore, it is necessary to provide mutual authentication among server nodes, Hadoop components - Domain specific as well as infrastructure components. Mutual authentication is achieved by integrating Kerberos into Hadoop, Spark and Alluxio.
+\par With the advent of Web 2.0 techniques,
+users started prefering to share their opinions on the Web. These user-generated and 
+sentiment-rich data are valuable to many applications like 
+credibility analysis of news sites on the Web, recommendation system, business and 
+government intelligence etc. At the same time, it brings
+urgent need for detecting overall sentiment inclinations of
+documents generated by users, which can be treated as a
+classification problem. Sentiment analysis includes several
+subtasks  which have seen a great deal of attention in recent years:
+\begin{enumerate}
+ \item To detect whether a given document is subjective or objective.
+  \item To Identify whether given subjective document express a positive opinion or a negative opinion.
+  \item To determine the sentiment strength of a document,
+such as strongly negative, weakly negative, neutral, weakly
+positive and strongly positive.
+\end{enumerate}
+
+In this work we are focusing on second subtask.
+
+\par Besides individuals on social media marketers also need to monitor all media for information related to their brands
+whether it’s for public relations activities, fraud violations, or competitive intelligence.
+Thus, aside from individuals, sentiment analysis is also the need of companies which are anxious to understand how
+their products and services are perceived by the public.
+
+\par The dominating text representation method in
+both supervised and 
+semi supervised sentiment
+classification is known as the bag-of-words (BOW)
+model, which is difficult to meet the requirements
+for understanding the review text and dealing with
+complex linguistic structures such as negation. For
+example, the BOW representations of two opposite
+reviews ``It works well'' and ``It doesn't work well''
+are considered to be very similar by most statistical
+learning algorithms.The two sentiment opposite texts are considered to be very similar by the
+BOW representation. This is exactly why standard machine learning algorithms often
+fail under the circumstance of polarity shift due to negation in the sentences of the review text.
+
+\par Several approaches have been proposed in the literature
+to address the polarity shift problem .They require either knowledge about language constructs or
+extra human interventions which eventually increases the complexity in classification of sentiment.  Such
+high-level dependency on external resources makes the systems 
+difficult to be widely used in practice. There were also
+some efforts to address the polarity shift problem with the
+absence of extra annotations and linguistic knowledge. However, results are still far from satisfactory.
 \section{Motivation of Dissertation}
+Polarity shift is a kind of linguistic phenomenon which can reverse the sentiment polarity of the text. Negation is
+the most important type of polarity shift. For example, by adding a negation word “don’t” to a positive text “I like
+this book” in front of the word “like”, the sentiment of the this book” in front of the word “like”, the sentiment of the
+text will be reversed from positive to negative. However,the two sentiment-opposite texts are considered to be
+very similar by the BOW representation. This is the main reason why standard machine learning algorithms often
+fail under the circumstance of polarity shift.
 
-\hspace{1.1cm} In various organizations, candidates are assessed for criteria of suitability to organization’s culture and their specific role. Behavior of a candidate plays a vital role in progress of organization. A candidate may excel at his role but do not have proper attitude towards his teammates, may degrade the quality and productivity of his entire team. Candidate may lie in behavioral assessment test but they do not hide their reactions on social media sites about current trending topics like political, scientific etc. By collecting those reactions, we can construct behavioral model of candidates and can predict future behavior.
- 
 
 \chapter{LITERATURE SURVEY}
 
-We studied the following related systems to discover their advantages, drawbacks and limitations and these are discussed below.
+We studied the related work on sentiment analysis and
+polarity shift.
 
-\section{Affective Text Mining}
-\hspace{1.1cm}Previous work focused on mining affective content from text documents using sentiment classification. However, study does not explores extraction of social emotions from multiple social media sites and building a behavioral profile of a candidate that quicksilver with consideration of new posts to sites. The most related direction to work is emotion prediction and classification. Affective text aims to add notes giving explanation to predefined list of emotions and/or polarity orientation (positive, negative and neutral). Alm et al [1] explored text-based emotion prediction using supervised learning approaches. Strapparava and Mihalcea [2] evaluated methods for the automatic identification of six emotions. Tokuhisa et al [3] proposed a two step model for emotion classification using emotion-provoking event instances. Yang et al [4] investigated the emotion classification of blogs using machine learning techniques.
+\section{Sentiment Analysis and Polarity Shift}
+\hspace{1.1cm}According to the levels of granularity, tasks in sentiment
+analysis can be divided into four categorizations: document-
+level, sentence-level, phrase-level, and aspect-level sentiment analysis.
+\par 
+For document and sentence-level sentiment classification, 
+there are two main types of methods in the literature:
+term-counting and machine learning methods. In term-
+counting methods, the overall orientation of a text is
+obtained by summing up the orientation scores of content
+words in the text, based on manually-collected or external
+lexical resources [38], [39]. In machine learning methods,
+sentiment classification is regarded as a statistical 
+classification problem, where a text is represented by a 
+bag-of-words; then, the supervised machine learning algorithms
+are applied as classifier [35]. Accordingly, 
+the way to handle polarity shift also differs in the two types of methods.
+\par
+The term-counting methods can be easily modified to
+include polarity shift. One common way is to directly
+reverse the sentiment of polarity-shifted words, and then
+sum up the sentiment score word by word [4], [16], [17],
+[37]. Compared with term counting methods, the machine
+learning methods are more widely discussed in the 
+sentiment classification literatures. However, it is relatively
+hard to integrate the polarity shift information into the
+BOW model in such methods. For example, Das and
+Chen [6] proposed a method by simply attaching “NOT”
+to words in the scope of negation, so that in the text “I
+don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. [35] reported that this method only
+has slightly negligible effects on improving the sentiment
+classification accuracy.
+\par
 
-\section{Emotion Term Model}
-A method to model the word-emotion associations is emotion-term model [14], which uses Naive Bayes with the assumption that words are independently generated from social emotion labels. The model needs to be extended to account not only social emotion labels but querying entire text to generate more precise emotion-term relationship. Emotion-term model generates each word \textit{$w_i$} of document \textit{d} in two sampling steps.
-\begin{itemize}
-\item sample emotion \textit{$e_i$} according to the emotion frequency count
-\item sample a word \textit{$w_i$} given the emotion under the conditional probability P($w|e$)
-\end{itemize}
-\par The model parameters can be learned by maximum-likelihood estimation. In particular, the conditional probability of a word \textit{w} given an emotion \textit{e} can be estimated as follows:
-\begin{equation}
-P(w|e) = \frac{|(w, e)|}{\sum|(w, e)|} 
-\end{equation}
-\par where $w^i \epsilon  W$, $|(w, e)|$ is the co-occurrence count between $w \epsilon W$ and emotion $e \epsilon E$ for all documents. It is formally derived based on the word and emotion frequency counts
-\begin{equation}
-|(w, e)| = S + \sum\limits_{d \epsilon D} \delta_{d,w} . \Upsilon_{d,e}
-\end{equation}
-\par where S is a small smoothing constant that is set to 1. For predicting emotion on a new document \textit{b}, Bayes theorem can be applied under the term independence assumption
-\begin{equation}
-P(e|d) = \frac{P(d|e)P(e)}{P(d)} \alpha P(d|e)P(e)
-\end{equation}
-\par where P(e) is the a priori probability of emotion e. It can again be calculated by maximum likelihood estimation from the emotion distribution of the entire collection.
 
-\section{Authentication Methods For Hadoop}
-\hspace{1.1cm}Multiple clients submit their MapReduce jobs for processing. Before submitting any jobs, a client needs to get authenticated by Authentication Server. Somu et al [5] provides a method which is symmetric key based. It uses single authentication factor, supports only gate-level authentication and has more communication overheads. Rubika method of authentication [6] is also designed to support client authentication only. Wei et al [7] ensures the authenticity of messages sent from one MR-job component to another. There is need of mutual authentication between MR components and MR infrastructure components. J. Zhao et al [8] supports the authentication of a client to MR application and authentication between pair of domain specific MR components.
 
 
 \section{Gap Identification Through Literature Survey}
 
-The following table shows the literature survey about different techniques of analyzing sentiment from social media text and emotion classification.
+The following table shows the literature survey about different techniques of sentiment analysis used for classification. 
 
 \renewcommand{\arraystretch}{1.0}
 \begin{center}
@@ -557,7 +584,7 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \end{itemize}
 
 \subsection{Management Reporting and Communication}
-The progress of dissertation is reported twice in a month to internal guide and discussed with external guide once in a month.
+The progress of dissertation is reported once in a month.
 \section{Dissertation Schedule}
 \subsection{Dissertation Task Set}
 Major tasks in the Dissertation stages are - 
@@ -611,26 +638,29 @@ System builds a iterative behavioral model by fetching candidate's tweets and cl
 \item Managing Candidate's Details and Data - It allows Product Admin to delete candidate's data or details or both.
 \end{itemize}
 \section{Hardware Resources Used}
-4-Node Cluster with following configuration - 
+\subsection{Software Requirements}
 \begin{itemize}
-\item Intel(R) Core(TM) i5 CPU @ 2.90GHz or later, width : 64 bits 
-\item Memory : 4 GB DDR3 or more 
-\item Capacity : 1697MHz or more 
-\item Cores : 4 or more 
-\item PCI Express Gigabit Ethernet Controller, Size: 100Mbit/s, Capacity: 1Gbit/s, Width: 64 bits 
-\item Hard Disk : 500 GB (EXT4 Primary/Logical Partition)
+				\item Python 2.7.6 
+				\item Rstudio Version 0.99.893 
+				\item R version 3.3.2
+				\item Operating Systems:
+					\begin{itemize}
+						\item Windows XP, 7, 8, 10
+						\item Linux(Any flavor)
+						\item Mac OS 
+					\end{itemize}
 \end{itemize}
-
-
-\section{Software Resources Used}
-\begin{itemize}
-\item OpenCV 3.0.0 or later
-\item Python 2.7.6 or later
-\item Ubuntu 14.04 or later
-\item 
-\item 
-
-\end{itemize}
+\subsection{Hardware Requirements}
+			\begin{itemize}
+				\item Intel(R) Core(TM) i3 CPU @ 2.90GHz or later, width : 64 bits
+				\item Memory : 4 GB DDR3 or more
+				\item Capacity : 1697MHz or more
+				\item Cores : 4 or more
+				\item PCI Express Gigabit Ethernet Controller, Size: 100Mbit/s, Capacity: 1Gbit/s, Width: 64 bits
+				\item Hard Disk : 500 GB (EXT4 Primary/Logical Partition)
+			\end{itemize}
+		
+\newpage
 
 \section{Functionality}
 \begin{itemize}
@@ -1232,7 +1262,7 @@ N \times R (N \times Request + N \times Response)
 \section{Alluxio Storage System Performance Analysis}
 \hspace{1.1cm}For writes throughput, Alluxio outperforms MemHDFS by 110x and for reads throughput, 2x greater than MemHDFS. It's read throughput is higher than write throughput. This happens due to machine configured with optimized memory hardware, leaving more bandwidth for reads.
 \par It also improves the end-to-end latency of a realistic work flow by 4x. Introducing check-pointing algorithm guarantees recovery cost and resource allocation strategies for re-computation under resource schedulers.
-\par Alluxio architecture consists of two layers- lineage and persistence. The
+\par Alluxio architecture consists of two layers-lineage and persistence. The
 lineage layer provides high throughput I/O and tracks the sequence of jobs that have created a particular data output. The persistence layer persists data onto storage without the lineage concept.
 
 
@@ -1244,31 +1274,86 @@ interaction system that provides a  natural  way to interact with computer.The h
 The research can be extended to explores the relationship between behaviors and psychological theories to determine candidate's language style or social tendencies. The system only fetches 3200 tweets of a candidate for analysis. For more precise profile deviation, more tweets should be fetched for Behavioral Analytics. 
 
 \begin{thebibliography}{1}
-\bibitem{Ghotkar} A.Ghotkar and K.Kharate,“Hand Segmentation Techniques to Hand Gesture Recognition for Natural Human Computer Interaction,” in International Journal of Human Computer Interaction (IJHCI), Volume(3), Issue(1), 2012: 15-250.
-\bibitem{Ghotkar1} A.Ghotkar, R.Khatal,S.Khupase,S.Asati and M.Hadap, “Hand Gesture Recognition for Indian Sign Language,” International Conference on Computer Communication and Informatics (ICCCI-2012), Coimbatore, India : 2012.
-\bibitem{Wang} Q.Wang, J.Cheng and J.Pang,“A Novel Projector-Camera Interaction System with the Fingertip,” Journal of Image and Graphics Vol.1,No.2,2013:80-84.
-\bibitem{Akhalaq} S. Akhalaq, H. Shah, A. Ahmed, I. Mohmood and K. Khurshid,“Hand Gesture based User Interface for Computer using a Camera and Projector,” 	IEEE International Conference on Signal and Image Processing Applications (ICSIPA2011), 2011: 168-173.
-\bibitem{Chen} C.Chen, M.Zang, K.Qiu and Z. Pan,“Real-Time Robust Hand Tracking based on Camshift and Motion Velocity,” IEEE International conference on Digital Home, 2014: 20-24.
-\bibitem{Baraldi} L.Baraldi, F.Paci, G.Sera and L.Benini, “Gesture Recognition in Ego-centric Videos using Dense Trajectories and Hand Segmentation,” IEEE Conference on Computer Vision and Pattern Recognition Workshop, 2014 : 702-707.
-\bibitem{Chien} P.Chien,Y.Miao and J.Guo,“A 3D Hand Tracking and Gesture Control in Complex Environments,” IEEE Conference, 2015.
-\bibitem{Dhote}  A.Dhote and S. Badwaik,“Hand Tracking and Gesture Recognition,” IEEE International Conference on Pervasive Computing (ICPC): 2015.
-\bibitem{Nanivadekar} P.Nanivadekar and V.Kulkarni,“Indian Sign Language Recognition: Database Creation, Hand Tracking and Segmentation,” International Conference on Circuits, Systems, Communication and Information Technology Appliances (CSCITA), 2014: 358-363.
-\bibitem{Lee} J.Y.Lee and S.I. Yoo,“An Elliptical Boundry Model for Skin Color Detection,” in Proc.The International Conference on Imaging Science, Systems and Technology 2002.
-\bibitem{Salhi} A.Salhi and A.Y. Jammoussi,“Object tracking system using Camshift, Meanshift and Kalman filter,” International Journal of Electrical, Computer, Energetic, Electronic and Communication Engineering Vol:6, No:4, 2012.
-\bibitem{Leonardo} D.Leonardo, M. Lizarazo, J. Antonio and T. Borja,“Hand Position Tracking Using a Depth Image from a RGB-d Camera,” IEEE International Conference,2015: 1680-1687.  
+
+
+
+\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, `` Dual sentiment analysis: Considering  two  sides  of  one 
+review, '' in IEEE transactions on knowledge and data engineering, vol. 27, no. 8, pp. 2120
+-
+2133, Aug. 2015.
+
+  \bibitem{yahoo}S. Das and M. Chen, `` Yahoo! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp.1375-1388, 2007.
+
+  
+  
+  \bibitem{pang}Pang, L. Lee, and S. Vaithyanathan, `` Thumbs up?: Sentiment classification using machine learning techniques, '' {\em Proceedings of the ACL-02 conference on Empirical methods in natural language processing,}
+  pp. 79-86, 2002.
+  
+  \bibitem{pang2008}B. Pang and L. Lee, `` Opinion mining and sentiment analysis, '' {\em Foundations
+  and Trends in Information Retrieval,} vol. 2, no. 1-2, pp. 1-135, 2008.
+  
+  \bibitem{xia}R. Xia, T. Wang, X. Hu, S. Li, and C. Zong, `` Dual Training and Dual
+Prediction for Polarity Classification,'' {\em Proceedings of the Annual 
+Meeting of the Association for Computational Linguistics (ACL - 02),} pp. 521-525,
+2013.
+  \bibitem{turney}P. Turney, `` Thumbs up or thumbs down? Semantic orientation applied to unsupervised classification of reviews, '' Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), pp. 417-424, 2002.
+
+  
+  \bibitem{contrast}M. Li and C. Huang, `` Sentiment classification considering negation
+and contrast transition, '' {\em Proceedings of the Pacific Asia Conference on
+Language, Information and Computation (PACLIC),}  pp. 307-316, 2009.
+
+
+  \bibitem{Shift}Li, S. Lee, Y. Chen, C. Huang and G. Zhou, `` Sentiment 
+  Classification and Polarity Shifting, '' {\em Proceedings of the International Conference on
+  Computational Linguistics (COLING),} pp. 635-643, 2010.
+  
+ 
+  
+  \bibitem{turney1}D. Turney and Michael L. Littman, `` Un-supervised learning of semantic orientation from
+a hundred-billion-word corpus. ''{\em Technical Report
+EGB-1094, National Research Council Canada,} arXiv preprint cs/0212012, 2002.
+
+  \bibitem{vector}Yuan Wang, Zhaohui Li, Jie Liu, Zhicheng He, Yalou Huang and Dong Li,
+ `` Word Vector Modeling for Sentiment Analysis
+of Product Reviews '' {\em Natural Language Processing and Chinese Computing 2014,} pp. 168-180, 2014.
+
+
+\bibitem{xiaco}Xia, Rui and Wang, Cheng and Dai, Xinyu and Li, Tao, 
+`` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation ''
+  {\em Association for Computational Linguistics (ACL 1),} pages 1054–1063, 2015.
+  
+\bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic Processing in Automatic 
+Sentiment Classification of Product Reviews ''{\em Proceedings 
+of the Eighth International ISKO Conference
+ } pp. 49-54, 2004.
+ 
+ \bibitem{rui22}Rui Xia, Feng Xu, Jianfei Yu, Yong Qi and Erik Cambria, `` Polarity shift detection, elimination and ensemble:
+A three-stage model for document-level sentiment analysis '' {\em  Information Processing \& Management 52, no. 1, } pp. 36 - 45, 2016
+
+\bibitem{ruiEnssemble}Rui Xia, Chengqing Zong and Shoushan Li, `` Ensemble of feature sets and classification algorithms
+for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138–1152, 2011
+
+\bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
+{\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
+
+\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, " An Information Theoretic Approach to Sentiment Polarity
+Classification "{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
+
+\bibitem{dataset}http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pang02.zip
 \end{thebibliography}
 
 \appendix
 \chapter{PAPERS PUBLISHED}
 \section{Paper Title}
-Sentiment Analysis, Emotion Mining, Authentication Methods in Hadoop :  A Survey of Approaches
-\subsection{IJARCCE Certification}
+Sentiment Analysis using Machine Learning Algorithms: A Survey
+\subsection{IJIRCCE Certification}
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=4.2in]{ijarcce.png}
 \caption{IJARCCE Certificate}
 \end{figure}
 \section{Paper Title}
-Behavioral Assessment of Internal and External Candidates of Multiple Organizations using Sentiment Analysis and Emotion Mining
+Sentiment Analysis using Original and Reversed Reviews
 \subsection{cPGCON Certificate}
 \subsection{cPGCON Review}
 
@@ -1281,7 +1366,7 @@ Behavioral Assessment of Internal and External Candidates of Multiple Organizati
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Task Title} & \textbf{Dissertation Task}                    \\ \hline
-T1                  & Study of Domain - Big Data Analytics          \\ \hline
+T1                  & Study of Domain - Machine Learning and Natural Language Processing         \\ \hline
 T2                  & Identification of problem in existing systems \\ \hline
 T3                  & Review of Literature \\ 
 \hline
@@ -1289,8 +1374,8 @@ T4                  & Building Mathematical Model \\
 \hline
 T5                  & Report On Scheme of Implementation \\ \hline
 T6                  & Identification of Prerequisites and Installation \\ \hline
-T7                  & Configuring Single Node Hadoop Cluster \\ \hline
-T8                  & Study of Distributed Computing and Configuring Alluxio \\ \hline
+T7                  & Configuring python and python package installer pip in the system \\ \hline
+T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
 T9                  & Kerberos Authentication Protocol Configuration for Hadoop and Alluxio. \\ \hline
 T10                  & Implementation Of Rubika Method of Authentication. \\ \hline
 T11                  & Preparing Web Interface For Proposed System \\ \hline
