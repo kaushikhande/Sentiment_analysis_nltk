@@ -38,15 +38,20 @@ def load_file():
 # preprocess creates the term frequency matrix for the review data set
 def preprocess():
     data,target = load_file()
-    #print data
-    count_vectorizer = CountVectorizer(binary='true',ngram_range=(1,1))
-    #data1 = "This book is interesting"
+    
+    count_vectorizer = CountVectorizer(ngram_range=(1,1))
+    
     data = count_vectorizer.fit_transform(data)
-    #data1 = count_vectorizer.fit_transform(data1)
+    data1 = {"This book is interesting","It is boring and interesting interesting"}
+    data1 = count_vectorizer.fit_transform(data1)
+    print data1
+    raw_input('>')
+
     #print data
     tfidf_data = TfidfTransformer(use_idf=False).fit_transform(data)
-    #tfidf_data1 = TfidfTransformer(use_idf=False).fit_transform(data1)
-    #print tfidf_data
+    tfidf_data1 = TfidfTransformer(use_idf=False).fit_transform(data1)
+    print tfidf_data1
+    raw_input('>')
     return tfidf_data
 
 
@@ -57,6 +62,8 @@ def learn_model(data,target):
     data_train,data_test,target_train,target_test = cross_validation.train_test_split(data,target,test_size=0.20,random_state=43)
     
     classifier = BernoulliNB().fit(data_train,target_train)
+    print data_test[0]
+    raw_input('>')
     predicted = classifier.predict(data_test)
     for i in predicted:
     	cross_ref.append(i)
@@ -144,10 +151,10 @@ def main():
     print np.shape(data_test1)
     for i in range(0,50):
     	print "==========================="
-    	print data_test1[i],         # ########## reviews containing with opposite predicted and correct labels
-    	print target_test1[i],      ##############  correct labled values
-    	print cross_ref[i]     ########### predicted values
-    	print predicted_values[i]
+    	print data_test1[i],         # ########## test reviews from 0 to range values
+    	print target_test1[i],      ############## correct labeled values for respective test review
+    	print cross_ref[i]     ########### predicted values for respective test review
+    	print predicted_values[i]  ############ predicted values [ negative %, positive %]
     	
     #print "cross_ref"
     #print cross_ref[0:6]
