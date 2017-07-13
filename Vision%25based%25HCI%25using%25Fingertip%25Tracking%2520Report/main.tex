@@ -141,8 +141,9 @@ statistical classifier and make predictions."
 
 \section{Hypothesis}
 
-Original review and corresponding opposite review can be used to increase the accuracy of 
-review class label prediction.
+Polarity shift causes accuracy of classifier to decrease.
+We assume that original review and corresponding opposite review can be used together to increase the accuracy of 
+review class label prediction and to avoid the problem caused due to polarity shift.
 
 \section{Relevant Mathematics Associated with Dissertation}
 
@@ -349,19 +350,53 @@ The following table shows the literature survey about different techniques of se
 \hline
 No. & Reference                                                              & Techniques                                                                & Description                                                                 \\
 \hline
-1   & \begin{tabular}[c]{@{}l@{}}Hand Detection\\ Techniques to hand \\gesture Recognition for\\ Natural Human \\Computer Interaction\end{tabular}                                                             & \begin{tabular}[c]{@{}l@{}}Hand Detection using \\ Lab Color Space \\       and\\ Mean Shift Algorithm \end{tabular}                                                                    & \begin{tabular}[c]{@{}l@{}}Better results on \\ skin color detection using \\ HTS algorithm streams.\end{tabular}                                                                                                                                                                                         \\
+1   & \begin{tabular}[c]{@{}l@{}}Dual Sentiment Analysis:\\ Considering Two sides of \\ 
+one review\end{tabular}
+  & \begin{tabular}[c]{@{}l@{}}Support vector machine\\(SVM), Naive bayes,\\ Logistic Regression \end{tabular}   
+         & \begin{tabular}[c]{@{}l@{}}Dual training and \\
+Dual Prediction \\technique is used.\end{tabular}                                                                                                                                                                                         \\
 \hline
-2   & \begin{tabular}[c]{@{}l@{}}Hand Gesture Recognition \\for Indian Sign Language\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}HSV color model \\and General Camshift\\ algorithm\end{tabular}                                  & \begin{tabular}[c]{@{}l@{}}The Gesture Recognition \\System takes the input \\hand gestures through \\ in-built web camera.\end{tabular}                                                                                                                                                                      \\
+2   & \begin{tabular}[c]{@{}l@{}}Thumbs up?Sentiment \\
+Classification using\\
+Machine learning\\
+algorithms\end{tabular} 
+ & \begin{tabular}[c]{@{}l@{}}Learning algorithms\\
+and n-gram model\end{tabular}                      
+            & \begin{tabular}[c]{@{}l@{}}Classify the dataset\\
+using different\\
+machine.\end{tabular}                                                                                                                                                                      \\
 \hline
-3   & \begin{tabular}[c]{@{}l@{}}A Novel Projector-Camera \\Interaction System \\with the Fingertip\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Prediction
-Method and \\triangulation Zhang's\\ method \end{tabular}            & \begin{tabular}[c]{@{}l@{}}Projector and binocular \\vision system based on \\two cameras is applied \\for detecting the depth\\ of fingertips and \\touch operation.\end{tabular}                                                                                                                                                          \\
+3   & \begin{tabular}[c]{@{}l@{}}Classification of \\sentiment
+reviews using\\
+N-gram machine \\learning
+approach\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Support Vector Machine\\
+Naive Bayes \end{tabular}            & \begin{tabular}[c]{@{}l@{}}Converting text\\
+reviews into numeric\\
+matrices using\\
+countvectorizer and\\
+TF-IDF\end{tabular}                                                                                                                                                          \\
 \hline
-4   & \begin{tabular}[c]{@{}l@{}}Hand gesture based \\user interface for \\computer using a camera \\and Projector\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}} The YCrCb color space \\with single Gaussian\\ and Camshift tracking \\algorithm\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}A hand gesture based \\human computer \\interaction system \\comprising of a \\webcam and a \\pocket projector.\end{tabular}                                                                                                                                                                                        \\
+4   & \begin{tabular}[c]{@{}l@{}}Thumbs up or \\thumbs
+down? Semantic \\orientation
+applied to \\unsupervised
+classification \\of reviews\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Unsupervised
+learning \\algorithm for\\
+classifying a \\review\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}A specific unsupervised\\
+learning technique \\based
+on the\\
+mutual information\end{tabular}                                                                                                                                                                                        \\
 \hline
-5   & \begin{tabular}[c]{@{}l@{}}Real-Time Robust Hand \\Tracking Based on \\Camshift and Motion \\Velocity\end{tabular} & \begin{tabular}[c]{@{}l@{}} Improved Camshift \\algorithm \\with KLT tracking. \end{tabular}  & \begin{tabular}[c]{@{}l@{}} Probability of Bayesian\\ skin color is used \\to refine the velocity \\of hand motion.\end{tabular}                                                                                                                                                 \\
+5   & \begin{tabular}[c]{@{}l@{}}Automatic Opinion \\polarity
+Classification \\of movie\end{tabular} & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\
+And Markov Model \\(MM) \end{tabular}  & \begin{tabular}[c]{@{}l@{}} Accessed overall \\opinion
+polarity(OvOp)\\
+concept using \\machine
+learning\\ algorithm\end{tabular}                                                                                                                                                 \\
 \hline
-6   & \begin{tabular}[c]{@{}l@{}}Gesture Recognition in \\Ego-Centric Videos \\using Dense Trajectories \\and Hand Segmentation\end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} Dense trajectories\\
-extracted \\around hand regions\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dense features are\\ extracted around regions\\ selected by a new hand \\segmentation technique.\end{tabular}                                                                                                                                                                          \\
+6   & \begin{tabular}[c]{@{}l@{}}Dual Training and \\dual
+prediction for\\ polarity
+classification\end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} SVM and Naive Bayes\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dual training and\\
+dual prediction \\(DTDP)\end{tabular}                                                                                                                                                                          \\
 \hline
 
 7  & \begin{tabular}[c]{@{}l@{}}A 3D Hand Tracking\\ Design for Gesture\\ Control in Complex \\Environments\end{tabular}                                                                                & \begin{tabular}[c]{@{}l@{}}3D hand tracking design\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}It segments hands \\out of entire image \\and also facilitates \\depth estimation of \\tracked hands in\\ real-time by dual \\camera systems.\end{tabular}                                                                                                                                                                      \\
@@ -395,42 +430,46 @@ Hand \\Tracking \end{tabular}                                                   
 
 \section{Goals}
 \begin{itemize}
-\item Understanding of existing Cultural Framework and Role Scenarios.
-\item Designing a web platform that carries out functionality of the system.
-\item Understanding of Storage File Systems – Apache's HDFS and Alluxio.
-\item Integrating Alluxio with Apache's HDFS and Apache's Spark.
-\item Understanding Sentiment Analysis and Emotion Mining Approaches.
-\item Classifying candidate's documents into emotion categories.
+\item Understanding existing sentiment analysis approaches.
+\item Study corpus based, lexical based and semantic based techniques.
+\item Understanding unigram, bigram, trigram and combination of them for modeling purpose.
+\item Training the model with naive bayes, support vector machine, maximum entropy.
+\item Applying this learned model to the test dataset.
+\item Evaluating the results generated by classifiers.
 \end{itemize}
 
 \section{Objectives}
 
-Please refer Chapter 1, Section 1.7 on Page XX
+Please refer Chapter 1, Section 1.7 on Page 2
 
 \section{Statement of Scope}
 \begin{itemize}
-\item Analyzing candidate's tweets distributively on multiple node Spark cluster.
-\item Classify candidate's tweets into seven emotion categories and three polarities.
-\item Integrating Alluxio core services with Apache HDFS and Apache Spark.
-\item Validates candidate's emotion classification.
-\item Validates candidates comparison by emotion categories. 
+\item Preprocessing the reviews
+\item Classify reviews into two polarities.
+\item Evaluate the classification accuracy by each classifier.
 \end{itemize}
 
 \section{Software Context}
-\subsection{Apache Spark} 
-Spark [9] provides fast cluster computing system. It's high level APIs in Java, Python, Scala, Python and R are used. It also uses Hadoop client's libraries for performing operation on data stored in HDFS. Spark system in cluster mode is deployed to take advantage of commodity hardware by using Hadoop YARN as cluster manager. Spark with Mahout APIs can be used for calculating term frequencies, generating TFIDF vectors, writing and reading from HDFS and Alluxio and classification. By using Spark, more records in less time is classified efficiently.
+\subsection{Scikit-learn} 
+Scikit-learn (formerly scikits.learn) is a free software machine learning library for the Python programming language. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
-\subsection{Apache Hadoop}
-Hadoop's HDFS [10] stores huge amount of training data in HDFS for distributed processing. Mahout APIs can access data stored in HDFS for processing. It provides scalable environment and fault-tolerant file systems.
+\subsection{NumPY}
 
-\subsection{Alluxio}
-It provides memory centric design and unified name space for different storage system. Alluxio [11] improves processing speed for big data applications while providing a common interface of data access. Haoyuan Li et al. [12] explains how Alluxio speeds up read and write throughput. 
 
-\subsection{Kerberos}
-To provide a level of security among Hadoop components like Resource Manager etc. Kerberos [13] sets up a Key Distribution Center. KDC has three main components. Kerberos Database which stores users and services identity. Authentication server resides as a separate physical server. It issues tickets upon initial request. Ticket Granting Service responsible for providing service tickets. By using these three components, communication is secured between core components of Alluxio, Spark and Hadoop.
+NumPy is the fundamental package for scientific computing with Python. It contains among other things:
+\begin{itemize}
+\item A powerful N-dimensional array object
+\item Sophisticated (broadcasting) functions
+\item Tools for integrating C/C++ and Fortran code
+\item Useful linear algebra, Fourier transform, and random number capabilities
+\end{itemize}
+Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.
 
-\subsection{Laravel PHP}
-A PHP framework that provides useful tools to securely built a web application with an ease. It provides authentication, amazing ORM, painless routing and powerful queue library.
+\subsection{Natural language toolkit}
+NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning, wrappers for industrial-strength NLP libraries, and an active discussion forum.
+
+\subsection{Matplotlib}
+Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell, the jupyter notebook, web application servers, and four graphical user interface toolkits. You can generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc., with just a few lines of code.
 
 \chapter{DISSERTATION PLAN}
 
@@ -474,9 +513,9 @@ For risks identification, review of scope document, requirement specifications a
 The risks for the dissertation are analyzed within the constraints of time and quality. Risk can be as follows:
 
 \begin{itemize}
-\item Out of memory error, when training Naive Bayes Model.
-\item Spark executors were getting lost.
-\item Incorrect candidate results.
+\item Out of memory error, while creating model and training the model.
+\item Review text contains unrecognized characters.
+\item Out of memory error, while predicting on the test dataset.
 \end{itemize}
 Please refer Table 5.1, 5.2 and 5.3 for detail description.
 
@@ -487,9 +526,9 @@ Please refer Table 5.1, 5.2 and 5.3 for detail description.
 \hline
 \textbf{ID} & \textbf{Risk Description} & \textbf{Probability} & \multicolumn{3}{c|}{\textbf{Impact}}                                         \\ \hline
             & \textbf{}                 & \textbf{}            & \textbf{Schedule} & \textbf{Quality} & \textbf{Overall} \\ \hline
-1           & Out of Memory             & Low                  & Low                      & High                    & High                    \\ \hline
-2           & Executors Lost            & Medium               & Medium                   & High                    & Medium                  \\ \hline
-3           & Incorrect Results         & Medium               & Medium                   & High                    & High                    \\ \hline
+1           & Out of Memory             & High                & Low                      & High                    & High                    \\ \hline
+2           & Unrecognized characters            & Low               & Medium                   & High                    & Medium                  \\ \hline
+3           & Out of Memory         & Low               & Medium                   & High                    & High                    \\ \hline
 \end{tabular}
 \end{table}
 
@@ -512,8 +551,8 @@ Low                  & Probability of the occurrence is & 25\%                 \
 \hline
 \textbf{Impact} & \textbf{Value}    & \textbf{Description}                                                                                                                                        \\ \hline
 Very High       & \textgreater 10\% & Schedule impact or Unacceptable quality                                                                                                                     \\ \hline
-High            & 5\%-10\%          & Schedule impact or Some parts of the project have low quality                                                                                               \\ \hline
-Low             & \textless5\%      & \begin{tabular}[c]{@{}l@{}}Schedule impact or Barely noticeable degradation in quality\\ Low Impact on schedule or Quality can be incorporated\end{tabular} \\ \hline
+High            & 5\%-10\%          & \begin{tabular}[c]{@{}l@{}} Schedule impact or Some parts of \\ the project have low quality  \end{tabular}                                                                                              \\ \hline
+Low             & \textless5\%      & \begin{tabular}[c]{@{}l@{}}Schedule impact or Barely noticeable \\degradation in quality Low Impact on schedule or\\ Quality can be incorporated\end{tabular} \\ \hline
 \end{tabular}
 \end{table}
 
@@ -527,10 +566,10 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Risk ID}          & 1                                                    \\ \hline
-\textbf{Risk Description} & Out of memory error, when training Naive Bayes Model \\ \hline
+\textbf{Risk Description} & Out of memory error, when training Model \\ \hline
 \textbf{Category}         & Configuration                                        \\ \hline
 \textbf{Source}           & Software Requirement Specification Document          \\ \hline
-\textbf{Probability}      & Low                                                  \\ \hline
+\textbf{Probability}      & High                                                 \\ \hline
 \textbf{Impact}           & High                                                 \\ \hline
 \textbf{Response}         & Mitigate                                             \\ \hline
 \textbf{Strategy}         & Changing number of features resolves this issue.     \\ \hline
@@ -546,13 +585,13 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Risk ID}          & 2                                                                     \\ \hline
-\textbf{Risk Description} & Spark executors were getting lost                                     \\ \hline
+\textbf{Risk Description} & Unreconized characters                                     \\ \hline
 \textbf{Category}         & Configuration                                                         \\ \hline
 \textbf{Source}           & Software Requirement Specification Document                           \\ \hline
-\textbf{Probability}      & Medium                                                                \\ \hline
-\textbf{Impact}           & Medium                                                                \\ \hline
+\textbf{Probability}      & Low                                                               \\ \hline
+\textbf{Impact}           & Low                                                                \\ \hline
 \textbf{Response}         & Mitigate                                                              \\ \hline
-\textbf{Strategy}         & Increasing heart beat interval and network timeout resolve this issue \\ \hline
+\textbf{Strategy}         & Convert all characters into unicode format \\ \hline
 \textbf{Risk Status}      & Occurred and Resolved                                                 \\ \hline
 \end{tabular}
 \end{table}
@@ -563,13 +602,13 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Risk ID}          & 3                                           \\ \hline
-\textbf{Risk Description} & Incorrect Candidate Results                 \\ \hline
+\textbf{Risk Description} & Out of memory error, when predicting    \\ \hline
 \textbf{Category}         & Development Environment                     \\ \hline
 \textbf{Source}           & Software Requirement Specification Document \\ \hline
-\textbf{Probability}      & Medium                                      \\ \hline
-\textbf{Impact}           & High                                        \\ \hline
+\textbf{Probability}      & Low                                     \\ \hline
+\textbf{Impact}           & Low                                        \\ \hline
 \textbf{Response}         & Mitigate                                    \\ \hline
-\textbf{Strategy}         & Debugging Candidate Results.                \\ \hline
+\textbf{Strategy}         & Using sparse matrix to represent text                \\ \hline
 \textbf{Risk Status}      & Occurred and Resolved                       \\ \hline
 \end{tabular}
 \end{table}
@@ -589,11 +628,11 @@ The progress of dissertation is reported once in a month.
 \subsection{Dissertation Task Set}
 Major tasks in the Dissertation stages are - 
 \begin{itemize}
-\item Configure Alluxio, Apache's HDFS and Apache's Spark.
-\item Fetch candidate's tweets from Twitter.
+\item Installing the required libraries in python environment.
+\item Creating bag of words model from text reviews.
 \item Understand and build a document classifier.
-\item Profile candidates based on analysis done on candidate's tweets.
-\item Compare candidate's emotional and polarity categories.
+\item Test the classifier on test dataset.
+\item To find accuracy, precision, recall and other evaluation measures.
 \end{itemize}
 Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
 \subsection{Task Network}
@@ -1376,30 +1415,28 @@ T5                  & Report On Scheme of Implementation \\ \hline
 T6                  & Identification of Prerequisites and Installation \\ \hline
 T7                  & Configuring python and python package installer pip in the system \\ \hline
 T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
-T9                  & Kerberos Authentication Protocol Configuration for Hadoop and Alluxio. \\ \hline
-T10                  & Implementation Of Rubika Method of Authentication. \\ \hline
-T11                  & Preparing Web Interface For Proposed System \\ \hline
+T9                  & Studying libraries in python required for implementation \\ \hline
+T10                  & Downloading and extracting reviews from IMDb movie datasets provided for research purpose \\ \hline
+T11                  & Removing stopwords, punctuation marks, numbers etc.\\ \hline
 T12                  & Report Preparation \\ \hline
 T13                  & Dissertation Project Stage I Presentation \\ \hline
 T14                  & Document Preprocessing
  \\ \hline
-T15                  & Naive Bayes Classifier Implementation
+T15                  & Creating Bag of words model from movie reviews.
  \\ \hline
-T16                  & Candidate Behavioral Assessment Interface Implementation \\ \hline
-T17                  & Candidate Assessment Flow Implementation \\ \hline
-T18                  & Behavioral Model Construction For Candidates \\ \hline
-T19                  & Behavioral Analytics Implementation and Report Generation
+T16                  & Spliting the dataset into training and test dataset \\ \hline
+T17                  & Train machine learning classifiers using bag of words model.\\ \hline
+T18                  & Create unigram, bigram, trigram variations of model \\ \hline
+T19                  & Train machine learning classifiers using this model.
  \\ \hline
-T20                  & \begin{tabular}[c]{@{}l@{}} Apache Spark and Apache Spark on Alluxio Benchmarking \\ for Naive Bayes Classifier \end{tabular}
+T20                  & Cpgcon Paper Presentation
  \\ \hline
-T21                  & CPGCon Paper Presentation
+T21                  & Predictive Model Construction \\ \hline
+T22                  & Model Testing \\ \hline
+T23                  & Experimental results, Analysis and Validation of results \\ \hline
+T24                  &Project Review with Demonstration
  \\ \hline
-T22                  & Predictive Model Construction \\ \hline
-T23                  & Model Testing \\ \hline
-T24                  & Experimental results, Analysis and Validation of results \\ \hline
-T25                  &Project Review with Demonstration
- \\ \hline
-T26                  &Report Validation and Submission, Report Submission
+T25                  &Report Validation and Submission, Report Submission
  \\ \hline
 \end{tabular}
 \end{table}

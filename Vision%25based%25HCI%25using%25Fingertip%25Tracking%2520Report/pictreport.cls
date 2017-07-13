@@ -169,10 +169,10 @@ dissertation on {\bfseries \fontsize{12}{12} \selectfont ``#1''}.}
  Engineering Department, Pune Institute of Computer Technology for his indispensable  support, priceless suggestions and for most valuable time lent as and when required.}
 \vspace*{1.5\baselineskip}
 
-\textit{In the end my special thanks to \textbf{Mr. Rushikesh Kasar} for providing various resources such as well-equipped lab with all needed software platforms, continuous Internet connection, for my dissertation work.\\\\}
+\textit{In the end my special thanks to \textbf{Mr. Hrushikesh Kasar} for providing various resources such as well-equipped lab with all needed software platforms, continuous Internet connection, for my dissertation work.\\\\}
 \vspace*{1\baselineskip}
 
-Subhash K. Nevhal\\
+Kaushik S. Hande\\
 (M.E. Computer Engg.)
 }
 
