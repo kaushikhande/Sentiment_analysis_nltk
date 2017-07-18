@@ -652,13 +652,13 @@ Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
 \chapter{SOFTWARE REQUIREMENT SPECIFICATION}
 
 \section{Introduction}
-The aim of this document is to specify the software requirements for building a iterative behavioral model by analyzing candidate's tweets. 
+The aim of this document is to specify the software requirements for classification of movie reviews.
 
 \section{Purpose and Scope of the Document}
 The purpose of the document is to enlist various software requirements to build the system. This document has functional and non-functional requirements for the software being developed.
 
 \section{Overview of Responsibilities of Developer}
-The responsibilities of a developer includes gathering of information about the classification libraries, that can be used to design and develop the system to categorize candidate's tweets. The developer’s responsibilities include: 
+The responsibilities of a developer includes gathering of information about the classification libraries, that can be used to design and develop the system to categorize movie reviews. The developer’s responsibilities include: 
 \begin{itemize}
 \item Planning for dissertation (Scheduling) 
 \item Designing of system (High Level Design Document)
@@ -667,7 +667,7 @@ The responsibilities of a developer includes gathering of information about the 
 \end{itemize}
 
 \section{Product Overview}
-System builds a iterative behavioral model by fetching candidate's tweets and classifies them into one of the emotional categories and polarity categories. Different functionality of the system are : 
+System builds classifier models for classification of reviews. Different functionality of the system are : 
 
 \begin{itemize}
 \item Candidate Registration - It shows a registration page that candidate uses to registers for one of the organizations.
@@ -703,48 +703,43 @@ System builds a iterative behavioral model by fetching candidate's tweets and cl
 
 \section{Functionality}
 \begin{itemize}
-\item Fetch candidate's tweets from Twitter using Twitter API.
-\item Show behavioral profile of candidates.
-\begin{itemize}
-\item Show percentage of emotional and polarity categories for specific candidate year-wise, month-wise and day-wise.
-\item Show profile deviation of specific candidate.
-\item Show positive, negative and offensive polarity score for specific candidates.
-\end{itemize}
-\item Show percentage of relevance to particular user defined requirements.
-\item Compare two candidates for set of emotional and polarity categories.
+\item Download movie reviews from imDb dataset.
+\item Import the moview review dataset into python environment using csv package.
+
+\item Convert the text reviews into matrix form.
+\item Remove the stopwords from reviews.
+\item Show positive and negative polarity score for test reviews.
+
+
+\item Compare classifiers for accuracy of classification.
 \end{itemize} 
 
 \section{Input}
 \begin{itemize}
-\item Dataset that consists of Twitter's tweets.
-\item User specific requirements for finding relevance in candidate's profile.
-\item Candidate's emotional and polarity categories score for comparison and profile generation.
+\item Dataset that consists of movie reviews and their corresponding labels.
+\item List of stopwords which play no role in classification.
 \end{itemize}
 
 
 \section{Output}
-Candidate's behavioral profile that shows:
 \begin{itemize}
-\item Percentage of emotion and polarity categories
-\item Relevance to particular user defined requirements.
-\item Percentage of profile deviation.
-\item Candidate's comparison graph.
+\item Classification of each test review into positive or negative.
+\item Percentage of accuracy achieved in classification.
+\item Comparison of accuracies obtained by each classifier.
 \end{itemize}
 
 \section{Major Constraints}
 
 \begin{itemize}
-\item To store candidate's data as an input in CSV format.
-\item To store candidate's CSV file in Alluxio.
-\item To form Spark Standalone Cluster. 
-\item To execute Spark Classifier job in configured environment.
-\item To train the model for emotional and polarity categories and store it in Alluxio.
+\item To store movie reviews as input in csv file format.
+\item To execute classifiers in configured environment.
+\item To train the model for polarity classification.
 \end{itemize}
 
 \section{Applications}
 \begin{itemize}
 \item Businesses and organisations which require consumer opinions to do with products they market and services they produce.
-\item Individuals who make decisions to purchase products or services based upon word of mouth or on-line reviews, or to find public opinion, e.g. concerning politics or local issues.
+\item Individuals who make decisions to purchase products or services based upon word of mouth or on-line reviews, or to find public opinion, e.g. concerning politics or local issues.
 \item On-line advertising where in social media, an organisation may place an advertisement in response to a favourable review of a product, or a rival product could be advertised upon receipt of a bad review
 \item Opinion retrieval for general searches of opinions
 \item HR Analytics.
