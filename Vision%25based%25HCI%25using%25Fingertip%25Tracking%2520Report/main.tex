@@ -843,23 +843,22 @@ In the level 2 DFD as shown in figure 7.9, Candidate's tweets are retrieved from
 \\
 \section{Non-Functional Requirements}
 \subsection{Availability}
-Internet connection is needed as Bootstrap, J Query libraries are fetched from their respective Content Delivery Network. It is also required to fetch candidate's tweets from Twitter.
+Required libraries must be installed and loaded in the python environment with the required configurations. Dataset must be downloaded from specified url \cite{dataset}.
 
 \subsection{Scalability}
-The system should be scalable to connect more number of Spark nodes if candidate's data is increased. Apache Spark is configured to connect more nodes if need arises.
+The system should be scalable to classify reviews even if the training and test data are increased. System can comfortably handle 
+reviews dataset upto 25000 reviews.
 
 \subsection{Performance}
-The system must be interactive and delays involved must be less. There should be no immediate delays for every action and response of the system. In web application, flash success and error messages generate delay of 1 second. Execution request sent from web application to spark application should involve minimal delay. Execution time of Spark application depends upon processing of candidate's tweets stored in CSV format. It should take less time as multiple nodes are connected for processing.
+The system must be interactive and delays involved must be less. There should be no immediate delays for every action and response of the system. Training time increases as the training data increases. It takes 4 to 5 seconds in training the dataset. Training increases further when bigram and trigram models are used.
 
-\subsection{Security}
-A product administrator should be able to securely login to web application and submit candidate's tweets for analysis. Hadoop, Alluxio and Spark components must interact with each other in a secure manner.
 
 \subsection{Usability}
-The system should be easy to handle and process requests efficiently. System's functions are designed to use with ease and provide results. Candidate's analysis reports are presented in the form of graph and easy to comprehend.
+The system should be easy to handle and process requests efficiently. System's functions are designed to use with ease and provide results. Results are presented in the form of graphs and are easy to comprehend.
 
 \subsection{Reliability}
-The system should efficiently analyze candidate's tweets entirely and stores all the classified documents to database. It should be reliable to perform web application requests, receive responses and perform actions based on responses without fail. Kerberos Authentication is implemented for mutual authentication between processing components of computational framework and storage systems to secure candidate's information. 
-
+The system should efficiently analyze movie reviews entirely and give correct classification result. It should be reliable to perform 
+classification effectively on any review dataset.
 \subsection{Maintainability and Changeability}
 The system is made up of different independent modules that can be modified to correct faults, improve performance or other attributes, or adapt to a changed environment. System can be improved for new features and will be able to include new requirements.
 
