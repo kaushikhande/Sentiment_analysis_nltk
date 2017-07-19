@@ -841,8 +841,13 @@ This section contains details about events and associated behaviour of the syste
 Activity diagram is a flow chart to represent the flow form one activity to another activity. The activity can be described as an operation of the system. The control flow is drawn from one operation to another. This flow can be sequential, branched or concurrent. The purpose of activity diagrams is to capture the dynamic behaviour of the system.\\\\
 \textbf{Description} : As shown in figure 7.6, Product Administrator downloads candidate's tweets from Twitter for analysis. Tweets are stored in a CSV format in Alluxio data storage. For analysis to take place, candidate's download status is check. If it is true, load candidate's CSV file and proceed with analysis else download candidate's tweets. For document classification, initially model existence is checked. If it exists, then load model for document classification else proceed with training phase. The training phase consists of document preprocessing, feature extraction and saving model in Alluxio. Classifier uses this trained model for document classification. Candidates are profiled and compared based on their document classified into emotional and polarity categories.
 \begin{figure}[h!]
-\includegraphics[width=5.0in,height=4.0in]{Activity.jpg}
+\begin{center}
+ 
+
+\includegraphics[width=1.0in,height=6.0in]{Activity.png}
 \caption{Activity Diagram}
+\end{center}
+
 \end{figure}
 \newpage
 \section{Functional Model and Description}
@@ -894,47 +899,45 @@ The system is made up of different independent modules that can be modified to c
 \chapter{DETAILED DESIGN DOCUMENT}
 
 \section{Introduction}
-This document specifies the design that is used to fetch candidate tweets in CSV format, classifies individual tweets into emotion and polarity categories, profiles candidates based on predefined rules and predict future behavior of candidate.
-
-\section{Behavioral Modeling}
-Candidate's tweets are classified into emotional and polarity categories. Over the course of candidate's social media presence, profile deviates that forms a iterative behavioral model.
+This document specifies the design that is used to fetch movie reviews in CSV format, classifies individual movie review into polarity categories.
 \begin{itemize}
-    \item \textbf{Emotional Categories}
-    \begin{itemize}
-        \item Anger
-        \item Disgust
-        \item Joy
-        \item Love
-        \item Fear
-        \item Sadness
-        \item Surprise
-    \end{itemize}
+ 
+
+
     \item \textbf{Polarity Categories}
     \begin{itemize}
     \item Positive
     \item Negative
-    \item Offensive
+   
     \end{itemize}
 \end{itemize}
 Candidate's tweets are collected and classified based on these categories. They are profiled and compared based on emotional and polarity categories.
 \newpage
 \section{Architectural Design}
+Figure 8.1 shows architectural design of proposed system. Following are important components in the system :
+\begin{itemize}
+\item Movie reviews data : It contains 1,000 positive and 1,000 negative movie reviews from IMDB.
+\item Preprocessing : It has stopwords removal and vectorizer.
+\item Training data and Test Data : Data is divided into training data and test data. Training data consists of 75 \%
+of data and test data consists of 25 \% of total data. Both are mutually exclusive.
+\item Classifier : Training data is given as a input to one of the classifier.
+\item Prediction system : It takes test data and applies trained model to it .
+\item Sentiment : It gives the end output of polarity into positive and negative classification.   
+\end{itemize}
+
+
 \begin{figure}[!h]
-\includegraphics[width=5.7in,height=4.0in]{Architecture.jpg}
+\includegraphics[width=5.7in,height=4.0in]{archi.png}
 \caption{Proposed System Architecture}
 \end{figure}
-Figure 7.1 shows architectural design of proposed system. Following are important components in the system :
-\begin{itemize}
-\item Storage System : Alluxio, memory centric storage system is used as main storage system which stores in-memory data. Apache's HDFS is used as an underFS storage system. Candidate's CSV files, trained models, testing and training dataset is stored in Alluxio.
-\item Computation Framework : Apache's Spark is used for computations. Document classifier is built in Spark. It access candidate's CSV, trained model files from Alluxio. Spark's Mlib is used for training Naive Bayes model which is stored in Alluxio after training.
-\item Document Classifier : First, Naive Bayes model is trained by training dataset of emotional and polarity categories and saved in Alluxio. After training, prediction stage occurs. It access candidate's CSV file from Alluxio and classifies document on each candidate's tweet. Predicted labels on each tweet is stored in MySQL database with year, month and day.
-\item Candidate registers for specific organization using web application, providing twitter details. Product Administrator access web application to download candidate's tweets from Twitter, manages candidates, profiles and compares candidates. 
-\item Kerberos is  used for mutual authentication between storage system components and document classifier. It consists of Authentication Server, Database and Ticket Granting Service. Product Administrator requests Key Distribution Center for a valid ticket before submitting Spark job. If no valid ticket found, operation is not permitted. With only valid ticket, candidate's tweets are analyzed.  
-\end{itemize}
+
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
-\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying 
-\includegraphics[width=4.5in,height=4.0in]{Sentiment_Analysis_class_diagram.png
+\textbf{Description} : In figure 9.2, modules and their relationships are shown. Document classifier used for classifying \
+SentimentClassification class has ClassifyReview method which predicts the polarity if review.
+
+\begin{figure}[h!]
+\includegraphics[width=4.5in,height=4.0in]{Sentiment_Analysis_class_diagram.png}
 \caption{Class Diagram}
 \end{figure}
 \newpage
@@ -1093,231 +1096,22 @@ Negative          & 1000                      \\ \hline
 
 \chapter{TEST SPECIFICATION}
 
-\section{Introduction}
-This document explains the test plan and testing strategy for modules in a system. Following modules needs to be tested - 
-\begin{itemize}
-\item Fetching candidate's tweets from Twitter and store it in CSV format.
-\item Classification of candidates in emotional and polarity categories.
-\item Web application that sends requests, collect responses and act based on responses.
-\end{itemize}
-
-\subsection{Goals and Objectives}
-\begin{itemize}
-\item To validate candidate's tweets in a CSV after fetching it from Twitter.
-\item To check accuracy of different document classifiers.
-\item To validate predicted document labels of candidate's tweets.
-\item To validate candidate's profiles and comparison results.
-\item To validate execution distribution among multiple connected nodes.
-\end{itemize}
-
-\subsection{Statement of Scope}
-Testing will be done on individual modules of a system. Testing will be carried out for several different candidates. Finally, system as a whole is tested for correctness of results. 
-
-\subsection{Major Constraints}
-Testing is done manually. For testing the accuracy of document classifiers, testing dataset is formed and used. Total number of multiple connected nodes is limited to four nodes.
-
-\section{Test Plan}
-\subsection{Modules to be Tested}
-\begin{itemize}
-\item Candidate's tweets fetched from Twitter module.
-\item Candidate's tweets classification module.
-\item Web Application.
-\end{itemize}
-
-\subsection{Testing Strategy}
-\subsubsection{Unit Testing}
-Unit testing has been done for all the individual modules. While doing unit testing different parameter has been considered and according to input to the system different output is recorded. After recording output of unit testing different solution are applied to pass the test. This is carried out as white box testing.
-\begin{itemize}
-\item To test candidate's tweets are fetched and stored in a CSV format.
-\item To test classification module's effectiveness and prediction of document labels.
-\item To test different classifier's accuracy.
-\item To test candidate profiles and comparison's results. Result must be shown in the form of graph.
-\item To test candidate's documents analysis occurs distributively, using resources of multiple connected nodes. 
-\end{itemize}
-
-\subsubsection{Integration Testing}
-Once unit testing is complete for individual modules, all the modules are integrated together and tested for functional correctness. While doing integration testing, developer has kept in mind few constraints which need to be achieved in order to get desired results.
-\begin{itemize}
-\item Web application requests needs to be accepted by classification module and response back with predicted document labels for candidate's tweets.
-\item Web application uses candidate's data download functionality to fetch candidate's tweets from Twitter and store it in Alluxio.
-\item Web Application retrieves candidate's analysis results and forms a column b ar graph.
-\item Candidates are compared for seven emotional categories and results are shown as a graph.
-\end{itemize}
-
-\subsubsection{Validation Testing}
-Validation testing is carried out to test the entire work flow and input validation. This is carried out as a black box testing. In this project validation testing has been conducted on different modules.
-\begin{itemize}
-\item To validate candidate's tweets in a CSV after fetching it from Twitter.
-\item To validate predicted document labels of candidate's tweets.
-\item To validate candidate's profiles and comparison results.
-\item To validate execution distribution among multiple connected nodes.
-\end{itemize}
-
-\subsubsection{System Testing}
-\begin{itemize}
-\item To test if all GUI elements are shown properly in a web interface.
-\item To test if spark application is executed atomically using web interface.
-\item To test if spark application is able to access data stored in Alluxio.
-\item To test if Kerberos is integrated into Spark and Alluxio.
-\end{itemize}
-
-\subsubsection{GUI Testing}
-Front End of the system is designed as web application, runs on local server. Data visualization is provided by High charts. \\
-Following modules needs to be tested in a web application - 
-\begin{itemize}
-\item Candidate's data downloading functionality
-\item Assessment creation and deletion
-\item Storage Analyzer
-\item Candidate's profiles
-\item Candidates comparison 
-\end{itemize}
-
-\subsubsection{High Order Testing}
-It includes carrying out performance testing by checking complete running time of document classification on multinode spark cluster.
-
-\subsection{Test Procedure}
-\subsubsection{Unit Testing}
-\begin{table}[h!]
-\centering
-\caption{Unit Test Cases}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}}               & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                       & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}                        & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & Log In                                                                           & \begin{tabular}[c]{@{}l@{}}Product Admin should\\ be able to log in for\\ correct organization\\ only.\end{tabular}                          & \begin{tabular}[c]{@{}l@{}}Username \&\\ Password\end{tabular}                            & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}View\\ Candidates\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}Product Admin should \\ be able to view all\\ candidates registered\\ for organization.\end{tabular}              & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Details\end{tabular}                             & Pass                                                                \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Create \\ Behavioral\\ Assessment\\ Test\end{tabular} & \begin{tabular}[c]{@{}l@{}}Product Admin should\\ be able to create\\ customized behavioral\\ test.\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Emotional and\\ polarity\\ categories's \\ values\end{tabular} & Pass                                                                \\ \hline
-4                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Registration\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Candidate should be\\ able to register for \\ specific organization.\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Details\end{tabular}                             & Pass                                                                \\ \hline
-5                & \begin{tabular}[c]{@{}l@{}}Manage \\ Candidate\\ Data\end{tabular}               & \begin{tabular}[c]{@{}l@{}}Product Admin should\\ be able to delete \\ candidate's records \\ and tweets stored in\\ CSV format\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate's\\ User Identifier\end{tabular}                     & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
-\subsubsection{Integration Testing}
-\begin{table}[h!]
-\centering
-\caption{Integration Test Cases}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                                                    & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}                    & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Profiling\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Product Admin\\ submits candidate's\\ tweets for profiling.\\ Emotional and polarity\\ scores must be generated\\ after analysis.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate's \\ Unique\\ Identifier\end{tabular}               & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Comparison\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Product Admin selects two\\ candidates for comparison.\\ Comparison occurs based on\\ emotional and polarity scores.\end{tabular}              & \begin{tabular}[c]{@{}l@{}}Unique User\\ identifier \\ of both candidates.\end{tabular} & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
-\newpage
-\subsubsection{Validation Testing}
-\begin{table}[h!]
-\centering
-\caption{Validation Test Cases}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}}                                 & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                                   & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}                                  & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Data\\ Validation\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Candidate's details\\ are first validated\\ against rules set.\end{tabular}                                                   & \begin{tabular}[c]{@{}l@{}}Candidate's\\ details.\end{tabular}                                      & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Candidates\\ listing for\\ Behavioral\\ Assessment\\ Tests\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidates whose\\ tweets are fetched \\ should only appear \\ in list for test.\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Twitter Data\\ Download\\ Status\end{tabular}              & Pass                                                                \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Candidate\\ listing for\\ Profiling and\\ Comparison\end{tabular}       & \begin{tabular}[c]{@{}l@{}}Candidates whose\\ tweets have been \\ analyzed should only\\ appear in list for \\ profiling and \\ comparison.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Behavioral\\ Assessment\\ Completion\\ Status\end{tabular} & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
-\newpage
-\subsubsection{System Testing}
-\begin{table}[h!]
-\centering
-\caption{System Test Cases}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}}           & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                                                                      & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}             & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}GUI elements\\ displayed\\ properly.\end{tabular} & \begin{tabular}[c]{@{}l@{}}To show all GUI\\ elements in Web\\ Interface properly\end{tabular}                                                                                              & Views                                                                          & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Executing\\ Spark\\ Application\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Web application\\ executes Spark\\ application for tweets\\ classification into\\ emotional and polarity\\ categories.\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Unique\\ User Identifier\end{tabular} & Pass                                                                \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Alluxio data\\ access\end{tabular}                & \begin{tabular}[c]{@{}l@{}}Spark application\\ accesses tweets stored\\ in CSV format\\ from Alluxio.\end{tabular}                                                                          & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Unique User\\ Identifier\end{tabular} & Pass                                                                \\ \hline
-4                & \begin{tabular}[c]{@{}l@{}}Kerberos\\ Authentication\end{tabular}            & \begin{tabular}[c]{@{}l@{}}Product Admin must be\\ authenticated first and \\ should have valid ticket, \\ before submitting\\ candidate's tweets for\\ analysis.\\ submitting\end{tabular} & \begin{tabular}[c]{@{}l@{}}Product Admin's\\ Keytab\end{tabular}               & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
 \chapter{DATA TABLES AND DISCUSSIONS} 
-\section{Kerberos Sub-System Analysis}
-\hspace{1.1cm}A client may submit only one MR job or multiple jobs at a same time. The number of communication rounds and total number of protocol messages generated for different numbers of MR-Request-Component can be calculated. As number of jobs submission increases so does the communication overhead. There are three different use cases-
-\begin{itemize}
-\item One client can submit one job for submission.
-\begin{itemize}
-\item Total number of components requesting access to MR Resource for this case-
-\begin{equation}
-1(C) + n(Comp)
-\end{equation}
-\item Total number of communication rounds from Authentication Server to MR-Request-Component-
-\begin{equation}
-2(R) + 2n(R)
-\end{equation}
-\item Total number of communication rounds from MR-Request-Component to MR-Resource-Component are-
-\begin{equation}
-1(R) + n(R)
-\end{equation}
-\item Total number of messages sent are-
-\begin{equation}
-6 + 6n
-\end{equation}
-\end{itemize}
-\item One client can submit multiple jobs for submission.
-\begin{itemize}
-\item Total number of components requesting access to MR Resource for this case-
-\begin{equation}
-1(C) + z \times n(Comp)
-\end{equation}
-\item Total number of communication rounds from Authentication Server to MR-Request-Component-
-\begin{equation}
-2(R) + z \times 2n(R)
-\end{equation}
-\item Total number of communication rounds from MR-Request-Component to MR-Resource-Component are-
-\begin{equation}
-1(R) + z \times n(R)
-\end{equation}
-\item Total number of messages sent are-
-\begin{equation}
-6 + 6n \times z
-\end{equation}
-\end{itemize}
-\item Multiple client can submit multiple jobs for submission.
-\begin{itemize}
-\item Total number of components requesting access to MR Resource for this case-
-\begin{equation}
-y(C) + y \times z \times n(Comp)
-\end{equation}
-\item Total number of communication rounds from Authentication Server to MR-Request-Component-
-\begin{equation}
-y \times 2(R) + y \times z \times 2n(R)
-\end{equation}
-\item Total number of communication rounds from MR-Request-Component to MR-Resource-Component are-
-\begin{equation}
-1(R) + y \times z \times n(R)
-\end{equation}
-\item Total number of messages sent are-
-\begin{equation}
-6y + 6y \times n \times z
-\end{equation}
-\end{itemize}
-\end{itemize}
-One Client (C) has on Job(J) with n Components (Comp) per job. One Client has z jobs with n Components (Comp) per job. y Clients, each client has z jobs with n Component (Comp) per job. 
-\par For a N number of MR components requests access to MR-Resource-Component per job,
-number of communication rounds and messages for an authentication process can be calculated as,
-\begin{itemize}
-\item For communication round from Authentication Server to MR-Request-Component Communication
-\begin{equation}
-2N \times R (2N \times Request + 2N \times Response)
-\end{equation}
-\item For communication round from MR-Request-Component to MR-Resource-Component
-\begin{equation}
-N \times R (N \times Request + N \times Response)
-\end{equation}
-\end{itemize}
-
-\section{Alluxio Storage System Performance Analysis}
-\hspace{1.1cm}For writes throughput, Alluxio outperforms MemHDFS by 110x and for reads throughput, 2x greater than MemHDFS. It's read throughput is higher than write throughput. This happens due to machine configured with optimized memory hardware, leaving more bandwidth for reads.
-\par It also improves the end-to-end latency of a realistic work flow by 4x. Introducing check-pointing algorithm guarantees recovery cost and resource allocation strategies for re-computation under resource schedulers.
-\par Alluxio architecture consists of two layers-lineage and persistence. The
-lineage layer provides high throughput I/O and tracks the sequence of jobs that have created a particular data output. The persistence layer persists data onto storage without the lineage concept.
 
 
 \chapter{CONCLUSION}
 We proposed a hand gesture based human computer
-interaction system that provides a  natural  way to interact with computer.The hand is first segmented  by using skin color information and then tracked using 'Camshift' tracker with Kalman filter, then fingertips are located on the contour of the segmented hand and single gestures drawn from fingertips are recognized. For  pointing, click, right click, zoom, drag and window closing various gestures have been allocated.
+interaction system that provides a  natural  way to interact with computer.The hand 
+is first segmented  by using skin color information and then tracked using 'Camshift'
+tracker with Kalman filter, then fingertips are located on the contour of the segmented hand
+and single gestures drawn from fingertips are recognized. For  pointing, click, right click, 
+zoom, drag and window closing various gestures have been allocated.
 
 \chapter{FUTURE ENHANCEMENTS} 
-The research can be extended to explores the relationship between behaviors and psychological theories to determine candidate's language style or social tendencies. The system only fetches 3200 tweets of a candidate for analysis. For more precise profile deviation, more tweets should be fetched for Behavioral Analytics. 
+The research can be extended to explores the relationship between behaviors and 
+psychological theories to determine candidate's language style or social tendencies.
+The system only fetches 3200 tweets of a candidate for analysis. For more precise 
+profile deviation, more tweets should be fetched for Behavioral Analytics. 
 
 \begin{thebibliography}{20}
 
@@ -1396,11 +1190,19 @@ Sentiment Analysis using Machine Learning Algorithms: A Survey
 \subsection{IJIRCCE Certification}
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=4.2in]{ijarcce.png}
-\caption{IJARCCE Certificate}
+\caption{IJIRCCE Certificate}
 \end{figure}
 \section{Paper Title}
 Sentiment Analysis using Original and Reversed Reviews
+\newpage
 \subsection{cPGCON Certificate}
+
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=4.2in]{6107_certificate.jpg}
+\caption{cPGCON Certificate}
+\end{figure}
+
+
 \subsection{cPGCON Review}
 
 \chapter{DISSERTATION PLANNER}

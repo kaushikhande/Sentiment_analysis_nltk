@@ -141,8 +141,9 @@ statistical classifier and make predictions."
 
 \section{Hypothesis}
 
-Original review and corresponding opposite review can be used to increase the accuracy of 
-review class label prediction.
+Polarity shift causes accuracy of classifier to decrease.
+We assume that original review and corresponding opposite review can be used together to increase the accuracy of 
+review class label prediction and to avoid the problem caused due to polarity shift.
 
 \section{Relevant Mathematics Associated with Dissertation}
 
@@ -297,38 +298,49 @@ fail under the circumstance of polarity shift.
 
 \chapter{LITERATURE SURVEY}
 
-We studied the following related systems to discover their advantages, drawbacks and limitations and these are discussed below.
+We studied the related work on sentiment analysis and
+polarity shift.
 
-\section{Affective Text Mining}
-\hspace{1.1cm}Previous work focused on mining affective content from text documents using sentiment classification. However, study does not explores extraction of social emotions from multiple social media sites and building a behavioral profile of a candidate that quicksilver with consideration of new posts to sites. The most related direction to work is emotion prediction and classification. Affective text aims to add notes giving explanation to predefined list of emotions and/or polarity orientation (positive, negative and neutral). Alm et al [1] explored text-based emotion prediction using supervised learning approaches. Strapparava and Mihalcea [2] evaluated methods for the automatic identification of six emotions. Tokuhisa et al [3] proposed a two step model for emotion classification using emotion-provoking event instances. Yang et al [4] investigated the emotion classification of blogs using machine learning techniques.
+\section{Sentiment Analysis and Polarity Shift}
+\hspace{1.1cm}According to the levels of granularity, tasks in sentiment
+analysis can be divided into four categorizations: document-
+level, sentence-level, phrase-level, and aspect-level sentiment analysis.
+\par 
+For document and sentence-level sentiment classification, 
+there are two main types of methods in the literature:
+term-counting and machine learning methods. In term-
+counting methods, the overall orientation of a text is
+obtained by summing up the orientation scores of content
+words in the text, based on manually-collected or external
+lexical resources [38], [39]. In machine learning methods,
+sentiment classification is regarded as a statistical 
+classification problem, where a text is represented by a 
+bag-of-words; then, the supervised machine learning algorithms
+are applied as classifier [35]. Accordingly, 
+the way to handle polarity shift also differs in the two types of methods.
+\par
+The term-counting methods can be easily modified to
+include polarity shift. One common way is to directly
+reverse the sentiment of polarity-shifted words, and then
+sum up the sentiment score word by word [4], [16], [17],
+[37]. Compared with term counting methods, the machine
+learning methods are more widely discussed in the 
+sentiment classification literatures. However, it is relatively
+hard to integrate the polarity shift information into the
+BOW model in such methods. For example, Das and
+Chen [6] proposed a method by simply attaching “NOT”
+to words in the scope of negation, so that in the text “I
+don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. [35] reported that this method only
+has slightly negligible effects on improving the sentiment
+classification accuracy.
+\par
 
-\section{Emotion Term Model}
-A method to model the word-emotion associations is emotion-term model [14], which uses Naive Bayes with the assumption that words are independently generated from social emotion labels. The model needs to be extended to account not only social emotion labels but querying entire text to generate more precise emotion-term relationship. Emotion-term model generates each word \textit{$w_i$} of document \textit{d} in two sampling steps.
-\begin{itemize}
-\item sample emotion \textit{$e_i$} according to the emotion frequency count
-\item sample a word \textit{$w_i$} given the emotion under the conditional probability P($w|e$)
-\end{itemize}
-\par The model parameters can be learned by maximum-likelihood estimation. In particular, the conditional probability of a word \textit{w} given an emotion \textit{e} can be estimated as follows:
-\begin{equation}
-P(w|e) = \frac{|(w, e)|}{\sum|(w, e)|} 
-\end{equation}
-\par where $w^i \epsilon  W$, $|(w, e)|$ is the co-occurrence count between $w \epsilon W$ and emotion $e \epsilon E$ for all documents. It is formally derived based on the word and emotion frequency counts
-\begin{equation}
-|(w, e)| = S + \sum\limits_{d \epsilon D} \delta_{d,w} . \Upsilon_{d,e}
-\end{equation}
-\par where S is a small smoothing constant that is set to 1. For predicting emotion on a new document \textit{b}, Bayes theorem can be applied under the term independence assumption
-\begin{equation}
-P(e|d) = \frac{P(d|e)P(e)}{P(d)} \alpha P(d|e)P(e)
-\end{equation}
-\par where P(e) is the a priori probability of emotion e. It can again be calculated by maximum likelihood estimation from the emotion distribution of the entire collection.
 
-\section{Authentication Methods For Hadoop}
-\hspace{1.1cm}Multiple clients submit their MapReduce jobs for processing. Before submitting any jobs, a client needs to get authenticated by Authentication Server. Somu et al [5] provides a method which is symmetric key based. It uses single authentication factor, supports only gate-level authentication and has more communication overheads. Rubika method of authentication [6] is also designed to support client authentication only. Wei et al [7] ensures the authenticity of messages sent from one MR-job component to another. There is need of mutual authentication between MR components and MR infrastructure components. J. Zhao et al [8] supports the authentication of a client to MR application and authentication between pair of domain specific MR components.
 
 
 \section{Gap Identification Through Literature Survey}
 
-The following table shows the literature survey about different techniques of analyzing sentiment from social media text and emotion classification.
+The following table shows the literature survey about different techniques of sentiment analysis used for classification. 
 
 \renewcommand{\arraystretch}{1.0}
 \begin{center}
@@ -338,19 +350,53 @@ The following table shows the literature survey about different techniques of an
 \hline
 No. & Reference                                                              & Techniques                                                                & Description                                                                 \\
 \hline
-1   & \begin{tabular}[c]{@{}l@{}}Hand Detection\\ Techniques to hand \\gesture Recognition for\\ Natural Human \\Computer Interaction\end{tabular}                                                             & \begin{tabular}[c]{@{}l@{}}Hand Detection using \\ Lab Color Space \\       and\\ Mean Shift Algorithm \end{tabular}                                                                    & \begin{tabular}[c]{@{}l@{}}Better results on \\ skin color detection using \\ HTS algorithm streams.\end{tabular}                                                                                                                                                                                         \\
+1   & \begin{tabular}[c]{@{}l@{}}Dual Sentiment Analysis:\\ Considering Two sides of \\ 
+one review\end{tabular}
+  & \begin{tabular}[c]{@{}l@{}}Support vector machine\\(SVM), Naive bayes,\\ Logistic Regression \end{tabular}   
+         & \begin{tabular}[c]{@{}l@{}}Dual training and \\
+Dual Prediction \\technique is used.\end{tabular}                                                                                                                                                                                         \\
 \hline
-2   & \begin{tabular}[c]{@{}l@{}}Hand Gesture Recognition \\for Indian Sign Language\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}HSV color model \\and General Camshift\\ algorithm\end{tabular}                                  & \begin{tabular}[c]{@{}l@{}}The Gesture Recognition \\System takes the input \\hand gestures through \\ in-built web camera.\end{tabular}                                                                                                                                                                      \\
+2   & \begin{tabular}[c]{@{}l@{}}Thumbs up?Sentiment \\
+Classification using\\
+Machine learning\\
+algorithms\end{tabular} 
+ & \begin{tabular}[c]{@{}l@{}}Learning algorithms\\
+and n-gram model\end{tabular}                      
+            & \begin{tabular}[c]{@{}l@{}}Classify the dataset\\
+using different\\
+machine.\end{tabular}                                                                                                                                                                      \\
 \hline
-3   & \begin{tabular}[c]{@{}l@{}}A Novel Projector-Camera \\Interaction System \\with the Fingertip\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Prediction
-Method and \\triangulation Zhang's\\ method \end{tabular}            & \begin{tabular}[c]{@{}l@{}}Projector and binocular \\vision system based on \\two cameras is applied \\for detecting the depth\\ of fingertips and \\touch operation.\end{tabular}                                                                                                                                                          \\
+3   & \begin{tabular}[c]{@{}l@{}}Classification of \\sentiment
+reviews using\\
+N-gram machine \\learning
+approach\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Support Vector Machine\\
+Naive Bayes \end{tabular}            & \begin{tabular}[c]{@{}l@{}}Converting text\\
+reviews into numeric\\
+matrices using\\
+countvectorizer and\\
+TF-IDF\end{tabular}                                                                                                                                                          \\
 \hline
-4   & \begin{tabular}[c]{@{}l@{}}Hand gesture based \\user interface for \\computer using a camera \\and Projector\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}} The YCrCb color space \\with single Gaussian\\ and Camshift tracking \\algorithm\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}A hand gesture based \\human computer \\interaction system \\comprising of a \\webcam and a \\pocket projector.\end{tabular}                                                                                                                                                                                        \\
+4   & \begin{tabular}[c]{@{}l@{}}Thumbs up or \\thumbs
+down? Semantic \\orientation
+applied to \\unsupervised
+classification \\of reviews\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Unsupervised
+learning \\algorithm for\\
+classifying a \\review\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}A specific unsupervised\\
+learning technique \\based
+on the\\
+mutual information\end{tabular}                                                                                                                                                                                        \\
 \hline
-5   & \begin{tabular}[c]{@{}l@{}}Real-Time Robust Hand \\Tracking Based on \\Camshift and Motion \\Velocity\end{tabular} & \begin{tabular}[c]{@{}l@{}} Improved Camshift \\algorithm \\with KLT tracking. \end{tabular}  & \begin{tabular}[c]{@{}l@{}} Probability of Bayesian\\ skin color is used \\to refine the velocity \\of hand motion.\end{tabular}                                                                                                                                                 \\
+5   & \begin{tabular}[c]{@{}l@{}}Automatic Opinion \\polarity
+Classification \\of movie\end{tabular} & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\
+And Markov Model \\(MM) \end{tabular}  & \begin{tabular}[c]{@{}l@{}} Accessed overall \\opinion
+polarity(OvOp)\\
+concept using \\machine
+learning\\ algorithm\end{tabular}                                                                                                                                                 \\
 \hline
-6   & \begin{tabular}[c]{@{}l@{}}Gesture Recognition in \\Ego-Centric Videos \\using Dense Trajectories \\and Hand Segmentation\end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} Dense trajectories\\
-extracted \\around hand regions\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dense features are\\ extracted around regions\\ selected by a new hand \\segmentation technique.\end{tabular}                                                                                                                                                                          \\
+6   & \begin{tabular}[c]{@{}l@{}}Dual Training and \\dual
+prediction for\\ polarity
+classification\end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} SVM and Naive Bayes\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dual training and\\
+dual prediction \\(DTDP)\end{tabular}                                                                                                                                                                          \\
 \hline
 
 7  & \begin{tabular}[c]{@{}l@{}}A 3D Hand Tracking\\ Design for Gesture\\ Control in Complex \\Environments\end{tabular}                                                                                & \begin{tabular}[c]{@{}l@{}}3D hand tracking design\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}It segments hands \\out of entire image \\and also facilitates \\depth estimation of \\tracked hands in\\ real-time by dual \\camera systems.\end{tabular}                                                                                                                                                                      \\
@@ -384,42 +430,46 @@ Hand \\Tracking \end{tabular}                                                   
 
 \section{Goals}
 \begin{itemize}
-\item Understanding of existing Cultural Framework and Role Scenarios.
-\item Designing a web platform that carries out functionality of the system.
-\item Understanding of Storage File Systems – Apache's HDFS and Alluxio.
-\item Integrating Alluxio with Apache's HDFS and Apache's Spark.
-\item Understanding Sentiment Analysis and Emotion Mining Approaches.
-\item Classifying candidate's documents into emotion categories.
+\item Understanding existing sentiment analysis approaches.
+\item Study corpus based, lexical based and semantic based techniques.
+\item Understanding unigram, bigram, trigram and combination of them for modeling purpose.
+\item Training the model with naive bayes, support vector machine, maximum entropy.
+\item Applying this learned model to the test dataset.
+\item Evaluating the results generated by classifiers.
 \end{itemize}
 
 \section{Objectives}
 
-Please refer Chapter 1, Section 1.7 on Page XX
+Please refer Chapter 1, Section 1.7 on Page 2
 
 \section{Statement of Scope}
 \begin{itemize}
-\item Analyzing candidate's tweets distributively on multiple node Spark cluster.
-\item Classify candidate's tweets into seven emotion categories and three polarities.
-\item Integrating Alluxio core services with Apache HDFS and Apache Spark.
-\item Validates candidate's emotion classification.
-\item Validates candidates comparison by emotion categories. 
+\item Preprocessing the reviews
+\item Classify reviews into two polarities.
+\item Evaluate the classification accuracy by each classifier.
 \end{itemize}
 
 \section{Software Context}
-\subsection{Apache Spark} 
-Spark [9] provides fast cluster computing system. It's high level APIs in Java, Python, Scala, Python and R are used. It also uses Hadoop client's libraries for performing operation on data stored in HDFS. Spark system in cluster mode is deployed to take advantage of commodity hardware by using Hadoop YARN as cluster manager. Spark with Mahout APIs can be used for calculating term frequencies, generating TFIDF vectors, writing and reading from HDFS and Alluxio and classification. By using Spark, more records in less time is classified efficiently.
+\subsection{Scikit-learn} 
+Scikit-learn (formerly scikits.learn) is a free software machine learning library for the Python programming language. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
-\subsection{Apache Hadoop}
-Hadoop's HDFS [10] stores huge amount of training data in HDFS for distributed processing. Mahout APIs can access data stored in HDFS for processing. It provides scalable environment and fault-tolerant file systems.
+\subsection{NumPY}
 
-\subsection{Alluxio}
-It provides memory centric design and unified name space for different storage system. Alluxio [11] improves processing speed for big data applications while providing a common interface of data access. Haoyuan Li et al. [12] explains how Alluxio speeds up read and write throughput. 
 
-\subsection{Kerberos}
-To provide a level of security among Hadoop components like Resource Manager etc. Kerberos [13] sets up a Key Distribution Center. KDC has three main components. Kerberos Database which stores users and services identity. Authentication server resides as a separate physical server. It issues tickets upon initial request. Ticket Granting Service responsible for providing service tickets. By using these three components, communication is secured between core components of Alluxio, Spark and Hadoop.
+NumPy is the fundamental package for scientific computing with Python. It contains among other things:
+\begin{itemize}
+\item A powerful N-dimensional array object
+\item Sophisticated (broadcasting) functions
+\item Tools for integrating C/C++ and Fortran code
+\item Useful linear algebra, Fourier transform, and random number capabilities
+\end{itemize}
+Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.
 
-\subsection{Laravel PHP}
-A PHP framework that provides useful tools to securely built a web application with an ease. It provides authentication, amazing ORM, painless routing and powerful queue library.
+\subsection{Natural language toolkit}
+NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning, wrappers for industrial-strength NLP libraries, and an active discussion forum.
+
+\subsection{Matplotlib}
+Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell, the jupyter notebook, web application servers, and four graphical user interface toolkits. You can generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc., with just a few lines of code.
 
 \chapter{DISSERTATION PLAN}
 
@@ -463,11 +513,11 @@ For risks identification, review of scope document, requirement specifications a
 The risks for the dissertation are analyzed within the constraints of time and quality. Risk can be as follows:
 
 \begin{itemize}
-\item Out of memory error, when training Naive Bayes Model.
-\item Spark executors were getting lost.
-\item Incorrect candidate results.
+\item Out of memory error, while creating model and training the model.
+\item Review text contains unrecognized characters.
+\item Out of memory error, while predicting on the test dataset.
 \end{itemize}
-Please refer Table 5.1, 5.2 and 5.3 for detail description.
+Please refer Table 6.1, 6.2 and 6.3 for detail description.
 
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[h!]
@@ -476,9 +526,9 @@ Please refer Table 5.1, 5.2 and 5.3 for detail description.
 \hline
 \textbf{ID} & \textbf{Risk Description} & \textbf{Probability} & \multicolumn{3}{c|}{\textbf{Impact}}                                         \\ \hline
             & \textbf{}                 & \textbf{}            & \textbf{Schedule} & \textbf{Quality} & \textbf{Overall} \\ \hline
-1           & Out of Memory             & Low                  & Low                      & High                    & High                    \\ \hline
-2           & Executors Lost            & Medium               & Medium                   & High                    & Medium                  \\ \hline
-3           & Incorrect Results         & Medium               & Medium                   & High                    & High                    \\ \hline
+1           & Out of Memory             & High                & Low                      & High                    & High                    \\ \hline
+2           & Unrecognized characters            & Low               & Medium                   & High                    & Medium                  \\ \hline
+3           & Out of Memory         & Low               & Medium                   & High                    & High                    \\ \hline
 \end{tabular}
 \end{table}
 
@@ -501,13 +551,13 @@ Low                  & Probability of the occurrence is & 25\%                 \
 \hline
 \textbf{Impact} & \textbf{Value}    & \textbf{Description}                                                                                                                                        \\ \hline
 Very High       & \textgreater 10\% & Schedule impact or Unacceptable quality                                                                                                                     \\ \hline
-High            & 5\%-10\%          & Schedule impact or Some parts of the project have low quality                                                                                               \\ \hline
-Low             & \textless5\%      & \begin{tabular}[c]{@{}l@{}}Schedule impact or Barely noticeable degradation in quality\\ Low Impact on schedule or Quality can be incorporated\end{tabular} \\ \hline
+High            & 5\%-10\%          & \begin{tabular}[c]{@{}l@{}} Schedule impact or Some parts of \\ the project have low quality  \end{tabular}                                                                                              \\ \hline
+Low             & \textless5\%      & \begin{tabular}[c]{@{}l@{}}Schedule impact or Barely noticeable \\degradation in quality Low Impact on schedule or\\ Quality can be incorporated\end{tabular} \\ \hline
 \end{tabular}
 \end{table}
 
 \subsection{Overview of Risk Mitigation, Monitoring and Management}
-Please refer Table 5.4, 5.5 and 5.6 for detail description.
+Please refer Table 6.4, 6.5 and 6.6 for detail description.
 
 \begin{table}[h!]
 \centering
@@ -516,10 +566,10 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Risk ID}          & 1                                                    \\ \hline
-\textbf{Risk Description} & Out of memory error, when training Naive Bayes Model \\ \hline
+\textbf{Risk Description} & Out of memory error, when training Model \\ \hline
 \textbf{Category}         & Configuration                                        \\ \hline
 \textbf{Source}           & Software Requirement Specification Document          \\ \hline
-\textbf{Probability}      & Low                                                  \\ \hline
+\textbf{Probability}      & High                                                 \\ \hline
 \textbf{Impact}           & High                                                 \\ \hline
 \textbf{Response}         & Mitigate                                             \\ \hline
 \textbf{Strategy}         & Changing number of features resolves this issue.     \\ \hline
@@ -535,13 +585,13 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Risk ID}          & 2                                                                     \\ \hline
-\textbf{Risk Description} & Spark executors were getting lost                                     \\ \hline
+\textbf{Risk Description} & Unreconized characters                                     \\ \hline
 \textbf{Category}         & Configuration                                                         \\ \hline
 \textbf{Source}           & Software Requirement Specification Document                           \\ \hline
-\textbf{Probability}      & Medium                                                                \\ \hline
-\textbf{Impact}           & Medium                                                                \\ \hline
+\textbf{Probability}      & Low                                                               \\ \hline
+\textbf{Impact}           & Low                                                                \\ \hline
 \textbf{Response}         & Mitigate                                                              \\ \hline
-\textbf{Strategy}         & Increasing heart beat interval and network timeout resolve this issue \\ \hline
+\textbf{Strategy}         & Convert all characters into unicode format \\ \hline
 \textbf{Risk Status}      & Occurred and Resolved                                                 \\ \hline
 \end{tabular}
 \end{table}
@@ -552,13 +602,13 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Risk ID}          & 3                                           \\ \hline
-\textbf{Risk Description} & Incorrect Candidate Results                 \\ \hline
+\textbf{Risk Description} & Out of memory error, when predicting    \\ \hline
 \textbf{Category}         & Development Environment                     \\ \hline
 \textbf{Source}           & Software Requirement Specification Document \\ \hline
-\textbf{Probability}      & Medium                                      \\ \hline
-\textbf{Impact}           & High                                        \\ \hline
+\textbf{Probability}      & Low                                     \\ \hline
+\textbf{Impact}           & Low                                        \\ \hline
 \textbf{Response}         & Mitigate                                    \\ \hline
-\textbf{Strategy}         & Debugging Candidate Results.                \\ \hline
+\textbf{Strategy}         & Using sparse matrix to represent text                \\ \hline
 \textbf{Risk Status}      & Occurred and Resolved                       \\ \hline
 \end{tabular}
 \end{table}
@@ -573,18 +623,46 @@ Please refer Table 5.4, 5.5 and 5.6 for detail description.
 \end{itemize}
 
 \subsection{Management Reporting and Communication}
-The progress of dissertation is reported twice in a month to internal guide and discussed with external guide once in a month.
-\section{Dissertation Schedule}
+The progress of dissertation is reported once in a month.
 \subsection{Dissertation Task Set}
+
+
 Major tasks in the Dissertation stages are - 
-\begin{itemize}
-\item Configure Alluxio, Apache's HDFS and Apache's Spark.
-\item Fetch candidate's tweets from Twitter.
-\item Understand and build a document classifier.
-\item Profile candidates based on analysis done on candidate's tweets.
-\item Compare candidate's emotional and polarity categories.
-\end{itemize}
-Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
+	
+				
+				Task 1 : Requirement
+					\begin{enumerate}
+						\item Define problem statement
+						\item Identify scope, requirements
+						\item Related mathematical model
+					\end{enumerate}
+				Task 2 : Design
+					\begin{enumerate}
+						\item Identifying of key objects, functional relation
+						\item UML diagrams and functional dependency graph
+						\item System design
+					\end{enumerate}
+				Task 3 : Implementation
+				\begin{enumerate}
+						\item GUI Implementation
+						\item MongoDB Implementation
+						\item Cloud Installation
+					\end{enumerate}
+				Task 4 : Testing
+					\begin{enumerate}
+						\item Unit testing
+						\item Integration testing
+						\item System testing
+					\end{enumerate}
+				Task 5 : Integration and Maintenance
+					\begin{enumerate}
+						\item Integration
+						\item Maintenance
+					\end{enumerate}
+
+
+\par Please refer figure 6.1 Task Network.
+
 \subsection{Task Network}
 \begin{figure}[!h]
 \centering
@@ -593,6 +671,7 @@ Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
 \end{figure}
 \newpage
 \subsection{Timeline Chart}
+Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=5.5in,height=5.5in]{timeline.png}
@@ -602,13 +681,13 @@ Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
 \chapter{SOFTWARE REQUIREMENT SPECIFICATION}
 
 \section{Introduction}
-The aim of this document is to specify the software requirements for building a iterative behavioral model by analyzing candidate's tweets. 
+The aim of this document is to specify the software requirements for classification of movie reviews.
 
 \section{Purpose and Scope of the Document}
 The purpose of the document is to enlist various software requirements to build the system. This document has functional and non-functional requirements for the software being developed.
 
 \section{Overview of Responsibilities of Developer}
-The responsibilities of a developer includes gathering of information about the classification libraries, that can be used to design and develop the system to categorize candidate's tweets. The developer’s responsibilities include: 
+The responsibilities of a developer includes gathering of information about the classification libraries, that can be used to design and develop the system to categorize movie reviews. The developer’s responsibilities include: 
 \begin{itemize}
 \item Planning for dissertation (Scheduling) 
 \item Designing of system (High Level Design Document)
@@ -617,14 +696,14 @@ The responsibilities of a developer includes gathering of information about the 
 \end{itemize}
 
 \section{Product Overview}
-System builds a iterative behavioral model by fetching candidate's tweets and classifies them into one of the emotional categories and polarity categories. Different functionality of the system are : 
+System builds classifier models for classification of reviews. Different functionality of the system are : 
 
 \begin{itemize}
-\item Candidate Registration - It shows a registration page that candidate uses to registers for one of the organizations.
-\item Candidate Data Downloading - It allows a Product Admin to download candidate's tweets from Twitter.
-\item Candidate Profiling - Profiles are formed for specific candidate after analyzing tweets in the form of column graph. It shows percentage of emotional and polarity categories scores. Scores are shown year-wise, month-wise and day-wise.
-\item Candidate Comparison - It allows Product Admin to compare two candidates with respect to their emotional and polarity scores achieved. Comparison graphs of candidates are shown year-wise, month-wise and day-wise.
-\item Managing Candidate's Details and Data - It allows Product Admin to delete candidate's data or details or both.
+\item Review loader : It loads the reviews into python environment.
+\item Stopwords remover : It removes the stopwords like the words is, a, an, the, was, were etc.
+\item Vectorizer : It converts the reviews into matrix of rows and columns where columns represents the words
+and rows represents each reviews. Presence of particular word in a review is shown by the values in the columns.
+\item Classifier : It classifies the reviews into positive and negative review.
 \end{itemize}
 \section{Hardware Resources Used}
 \subsection{Software Requirements}
@@ -653,49 +732,45 @@ System builds a iterative behavioral model by fetching candidate's tweets and cl
 
 \section{Functionality}
 \begin{itemize}
-\item Fetch candidate's tweets from Twitter using Twitter API.
-\item Show behavioral profile of candidates.
-\begin{itemize}
-\item Show percentage of emotional and polarity categories for specific candidate year-wise, month-wise and day-wise.
-\item Show profile deviation of specific candidate.
-\item Show positive, negative and offensive polarity score for specific candidates.
-\end{itemize}
-\item Show percentage of relevance to particular user defined requirements.
-\item Compare two candidates for set of emotional and polarity categories.
+\item Download movie reviews from imDb dataset.
+\item Import the moview review dataset into python environment using csv package.
+
+\item Convert the text reviews into matrix form.
+\item Remove the stopwords from reviews.
+\item Show positive and negative polarity score for test reviews.
+
+
+\item Compare classifiers for accuracy of classification.
 \end{itemize} 
 
 \section{Input}
 \begin{itemize}
-\item Dataset that consists of Twitter's tweets.
-\item User specific requirements for finding relevance in candidate's profile.
-\item Candidate's emotional and polarity categories score for comparison and profile generation.
+\item Dataset that consists of movie reviews and their corresponding labels.
+\item List of stopwords which play no role in classification.
 \end{itemize}
 
 
 \section{Output}
-Candidate's behavioral profile that shows:
 \begin{itemize}
-\item Percentage of emotion and polarity categories
-\item Relevance to particular user defined requirements.
-\item Percentage of profile deviation.
-\item Candidate's comparison graph.
+\item Classification of each test review into positive or negative.
+\item Percentage of accuracy achieved in classification.
+\item Comparison of accuracies obtained by each classifier.
 \end{itemize}
 
 \section{Major Constraints}
 
 \begin{itemize}
-\item To store candidate's data as an input in CSV format.
-\item To store candidate's CSV file in Alluxio.
-\item To form Spark Standalone Cluster. 
-\item To execute Spark Classifier job in configured environment.
-\item To train the model for emotional and polarity categories and store it in Alluxio.
+\item To store movie reviews as input in csv file format.
+\item To execute classifiers in configured environment.
+\item To train the model for polarity classification.
 \end{itemize}
 
 \section{Applications}
 \begin{itemize}
-\item External candidates behavioral assessments visiting for recruitment drive or invited by
-managers, organized by multiple organizations.
-\item Internal candidates profile evaluation of multiple organizations.
+\item Businesses and organisations which require consumer opinions to do with products they market and services they produce.
+\item Individuals who make decisions to purchase products or services based upon word of mouth or on-line reviews, or to find public opinion, e.g. concerning politics or local issues.
+\item On-line advertising where in social media, an organisation may place an advertisement in response to a favourable review of a product, or a rival product could be advertised upon receipt of a bad review
+\item Opinion retrieval for general searches of opinions
 \item HR Analytics.
 \end{itemize}
 
@@ -766,8 +841,13 @@ This section contains details about events and associated behaviour of the syste
 Activity diagram is a flow chart to represent the flow form one activity to another activity. The activity can be described as an operation of the system. The control flow is drawn from one operation to another. This flow can be sequential, branched or concurrent. The purpose of activity diagrams is to capture the dynamic behaviour of the system.\\\\
 \textbf{Description} : As shown in figure 7.6, Product Administrator downloads candidate's tweets from Twitter for analysis. Tweets are stored in a CSV format in Alluxio data storage. For analysis to take place, candidate's download status is check. If it is true, load candidate's CSV file and proceed with analysis else download candidate's tweets. For document classification, initially model existence is checked. If it exists, then load model for document classification else proceed with training phase. The training phase consists of document preprocessing, feature extraction and saving model in Alluxio. Classifier uses this trained model for document classification. Candidates are profiled and compared based on their document classified into emotional and polarity categories.
 \begin{figure}[h!]
-\includegraphics[width=5.0in,height=4.0in]{Activity.jpg}
+\begin{center}
+ 
+
+\includegraphics[width=1.0in,height=6.0in]{Activity.png}
 \caption{Activity Diagram}
+\end{center}
+
 \end{figure}
 \newpage
 \section{Functional Model and Description}
@@ -797,71 +877,60 @@ In the level 2 DFD as shown in figure 7.9, Candidate's tweets are retrieved from
 \\
 \section{Non-Functional Requirements}
 \subsection{Availability}
-Internet connection is needed as Bootstrap, J Query libraries are fetched from their respective Content Delivery Network. It is also required to fetch candidate's tweets from Twitter.
+Required libraries must be installed and loaded in the python environment with the required configurations. Dataset must be downloaded from specified url \cite{dataset}.
 
 \subsection{Scalability}
-The system should be scalable to connect more number of Spark nodes if candidate's data is increased. Apache Spark is configured to connect more nodes if need arises.
+The system should be scalable to classify reviews even if the training and test data are increased. System can comfortably handle 
+reviews dataset upto 25000 reviews.
 
 \subsection{Performance}
-The system must be interactive and delays involved must be less. There should be no immediate delays for every action and response of the system. In web application, flash success and error messages generate delay of 1 second. Execution request sent from web application to spark application should involve minimal delay. Execution time of Spark application depends upon processing of candidate's tweets stored in CSV format. It should take less time as multiple nodes are connected for processing.
+The system must be interactive and delays involved must be less. There should be no immediate delays for every action and response of the system. Training time increases as the training data increases. It takes 4 to 5 seconds in training the dataset. Training increases further when bigram and trigram models are used.
 
-\subsection{Security}
-A product administrator should be able to securely login to web application and submit candidate's tweets for analysis. Hadoop, Alluxio and Spark components must interact with each other in a secure manner.
 
 \subsection{Usability}
-The system should be easy to handle and process requests efficiently. System's functions are designed to use with ease and provide results. Candidate's analysis reports are presented in the form of graph and easy to comprehend.
+The system should be easy to handle and process requests efficiently. System's functions are designed to use with ease and provide results. Results are presented in the form of graphs and are easy to comprehend.
 
 \subsection{Reliability}
-The system should efficiently analyze candidate's tweets entirely and stores all the classified documents to database. It should be reliable to perform web application requests, receive responses and perform actions based on responses without fail. Kerberos Authentication is implemented for mutual authentication between processing components of computational framework and storage systems to secure candidate's information. 
-
+The system should efficiently analyze movie reviews entirely and give correct classification result. It should be reliable to perform 
+classification effectively on any review dataset.
 \subsection{Maintainability and Changeability}
 The system is made up of different independent modules that can be modified to correct faults, improve performance or other attributes, or adapt to a changed environment. System can be improved for new features and will be able to include new requirements.
 
 \chapter{DETAILED DESIGN DOCUMENT}
 
 \section{Introduction}
-This document specifies the design that is used to fetch candidate tweets in CSV format, classifies individual tweets into emotion and polarity categories, profiles candidates based on predefined rules and predict future behavior of candidate.
-
-\section{Behavioral Modeling}
-Candidate's tweets are classified into emotional and polarity categories. Over the course of candidate's social media presence, profile deviates that forms a iterative behavioral model.
+This document specifies the design that is used to fetch movie reviews in CSV format, classifies individual movie review into polarity categories.
 \begin{itemize}
-    \item \textbf{Emotional Categories}
-    \begin{itemize}
-        \item Anger
-        \item Disgust
-        \item Joy
-        \item Love
-        \item Fear
-        \item Sadness
-        \item Surprise
-    \end{itemize}
+ 
+
+
     \item \textbf{Polarity Categories}
     \begin{itemize}
     \item Positive
     \item Negative
-    \item Offensive
+   
     \end{itemize}
 \end{itemize}
 Candidate's tweets are collected and classified based on these categories. They are profiled and compared based on emotional and polarity categories.
 \newpage
 \section{Architectural Design}
 \begin{figure}[!h]
-\includegraphics[width=5.7in,height=4.0in]{Architecture.jpg}
+\includegraphics[width=5.7in,height=4.0in]{archi.png}
 \caption{Proposed System Architecture}
 \end{figure}
 Figure 7.1 shows architectural design of proposed system. Following are important components in the system :
 \begin{itemize}
-\item Storage System : Alluxio, memory centric storage system is used as main storage system which stores in-memory data. Apache's HDFS is used as an underFS storage system. Candidate's CSV files, trained models, testing and training dataset is stored in Alluxio.
-\item Computation Framework : Apache's Spark is used for computations. Document classifier is built in Spark. It access candidate's CSV, trained model files from Alluxio. Spark's Mlib is used for training Naive Bayes model which is stored in Alluxio after training.
-\item Document Classifier : First, Naive Bayes model is trained by training dataset of emotional and polarity categories and saved in Alluxio. After training, prediction stage occurs. It access candidate's CSV file from Alluxio and classifies document on each candidate's tweet. Predicted labels on each tweet is stored in MySQL database with year, month and day.
-\item Candidate registers for specific organization using web application, providing twitter details. Product Administrator access web application to download candidate's tweets from Twitter, manages candidates, profiles and compares candidates. 
-\item Kerberos is  used for mutual authentication between storage system components and document classifier. It consists of Authentication Server, Database and Ticket Granting Service. Product Administrator requests Key Distribution Center for a valid ticket before submitting Spark job. If no valid ticket found, operation is not permitted. With only valid ticket, candidate's tweets are analyzed.  
+\item Movie reviews data : It contains 1,000 positive and 1,000 negative movie reviews from IMDB.
+\item 
+\item 
+\item 
+\item   
 \end{itemize}
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
-\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying candidate's tweets takes user identifier of candidate and candidate's CSV location in Alluxio as an input. Product Administrator fetches candidate's tweets from Twitter in a CSV format and store the file in Alluxio. Candidate's CSV file location is saved into database for further processing. After document classification, candidates can be profiled and compared based on their emotional and polarity categories. For both modules, results are displayed by year, month and day.
+\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying 
 \begin{figure}[h!]
-\includegraphics[width=4.5in,height=4.0in]{Class.jpg}
+\includegraphics[width=4.5in,height=4.0in]{Sentiment_Analysis_class_diagram.png}
 \caption{Class Diagram}
 \end{figure}
 \newpage
@@ -994,28 +1063,12 @@ Registration – It allows a candidate to register himself/herself to a certain 
 \end{itemize}
 
 \section{Dataset}
-\hspace{1.1cm}Dataset comprises of tweets from Twitter. It has to be collected for every candidate that needs to be assessed for behavioural assessment. There is significant latency and load on server in fetching such information of candidate using Twitter API.
-\par After the dataset is collected, it needs to be stored in underFS storage layer. Movement of huge dataset to storage layer requires additional I/O writes and communication overhead. But, by using proposed system, writes operation to storage layer is significantly lesser.
-\par For document classification, a training and testing dataset is required. Training records for emotional and polarity categories are mentioned in Table 9.1 and 9.2.
+\hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets. It contains 1,000 positive and 1,000 negative movie reviews from IMDB, so it is now considered too small for serious research and development purposes. However, the text is similar to movies reviews on IMDB today.
+
+\par The file movie-pang02.zip contains a copy of Pang and Lee's Movie Review Data in a csv format that can be imported directly in python. It has two categories: Pos (reviews that express a positive or favorable sentiment) and Neg (reviews that express a negative or unfavorable sentiment). For this assignment, we will assume that all reviews are either positive or negative; there are no neutral reviews. 
+\par For document classification, a training and testing dataset is required. Training records for polarity categories are mentioned in Table 9.1
 
 \renewcommand{\arraystretch}{1.5}
-\begin{table}[h!]
-\centering
-\caption{Emotional Training Dataset}
-\label{my-label}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Emotion Category} & \textbf{Training Records} \\ \hline
-Anger                     & 1572                      \\ \hline
-Joy                       & 8276                      \\ \hline
-Disgust                   & 761                       \\ \hline
-Love                      & 216                       \\ \hline
-Sadness                   & 3853                      \\ \hline
-Surprise                  & 3912                      \\ \hline
-Fear                      & 2839                      \\ \hline
-\textbf{Total}            & \textbf{21429}            \\ \hline
-\end{tabular}
-\end{table}
 
 \begin{table}[h!]
 \centering
@@ -1024,10 +1077,10 @@ Fear                      & 2839                      \\ \hline
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Polarity} & \textbf{Training Records} \\ \hline
-Positive          & 2007                      \\ \hline
-Negative          & 4783                      \\ \hline
-Disgust           & 2007                      \\ \hline
-\textbf{Total}    & \textbf{8797}             \\ \hline
+Positive          & 1000                      \\ \hline
+Negative          & 1000                      \\ \hline
+
+\textbf{Total}    & \textbf{2000}             \\ \hline
 \end{tabular}
 \end{table}
 
@@ -1036,223 +1089,7 @@ Disgust           & 2007                      \\ \hline
 
 \chapter{TEST SPECIFICATION}
 
-\section{Introduction}
-This document explains the test plan and testing strategy for modules in a system. Following modules needs to be tested - 
-\begin{itemize}
-\item Fetching candidate's tweets from Twitter and store it in CSV format.
-\item Classification of candidates in emotional and polarity categories.
-\item Web application that sends requests, collect responses and act based on responses.
-\end{itemize}
-
-\subsection{Goals and Objectives}
-\begin{itemize}
-\item To validate candidate's tweets in a CSV after fetching it from Twitter.
-\item To check accuracy of different document classifiers.
-\item To validate predicted document labels of candidate's tweets.
-\item To validate candidate's profiles and comparison results.
-\item To validate execution distribution among multiple connected nodes.
-\end{itemize}
-
-\subsection{Statement of Scope}
-Testing will be done on individual modules of a system. Testing will be carried out for several different candidates. Finally, system as a whole is tested for correctness of results. 
-
-\subsection{Major Constraints}
-Testing is done manually. For testing the accuracy of document classifiers, testing dataset is formed and used. Total number of multiple connected nodes is limited to four nodes.
-
-\section{Test Plan}
-\subsection{Modules to be Tested}
-\begin{itemize}
-\item Candidate's tweets fetched from Twitter module.
-\item Candidate's tweets classification module.
-\item Web Application.
-\end{itemize}
-
-\subsection{Testing Strategy}
-\subsubsection{Unit Testing}
-Unit testing has been done for all the individual modules. While doing unit testing different parameter has been considered and according to input to the system different output is recorded. After recording output of unit testing different solution are applied to pass the test. This is carried out as white box testing.
-\begin{itemize}
-\item To test candidate's tweets are fetched and stored in a CSV format.
-\item To test classification module's effectiveness and prediction of document labels.
-\item To test different classifier's accuracy.
-\item To test candidate profiles and comparison's results. Result must be shown in the form of graph.
-\item To test candidate's documents analysis occurs distributively, using resources of multiple connected nodes. 
-\end{itemize}
-
-\subsubsection{Integration Testing}
-Once unit testing is complete for individual modules, all the modules are integrated together and tested for functional correctness. While doing integration testing, developer has kept in mind few constraints which need to be achieved in order to get desired results.
-\begin{itemize}
-\item Web application requests needs to be accepted by classification module and response back with predicted document labels for candidate's tweets.
-\item Web application uses candidate's data download functionality to fetch candidate's tweets from Twitter and store it in Alluxio.
-\item Web Application retrieves candidate's analysis results and forms a column b ar graph.
-\item Candidates are compared for seven emotional categories and results are shown as a graph.
-\end{itemize}
-
-\subsubsection{Validation Testing}
-Validation testing is carried out to test the entire work flow and input validation. This is carried out as a black box testing. In this project validation testing has been conducted on different modules.
-\begin{itemize}
-\item To validate candidate's tweets in a CSV after fetching it from Twitter.
-\item To validate predicted document labels of candidate's tweets.
-\item To validate candidate's profiles and comparison results.
-\item To validate execution distribution among multiple connected nodes.
-\end{itemize}
-
-\subsubsection{System Testing}
-\begin{itemize}
-\item To test if all GUI elements are shown properly in a web interface.
-\item To test if spark application is executed atomically using web interface.
-\item To test if spark application is able to access data stored in Alluxio.
-\item To test if Kerberos is integrated into Spark and Alluxio.
-\end{itemize}
-
-\subsubsection{GUI Testing}
-Front End of the system is designed as web application, runs on local server. Data visualization is provided by High charts. \\
-Following modules needs to be tested in a web application - 
-\begin{itemize}
-\item Candidate's data downloading functionality
-\item Assessment creation and deletion
-\item Storage Analyzer
-\item Candidate's profiles
-\item Candidates comparison 
-\end{itemize}
-
-\subsubsection{High Order Testing}
-It includes carrying out performance testing by checking complete running time of document classification on multinode spark cluster.
-
-\subsection{Test Procedure}
-\subsubsection{Unit Testing}
-\begin{table}[h!]
-\centering
-\caption{Unit Test Cases}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}}               & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                       & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}                        & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & Log In                                                                           & \begin{tabular}[c]{@{}l@{}}Product Admin should\\ be able to log in for\\ correct organization\\ only.\end{tabular}                          & \begin{tabular}[c]{@{}l@{}}Username \&\\ Password\end{tabular}                            & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}View\\ Candidates\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}Product Admin should \\ be able to view all\\ candidates registered\\ for organization.\end{tabular}              & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Details\end{tabular}                             & Pass                                                                \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Create \\ Behavioral\\ Assessment\\ Test\end{tabular} & \begin{tabular}[c]{@{}l@{}}Product Admin should\\ be able to create\\ customized behavioral\\ test.\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Emotional and\\ polarity\\ categories's \\ values\end{tabular} & Pass                                                                \\ \hline
-4                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Registration\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Candidate should be\\ able to register for \\ specific organization.\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Details\end{tabular}                             & Pass                                                                \\ \hline
-5                & \begin{tabular}[c]{@{}l@{}}Manage \\ Candidate\\ Data\end{tabular}               & \begin{tabular}[c]{@{}l@{}}Product Admin should\\ be able to delete \\ candidate's records \\ and tweets stored in\\ CSV format\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate's\\ User Identifier\end{tabular}                     & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
-\subsubsection{Integration Testing}
-\begin{table}[h!]
-\centering
-\caption{Integration Test Cases}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                                                    & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}                    & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Profiling\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Product Admin\\ submits candidate's\\ tweets for profiling.\\ Emotional and polarity\\ scores must be generated\\ after analysis.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate's \\ Unique\\ Identifier\end{tabular}               & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Comparison\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Product Admin selects two\\ candidates for comparison.\\ Comparison occurs based on\\ emotional and polarity scores.\end{tabular}              & \begin{tabular}[c]{@{}l@{}}Unique User\\ identifier \\ of both candidates.\end{tabular} & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
-\newpage
-\subsubsection{Validation Testing}
-\begin{table}[h!]
-\centering
-\caption{Validation Test Cases}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}}                                 & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                                   & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}                                  & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}Candidate\\ Data\\ Validation\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Candidate's details\\ are first validated\\ against rules set.\end{tabular}                                                   & \begin{tabular}[c]{@{}l@{}}Candidate's\\ details.\end{tabular}                                      & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Candidates\\ listing for\\ Behavioral\\ Assessment\\ Tests\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidates whose\\ tweets are fetched \\ should only appear \\ in list for test.\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Twitter Data\\ Download\\ Status\end{tabular}              & Pass                                                                \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Candidate\\ listing for\\ Profiling and\\ Comparison\end{tabular}       & \begin{tabular}[c]{@{}l@{}}Candidates whose\\ tweets have been \\ analyzed should only\\ appear in list for \\ profiling and \\ comparison.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Behavioral\\ Assessment\\ Completion\\ Status\end{tabular} & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
-\newpage
-\subsubsection{System Testing}
-\begin{table}[h!]
-\centering
-\caption{System Test Cases}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case \\ Name\end{tabular}}           & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Objective\end{tabular}}                                                                                                                      & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Input\end{tabular}}             & \textbf{\begin{tabular}[c]{@{}l@{}}Test Case\\ Result\end{tabular}} \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}GUI elements\\ displayed\\ properly.\end{tabular} & \begin{tabular}[c]{@{}l@{}}To show all GUI\\ elements in Web\\ Interface properly\end{tabular}                                                                                              & Views                                                                          & Pass                                                                \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Executing\\ Spark\\ Application\end{tabular}      & \begin{tabular}[c]{@{}l@{}}Web application\\ executes Spark\\ application for tweets\\ classification into\\ emotional and polarity\\ categories.\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Unique\\ User Identifier\end{tabular} & Pass                                                                \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Alluxio data\\ access\end{tabular}                & \begin{tabular}[c]{@{}l@{}}Spark application\\ accesses tweets stored\\ in CSV format\\ from Alluxio.\end{tabular}                                                                          & \begin{tabular}[c]{@{}l@{}}Candidate's\\ Unique User\\ Identifier\end{tabular} & Pass                                                                \\ \hline
-4                & \begin{tabular}[c]{@{}l@{}}Kerberos\\ Authentication\end{tabular}            & \begin{tabular}[c]{@{}l@{}}Product Admin must be\\ authenticated first and \\ should have valid ticket, \\ before submitting\\ candidate's tweets for\\ analysis.\\ submitting\end{tabular} & \begin{tabular}[c]{@{}l@{}}Product Admin's\\ Keytab\end{tabular}               & Pass                                                                \\ \hline
-\end{tabular}
-\end{table}
 \chapter{DATA TABLES AND DISCUSSIONS} 
-\section{Kerberos Sub-System Analysis}
-\hspace{1.1cm}A client may submit only one MR job or multiple jobs at a same time. The number of communication rounds and total number of protocol messages generated for different numbers of MR-Request-Component can be calculated. As number of jobs submission increases so does the communication overhead. There are three different use cases-
-\begin{itemize}
-\item One client can submit one job for submission.
-\begin{itemize}
-\item Total number of components requesting access to MR Resource for this case-
-\begin{equation}
-1(C) + n(Comp)
-\end{equation}
-\item Total number of communication rounds from Authentication Server to MR-Request-Component-
-\begin{equation}
-2(R) + 2n(R)
-\end{equation}
-\item Total number of communication rounds from MR-Request-Component to MR-Resource-Component are-
-\begin{equation}
-1(R) + n(R)
-\end{equation}
-\item Total number of messages sent are-
-\begin{equation}
-6 + 6n
-\end{equation}
-\end{itemize}
-\item One client can submit multiple jobs for submission.
-\begin{itemize}
-\item Total number of components requesting access to MR Resource for this case-
-\begin{equation}
-1(C) + z \times n(Comp)
-\end{equation}
-\item Total number of communication rounds from Authentication Server to MR-Request-Component-
-\begin{equation}
-2(R) + z \times 2n(R)
-\end{equation}
-\item Total number of communication rounds from MR-Request-Component to MR-Resource-Component are-
-\begin{equation}
-1(R) + z \times n(R)
-\end{equation}
-\item Total number of messages sent are-
-\begin{equation}
-6 + 6n \times z
-\end{equation}
-\end{itemize}
-\item Multiple client can submit multiple jobs for submission.
-\begin{itemize}
-\item Total number of components requesting access to MR Resource for this case-
-\begin{equation}
-y(C) + y \times z \times n(Comp)
-\end{equation}
-\item Total number of communication rounds from Authentication Server to MR-Request-Component-
-\begin{equation}
-y \times 2(R) + y \times z \times 2n(R)
-\end{equation}
-\item Total number of communication rounds from MR-Request-Component to MR-Resource-Component are-
-\begin{equation}
-1(R) + y \times z \times n(R)
-\end{equation}
-\item Total number of messages sent are-
-\begin{equation}
-6y + 6y \times n \times z
-\end{equation}
-\end{itemize}
-\end{itemize}
-One Client (C) has on Job(J) with n Components (Comp) per job. One Client has z jobs with n Components (Comp) per job. y Clients, each client has z jobs with n Component (Comp) per job. 
-\par For a N number of MR components requests access to MR-Resource-Component per job,
-number of communication rounds and messages for an authentication process can be calculated as,
-\begin{itemize}
-\item For communication round from Authentication Server to MR-Request-Component Communication
-\begin{equation}
-2N \times R (2N \times Request + 2N \times Response)
-\end{equation}
-\item For communication round from MR-Request-Component to MR-Resource-Component
-\begin{equation}
-N \times R (N \times Request + N \times Response)
-\end{equation}
-\end{itemize}
-
-\section{Alluxio Storage System Performance Analysis}
-\hspace{1.1cm}For writes throughput, Alluxio outperforms MemHDFS by 110x and for reads throughput, 2x greater than MemHDFS. It's read throughput is higher than write throughput. This happens due to machine configured with optimized memory hardware, leaving more bandwidth for reads.
-\par It also improves the end-to-end latency of a realistic work flow by 4x. Introducing check-pointing algorithm guarantees recovery cost and resource allocation strategies for re-computation under resource schedulers.
-\par Alluxio architecture consists of two layers-lineage and persistence. The
-lineage layer provides high throughput I/O and tracks the sequence of jobs that have created a particular data output. The persistence layer persists data onto storage without the lineage concept.
 
 
 \chapter{CONCLUSION}
@@ -1262,68 +1099,68 @@ interaction system that provides a  natural  way to interact with computer.The h
 \chapter{FUTURE ENHANCEMENTS} 
 The research can be extended to explores the relationship between behaviors and psychological theories to determine candidate's language style or social tendencies. The system only fetches 3200 tweets of a candidate for analysis. For more precise profile deviation, more tweets should be fetched for Behavioral Analytics. 
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{20}
 
 
 
-\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, " Dual sentiment analysis: Considering  two  sides  of  one 
-review, " in IEEE transactions on knowledge and data engineering, vol. 27, no. 8, pp. 2120
+\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, `` Dual sentiment analysis: Considering  two  sides  of  one 
+review, '' in IEEE transactions on knowledge and data engineering, vol. 27, no. 8, pp. 2120
 -
 2133, Aug. 2015.
 
-  \bibitem{yahoo}S. Das and M. Chen, " Yahoo! for Amazon: Sentiment extraction from small talk on the web, " {\em Management science} , Vol.53, Issue no.9, pp.1375-1388, 2007.
+  \bibitem{yahoo}S. Das and M. Chen, `` Yahoo! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp.1375-1388, 2007.
 
   
   
-  \bibitem{pang}Pang, L. Lee, and S. Vaithyanathan, " Thumbs up?: Sentiment classification using machine learning techniques, " {\em Proceedings of the ACL-02 conference on Empirical methods in natural language processing,}
+  \bibitem{pang}Pang, L. Lee, and S. Vaithyanathan, `` Thumbs up?: Sentiment classification using machine learning techniques, '' {\em Proceedings of the ACL-02 conference on Empirical methods in natural language processing,}
   pp. 79-86, 2002.
   
-  \bibitem{pang2008}B. Pang and L. Lee, "Opinion mining and sentiment analysis," {\em Foundations
+  \bibitem{pang2008}B. Pang and L. Lee, `` Opinion mining and sentiment analysis, '' {\em Foundations
   and Trends in Information Retrieval,} vol. 2, no. 1-2, pp. 1-135, 2008.
   
-  \bibitem{xia}R. Xia, T. Wang, X. Hu, S. Li, and C. Zong, " Dual Training and Dual
-Prediction for Polarity Classification," {\em Proceedings of the Annual 
+  \bibitem{xia}R. Xia, T. Wang, X. Hu, S. Li, and C. Zong, `` Dual Training and Dual
+Prediction for Polarity Classification,'' {\em Proceedings of the Annual 
 Meeting of the Association for Computational Linguistics (ACL - 02),} pp. 521-525,
 2013.
-  \bibitem{turney}P. Turney, " Thumbs up or thumbs down? Semantic orientation applied to unsupervised classification of reviews," Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), pp. 417-424, 2002.
+  \bibitem{turney}P. Turney, `` Thumbs up or thumbs down? Semantic orientation applied to unsupervised classification of reviews, '' Proceedings of the Annual Meeting of the Association for Computational Linguistics (ACL), pp. 417-424, 2002.
 
   
-  \bibitem{contrast}M. Li and C. Huang, " Sentiment classification considering negation
-and contrast transition, " {\em Proceedings of the Pacific Asia Conference on
+  \bibitem{contrast}M. Li and C. Huang, `` Sentiment classification considering negation
+and contrast transition, '' {\em Proceedings of the Pacific Asia Conference on
 Language, Information and Computation (PACLIC),}  pp. 307-316, 2009.
 
 
-  \bibitem{Shift}Li, S. Lee, Y. Chen, C. Huang and G. Zhou, " Sentiment 
-  Classification and Polarity Shifting, " {\em Proceedings of the International Conference on
+  \bibitem{Shift}Li, S. Lee, Y. Chen, C. Huang and G. Zhou, `` Sentiment 
+  Classification and Polarity Shifting, '' {\em Proceedings of the International Conference on
   Computational Linguistics (COLING),} pp. 635-643, 2010.
   
  
   
-  \bibitem{turney1}D. Turney and Michael L. Littman, "Un-supervised learning of semantic orientation from
-a hundred-billion-word corpus. "{\em Technical Report
-EGB-1094, National Research Council Canada,}  arXiv preprint cs/0212012, 2002.
+  \bibitem{turney1}D. Turney and Michael L. Littman, `` Un-supervised learning of semantic orientation from
+a hundred-billion-word corpus. ''{\em Technical Report
+EGB-1094, National Research Council Canada,} arXiv preprint cs/0212012, 2002.
 
   \bibitem{vector}Yuan Wang, Zhaohui Li, Jie Liu, Zhicheng He, Yalou Huang and Dong Li,
- " Word Vector Modeling for Sentiment Analysis
-of Product Reviews " {\em Natural Language Processing and Chinese Computing 2014,} pp. 168-180, 2014.
+ `` Word Vector Modeling for Sentiment Analysis
+of Product Reviews '' {\em Natural Language Processing and Chinese Computing 2014,} pp. 168-180, 2014.
 
 
 \bibitem{xiaco}Xia, Rui and Wang, Cheng and Dai, Xinyu and Li, Tao, 
-" Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation "
-  {\em Association for Computational Linguistics (ACL 1),} pages 1054–1063, 2015.
+`` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation ''
+  {\em Association for Computational Linguistics (ACL 1),} pp. 1054–1063, 2015.
   
-\bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., " Effectiveness of Simple Linguistic Processing in Automatic 
-Sentiment Classification of Product Reviews "{\em Proceedings 
+\bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic Processing in Automatic 
+Sentiment Classification of Product Reviews ''{\em Proceedings 
 of the Eighth International ISKO Conference
  } pp. 49-54, 2004.
  
- \bibitem{rui22}Rui Xia, Feng Xu, Jianfei Yu, Yong Qi and Erik Cambria, " Polarity shift detection, elimination and ensemble:
-A three-stage model for document-level sentiment analysis "{\em  Information Processing \& Management 52, no. 1, } pp. 36–45, 2016
+ \bibitem{rui22}Rui Xia, Feng Xu, Jianfei Yu, Yong Qi and Erik Cambria, `` Polarity shift detection, elimination and ensemble:
+A three-stage model for document-level sentiment analysis '' {\em  Information Processing \& Management 52, no. 1, } pp. 36 - 45, 2016
 
-\bibitem{ruiEnssemble}Rui Xia, Chengqing Zong and Shoushan Li, " Ensemble of feature sets and classification algorithms
-for sentiment classification "{\em  Information Sciences 181, no. 6 } pp. 1138–1152, 2011
+\bibitem{ruiEnssemble}Rui Xia, Chengqing Zong and Shoushan Li, `` Ensemble of feature sets and classification algorithms
+for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138–1152, 2011
 
-\bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, " Information retrieval for sentiment polarity prediction, "
+\bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
 {\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
 
 \bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, " An Information Theoretic Approach to Sentiment Polarity
@@ -1339,11 +1176,19 @@ Sentiment Analysis using Machine Learning Algorithms: A Survey
 \subsection{IJIRCCE Certification}
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=4.2in]{ijarcce.png}
-\caption{IJARCCE Certificate}
+\caption{IJIRCCE Certificate}
 \end{figure}
 \section{Paper Title}
 Sentiment Analysis using Original and Reversed Reviews
+\newpage
 \subsection{cPGCON Certificate}
+
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=4.2in]{6107_certificate.jpg}
+\caption{cPGCON Certificate}
+\end{figure}
+
+
 \subsection{cPGCON Review}
 
 \chapter{DISSERTATION PLANNER}
@@ -1365,30 +1210,28 @@ T5                  & Report On Scheme of Implementation \\ \hline
 T6                  & Identification of Prerequisites and Installation \\ \hline
 T7                  & Configuring python and python package installer pip in the system \\ \hline
 T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
-T9                  & Kerberos Authentication Protocol Configuration for Hadoop and Alluxio. \\ \hline
-T10                  & Implementation Of Rubika Method of Authentication. \\ \hline
-T11                  & Preparing Web Interface For Proposed System \\ \hline
+T9                  & Studying libraries in python required for implementation \\ \hline
+T10                  & Downloading and extracting reviews from IMDb movie datasets provided for research purpose \\ \hline
+T11                  & Removing stopwords, punctuation marks, numbers etc.\\ \hline
 T12                  & Report Preparation \\ \hline
 T13                  & Dissertation Project Stage I Presentation \\ \hline
 T14                  & Document Preprocessing
  \\ \hline
-T15                  & Naive Bayes Classifier Implementation
+T15                  & Creating Bag of words model from movie reviews.
  \\ \hline
-T16                  & Candidate Behavioral Assessment Interface Implementation \\ \hline
-T17                  & Candidate Assessment Flow Implementation \\ \hline
-T18                  & Behavioral Model Construction For Candidates \\ \hline
-T19                  & Behavioral Analytics Implementation and Report Generation
+T16                  & Spliting the dataset into training and test dataset \\ \hline
+T17                  & Train machine learning classifiers using bag of words model.\\ \hline
+T18                  & Create unigram, bigram, trigram variations of model \\ \hline
+T19                  & Train machine learning classifiers using this model.
  \\ \hline
-T20                  & \begin{tabular}[c]{@{}l@{}} Apache Spark and Apache Spark on Alluxio Benchmarking \\ for Naive Bayes Classifier \end{tabular}
+T20                  & Cpgcon Paper Presentation
  \\ \hline
-T21                  & CPGCon Paper Presentation
+T21                  & Predictive Model Construction \\ \hline
+T22                  & Model Testing \\ \hline
+T23                  & Experimental results, Analysis and Validation of results \\ \hline
+T24                  &Project Review with Demonstration
  \\ \hline
-T22                  & Predictive Model Construction \\ \hline
-T23                  & Model Testing \\ \hline
-T24                  & Experimental results, Analysis and Validation of results \\ \hline
-T25                  &Project Review with Demonstration
- \\ \hline
-T26                  &Report Validation and Submission, Report Submission
+T25                  &Report Validation and Submission, Report Submission
  \\ \hline
 \end{tabular}
 \end{table}

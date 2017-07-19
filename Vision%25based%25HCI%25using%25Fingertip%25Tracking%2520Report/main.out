@@ -70,41 +70,30 @@
 \BOOKMARK [2][-]{subsection.7.14.6}{Maintainability and Changeability}{section.7.14}% 70
 \BOOKMARK [0][-]{chapter.8}{DETAILED DESIGN DOCUMENT}{}% 71
 \BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 72
-\BOOKMARK [1][-]{section.8.2}{Behavioral Modeling}{chapter.8}% 73
-\BOOKMARK [1][-]{section.8.3}{Architectural Design}{chapter.8}% 74
-\BOOKMARK [1][-]{section.8.4}{Class Design}{chapter.8}% 75
-\BOOKMARK [1][-]{section.8.5}{Component Design}{chapter.8}% 76
-\BOOKMARK [1][-]{section.8.6}{Deployment Design}{chapter.8}% 77
-\BOOKMARK [0][-]{chapter.9}{IMPLEMENTATION DETAILS}{}% 78
-\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 79
-\BOOKMARK [1][-]{section.9.2}{Algorithm}{chapter.9}% 80
-\BOOKMARK [2][-]{subsection.9.2.1}{Document Classification}{section.9.2}% 81
-\BOOKMARK [2][-]{subsection.9.2.2}{Candidate Profiling}{section.9.2}% 82
-\BOOKMARK [1][-]{section.9.3}{Modules}{chapter.9}% 83
-\BOOKMARK [2][-]{subsection.9.3.1}{Candidate's Tweets Fetched From Twitter}{section.9.3}% 84
-\BOOKMARK [2][-]{subsection.9.3.2}{Document Classification}{section.9.3}% 85
-\BOOKMARK [2][-]{subsection.9.3.3}{Web Application}{section.9.3}% 86
-\BOOKMARK [1][-]{section.9.4}{Dataset}{chapter.9}% 87
-\BOOKMARK [1][-]{section.9.5}{Snapshots}{chapter.9}% 88
-\BOOKMARK [0][-]{chapter.10}{TEST SPECIFICATION}{}% 89
-\BOOKMARK [1][-]{section.10.1}{Introduction}{chapter.10}% 90
-\BOOKMARK [2][-]{subsection.10.1.1}{Goals and Objectives}{section.10.1}% 91
-\BOOKMARK [2][-]{subsection.10.1.2}{Statement of Scope}{section.10.1}% 92
-\BOOKMARK [2][-]{subsection.10.1.3}{Major Constraints}{section.10.1}% 93
-\BOOKMARK [1][-]{section.10.2}{Test Plan}{chapter.10}% 94
-\BOOKMARK [2][-]{subsection.10.2.1}{Modules to be Tested}{section.10.2}% 95
-\BOOKMARK [2][-]{subsection.10.2.2}{Testing Strategy}{section.10.2}% 96
-\BOOKMARK [2][-]{subsection.10.2.3}{Test Procedure}{section.10.2}% 97
-\BOOKMARK [0][-]{chapter.11}{DATA TABLES AND DISCUSSIONS}{}% 98
-\BOOKMARK [1][-]{section.11.1}{Kerberos Sub-System Analysis}{chapter.11}% 99
-\BOOKMARK [1][-]{section.11.2}{Alluxio Storage System Performance Analysis}{chapter.11}% 100
-\BOOKMARK [0][-]{chapter.12}{CONCLUSION}{}% 101
-\BOOKMARK [0][-]{chapter.13}{FUTURE ENHANCEMENTS}{}% 102
-\BOOKMARK [0][-]{chapter.14}{REFERENCES}{}% 103
-\BOOKMARK [0][-]{appendix.A}{PAPERS PUBLISHED}{}% 104
-\BOOKMARK [1][-]{section.A.1}{Paper Title}{appendix.A}% 105
-\BOOKMARK [2][-]{subsection.A.1.1}{IJIRCCE Certification}{section.A.1}% 106
-\BOOKMARK [1][-]{section.A.2}{Paper Title}{appendix.A}% 107
-\BOOKMARK [2][-]{subsection.A.2.1}{cPGCON Certificate}{section.A.2}% 108
-\BOOKMARK [2][-]{subsection.A.2.2}{cPGCON Review}{section.A.2}% 109
-\BOOKMARK [0][-]{appendix.B}{DISSERTATION PLANNER}{}% 110
+\BOOKMARK [1][-]{section.8.2}{Architectural Design}{chapter.8}% 73
+\BOOKMARK [1][-]{section.8.3}{Class Design}{chapter.8}% 74
+\BOOKMARK [1][-]{section.8.4}{Component Design}{chapter.8}% 75
+\BOOKMARK [1][-]{section.8.5}{Deployment Design}{chapter.8}% 76
+\BOOKMARK [0][-]{chapter.9}{IMPLEMENTATION DETAILS}{}% 77
+\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 78
+\BOOKMARK [1][-]{section.9.2}{Algorithm}{chapter.9}% 79
+\BOOKMARK [2][-]{subsection.9.2.1}{Document Classification}{section.9.2}% 80
+\BOOKMARK [2][-]{subsection.9.2.2}{Candidate Profiling}{section.9.2}% 81
+\BOOKMARK [1][-]{section.9.3}{Modules}{chapter.9}% 82
+\BOOKMARK [2][-]{subsection.9.3.1}{Candidate's Tweets Fetched From Twitter}{section.9.3}% 83
+\BOOKMARK [2][-]{subsection.9.3.2}{Document Classification}{section.9.3}% 84
+\BOOKMARK [2][-]{subsection.9.3.3}{Web Application}{section.9.3}% 85
+\BOOKMARK [1][-]{section.9.4}{Dataset}{chapter.9}% 86
+\BOOKMARK [1][-]{section.9.5}{Snapshots}{chapter.9}% 87
+\BOOKMARK [0][-]{chapter.10}{TEST SPECIFICATION}{}% 88
+\BOOKMARK [0][-]{chapter.11}{DATA TABLES AND DISCUSSIONS}{}% 89
+\BOOKMARK [0][-]{chapter.12}{CONCLUSION}{}% 90
+\BOOKMARK [0][-]{chapter.13}{FUTURE ENHANCEMENTS}{}% 91
+\BOOKMARK [0][-]{chapter.14}{REFERENCES}{}% 92
+\BOOKMARK [0][-]{appendix.A}{PAPERS PUBLISHED}{}% 93
+\BOOKMARK [1][-]{section.A.1}{Paper Title}{appendix.A}% 94
+\BOOKMARK [2][-]{subsection.A.1.1}{IJIRCCE Certification}{section.A.1}% 95
+\BOOKMARK [1][-]{section.A.2}{Paper Title}{appendix.A}% 96
+\BOOKMARK [2][-]{subsection.A.2.1}{cPGCON Certificate}{section.A.2}% 97
+\BOOKMARK [2][-]{subsection.A.2.2}{cPGCON Review}{section.A.2}% 98
+\BOOKMARK [0][-]{appendix.B}{DISSERTATION PLANNER}{}% 99
