@@ -38,7 +38,7 @@ ax.set_xticks(ind + width)
 ax.set_xticklabels(('Unigram', 'Bigram', 'trigram'))
 plt.ylim([75,85])
 
-ax.legend((rects1[0], rects2[0], rects3[0],rects4[0]), ('Naive Bayes', 'SVM', 'ME', 'Ensemble'))
+ax.legend((rects1[0], rects2[0], rects3[0],rects4[0]), ('Naive Bayes', 'SVM', 'ME', 'Proposed'))
 
 
 def autolabel(rects):

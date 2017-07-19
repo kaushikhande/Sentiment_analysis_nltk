@@ -644,9 +644,9 @@ Major tasks in the Dissertation stages are -
 					\end{enumerate}
 				Task 3 : Implementation
 				\begin{enumerate}
-						\item GUI Implementation
-						\item MongoDB Implementation
-						\item Cloud Installation
+						\item Import dataset
+						\item Classifier implementation
+						\item Comparison using graphs
 					\end{enumerate}
 				Task 4 : Testing
 					\begin{enumerate}
@@ -834,12 +834,13 @@ Table 7.1 gives Use Cases for system to be developed.
 \caption{Use Case : Overall System}
 \end{figure}
 \newpage
-\section{Behavioral Model and Description}
+\section{Model and Description}
 This section contains details about events and associated behaviour of the system which is shown using diagram below.
 
 \subsection{Activity Diagram}
 Activity diagram is a flow chart to represent the flow form one activity to another activity. The activity can be described as an operation of the system. The control flow is drawn from one operation to another. This flow can be sequential, branched or concurrent. The purpose of activity diagrams is to capture the dynamic behaviour of the system.\\\\
-\textbf{Description} : As shown in figure 7.6, Product Administrator downloads candidate's tweets from Twitter for analysis. Tweets are stored in a CSV format in Alluxio data storage. For analysis to take place, candidate's download status is check. If it is true, load candidate's CSV file and proceed with analysis else download candidate's tweets. For document classification, initially model existence is checked. If it exists, then load model for document classification else proceed with training phase. The training phase consists of document preprocessing, feature extraction and saving model in Alluxio. Classifier uses this trained model for document classification. Candidates are profiled and compared based on their document classified into emotional and polarity categories.
+\textbf{Description} : As shown in figure 8.6, User downloads movie dataset. This dataset is added for processing using csv import 
+library. Documents are preprocessed to remove stopwords and reviews are converted into matrix. Classifiers are trained after feature extraction. This trained classifiers are used on test dataset to classify.
 \begin{figure}[h!]
 \begin{center}
  
@@ -855,23 +856,31 @@ This section describes data flow diagrams (DFD) of the proposed system. There ar
 
 \subsection{Data Flow Diagram}
 \subsubsection{Level 0 Data Flow Diagram}
-In the level 0 DFD as shown in figure 7.7, Candidates registers into Behavioral Assessment System. System performs analysis and generates reports for a registered candidate. They are displayed to Product Admin.\\
+In the level 0 DFD as shown in figure 7.7, Downloaded reviews are loaded in sentiment analysis system. The sytem analyzes and presents report
+through charts to user\\
 \begin{figure}[h!]
-\includegraphics[width=4.5in]{DFD-0.jpg}
+\begin{center}
+ 
+
+
+\includegraphics[width=4.5in]{level_0.png}
 \caption{Level 0 DFD}
+\end{center}
 \end{figure}
 
 \subsubsection{Level 1 Data Flow Diagram}
-In the level 1 DFD as shown in figure 7.8, Candidate's tweets are fetched from Twitter by Product Admin using Web Interface. Tweets are stored in Alluxio for storage. They are retrieved by Web Application modules for analysis and report generation.\\
+In the level 1 DFD as shown in figure 7.8, Reviews are loaded through csv file loader. Data is preprocessed and model is created.
+Analysis done by the system is given to the user.\\
 \begin{figure}[h!]
-\includegraphics[width=4.5in]{DFD-1.jpg}
+\includegraphics[width=4.5in]{level_1.png}
 \caption{Level 1 DFD}
 \end{figure}
 
 \subsubsection{Level 2 Data Flow Diagram}
-In the level 2 DFD as shown in figure 7.9, Candidate's tweets are retrieved from Alluxio Data Storage and preprocessed. Features are extracted for Classification. It classifies tweets of a candidate to emotional and polarity categories. Candidate are profiled and compared based on these categories. Profile and comparison results are displayed to Product Admin using Web Interface.\\
+In the level 2 DFD as shown in figure 7.9, Reviews are preprocessed to give bag of words features. Classifiers are trained using this model. Classification is 
+performed on the test dataset. Detailed analysis of results obtained by classifiers is done. It is provided to the user.\\
 \begin{figure}[h!]
-\includegraphics[width=4.5in]{DFD-2.jpg}
+\includegraphics[width=4.5in]{level_2.png}
 \caption{Level 2 DFD}
 \end{figure}
 \\
@@ -1094,6 +1103,25 @@ Negative          & 1000                      \\ \hline
 
 \section{Snapshots}
 
+
+\begin{figure}[!h]
+\includegraphics[width=6.0in,height=4.0in]{screenshot2.png}
+\caption{Sample matrix creation with word counts}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[width=6.0in,height=4.0in]{screenshot3.png}
+\caption{Sample matrix creation with tf-idf}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[width=6.0in,height=4.0in]{screenshot1.png}
+\caption{Review classification with negative and positive percentages}
+\end{figure}
+
+
+
+
 \chapter{TEST SPECIFICATION}
 
 \chapter{DATA TABLES AND DISCUSSIONS} 
@@ -1202,7 +1230,7 @@ Sentiment Analysis using Original and Reversed Reviews
 \caption{cPGCON Certificate}
 \end{figure}
 
-
+\newpage
 \subsection{cPGCON Review}
 
 \chapter{DISSERTATION PLANNER}
