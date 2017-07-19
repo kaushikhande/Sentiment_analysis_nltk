@@ -699,11 +699,11 @@ The responsibilities of a developer includes gathering of information about the 
 System builds classifier models for classification of reviews. Different functionality of the system are : 
 
 \begin{itemize}
-\item Candidate Registration - It shows a registration page that candidate uses to registers for one of the organizations.
-\item Candidate Data Downloading - It allows a Product Admin to download candidate's tweets from Twitter.
-\item Candidate Profiling - Profiles are formed for specific candidate after analyzing tweets in the form of column graph. It shows percentage of emotional and polarity categories scores. Scores are shown year-wise, month-wise and day-wise.
-\item Candidate Comparison - It allows Product Admin to compare two candidates with respect to their emotional and polarity scores achieved. Comparison graphs of candidates are shown year-wise, month-wise and day-wise.
-\item Managing Candidate's Details and Data - It allows Product Admin to delete candidate's data or details or both.
+\item Review loader : It loads the reviews into python environment.
+\item Stopwords remover : It removes the stopwords like the words is, a, an, the, was, were etc.
+\item Vectorizer : It converts the reviews into matrix of rows and columns where columns represents the words
+and rows represents each reviews. Presence of particular word in a review is shown by the values in the columns.
+\item Classifier : It classifies the reviews into positive and negative review.
 \end{itemize}
 \section{Hardware Resources Used}
 \subsection{Software Requirements}
@@ -933,9 +933,8 @@ Figure 7.1 shows architectural design of proposed system. Following are importan
 \end{itemize}
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
-\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying candidate's tweets takes user identifier of candidate and candidate's CSV location in Alluxio as an input. Product Administrator fetches candidate's tweets from Twitter in a CSV format and store the file in Alluxio. Candidate's CSV file location is saved into database for further processing. After document classification, candidates can be profiled and compared based on their emotional and polarity categories. For both modules, results are displayed by year, month and day.
-\begin{figure}[h!]
-\includegraphics[width=4.5in,height=4.0in]{Class.jpg}
+\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying 
+\includegraphics[width=4.5in,height=4.0in]{Sentiment_Analysis_class_diagram.png
 \caption{Class Diagram}
 \end{figure}
 \newpage
@@ -1068,28 +1067,12 @@ Registration – It allows a candidate to register himself/herself to a certain 
 \end{itemize}
 
 \section{Dataset}
-\hspace{1.1cm}Dataset comprises of tweets from Twitter. It has to be collected for every candidate that needs to be assessed for behavioural assessment. There is significant latency and load on server in fetching such information of candidate using Twitter API.
-\par After the dataset is collected, it needs to be stored in underFS storage layer. Movement of huge dataset to storage layer requires additional I/O writes and communication overhead. But, by using proposed system, writes operation to storage layer is significantly lesser.
-\par For document classification, a training and testing dataset is required. Training records for emotional and polarity categories are mentioned in Table 9.1 and 9.2.
+\hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets. It contains 1,000 positive and 1,000 negative movie reviews from IMDB, so it is now considered too small for serious research and development purposes. However, the text is similar to movies reviews on IMDB today.
+
+\par The file movie-pang02.zip contains a copy of Pang and Lee's Movie Review Data in a csv format that can be imported directly in python. It has two categories: Pos (reviews that express a positive or favorable sentiment) and Neg (reviews that express a negative or unfavorable sentiment). For this assignment, we will assume that all reviews are either positive or negative; there are no neutral reviews. 
+\par For document classification, a training and testing dataset is required. Training records for polarity categories are mentioned in Table 9.1
 
 \renewcommand{\arraystretch}{1.5}
-\begin{table}[h!]
-\centering
-\caption{Emotional Training Dataset}
-\label{my-label}
-\begin{tabular}{|l|l|}
-\hline
-\textbf{Emotion Category} & \textbf{Training Records} \\ \hline
-Anger                     & 1572                      \\ \hline
-Joy                       & 8276                      \\ \hline
-Disgust                   & 761                       \\ \hline
-Love                      & 216                       \\ \hline
-Sadness                   & 3853                      \\ \hline
-Surprise                  & 3912                      \\ \hline
-Fear                      & 2839                      \\ \hline
-\textbf{Total}            & \textbf{21429}            \\ \hline
-\end{tabular}
-\end{table}
 
 \begin{table}[h!]
 \centering
@@ -1098,10 +1081,10 @@ Fear                      & 2839                      \\ \hline
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Polarity} & \textbf{Training Records} \\ \hline
-Positive          & 2007                      \\ \hline
-Negative          & 4783                      \\ \hline
-Disgust           & 2007                      \\ \hline
-\textbf{Total}    & \textbf{8797}             \\ \hline
+Positive          & 1000                      \\ \hline
+Negative          & 1000                      \\ \hline
+
+\textbf{Total}    & \textbf{2000}             \\ \hline
 \end{tabular}
 \end{table}
 
@@ -1384,7 +1367,7 @@ of Product Reviews '' {\em Natural Language Processing and Chinese Computing 201
 
 \bibitem{xiaco}Xia, Rui and Wang, Cheng and Dai, Xinyu and Li, Tao, 
 `` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation ''
-  {\em Association for Computational Linguistics (ACL 1),} pages 1054–1063, 2015.
+  {\em Association for Computational Linguistics (ACL 1),} pp. 1054–1063, 2015.
   
 \bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic Processing in Automatic 
 Sentiment Classification of Product Reviews ''{\em Proceedings 
