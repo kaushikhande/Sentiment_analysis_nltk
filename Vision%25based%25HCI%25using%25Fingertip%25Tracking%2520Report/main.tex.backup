@@ -883,7 +883,15 @@ performed on the test dataset. Detailed analysis of results obtained by classifi
 \includegraphics[width=4.5in]{level_2.png}
 \caption{Level 2 DFD}
 \end{figure}
-\\
+
+\subsection{Sequence Diagram}
+\begin{figure}[h!]
+\includegraphics[width=5.0in,height=5.0in]{sequence.png}
+\caption{Sequence Diagram}
+\end{figure}
+
+
+
 \section{Non-Functional Requirements}
 \subsection{Availability}
 Required libraries must be installed and loaded in the python environment with the required configurations. Dataset must be downloaded from specified url \cite{dataset}.
@@ -971,43 +979,27 @@ This section describes implementation of the system, required libraries and depe
 \section{Algorithm}
 \subsection{Document Classification}
 
-\textbf{Input} : Candidate's CSV file and Unique Identifier. \\
-\textbf{Output} : Candidate's tweets classified into emotional and polarity categories. \\\\
-Initialize numFeatures to 10000 \\
-Initialize emotionalTrainingDataPath to /emotion-training \\  
-Initialize polarityTrainingDataPath to /polarity-training \\
-Initialize emotionModel to /emotion-model \\
-Initialize polarityModel to /polarity-model \\
-Input candidateCSVLocation \\
-Input candidateUserId \\\\
-If  emotionModel exists
-    \par load emotionModel\\
-Else
-    \par load Category Data from emotionalTrainingDataPath
-	\par transform Category Data using Hashing Transform for numFeatures
-	\par attach label to Category Data
-	\par save emotionModel to /emotion-model
-	\par load emotionModel from /emotion-model\\
-If  polarityModel exists
-	\par load polarityModel \\
-Else
-	\par load Category Data from polarityTrainingDataPath
-	\par transform Category Data using Hashing Transform for numFeatures
-	\par attach label to Category Data
-	\par save polarityModel to /polarity-model
-	\par load polarityModel from /polarity-model\\
-Read CSV file from candidateCSVLocation\\
-While CSV file contains some rows
-	\par Read Columns from CSV file
-	\par Column 0 contains 'Date'
-	\par Column 1 contains 'Actual Tweet'
-	\par Split Column 0 into year, month and day
-	\par Transform Column 1 using Hashing Transform for numFeatures
-	\par Classify Column 1 with respect to emotionModel and get emotionLabel
-	\par Save emotionLabel into database with year, month and day
-	\par Classify Column 1 with respect to polarityModel and get polarityLabel
-	\par Save polarityLabel into database with year, month and day
+\textbf{Input} : Movie review dataset in .csv file format \\
+\textbf{Output} : Polarity classification \\
 
+\begin{enumerate}
+\item Initialize review\_data list to empty
+\item Initialize review\_label list to empty
+\item Read csv file
+\item Put first column of each row in csv in review\_data
+\item Put second column of each row in csv in review\_label
+\item Specify ngram range i.e. unigram, bigram or trigram
+\item Fit the review\_data into matrix form using countvectorizer
+which stores counts of each word in a review.
+\item Transform review\_data to tfidf using tfidftransformer.
+\item Split review\_data and review\_label into review\_train, 
+label\_train, review\_test and label\_test
+\item Give review\_train and label\_train
+\item Third level, enumerate, second item
+\item Third level, enumerate, second item
+\item Third level, enumerate, second item
+\item Third level, enumerate, second item
+\end{enumerate}
 \subsection{Candidate Profiling}
 \textbf{Input} : Candidate's User Identifier.\\
 \textbf{Output} : Candidate Profiles\\\\
@@ -1172,8 +1164,23 @@ Maximum Entropy          & 77.59  & 79.52 & 77.30 & 77.09 \\ \hline
 \end{tabular}
 \end{table}
 
+\vspace{5mm}
+\par The above Table 11.1, Table 11.2, Table 11.3 shows accuracy, precision, recall and f-measure
+of three different classifiers. Three different features are used as features.
+First table shows results with unigram features i.e. each words is considered separate features.
+Second table shows results with bigram features i.e. 2 words together are considered as features.
+Third table shows results with trigram features i.e. 3 words combine are considered as features.
 
-\par The above Table 11.1, Table 11.2, Table 11.3
+\vspace{5mm}
+\newpage
+\par Below fig. 11.1 shows comparison of accuracy scores shown in Table 11.1, Table 11.2, Table 11.3 .
+
+\begin{figure}[!h]
+\includegraphics[width=5.0in,height=4.0in]{Comparison.png}
+\caption{Classifiers accuracy score comparison}
+\end{figure}
+
+
 
 
 \chapter{CONCLUSION}

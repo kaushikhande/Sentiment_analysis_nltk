@@ -61,39 +61,35 @@
 \BOOKMARK [2][-]{subsection.7.12.1}{Activity Diagram}{section.7.12}% 61
 \BOOKMARK [1][-]{section.7.13}{Functional Model and Description}{chapter.7}% 62
 \BOOKMARK [2][-]{subsection.7.13.1}{Data Flow Diagram}{section.7.13}% 63
-\BOOKMARK [1][-]{section.7.14}{Non-Functional Requirements}{chapter.7}% 64
-\BOOKMARK [2][-]{subsection.7.14.1}{Availability}{section.7.14}% 65
-\BOOKMARK [2][-]{subsection.7.14.2}{Scalability}{section.7.14}% 66
-\BOOKMARK [2][-]{subsection.7.14.3}{Performance}{section.7.14}% 67
-\BOOKMARK [2][-]{subsection.7.14.4}{Usability}{section.7.14}% 68
-\BOOKMARK [2][-]{subsection.7.14.5}{Reliability}{section.7.14}% 69
-\BOOKMARK [2][-]{subsection.7.14.6}{Maintainability and Changeability}{section.7.14}% 70
-\BOOKMARK [0][-]{chapter.8}{DETAILED DESIGN DOCUMENT}{}% 71
-\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 72
-\BOOKMARK [1][-]{section.8.2}{Architectural Design}{chapter.8}% 73
-\BOOKMARK [1][-]{section.8.3}{Class Design}{chapter.8}% 74
-\BOOKMARK [1][-]{section.8.4}{Component Design}{chapter.8}% 75
-\BOOKMARK [1][-]{section.8.5}{Deployment Design}{chapter.8}% 76
-\BOOKMARK [0][-]{chapter.9}{IMPLEMENTATION DETAILS}{}% 77
-\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 78
-\BOOKMARK [1][-]{section.9.2}{Algorithm}{chapter.9}% 79
-\BOOKMARK [2][-]{subsection.9.2.1}{Document Classification}{section.9.2}% 80
-\BOOKMARK [2][-]{subsection.9.2.2}{Candidate Profiling}{section.9.2}% 81
-\BOOKMARK [1][-]{section.9.3}{Modules}{chapter.9}% 82
-\BOOKMARK [2][-]{subsection.9.3.1}{Candidate's Tweets Fetched From Twitter}{section.9.3}% 83
-\BOOKMARK [2][-]{subsection.9.3.2}{Document Classification}{section.9.3}% 84
-\BOOKMARK [2][-]{subsection.9.3.3}{Web Application}{section.9.3}% 85
-\BOOKMARK [1][-]{section.9.4}{Dataset}{chapter.9}% 86
-\BOOKMARK [1][-]{section.9.5}{Snapshots}{chapter.9}% 87
-\BOOKMARK [0][-]{chapter.10}{TEST SPECIFICATION}{}% 88
-\BOOKMARK [0][-]{chapter.11}{DATA TABLES AND DISCUSSIONS}{}% 89
-\BOOKMARK [0][-]{chapter.12}{CONCLUSION}{}% 90
-\BOOKMARK [0][-]{chapter.13}{FUTURE ENHANCEMENTS}{}% 91
-\BOOKMARK [0][-]{chapter.14}{REFERENCES}{}% 92
-\BOOKMARK [0][-]{appendix.A}{PAPERS PUBLISHED}{}% 93
-\BOOKMARK [1][-]{section.A.1}{Paper Title}{appendix.A}% 94
-\BOOKMARK [2][-]{subsection.A.1.1}{IJIRCCE Certification}{section.A.1}% 95
-\BOOKMARK [1][-]{section.A.2}{Paper Title}{appendix.A}% 96
-\BOOKMARK [2][-]{subsection.A.2.1}{cPGCON Certificate}{section.A.2}% 97
-\BOOKMARK [2][-]{subsection.A.2.2}{cPGCON Review}{section.A.2}% 98
-\BOOKMARK [0][-]{appendix.B}{DISSERTATION PLANNER}{}% 99
+\BOOKMARK [2][-]{subsection.7.13.2}{Sequence Diagram}{section.7.13}% 64
+\BOOKMARK [1][-]{section.7.14}{Non-Functional Requirements}{chapter.7}% 65
+\BOOKMARK [2][-]{subsection.7.14.1}{Availability}{section.7.14}% 66
+\BOOKMARK [2][-]{subsection.7.14.2}{Scalability}{section.7.14}% 67
+\BOOKMARK [2][-]{subsection.7.14.3}{Performance}{section.7.14}% 68
+\BOOKMARK [2][-]{subsection.7.14.4}{Usability}{section.7.14}% 69
+\BOOKMARK [2][-]{subsection.7.14.5}{Reliability}{section.7.14}% 70
+\BOOKMARK [2][-]{subsection.7.14.6}{Maintainability and Changeability}{section.7.14}% 71
+\BOOKMARK [0][-]{chapter.8}{DETAILED DESIGN DOCUMENT}{}% 72
+\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 73
+\BOOKMARK [1][-]{section.8.2}{Architectural Design}{chapter.8}% 74
+\BOOKMARK [1][-]{section.8.3}{Class Design}{chapter.8}% 75
+\BOOKMARK [1][-]{section.8.4}{Component Design}{chapter.8}% 76
+\BOOKMARK [1][-]{section.8.5}{Deployment Design}{chapter.8}% 77
+\BOOKMARK [0][-]{chapter.9}{IMPLEMENTATION DETAILS}{}% 78
+\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 79
+\BOOKMARK [1][-]{section.9.2}{Algorithm}{chapter.9}% 80
+\BOOKMARK [2][-]{subsection.9.2.1}{Document Classification}{section.9.2}% 81
+\BOOKMARK [1][-]{section.9.3}{Dataset}{chapter.9}% 82
+\BOOKMARK [1][-]{section.9.4}{Snapshots}{chapter.9}% 83
+\BOOKMARK [0][-]{chapter.10}{TEST SPECIFICATION}{}% 84
+\BOOKMARK [0][-]{chapter.11}{DATA TABLES AND DISCUSSIONS}{}% 85
+\BOOKMARK [0][-]{chapter.12}{CONCLUSION}{}% 86
+\BOOKMARK [0][-]{chapter.13}{FUTURE ENHANCEMENTS}{}% 87
+\BOOKMARK [0][-]{chapter.14}{REFERENCES}{}% 88
+\BOOKMARK [0][-]{appendix.A}{PAPERS PUBLISHED}{}% 89
+\BOOKMARK [1][-]{section.A.1}{Paper Title}{appendix.A}% 90
+\BOOKMARK [2][-]{subsection.A.1.1}{IJIRCCE Certification}{section.A.1}% 91
+\BOOKMARK [1][-]{section.A.2}{Paper Title}{appendix.A}% 92
+\BOOKMARK [2][-]{subsection.A.2.1}{cPGCON Certificate}{section.A.2}% 93
+\BOOKMARK [2][-]{subsection.A.2.2}{cPGCON Review}{section.A.2}% 94
+\BOOKMARK [0][-]{appendix.B}{DISSERTATION PLANNER}{}% 95

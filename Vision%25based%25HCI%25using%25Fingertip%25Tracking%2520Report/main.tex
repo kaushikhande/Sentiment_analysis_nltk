@@ -883,7 +883,15 @@ performed on the test dataset. Detailed analysis of results obtained by classifi
 \includegraphics[width=4.5in]{level_2.png}
 \caption{Level 2 DFD}
 \end{figure}
-\\
+
+\subsection{Sequence Diagram}
+\begin{figure}[h!]
+\includegraphics[width=5.0in,height=5.0in]{sequence.png}
+\caption{Sequence Diagram}
+\end{figure}
+
+
+
 \section{Non-Functional Requirements}
 \subsection{Availability}
 Required libraries must be installed and loaded in the python environment with the required configurations. Dataset must be downloaded from specified url \cite{dataset}.
@@ -971,114 +979,28 @@ This section describes implementation of the system, required libraries and depe
 \section{Algorithm}
 \subsection{Document Classification}
 
-\textbf{Input} : Candidate's CSV file and Unique Identifier. \\
-\textbf{Output} : Candidate's tweets classified into emotional and polarity categories. \\\\
-Initialize numFeatures to 10000 \\
-Initialize emotionalTrainingDataPath to /emotion-training \\  
-Initialize polarityTrainingDataPath to /polarity-training \\
-Initialize emotionModel to /emotion-model \\
-Initialize polarityModel to /polarity-model \\
-Input candidateCSVLocation \\
-Input candidateUserId \\\\
-If  emotionModel exists
-    \par load emotionModel\\
-Else
-    \par load Category Data from emotionalTrainingDataPath
-	\par transform Category Data using Hashing Transform for numFeatures
-	\par attach label to Category Data
-	\par save emotionModel to /emotion-model
-	\par load emotionModel from /emotion-model\\
-If  polarityModel exists
-	\par load polarityModel \\
-Else
-	\par load Category Data from polarityTrainingDataPath
-	\par transform Category Data using Hashing Transform for numFeatures
-	\par attach label to Category Data
-	\par save polarityModel to /polarity-model
-	\par load polarityModel from /polarity-model\\
-Read CSV file from candidateCSVLocation\\
-While CSV file contains some rows
-	\par Read Columns from CSV file
-	\par Column 0 contains 'Date'
-	\par Column 1 contains 'Actual Tweet'
-	\par Split Column 0 into year, month and day
-	\par Transform Column 1 using Hashing Transform for numFeatures
-	\par Classify Column 1 with respect to emotionModel and get emotionLabel
-	\par Save emotionLabel into database with year, month and day
-	\par Classify Column 1 with respect to polarityModel and get polarityLabel
-	\par Save polarityLabel into database with year, month and day
+\textbf{Input} : Movie review dataset in .csv file format \\
+\textbf{Output} : Polarity classification \\
 
-\subsection{Candidate Profiling}
-\textbf{Input} : Candidate's User Identifier.\\
-\textbf{Output} : Candidate Profiles\\\\
-Input Candidate's User Identifier.\\
-Retrieve years from Database based on UserId\\
-Retrieve months from Database based on UserId\\
-Retrieve days from Database based on UserId\\\\
-\textbf{Calculate Percentage of Categories for all years}\\
-Retrieve emotionsValues from Database based on UserId for all years\\
-Retrieve polarityValues from Database based on UserId for all years\\\\
-While candidate has emotion category and value in a year
-	\par Calculate Total number of documents in a year
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category\\
-While candidate has polarity category and value in a year
-	\par Calculate Total number of documents in a year
-	\par Calculate Total number of document for a specific category for a year
-	\par Calculate Percentage for a specific category for a year\\\\
-\textbf{Calculate Percentage of Categories for all months}\\
-Retrieve emotionsValues from Database based on UserId for all months group by years\\
-Retrieve polarityValues from Database based on UserId for all months group by years\\\\
-While candidate has emotion category and value in a month for specific year
-	\par Calculate Total number of documents in a month
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category for a month\\
-While candidate has polarity category and value in a month for specific year
-	\par Calculate Total number of documents in a month
-	\par Calculate Total number of document for a specific category for a year
-	\par Calculate Percentage for a specific category for a month\\\\
-\textbf{Calculate Percentage of Categories for all days}\\\\
-Retrieve emotionsValues from Database based on UserId for all days in a month for a specific year\\
-Retrieve polarityValues from Database based on UserId for all days in a month for a specific year\\\\
-While candidate has emotion category and value for all days in a month for specific year
-	\par Calculate Total number of documents in a day
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category for a day\\
-While candidate has polarity category and value for all days in a month for specific year
-	\par Calculate Total number of documents in a day
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category for a day
-\section{Modules}
-\subsection{Candidate's Tweets Fetched From Twitter}
-\begin{itemize}
-\item This modules retrieves candidate's tweets from Twitter. Input to module is candidate's screen name. 
-\item Every user in twitter has unique screen name which can be used to retrieve his/her tweets using Twitter APIs and OAuth. 
-\item OAuth 2 is an authorization framework that enables application to obtain limited access to user accounts on an HTTP service such as Facebook and Twitter. 
-\item A Twitter application is created, python module connects to Twitter application using consumer secret key and consumer key. Twitter application also generates access key and access secret key which decides validity of tweets access. Tweets are fetch and store it in CSV format. 
-\item The CSV file of every candidate is pushed to Alluxio storage system. Python's Tweepy library is used for implementation of this module. 
-\item A Product Administrator uses candidate data downloading functionality to trigger this module giving candidate's screen name as an input.
-\end{itemize}
-\subsection{Document Classification}
-\begin{itemize}
-\item This module takes candidate's CSV location in Alluxio and unique identifier as an input. 
-\item This module is written in Scala and executes as an spark job on multi-node spark cluster. This means, spark job uses resources of multiple connected nodes for faster processing. 
-\item Alluxio is memory centric distributed storage system that provides candidate's CSV file to spark job. Spark's Machine Learning library is used for  implementation of Naive Bayes Classifier. 
-\item Initially, model is trained by training dataset that consists of emotional categories of 21429 records and polarity categories of 8797 records. Both models are saved to and loaded from Alluxio. 
-\item Every candidate's tweet is classified into one of the emotional and polarity categories. A database insertion operation push classified documents along with user identifier to MySQL.
-\end{itemize}
-
-\subsection{Web Application}
-Web application is designed and built in Laravel PHP 5.4. High charts is used for showing candidate results in the form of column graphs. There are different modules in web application - 
-\begin{itemize}
-\item Candidate Profiling : Module shows each candidate's emotional and polarity categories percentage year-wise, month-wise and day-wise.
-\item Candidate Comparison : Two candidates are compared by emotional and polarity categories percentage. Results are shown year-wise, month-wise and day-wise.
-\item Candidate Data Downloading Functionality : It enables product administrator to download tweets of a certain candidate. It uses Process component of Symphony to execute python script that fetches tweets from Twitter.
-\item Storage Analyzer : It shows storage space used by candidate's CSV files, training and testing dataset and saved trained models in Alluxio. Alluxio's local file system commands are used to retrieve space occupied. 
-Registration – It allows a candidate to register himself/herself to a certain organization. 
-\item Assessment creation and deletion : Assessments are created, deleted and updated by product administrator. 
-\end{itemize}
-
-\section{Dataset}
+\begin{enumerate}
+\item Initialize review\_data list to empty
+\item Initialize review\_label list to empty
+\item Read csv file
+\item Put first column of each row in csv in review\_data
+\item Put second column of each row in csv in review\_label
+\item Specify ngram range i.e. unigram, bigram or trigram
+\item Fit the review\_data into matrix form using countvectorizer
+which stores counts of each word in a review.
+\item Transform review\_data to tfidf using tfidftransformer.
+\item Split review\_data and review\_label into review\_train, 
+label\_train, review\_test and label\_test
+\item Give review\_train and label\_train as input to the classifier
+and store learned model in classifier variable.
+\item Apply review\_test on classifier model with predict method
+and take predicted labels output in predicted variable
+\item Compare label\_test with predicted vaiable label values
+\item Print the confusion matrix
+\end{enumerate}\section{Dataset}
 \hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets. It contains 1,000 positive and 1,000 negative movie reviews from IMDB, so it is now considered too small for serious research and development purposes. However, the text is similar to movies reviews on IMDB today.
 
 \par The file movie-pang02.zip contains a copy of Pang and Lee's Movie Review Data in a csv format that can be imported directly in python. It has two categories: Pos (reviews that express a positive or favorable sentiment) and Neg (reviews that express a negative or unfavorable sentiment). For this assignment, we will assume that all reviews are either positive or negative; there are no neutral reviews. 
