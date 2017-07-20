@@ -129,8 +129,8 @@ Prof. A. G. Phakatkar
 
 \section{Problem Statement}
 \label{sec:problem_def}
-"To make use of the original and reversed review samples in pairs for training a
-statistical classifier and make predictions."
+`` To make use of the original and reversed review samples in pairs for training a
+statistical classifier and make predictions.''
 
 \section{Objectives}
 \begin{itemize}
@@ -240,7 +240,7 @@ Natural language processing, machine learning, sentiment analysis, opinion minin
 is also known as opinion mining, it involves studing of people’s sentiments towards 
 certain entities. Internet is a resourceful place with respect to sentiment information. From a
 perspective of a user, people are able to express their views through various social media,
-such as forums, micro-blogs, or online social networking sites.
+such as forums, micro-blogs, or online social networking sites \cite{pang2008}.
 
 \par With the advent of Web 2.0 techniques,
 users started prefering to share their opinions on the Web. These user-generated and 
@@ -270,15 +270,15 @@ their products and services are perceived by the public.
 both supervised and 
 semi supervised sentiment
 classification is known as the bag-of-words (BOW)
-model, which is difficult to meet the requirements
+model \cite{pang}, which is difficult to meet the requirements
 for understanding the review text and dealing with
 complex linguistic structures such as negation. For
 example, the BOW representations of two opposite
 reviews ``It works well'' and ``It doesn't work well''
 are considered to be very similar by most statistical
-learning algorithms.The two sentiment opposite texts are considered to be very similar by the
+learning algorithms \cite{yahoo}.The two sentiment opposite texts are considered to be very similar by the
 BOW representation. This is exactly why standard machine learning algorithms often
-fail under the circumstance of polarity shift due to negation in the sentences of the review text.
+fail under the circumstance of polarity shift due to negation in the sentences of the review text \cite{contrast} \cite{xiaOriginal}.
 
 \par Several approaches have been proposed in the literature
 to address the polarity shift problem .They require either knowledge about language constructs or
@@ -289,7 +289,7 @@ some efforts to address the polarity shift problem with the
 absence of extra annotations and linguistic knowledge. However, results are still far from satisfactory.
 \section{Motivation of Dissertation}
 Polarity shift is a kind of linguistic phenomenon which can reverse the sentiment polarity of the text. Negation is
-the most important type of polarity shift. For example, by adding a negation word “don’t” to a positive text “I like
+the most important type of polarity shift \cite{xiaOriginal}. For example, by adding a negation word “don’t” to a positive text “I like
 this book” in front of the word “like”, the sentiment of the this book” in front of the word “like”, the sentiment of the
 text will be reversed from positive to negative. However,the two sentiment-opposite texts are considered to be
 very similar by the BOW representation. This is the main reason why standard machine learning algorithms often
@@ -308,32 +308,31 @@ level, sentence-level, phrase-level, and aspect-level sentiment analysis.
 \par 
 For document and sentence-level sentiment classification, 
 there are two main types of methods in the literature:
-term-counting and machine learning methods. In term-
+term-counting and machine learning methods \cite{yahoo} \cite{pang} \cite{pang2008} \cite{ruiEnssemble} . In term-
 counting methods, the overall orientation of a text is
 obtained by summing up the orientation scores of content
 words in the text, based on manually-collected or external
-lexical resources [38], [39]. In machine learning methods,
+lexical resources \cite{turney} \cite{turney1}. In machine learning methods,
 sentiment classification is regarded as a statistical 
 classification problem, where a text is represented by a 
 bag-of-words; then, the supervised machine learning algorithms
-are applied as classifier [35]. Accordingly, 
+are applied as classifier \cite{pang}. Accordingly, 
 the way to handle polarity shift also differs in the two types of methods.
 \par
 The term-counting methods can be easily modified to
 include polarity shift. One common way is to directly
 reverse the sentiment of polarity-shifted words, and then
-sum up the sentiment score word by word [4], [16], [17],
-[37]. Compared with term counting methods, the machine
+sum up the sentiment score word by word \cite{valence}. Compared with term counting methods, the machine
 learning methods are more widely discussed in the 
 sentiment classification literatures. However, it is relatively
 hard to integrate the polarity shift information into the
 BOW model in such methods. For example, Das and
-Chen [6] proposed a method by simply attaching “NOT”
+Chen \cite{yahoo} proposed a method by simply attaching “NOT”
 to words in the scope of negation, so that in the text “I
-don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. [35] reported that this method only
+don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. \cite{pang} reported that this method only
 has slightly negligible effects on improving the sentiment
 classification accuracy.
-\par
+\newpage
 
 
 
@@ -399,32 +398,11 @@ classification\end{tabular}                                                     
 dual prediction \\(DTDP)\end{tabular}                                                                                                                                                                          \\
 \hline
 
-7  & \begin{tabular}[c]{@{}l@{}}A 3D Hand Tracking\\ Design for Gesture\\ Control in Complex \\Environments\end{tabular}                                                                                & \begin{tabular}[c]{@{}l@{}}3D hand tracking design\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}It segments hands \\out of entire image \\and also facilitates \\depth estimation of \\tracked hands in\\ real-time by dual \\camera systems.\end{tabular}                                                                                                                                                                      \\
-\hline
-8  & \begin{tabular}[c]{@{}l@{}}Hand tracking and \\Gesture Recognition\end{tabular}                                                                              & \begin{tabular}[c]{@{}l@{}}Kalman filter and\\
-derived Scale Invariant \\Feature Transform (SIFT).\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}It presents a method \\for tracking and \\recognizing hand\\ gestures by extracting \\ unique invariant \\features from gestures.\end{tabular}  \\          
-\hline
-\end{tabular}
-\end{table}
-\end{center}
-\newpage
-\renewcommand{\arraystretch}{1.0}
-\begin{center}
-\begin{table}[h!]
-\begin{tabular}{|l|l|l|l|}
-\hline
-No. & Reference                                                              & Techniques                                                                & Description                                                                 \\
-\hline
-9  & \begin{tabular}[c]{@{}l@{}}Hand Position Tracking \\Using a Depth Image \\from a RGB-d Camera\end{tabular}                                               & \begin{tabular}[c]{@{}l@{}}RGB image based on \\the skin color
-Hand \\Tracking \end{tabular}                                                      & \begin{tabular}[c]{@{}l@{}}The algorithms can be\\ used for natural user \\interfaces, the guidance of the\\end effector \\of an industrial robot\\ and hand segmentation.\end{tabular}
-\\    
-\hline
-10 & \begin{tabular}[c]{@{}l@{}}Indian Sign Language \\Recognition: \\Database Creation, Hand \\Tracking and Segmentation\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}YcbCr based skin \\color model \end{tabular}     & \begin{tabular}[c]{@{}l@{}}This algorithm works \\on motion tracking, \\edge detection and \\skin color detection.\end{tabular}          \\
-\hline
 \end{tabular}
 \caption{Literature Survey} 
 \end{table}
 \end{center}
+
 
 \chapter{PROBLEM DEFINITION AND SCOPE}
 
@@ -491,8 +469,9 @@ Calendar time required: 11 months.
 \subsubsection{Dissertation Resources}
 \begin{itemize}
 \item People : Single Person
-\item Hardware resources used are mentioned in Chapter 6, Section 6.5 on Page XX
-\item Software resources used are mentioned in Chapter 6, Section 6.6 on Page XX
+\item Software resources used are mentioned in Chapter 7, Section 7.5.1 on Page 26
+\item Hardware resources used are mentioned in Chapter 7, Section 7.5.2 on Page 26
+
 \end{itemize}
 
 \section{Risk Management}
@@ -808,30 +787,8 @@ Table 7.1 gives Use Cases for system to be developed.
 \subsection{Use Case Views}
 \subsubsection{Candidate Registration}
 \begin{figure}[h!]
-\includegraphics[width=5.2in,height=1.5in]{UseCase1.jpg}
-\caption{Use Case : Candidate Registration}
-\end{figure}
-\subsubsection{Candidate Data Download}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=2.0in]{UseCase2.jpg}
-\caption{Use Case : Candidate Data Download}
-\end{figure}
-\newpage
-\subsubsection{Candidate Comparison}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=3.5in]{UseCase3.jpg}
-\caption{Use Case : Candidate Comparison}
-\end{figure}
-\subsubsection{Candidate Profiling}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=3.5in]{UseCase4.jpg}
-\caption{Use Case : Candidate Profiling}
-\end{figure}
-\newpage
-\subsubsection{System Use Case}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.4in]{SystemUseCase.jpg}
-\caption{Use Case : Overall System}
+\includegraphics[width=5.2in,height=5.5in]{use_case.png}
+\caption{Use Case : System}
 \end{figure}
 \newpage
 \section{Model and Description}
@@ -1193,6 +1150,10 @@ for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138�
 
 \bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, " An Information Theoretic Approach to Sentiment Polarity
 Classification "{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
+
+
+\bibitem{valence}L. Polanyi and A. Zaenen, “Contextual lexical valence shifters,” in
+{\em Proc. AAAI Spring Symp. Exploring Attitude Affect Text}, pp. 1–10, 2004.
 
 \bibitem{dataset}http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pang02.zip
 \end{thebibliography}

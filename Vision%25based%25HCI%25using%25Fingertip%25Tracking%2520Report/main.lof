@@ -4,37 +4,33 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Task Network\relax }}{23}{figure.caption.13}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Timeline Chart\relax }}{24}{figure.caption.14}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Task Network\relax }}{22}{figure.caption.12}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Timeline Chart\relax }}{23}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Use Case : Candidate Registration\relax }}{32}{figure.caption.16}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Use Case : Candidate Data Download\relax }}{32}{figure.caption.17}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Use Case : Candidate Comparison\relax }}{33}{figure.caption.18}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Use Case : Candidate Profiling\relax }}{33}{figure.caption.19}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Use Case : Overall System\relax }}{34}{figure.caption.20}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Activity Diagram\relax }}{36}{figure.caption.21}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Level 0 DFD\relax }}{37}{figure.caption.22}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Level 1 DFD\relax }}{37}{figure.caption.23}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Level 2 DFD\relax }}{38}{figure.caption.24}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Sequence Diagram\relax }}{38}{figure.caption.25}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Use Case : Candidate Registration\relax }}{31}{figure.caption.15}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Activity Diagram\relax }}{33}{figure.caption.16}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Level 0 DFD\relax }}{34}{figure.caption.17}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Level 1 DFD\relax }}{34}{figure.caption.18}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Level 2 DFD\relax }}{35}{figure.caption.19}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Sequence Diagram\relax }}{35}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Proposed System Architecture\relax }}{42}{figure.caption.26}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Class Diagram\relax }}{43}{figure.caption.27}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Component Diagram\relax }}{44}{figure.caption.28}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Deployment Diagram\relax }}{45}{figure.caption.29}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Proposed System Architecture\relax }}{39}{figure.caption.21}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Class Diagram\relax }}{40}{figure.caption.22}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Component Diagram\relax }}{41}{figure.caption.23}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Deployment Diagram\relax }}{42}{figure.caption.24}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample matrix creation with word counts\relax }}{49}{figure.caption.31}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample matrix creation with tf-idf\relax }}{49}{figure.caption.32}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Review classification with negative and positive percentages\relax }}{50}{figure.caption.33}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample matrix creation with word counts\relax }}{46}{figure.caption.26}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample matrix creation with tf-idf\relax }}{46}{figure.caption.27}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Review classification with negative and positive percentages\relax }}{47}{figure.caption.28}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Classifiers accuracy score comparison\relax }}{54}{figure.caption.37}
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Classifiers accuracy score comparison\relax }}{51}{figure.caption.32}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces IJIRCCE Certificate\relax }}{63}{figure.caption.38}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces cPGCON Certificate\relax }}{64}{figure.caption.39}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces IJIRCCE Certificate\relax }}{60}{figure.caption.33}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces cPGCON Certificate\relax }}{61}{figure.caption.34}
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 
