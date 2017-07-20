@@ -87,17 +87,17 @@
 \contentsline {section}{\numberline {9.2}Algorithm}{44}{section.9.2}
 \contentsline {subsection}{\numberline {9.2.1}Document Classification}{44}{subsection.9.2.1}
 \contentsline {section}{\numberline {9.3}Dataset}{45}{section.9.3}
-\contentsline {section}{\numberline {9.4}Snapshots}{45}{section.9.4}
-\contentsline {chapter}{\numberline {10}TEST SPECIFICATION}{48}{chapter.10}
-\contentsline {chapter}{\numberline {11}DATA TABLES AND DISCUSSIONS}{49}{chapter.11}
-\contentsline {chapter}{\numberline {12}CONCLUSION}{52}{chapter.12}
-\contentsline {chapter}{\numberline {13}FUTURE ENHANCEMENTS}{54}{chapter.13}
-\contentsline {chapter}{\numberline {14}REFERENCES}{56}{chapter.14}
-\contentsline {chapter}{\numberline {A}PAPERS PUBLISHED}{59}{appendix.A}
-\contentsline {section}{\numberline {A.1}Paper Title}{60}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}IJIRCCE Certification}{60}{subsection.A.1.1}
-\contentsline {section}{\numberline {A.2}Paper Title}{60}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}cPGCON Certificate}{61}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}cPGCON Review}{62}{subsection.A.2.2}
-\contentsline {chapter}{\numberline {B}DISSERTATION PLANNER}{63}{appendix.B}
+\contentsline {section}{\numberline {9.4}Snapshots}{46}{section.9.4}
+\contentsline {chapter}{\numberline {10}TEST SPECIFICATION}{49}{chapter.10}
+\contentsline {chapter}{\numberline {11}DATA TABLES AND DISCUSSIONS}{50}{chapter.11}
+\contentsline {chapter}{\numberline {12}CONCLUSION}{53}{chapter.12}
+\contentsline {chapter}{\numberline {13}FUTURE ENHANCEMENTS}{55}{chapter.13}
+\contentsline {chapter}{\numberline {14}REFERENCES}{57}{chapter.14}
+\contentsline {chapter}{\numberline {A}PAPERS PUBLISHED}{60}{appendix.A}
+\contentsline {section}{\numberline {A.1}Paper Title}{61}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}IJIRCCE Certification}{61}{subsection.A.1.1}
+\contentsline {section}{\numberline {A.2}Paper Title}{61}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}cPGCON Certificate}{62}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}cPGCON Review}{63}{subsection.A.2.2}
+\contentsline {chapter}{\numberline {B}DISSERTATION PLANNER}{64}{appendix.B}
 \contentsfinish 

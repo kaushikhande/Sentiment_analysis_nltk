@@ -130,7 +130,7 @@ Prof. A. G. Phakatkar
 \section{Problem Statement}
 \label{sec:problem_def}
 `` To make use of the original and reversed review samples in pairs for training a
-statistical classifier and make predictions.''
+statistical classifier and make predictions. ''
 
 \section{Objectives}
 \begin{itemize}
@@ -908,7 +908,7 @@ of data and test data consists of 25 \% of total data. Both are mutually exclusi
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
 \textbf{Description} : In figure 9.2, modules and their relationships are shown. Document classifier used for classifying \
-SentimentClassification class has ClassifyReview method which predicts the polarity if review.
+SentimentClassification class has ClassifyReview method which predicts the polarity of review.
 
 \begin{figure}[h!]
 \includegraphics[width=4.5in,height=4.0in]{class.png}
@@ -979,25 +979,37 @@ Negative          & 1000                      \\ \hline
 \end{tabular}
 \end{table}
 
-
+\newpage
 \section{Snapshots}
 
 
 \begin{figure}[!h]
-\includegraphics[width=6.0in,height=4.0in]{screenshot2.png}
+\includegraphics[width=5.5in,height=3.5in]{screenshot2.png}
 \caption{Sample matrix creation with word counts}
 \end{figure}
 
 \begin{figure}[!h]
-\includegraphics[width=6.0in,height=4.0in]{screenshot3.png}
+\includegraphics[width=5.5in,height=3.5in]{screenshot3.png}
 \caption{Sample matrix creation with tf-idf}
 \end{figure}
 
 \begin{figure}[!h]
-\includegraphics[width=6.0in,height=4.0in]{screenshot1.png}
+\includegraphics[width=5.5in,height=3.5in]{screenshot1.png}
 \caption{Review classification with negative and positive percentages}
 \end{figure}
 
+
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=3.3in]{screenshot4.png}
+\caption{Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)}
+\end{figure}
+
+
+
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=3.3in]{screenshot5.png}
+\caption{Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)}
+\end{figure}
 
 
 
@@ -1087,7 +1099,10 @@ the problem of polarity shift due to negation .
 
 \chapter{FUTURE ENHANCEMENTS} 
 The research can be extended to include the neutral reviews as well.
-Also antonym can be obtained using words that has opposite polarity.
+Also antonym can be obtained using words that has opposite polarity in the corpus.
+The corpus-based pseudo-antonym dictionary is also good at obtaining
+more domain-relevant antonym words by learning from the
+corpus.
 
 
 \begin{thebibliography}{20}
@@ -1185,6 +1200,10 @@ Sentiment Analysis using Original and Reversed Reviews
 
 \newpage
 \subsection{cPGCON Review}
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=7.2in]{6107_reviewsheet.jpg}
+\caption{cPGCON Review Sheet}
+\end{figure}
 
 \chapter{DISSERTATION PLANNER}
 \renewcommand{\arraystretch}{1.5}
