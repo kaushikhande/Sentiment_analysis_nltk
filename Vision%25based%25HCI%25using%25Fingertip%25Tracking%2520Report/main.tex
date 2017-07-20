@@ -785,7 +785,7 @@ Table 7.1 gives Use Cases for system to be developed.
 \end{table}
 \newpage
 \subsection{Use Case Views}
-\subsubsection{Candidate Registration}
+\subsubsection{System}
 \begin{figure}[h!]
 \includegraphics[width=5.2in,height=5.5in]{use_case.png}
 \caption{Use Case : System}
@@ -1068,21 +1068,27 @@ Third table shows results with trigram features i.e. 3 words combine are conside
 \end{figure}
 
 
+\begin{figure}[!h]
+\includegraphics[width=5.0in,height=4.0in]{figure_1.png}
+\caption{Variations in classifier accuracies as the no. of features increases}
+\end{figure}
+
 
 
 \chapter{CONCLUSION}
-We proposed a hand gesture based human computer
-interaction system that provides a  natural  way to interact with computer.The hand 
-is first segmented  by using skin color information and then tracked using 'Camshift'
-tracker with Kalman filter, then fingertips are located on the contour of the segmented hand
-and single gestures drawn from fingertips are recognized. For  pointing, click, right click, 
-zoom, drag and window closing various gestures have been allocated.
+In this work, the Dual sentiment analysis technique is used
+to address the polarity shift problem in sentiment classification.
+The idea behind this is to create opposite reviews of the
+original reviews and used them together in Bag of words model
+which will be the feature inputs to various machine learning
+algorithms such as Naive Bayes, SVM and Maximum Entropy. It
+performs better than the methods which were used to address
+the problem of polarity shift due to negation .
 
 \chapter{FUTURE ENHANCEMENTS} 
-The research can be extended to explores the relationship between behaviors and 
-psychological theories to determine candidate's language style or social tendencies.
-The system only fetches 3200 tweets of a candidate for analysis. For more precise 
-profile deviation, more tweets should be fetched for Behavioral Analytics. 
+The research can be extended to include the neutral reviews as well.
+Also antonym can be obtained using words that has opposite polarity.
+
 
 \begin{thebibliography}{20}
 
@@ -1148,11 +1154,11 @@ for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138�
 \bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
 {\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
 
-\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, " An Information Theoretic Approach to Sentiment Polarity
-Classification "{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
+\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, `` An Information Theoretic Approach to Sentiment Polarity
+Classification ''{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
 
 
-\bibitem{valence}L. Polanyi and A. Zaenen, “Contextual lexical valence shifters,” in
+\bibitem{valence}L. Polanyi and A. Zaenen, ``Contextual lexical valence shifters,'' in
 {\em Proc. AAAI Spring Symp. Exploring Attitude Affect Text}, pp. 1–10, 2004.
 
 \bibitem{dataset}http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pang02.zip

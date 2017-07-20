@@ -60,7 +60,7 @@
 \contentsline {subsection}{\numberline {7.11.1}User Profiles}{28}{subsection.7.11.1}
 \contentsline {subsection}{\numberline {7.11.2}Use Cases}{30}{subsection.7.11.2}
 \contentsline {subsection}{\numberline {7.11.3}Use Case Views}{31}{subsection.7.11.3}
-\contentsline {subsubsection}{\numberline {7.11.3.1}Candidate Registration}{31}{subsubsection.7.11.3.1}
+\contentsline {subsubsection}{\numberline {7.11.3.1}System}{31}{subsubsection.7.11.3.1}
 \contentsline {section}{\numberline {7.12}Model and Description}{32}{section.7.12}
 \contentsline {subsection}{\numberline {7.12.1}Activity Diagram}{32}{subsection.7.12.1}
 \contentsline {section}{\numberline {7.13}Functional Model and Description}{33}{section.7.13}
