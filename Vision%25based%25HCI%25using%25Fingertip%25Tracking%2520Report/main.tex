@@ -1127,6 +1127,70 @@ Negative          & 1000                      \\ \hline
 \chapter{DATA TABLES AND DISCUSSIONS} 
 
 
+\begin{table}[h!]
+\centering
+\caption{Unigram Features Results}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Classifier} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\ \hline
+Naive Bayes          & 80.04  & 80.11 & 80.09 & 80.03                   \\ \hline
+Support Vector Machine          & 79.02  & 79.24 & 78.91 & 78.93                   \\ \hline
+Maximum Entropy          & 77.80  & 79.54 & 77.51 & 77.33 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Bigram Features Results}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Classifier} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\ \hline
+Naive Bayes          & 81.26  & 81.43 & 81.34 & 81.25                   \\ \hline
+Support Vector Machine          & 80.44  & 80.49 & 80.39 & 80.41                   \\ \hline
+Maximum Entropy          & 80.85  & 82.13 & 80.62 & 80.57 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Trigram Features Results}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Classifier} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\ \hline
+Naive Bayes          & 80.85  & 80.90 & 80.90 & 80.85                   \\ \hline
+Support Vector Machine          & 80.04  & 80.34 & 79.92 & 79.93                   \\ \hline
+Maximum Entropy          & 77.59  & 79.52 & 77.30 & 77.09 \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{5mm}
+\par The above Table 11.1, Table 11.2, Table 11.3 shows accuracy, precision, recall and f-measure
+of three different classifiers. Three different features are used as features.
+First table shows results with unigram features i.e. each words is considered separate features.
+Second table shows results with bigram features i.e. 2 words together are considered as features.
+Third table shows results with trigram features i.e. 3 words combine are considered as features.
+
+\vspace{5mm}
+\newpage
+\par Below fig. 11.1 shows comparison of accuracy scores shown in Table 11.1, Table 11.2, Table 11.3 .
+
+\begin{figure}[!h]
+\includegraphics[width=5.0in,height=4.0in]{Comparison.png}
+\caption{Classifiers accuracy score comparison}
+\end{figure}
+
+
+
+
 \chapter{CONCLUSION}
 We proposed a hand gesture based human computer
 interaction system that provides a  natural  way to interact with computer.The hand 

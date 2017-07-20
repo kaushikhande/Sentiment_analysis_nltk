@@ -644,9 +644,9 @@ Major tasks in the Dissertation stages are -
 					\end{enumerate}
 				Task 3 : Implementation
 				\begin{enumerate}
-						\item GUI Implementation
-						\item MongoDB Implementation
-						\item Cloud Installation
+						\item Import dataset
+						\item Classifier implementation
+						\item Comparison using graphs
 					\end{enumerate}
 				Task 4 : Testing
 					\begin{enumerate}
@@ -834,12 +834,13 @@ Table 7.1 gives Use Cases for system to be developed.
 \caption{Use Case : Overall System}
 \end{figure}
 \newpage
-\section{Behavioral Model and Description}
+\section{Model and Description}
 This section contains details about events and associated behaviour of the system which is shown using diagram below.
 
 \subsection{Activity Diagram}
 Activity diagram is a flow chart to represent the flow form one activity to another activity. The activity can be described as an operation of the system. The control flow is drawn from one operation to another. This flow can be sequential, branched or concurrent. The purpose of activity diagrams is to capture the dynamic behaviour of the system.\\\\
-\textbf{Description} : As shown in figure 7.6, Product Administrator downloads candidate's tweets from Twitter for analysis. Tweets are stored in a CSV format in Alluxio data storage. For analysis to take place, candidate's download status is check. If it is true, load candidate's CSV file and proceed with analysis else download candidate's tweets. For document classification, initially model existence is checked. If it exists, then load model for document classification else proceed with training phase. The training phase consists of document preprocessing, feature extraction and saving model in Alluxio. Classifier uses this trained model for document classification. Candidates are profiled and compared based on their document classified into emotional and polarity categories.
+\textbf{Description} : As shown in figure 8.6, User downloads movie dataset. This dataset is added for processing using csv import 
+library. Documents are preprocessed to remove stopwords and reviews are converted into matrix. Classifiers are trained after feature extraction. This trained classifiers are used on test dataset to classify.
 \begin{figure}[h!]
 \begin{center}
  
@@ -855,23 +856,31 @@ This section describes data flow diagrams (DFD) of the proposed system. There ar
 
 \subsection{Data Flow Diagram}
 \subsubsection{Level 0 Data Flow Diagram}
-In the level 0 DFD as shown in figure 7.7, Candidates registers into Behavioral Assessment System. System performs analysis and generates reports for a registered candidate. They are displayed to Product Admin.\\
+In the level 0 DFD as shown in figure 7.7, Downloaded reviews are loaded in sentiment analysis system. The sytem analyzes and presents report
+through charts to user\\
 \begin{figure}[h!]
-\includegraphics[width=4.5in]{DFD-0.jpg}
+\begin{center}
+ 
+
+
+\includegraphics[width=4.5in]{level_0.png}
 \caption{Level 0 DFD}
+\end{center}
 \end{figure}
 
 \subsubsection{Level 1 Data Flow Diagram}
-In the level 1 DFD as shown in figure 7.8, Candidate's tweets are fetched from Twitter by Product Admin using Web Interface. Tweets are stored in Alluxio for storage. They are retrieved by Web Application modules for analysis and report generation.\\
+In the level 1 DFD as shown in figure 7.8, Reviews are loaded through csv file loader. Data is preprocessed and model is created.
+Analysis done by the system is given to the user.\\
 \begin{figure}[h!]
-\includegraphics[width=4.5in]{DFD-1.jpg}
+\includegraphics[width=4.5in]{level_1.png}
 \caption{Level 1 DFD}
 \end{figure}
 
 \subsubsection{Level 2 Data Flow Diagram}
-In the level 2 DFD as shown in figure 7.9, Candidate's tweets are retrieved from Alluxio Data Storage and preprocessed. Features are extracted for Classification. It classifies tweets of a candidate to emotional and polarity categories. Candidate are profiled and compared based on these categories. Profile and comparison results are displayed to Product Admin using Web Interface.\\
+In the level 2 DFD as shown in figure 7.9, Reviews are preprocessed to give bag of words features. Classifiers are trained using this model. Classification is 
+performed on the test dataset. Detailed analysis of results obtained by classifiers is done. It is provided to the user.\\
 \begin{figure}[h!]
-\includegraphics[width=4.5in]{DFD-2.jpg}
+\includegraphics[width=4.5in]{level_2.png}
 \caption{Level 2 DFD}
 \end{figure}
 \\
@@ -914,23 +923,30 @@ This document specifies the design that is used to fetch movie reviews in CSV fo
 Candidate's tweets are collected and classified based on these categories. They are profiled and compared based on emotional and polarity categories.
 \newpage
 \section{Architectural Design}
+Figure 8.1 shows architectural design of proposed system. Following are important components in the system :
+\begin{itemize}
+\item Movie reviews data : It contains 1,000 positive and 1,000 negative movie reviews from IMDB.
+\item Preprocessing : It has stopwords removal and vectorizer.
+\item Training data and Test Data : Data is divided into training data and test data. Training data consists of 75 \%
+of data and test data consists of 25 \% of total data. Both are mutually exclusive.
+\item Classifier : Training data is given as a input to one of the classifier.
+\item Prediction system : It takes test data and applies trained model to it .
+\item Sentiment : It gives the end output of polarity into positive and negative classification.   
+\end{itemize}
+
+
 \begin{figure}[!h]
 \includegraphics[width=5.7in,height=4.0in]{archi.png}
 \caption{Proposed System Architecture}
 \end{figure}
-Figure 7.1 shows architectural design of proposed system. Following are important components in the system :
-\begin{itemize}
-\item Movie reviews data : It contains 1,000 positive and 1,000 negative movie reviews from IMDB.
-\item 
-\item 
-\item 
-\item   
-\end{itemize}
+
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
-\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying 
+\textbf{Description} : In figure 9.2, modules and their relationships are shown. Document classifier used for classifying \
+SentimentClassification class has ClassifyReview method which predicts the polarity if review.
+
 \begin{figure}[h!]
-\includegraphics[width=4.5in,height=4.0in]{Sentiment_Analysis_class_diagram.png}
+\includegraphics[width=4.5in,height=4.0in]{class.png}
 \caption{Class Diagram}
 \end{figure}
 \newpage
@@ -1087,17 +1103,92 @@ Negative          & 1000                      \\ \hline
 
 \section{Snapshots}
 
+
+\begin{figure}[!h]
+\includegraphics[width=6.0in,height=4.0in]{screenshot2.png}
+\caption{Sample matrix creation with word counts}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[width=6.0in,height=4.0in]{screenshot3.png}
+\caption{Sample matrix creation with tf-idf}
+\end{figure}
+
+\begin{figure}[!h]
+\includegraphics[width=6.0in,height=4.0in]{screenshot1.png}
+\caption{Review classification with negative and positive percentages}
+\end{figure}
+
+
+
+
 \chapter{TEST SPECIFICATION}
 
 \chapter{DATA TABLES AND DISCUSSIONS} 
 
 
+\begin{table}[h!]
+\centering
+\caption{Unigram Features Results}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Classifier} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\ \hline
+Naive Bayes          & 80.04  & 80.11 & 80.09 & 80.03                   \\ \hline
+Support Vector Machine          & 79.02  & 79.24 & 78.91 & 78.93                   \\ \hline
+Maximum Entropy          & 77.80  & 79.54 & 77.51 & 77.33 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Bigram Features Results}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Classifier} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\ \hline
+Naive Bayes          & 81.26  & 81.43 & 81.34 & 81.25                   \\ \hline
+Support Vector Machine          & 80.44  & 80.49 & 80.39 & 80.41                   \\ \hline
+Maximum Entropy          & 80.85  & 82.13 & 80.62 & 80.57 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}[h!]
+\centering
+\caption{Trigram Features Results}
+\label{my-label}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Classifier} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F-measure}\\ \hline
+Naive Bayes          & 80.85  & 80.90 & 80.90 & 80.85                   \\ \hline
+Support Vector Machine          & 80.04  & 80.34 & 79.92 & 79.93                   \\ \hline
+Maximum Entropy          & 77.59  & 79.52 & 77.30 & 77.09 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\par The above Table 11.1, Table 11.2, Table 11.3
+
+
 \chapter{CONCLUSION}
 We proposed a hand gesture based human computer
-interaction system that provides a  natural  way to interact with computer.The hand is first segmented  by using skin color information and then tracked using 'Camshift' tracker with Kalman filter, then fingertips are located on the contour of the segmented hand and single gestures drawn from fingertips are recognized. For  pointing, click, right click, zoom, drag and window closing various gestures have been allocated.
+interaction system that provides a  natural  way to interact with computer.The hand 
+is first segmented  by using skin color information and then tracked using 'Camshift'
+tracker with Kalman filter, then fingertips are located on the contour of the segmented hand
+and single gestures drawn from fingertips are recognized. For  pointing, click, right click, 
+zoom, drag and window closing various gestures have been allocated.
 
 \chapter{FUTURE ENHANCEMENTS} 
-The research can be extended to explores the relationship between behaviors and psychological theories to determine candidate's language style or social tendencies. The system only fetches 3200 tweets of a candidate for analysis. For more precise profile deviation, more tweets should be fetched for Behavioral Analytics. 
+The research can be extended to explores the relationship between behaviors and 
+psychological theories to determine candidate's language style or social tendencies.
+The system only fetches 3200 tweets of a candidate for analysis. For more precise 
+profile deviation, more tweets should be fetched for Behavioral Analytics. 
 
 \begin{thebibliography}{20}
 
@@ -1175,7 +1266,7 @@ Classification "{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web q
 Sentiment Analysis using Machine Learning Algorithms: A Survey
 \subsection{IJIRCCE Certification}
 \begin{figure}[!h]
-\includegraphics[width=5.5in,height=4.2in]{ijarcce.png}
+\includegraphics[width=5.7in,height=4.7in]{ijircce.png}
 \caption{IJIRCCE Certificate}
 \end{figure}
 \section{Paper Title}
@@ -1188,7 +1279,7 @@ Sentiment Analysis using Original and Reversed Reviews
 \caption{cPGCON Certificate}
 \end{figure}
 
-
+\newpage
 \subsection{cPGCON Review}
 
 \chapter{DISSERTATION PLANNER}

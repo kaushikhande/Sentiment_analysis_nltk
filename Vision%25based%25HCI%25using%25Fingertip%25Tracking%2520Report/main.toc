@@ -98,14 +98,14 @@
 \contentsline {section}{\numberline {9.5}Snapshots}{52}{section.9.5}
 \contentsline {chapter}{\numberline {10}TEST SPECIFICATION}{55}{chapter.10}
 \contentsline {chapter}{\numberline {11}DATA TABLES AND DISCUSSIONS}{56}{chapter.11}
-\contentsline {chapter}{\numberline {12}CONCLUSION}{57}{chapter.12}
-\contentsline {chapter}{\numberline {13}FUTURE ENHANCEMENTS}{59}{chapter.13}
-\contentsline {chapter}{\numberline {14}REFERENCES}{61}{chapter.14}
-\contentsline {chapter}{\numberline {A}PAPERS PUBLISHED}{64}{appendix.A}
-\contentsline {section}{\numberline {A.1}Paper Title}{65}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}IJIRCCE Certification}{65}{subsection.A.1.1}
-\contentsline {section}{\numberline {A.2}Paper Title}{65}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}cPGCON Certificate}{66}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}cPGCON Review}{67}{subsection.A.2.2}
-\contentsline {chapter}{\numberline {B}DISSERTATION PLANNER}{68}{appendix.B}
+\contentsline {chapter}{\numberline {12}CONCLUSION}{59}{chapter.12}
+\contentsline {chapter}{\numberline {13}FUTURE ENHANCEMENTS}{61}{chapter.13}
+\contentsline {chapter}{\numberline {14}REFERENCES}{63}{chapter.14}
+\contentsline {chapter}{\numberline {A}PAPERS PUBLISHED}{66}{appendix.A}
+\contentsline {section}{\numberline {A.1}Paper Title}{67}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}IJIRCCE Certification}{67}{subsection.A.1.1}
+\contentsline {section}{\numberline {A.2}Paper Title}{67}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}cPGCON Certificate}{68}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}cPGCON Review}{69}{subsection.A.2.2}
+\contentsline {chapter}{\numberline {B}DISSERTATION PLANNER}{70}{appendix.B}
 \contentsfinish 
