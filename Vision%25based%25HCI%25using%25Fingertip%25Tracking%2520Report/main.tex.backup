@@ -350,7 +350,7 @@ The following table shows the literature survey about different techniques of se
 No. & Reference                                                              & Techniques                                                                & Description                                                                 \\
 \hline
 1   & \begin{tabular}[c]{@{}l@{}}Dual Sentiment Analysis:\\ Considering Two sides of \\ 
-one review\end{tabular}
+one review\cite{xiaOriginal} \end{tabular}
   & \begin{tabular}[c]{@{}l@{}}Support vector machine\\(SVM), Naive bayes,\\ Logistic Regression \end{tabular}   
          & \begin{tabular}[c]{@{}l@{}}Dual training and \\
 Dual Prediction \\technique is used.\end{tabular}                                                                                                                                                                                         \\
@@ -358,7 +358,7 @@ Dual Prediction \\technique is used.\end{tabular}                               
 2   & \begin{tabular}[c]{@{}l@{}}Thumbs up?Sentiment \\
 Classification using\\
 Machine learning\\
-algorithms\end{tabular} 
+algorithms\cite{pang} \end{tabular} 
  & \begin{tabular}[c]{@{}l@{}}Learning algorithms\\
 and n-gram model\end{tabular}                      
             & \begin{tabular}[c]{@{}l@{}}Classify the dataset\\
@@ -368,7 +368,7 @@ machine.\end{tabular}                                                           
 3   & \begin{tabular}[c]{@{}l@{}}Classification of \\sentiment
 reviews using\\
 N-gram machine \\learning
-approach\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Support Vector Machine\\
+approach\cite{base} \end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Support Vector Machine\\
 Naive Bayes \end{tabular}            & \begin{tabular}[c]{@{}l@{}}Converting text\\
 reviews into numeric\\
 matrices using\\
@@ -378,7 +378,7 @@ TF-IDF\end{tabular}                                                             
 4   & \begin{tabular}[c]{@{}l@{}}Thumbs up or \\thumbs
 down? Semantic \\orientation
 applied to \\unsupervised
-classification \\of reviews\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Unsupervised
+classification \\of reviews\cite{turney}\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Unsupervised
 learning \\algorithm for\\
 classifying a \\review\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}A specific unsupervised\\
 learning technique \\based
@@ -386,7 +386,7 @@ on the\\
 mutual information\end{tabular}                                                                                                                                                                                        \\
 \hline
 5   & \begin{tabular}[c]{@{}l@{}}Automatic Opinion \\polarity
-Classification \\of movie\end{tabular} & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\
+Classification \\of movie\cite{salvetti}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\
 And Markov Model \\(MM) \end{tabular}  & \begin{tabular}[c]{@{}l@{}} Accessed overall \\opinion
 polarity(OvOp)\\
 concept using \\machine
@@ -394,8 +394,8 @@ learning\\ algorithm\end{tabular}                                               
 \hline
 6   & \begin{tabular}[c]{@{}l@{}}Dual Training and \\dual
 prediction for\\ polarity
-classification\end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} SVM and Naive Bayes\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dual training and\\
-dual prediction \\(DTDP)\end{tabular}                                                                                                                                                                          \\
+classification\cite{xia} \end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} SVM and Naive Bayes\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dual training and\\
+dual prediction\\(DTDP)\end{tabular}                                                                                                                                                                          \\
 \hline
 
 \end{tabular}
@@ -609,7 +609,7 @@ The progress of dissertation is reported once in a month.
 Major tasks in the Dissertation stages are - 
 	
 				
-				\par{}Task 1 : Requirement
+				\noindent Task 1 : Requirement
 					\begin{enumerate}
 						\item Define problem statement
 						\item Identify scope, requirements
@@ -766,9 +766,9 @@ The predicted class of the reviews is accessed by the user.
 
 
 \subsection{Use Case Views}
-\subsubsection{System}
+
 \begin{figure}[h!]
-\includegraphics[width=5.2in,height=5.5in]{use_case.png}
+\includegraphics[width=5.2in,height=4.5in]{use_case.png}
 \caption{Use Case : System}
 \end{figure}
 \newpage
@@ -1117,7 +1117,9 @@ Language, Information and Computation (PACLIC),}  pp. 307-316, 2009.
   Classification and Polarity Shifting, '' {\em Proceedings of the International Conference on
   Computational Linguistics (COLING),} pp. 635-643, 2010.
   
- 
+ \bibitem{base} A Tripathy, A Agrawal, SK Rath , “Classification of sentiment reviews using 
+n-gram machine learning approach”, in Expert Systems with Applications
+Volume 57, 15 September 2016, Pages 117–126.
   
   \bibitem{turney1}D. Turney and Michael L. Littman, `` Un-supervised learning of semantic orientation from
 a hundred-billion-word corpus. ''{\em Technical Report
@@ -1126,7 +1128,12 @@ EGB-1094, National Research Council Canada,} arXiv preprint cs/0212012, 2002.
   \bibitem{vector}Yuan Wang, Zhaohui Li, Jie Liu, Zhicheng He, Yalou Huang and Dong Li,
  `` Word Vector Modeling for Sentiment Analysis
 of Product Reviews '' {\em Natural Language Processing and Chinese Computing 2014,} pp. 168-180, 2014.
+ \bibitem{base} A Tripathy, A Agrawal, SK Rath , “Classification of sentiment reviews using 
+n-gram machine learning approach”, in Expert Systems with Applications
+Volume 57, pp. 117-126, 2016.
 
+\bibitem{salvetti} Salvetti, Franco, Stephen Lewis, and Christoph Reichenbach. 
+``Automatic opinion polarity classification of movie.'' {\em Colorado research in linguistics 17,} no. 2 2004.
 
 \bibitem{xiaco}Xia, Rui and Wang, Cheng and Dai, Xinyu and Li, Tao, 
 `` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation ''

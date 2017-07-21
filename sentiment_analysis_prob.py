@@ -18,6 +18,7 @@ import itertools
 con_rev = []
 cross_ref = []
 
+data1 =[]
 def load_file():
     with open('review.csv') as csv_file:
         reader = csv.reader(csv_file,delimiter=",",quotechar='"')
@@ -65,6 +66,11 @@ def learn_model(data,target):
     print data_test[0]
     raw_input('>')
     predicted = classifier.predict(data_test)
+    print data1
+    #predicted1 = classifier.predict(data1)
+    raw_input('--')
+    #print data1
+    #print predicted1
     for i in predicted:
     	cross_ref.append(i)
     #print "cross_ref"

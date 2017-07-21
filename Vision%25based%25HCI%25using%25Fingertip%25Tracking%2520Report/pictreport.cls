@@ -163,7 +163,7 @@ dissertation on {\bfseries \fontsize{12}{12} \selectfont ``#1''}.}
 \vspace*{1.5\baselineskip}
 
  \textit{I would like to take this opportunity to thank my internal guide
- \textbf{Dr. A. S. Ghotkar} for giving me all the help and guidance I needed. I am  really grateful to them for their kind support throughout the analysis and design phase. Their valuable criticism and suggestions were very helpful.} \vspace*{1.5\baselineskip}
+ \textbf{Dr. A. S. Ghotkar} for giving me all the help and guidance I needed. I am  really grateful for her kind support throughout the analysis and design phase. Her valuable criticism and suggestions were very helpful.} \vspace*{1.5\baselineskip}
 
  \textit{I am grateful to \textbf{Dr. Rajesh B. Ingle}, Head of Computer
  Engineering Department, Pune Institute of Computer Technology for his indispensable  support, priceless suggestions and for most valuable time lent as and when required.}
