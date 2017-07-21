@@ -129,8 +129,8 @@ Prof. A. G. Phakatkar
 
 \section{Problem Statement}
 \label{sec:problem_def}
-"To make use of the original and reversed review samples in pairs for training a
-statistical classifier and make predictions."
+`` To make use of the original and reversed review samples in pairs for training a
+statistical classifier and make predictions. ''
 
 \section{Objectives}
 \begin{itemize}
@@ -240,7 +240,7 @@ Natural language processing, machine learning, sentiment analysis, opinion minin
 is also known as opinion mining, it involves studing of people’s sentiments towards 
 certain entities. Internet is a resourceful place with respect to sentiment information. From a
 perspective of a user, people are able to express their views through various social media,
-such as forums, micro-blogs, or online social networking sites.
+such as forums, micro-blogs, or online social networking sites \cite{pang2008}.
 
 \par With the advent of Web 2.0 techniques,
 users started prefering to share their opinions on the Web. These user-generated and 
@@ -270,15 +270,15 @@ their products and services are perceived by the public.
 both supervised and 
 semi supervised sentiment
 classification is known as the bag-of-words (BOW)
-model, which is difficult to meet the requirements
+model \cite{pang}, which is difficult to meet the requirements
 for understanding the review text and dealing with
 complex linguistic structures such as negation. For
 example, the BOW representations of two opposite
 reviews ``It works well'' and ``It doesn't work well''
 are considered to be very similar by most statistical
-learning algorithms.The two sentiment opposite texts are considered to be very similar by the
+learning algorithms \cite{yahoo}.The two sentiment opposite texts are considered to be very similar by the
 BOW representation. This is exactly why standard machine learning algorithms often
-fail under the circumstance of polarity shift due to negation in the sentences of the review text.
+fail under the circumstance of polarity shift due to negation in the sentences of the review text \cite{contrast} \cite{xiaOriginal}.
 
 \par Several approaches have been proposed in the literature
 to address the polarity shift problem .They require either knowledge about language constructs or
@@ -289,7 +289,7 @@ some efforts to address the polarity shift problem with the
 absence of extra annotations and linguistic knowledge. However, results are still far from satisfactory.
 \section{Motivation of Dissertation}
 Polarity shift is a kind of linguistic phenomenon which can reverse the sentiment polarity of the text. Negation is
-the most important type of polarity shift. For example, by adding a negation word “don’t” to a positive text “I like
+the most important type of polarity shift \cite{xiaOriginal}. For example, by adding a negation word “don’t” to a positive text “I like
 this book” in front of the word “like”, the sentiment of the this book” in front of the word “like”, the sentiment of the
 text will be reversed from positive to negative. However,the two sentiment-opposite texts are considered to be
 very similar by the BOW representation. This is the main reason why standard machine learning algorithms often
@@ -308,32 +308,31 @@ level, sentence-level, phrase-level, and aspect-level sentiment analysis.
 \par 
 For document and sentence-level sentiment classification, 
 there are two main types of methods in the literature:
-term-counting and machine learning methods. In term-
+term-counting and machine learning methods \cite{yahoo} \cite{pang} \cite{pang2008} \cite{ruiEnssemble} . In term-
 counting methods, the overall orientation of a text is
 obtained by summing up the orientation scores of content
 words in the text, based on manually-collected or external
-lexical resources [38], [39]. In machine learning methods,
+lexical resources \cite{turney} \cite{turney1}. In machine learning methods,
 sentiment classification is regarded as a statistical 
 classification problem, where a text is represented by a 
 bag-of-words; then, the supervised machine learning algorithms
-are applied as classifier [35]. Accordingly, 
+are applied as classifier \cite{pang}. Accordingly, 
 the way to handle polarity shift also differs in the two types of methods.
 \par
 The term-counting methods can be easily modified to
 include polarity shift. One common way is to directly
 reverse the sentiment of polarity-shifted words, and then
-sum up the sentiment score word by word [4], [16], [17],
-[37]. Compared with term counting methods, the machine
+sum up the sentiment score word by word \cite{valence}. Compared with term counting methods, the machine
 learning methods are more widely discussed in the 
 sentiment classification literatures. However, it is relatively
 hard to integrate the polarity shift information into the
 BOW model in such methods. For example, Das and
-Chen [6] proposed a method by simply attaching “NOT”
+Chen \cite{yahoo} proposed a method by simply attaching “NOT”
 to words in the scope of negation, so that in the text “I
-don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. [35] reported that this method only
+don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. \cite{pang} reported that this method only
 has slightly negligible effects on improving the sentiment
 classification accuracy.
-\par
+\newpage
 
 
 
@@ -399,32 +398,11 @@ classification\end{tabular}                                                     
 dual prediction \\(DTDP)\end{tabular}                                                                                                                                                                          \\
 \hline
 
-7  & \begin{tabular}[c]{@{}l@{}}A 3D Hand Tracking\\ Design for Gesture\\ Control in Complex \\Environments\end{tabular}                                                                                & \begin{tabular}[c]{@{}l@{}}3D hand tracking design\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}It segments hands \\out of entire image \\and also facilitates \\depth estimation of \\tracked hands in\\ real-time by dual \\camera systems.\end{tabular}                                                                                                                                                                      \\
-\hline
-8  & \begin{tabular}[c]{@{}l@{}}Hand tracking and \\Gesture Recognition\end{tabular}                                                                              & \begin{tabular}[c]{@{}l@{}}Kalman filter and\\
-derived Scale Invariant \\Feature Transform (SIFT).\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}It presents a method \\for tracking and \\recognizing hand\\ gestures by extracting \\ unique invariant \\features from gestures.\end{tabular}  \\          
-\hline
-\end{tabular}
-\end{table}
-\end{center}
-\newpage
-\renewcommand{\arraystretch}{1.0}
-\begin{center}
-\begin{table}[h!]
-\begin{tabular}{|l|l|l|l|}
-\hline
-No. & Reference                                                              & Techniques                                                                & Description                                                                 \\
-\hline
-9  & \begin{tabular}[c]{@{}l@{}}Hand Position Tracking \\Using a Depth Image \\from a RGB-d Camera\end{tabular}                                               & \begin{tabular}[c]{@{}l@{}}RGB image based on \\the skin color
-Hand \\Tracking \end{tabular}                                                      & \begin{tabular}[c]{@{}l@{}}The algorithms can be\\ used for natural user \\interfaces, the guidance of the\\end effector \\of an industrial robot\\ and hand segmentation.\end{tabular}
-\\    
-\hline
-10 & \begin{tabular}[c]{@{}l@{}}Indian Sign Language \\Recognition: \\Database Creation, Hand \\Tracking and Segmentation\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}YcbCr based skin \\color model \end{tabular}     & \begin{tabular}[c]{@{}l@{}}This algorithm works \\on motion tracking, \\edge detection and \\skin color detection.\end{tabular}          \\
-\hline
 \end{tabular}
 \caption{Literature Survey} 
 \end{table}
 \end{center}
+
 
 \chapter{PROBLEM DEFINITION AND SCOPE}
 
@@ -491,8 +469,9 @@ Calendar time required: 11 months.
 \subsubsection{Dissertation Resources}
 \begin{itemize}
 \item People : Single Person
-\item Hardware resources used are mentioned in Chapter 6, Section 6.5 on Page XX
-\item Software resources used are mentioned in Chapter 6, Section 6.6 on Page XX
+\item Software resources used are mentioned in Chapter 7, Section 7.5.1 on Page 26
+\item Hardware resources used are mentioned in Chapter 7, Section 7.5.2 on Page 26
+
 \end{itemize}
 
 \section{Risk Management}
@@ -732,7 +711,7 @@ and rows represents each reviews. Presence of particular word in a review is sho
 
 \section{Functionality}
 \begin{itemize}
-\item Download movie reviews from imDb dataset.
+\item Download movie reviews from IMDB dataset.
 \item Import the moview review dataset into python environment using csv package.
 
 \item Convert the text reviews into matrix form.
@@ -778,60 +757,19 @@ and rows represents each reviews. Presence of particular word in a review is sho
 A use case represents a particular functionality of a system. Hence, use case diagram is used to describe the relationships among the functionalities and their internal/external actors. This section provides various usage scenarios for the system to be developed.
 
 \subsection{User Profiles}
-Actors of the system are Candidate, Product Administrator, Storage System, Database System and Web Interface.
-\begin{itemize}
-    \item \textbf{Candidate} : Actor registers for a specific organization giving twitter URL and other details to Database using Web Interface.
-    \item \textbf{Product Administrator} : Actor manages registers candidates, downloads tweets of a candidate, manages several behavioral assessment tests, profiles and compares candidates.
-    \item \textbf{Storage System} : Actor stores tweets of candidates downloaded by Product Administrator.
-    \item \textbf{Database System} : Actor stores emotional, polarity scores and other details of candidates.
-    \item \textbf{Web Interface} : Actor displays candidate's emotional and polarity graphs according to year, month and day. It also allows Product Admin to download candidate's data and manage behavioral assessment tests.  
-\end{itemize}
-\newpage
-\subsection{Use Cases}
-Table 7.1 gives Use Cases for system to be developed.
-\renewcommand{\arraystretch}{1.0}
-\begin{table}[h]
-\centering
-\caption{Use Cases}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{Use Case}                                                 & \textbf{Descriptions}                                                                                                                                                                                                    & \textbf{Actors}                                                                                                          & \textbf{Assumptions}                                                                                                    \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}Candidate \\ Registration\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate has to \\ registers for a \\ specific organization \\ giving necessary\\ details and saved \\ to Database.\end{tabular}                                                             & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database\\ System\end{tabular}                                                   & \begin{tabular}[c]{@{}l@{}}Provided\\ details \\ are correct\end{tabular}                                               \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Candidate Data\\ Download\end{tabular} & \begin{tabular}[c]{@{}l@{}}Product Admin \\ fetches candidate's\\  details from\\  database, Extract \\ screen name\\ from Twitter URL, \\ downloads candidate's \\ data and store it \\ in storage system.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database System, \\ Storage System,\\ Product\\ Admin\end{tabular}               & \begin{tabular}[c]{@{}l@{}}Data\\ is \\ downloaded\\  properly.\end{tabular}                                            \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Candidate \\ Comparison\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Product Admin \\ chooses\\ two candidates\\ for comparison\\  based \\ on emotional and\\ polarity values.\end{tabular}                                                                       & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database System, \\ Product Admin, \\ Web Interface\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Comparison\\ between \\ two candidates \\ are \\ shown in the \\ form of graph.\end{tabular} \\ \hline
-4                & \begin{tabular}[c]{@{}l@{}}Candidate \\ Profiling\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Candidate are \\ profiled\\ based on set\\ of rules defined\\ by Product Admin.\end{tabular}                                                                                                  & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database System, \\ Product Admin, \\ Web Interface\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Profile\\ results are \\ displayed\\  in the form of \\ column graph.\end{tabular}           \\ \hline
-5                & System                                                            & \begin{tabular}[c]{@{}l@{}}Overall \\ system\\ description\end{tabular}                                                                                                                                                  & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Product Admin,\\ Database System,\\ Web Interface,\\ Storage System\end{tabular} & \begin{tabular}[c]{@{}l@{}}System\\ is\\ functional\end{tabular}                                                        \\ \hline
-\end{tabular}
-\end{table}
+Actors of the system are user and IMDB movie dataset system.
+IMDB dataset provides input to the system. System downloads the 
+dataset from given url. It performs text analysis on each row for that
+stopwords removal, vectorizer and sentiment analysis is used.
+The predicted class of the reviews is given to the user.
+
+
 \newpage
 \subsection{Use Case Views}
-\subsubsection{Candidate Registration}
+\subsubsection{System}
 \begin{figure}[h!]
-\includegraphics[width=5.2in,height=1.5in]{UseCase1.jpg}
-\caption{Use Case : Candidate Registration}
-\end{figure}
-\subsubsection{Candidate Data Download}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=2.0in]{UseCase2.jpg}
-\caption{Use Case : Candidate Data Download}
-\end{figure}
-\newpage
-\subsubsection{Candidate Comparison}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=3.5in]{UseCase3.jpg}
-\caption{Use Case : Candidate Comparison}
-\end{figure}
-\subsubsection{Candidate Profiling}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=3.5in]{UseCase4.jpg}
-\caption{Use Case : Candidate Profiling}
-\end{figure}
-\newpage
-\subsubsection{System Use Case}
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.4in]{SystemUseCase.jpg}
-\caption{Use Case : Overall System}
+\includegraphics[width=5.2in,height=5.5in]{use_case.png}
+\caption{Use Case : System}
 \end{figure}
 \newpage
 \section{Model and Description}
@@ -951,7 +889,7 @@ of data and test data consists of 25 \% of total data. Both are mutually exclusi
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
 \textbf{Description} : In figure 9.2, modules and their relationships are shown. Document classifier used for classifying \
-SentimentClassification class has ClassifyReview method which predicts the polarity if review.
+SentimentClassification class has ClassifyReview method which predicts the polarity of review.
 
 \begin{figure}[h!]
 \includegraphics[width=4.5in,height=4.0in]{class.png}
@@ -960,17 +898,13 @@ SentimentClassification class has ClassifyReview method which predicts the polar
 \newpage
 \section{Component Design}
 It is used to model the physical aspects of a system. It is also used to visualize the organization and relationships among components in a system. It does not describe the functionality of the system but it describes the components used to make those functionalities.\\\\
-\textbf{Description} : Figure 8.3 describes primary components of the system. A web application provides candidate's tweets to be fetched and candidates are profiled and compared functionality to Product Administrator. Product Admins are authenticated first before using any of the functionality. To download tweets of a specific candidate, he/she must register for that organization. Tweets are stored in Alluxio data storage in CSV format. Data storage is accessed by Spark application for fetching candidate's tweets for preprocessing and document classification. 
+\textbf{Description} : Figure 8.3 describes primary components of the system.
+Movie dataset is stored in a component which then gives to classifier system.
+Classifier system then preprocess the reviews and does the prediction of polority and sends the output
+to the console subsystem where result evaluation and comparison takes place.
 \begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.2in]{component.jpg}
+\includegraphics[width=5.2in,height=3.2in]{Component_.png}
 \caption{Component Diagram}
-\end{figure}
-\section{Deployment Design}
- It is used visualize the topology of the physical components of a system, where the software components are deployed. It describes the static deployment view of a system, consisting of nodes and their relationships.\\\\
- \textbf{Description} : In figure 8.4, Web application designed in Laravel PHP runs on Apache Tomcat Server. Process component of Symphony is used to run spark application. 4-Node cluster is formed for spark application execution. It requires data from Alluxio data storage system. Alluxio is specifically compiled for Spark for data access. Web application retrieves candidate's emotional and polarity scores from database.
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.2in]{Deployment.jpg}
-\caption{Deployment Diagram}
 \end{figure}
 
 \chapter{IMPLEMENTATION DETAILS}
@@ -994,83 +928,13 @@ which stores counts of each word in a review.
 \item Transform review\_data to tfidf using tfidftransformer.
 \item Split review\_data and review\_label into review\_train, 
 label\_train, review\_test and label\_test
-\item Give review\_train and label\_train
-\item Third level, enumerate, second item
-\item Third level, enumerate, second item
-\item Third level, enumerate, second item
-\item Third level, enumerate, second item
-\end{enumerate}
-\subsection{Candidate Profiling}
-\textbf{Input} : Candidate's User Identifier.\\
-\textbf{Output} : Candidate Profiles\\\\
-Input Candidate's User Identifier.\\
-Retrieve years from Database based on UserId\\
-Retrieve months from Database based on UserId\\
-Retrieve days from Database based on UserId\\\\
-\textbf{Calculate Percentage of Categories for all years}\\
-Retrieve emotionsValues from Database based on UserId for all years\\
-Retrieve polarityValues from Database based on UserId for all years\\\\
-While candidate has emotion category and value in a year
-	\par Calculate Total number of documents in a year
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category\\
-While candidate has polarity category and value in a year
-	\par Calculate Total number of documents in a year
-	\par Calculate Total number of document for a specific category for a year
-	\par Calculate Percentage for a specific category for a year\\\\
-\textbf{Calculate Percentage of Categories for all months}\\
-Retrieve emotionsValues from Database based on UserId for all months group by years\\
-Retrieve polarityValues from Database based on UserId for all months group by years\\\\
-While candidate has emotion category and value in a month for specific year
-	\par Calculate Total number of documents in a month
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category for a month\\
-While candidate has polarity category and value in a month for specific year
-	\par Calculate Total number of documents in a month
-	\par Calculate Total number of document for a specific category for a year
-	\par Calculate Percentage for a specific category for a month\\\\
-\textbf{Calculate Percentage of Categories for all days}\\\\
-Retrieve emotionsValues from Database based on UserId for all days in a month for a specific year\\
-Retrieve polarityValues from Database based on UserId for all days in a month for a specific year\\\\
-While candidate has emotion category and value for all days in a month for specific year
-	\par Calculate Total number of documents in a day
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category for a day\\
-While candidate has polarity category and value for all days in a month for specific year
-	\par Calculate Total number of documents in a day
-	\par Calculate Total number of document for a specific category
-	\par Calculate Percentage for a specific category for a day
-\section{Modules}
-\subsection{Candidate's Tweets Fetched From Twitter}
-\begin{itemize}
-\item This modules retrieves candidate's tweets from Twitter. Input to module is candidate's screen name. 
-\item Every user in twitter has unique screen name which can be used to retrieve his/her tweets using Twitter APIs and OAuth. 
-\item OAuth 2 is an authorization framework that enables application to obtain limited access to user accounts on an HTTP service such as Facebook and Twitter. 
-\item A Twitter application is created, python module connects to Twitter application using consumer secret key and consumer key. Twitter application also generates access key and access secret key which decides validity of tweets access. Tweets are fetch and store it in CSV format. 
-\item The CSV file of every candidate is pushed to Alluxio storage system. Python's Tweepy library is used for implementation of this module. 
-\item A Product Administrator uses candidate data downloading functionality to trigger this module giving candidate's screen name as an input.
-\end{itemize}
-\subsection{Document Classification}
-\begin{itemize}
-\item This module takes candidate's CSV location in Alluxio and unique identifier as an input. 
-\item This module is written in Scala and executes as an spark job on multi-node spark cluster. This means, spark job uses resources of multiple connected nodes for faster processing. 
-\item Alluxio is memory centric distributed storage system that provides candidate's CSV file to spark job. Spark's Machine Learning library is used for  implementation of Naive Bayes Classifier. 
-\item Initially, model is trained by training dataset that consists of emotional categories of 21429 records and polarity categories of 8797 records. Both models are saved to and loaded from Alluxio. 
-\item Every candidate's tweet is classified into one of the emotional and polarity categories. A database insertion operation push classified documents along with user identifier to MySQL.
-\end{itemize}
-
-\subsection{Web Application}
-Web application is designed and built in Laravel PHP 5.4. High charts is used for showing candidate results in the form of column graphs. There are different modules in web application - 
-\begin{itemize}
-\item Candidate Profiling : Module shows each candidate's emotional and polarity categories percentage year-wise, month-wise and day-wise.
-\item Candidate Comparison : Two candidates are compared by emotional and polarity categories percentage. Results are shown year-wise, month-wise and day-wise.
-\item Candidate Data Downloading Functionality : It enables product administrator to download tweets of a certain candidate. It uses Process component of Symphony to execute python script that fetches tweets from Twitter.
-\item Storage Analyzer : It shows storage space used by candidate's CSV files, training and testing dataset and saved trained models in Alluxio. Alluxio's local file system commands are used to retrieve space occupied. 
-Registration – It allows a candidate to register himself/herself to a certain organization. 
-\item Assessment creation and deletion : Assessments are created, deleted and updated by product administrator. 
-\end{itemize}
-
-\section{Dataset}
+\item Give review\_train and label\_train as input to the classifier
+and store learned model in classifier variable.
+\item Apply review\_test on classifier model with predict method
+and take predicted labels output in predicted variable
+\item Compare label\_test with predicted vaiable label values
+\item Print the confusion matrix
+\end{enumerate}\section{Dataset}
 \hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets. It contains 1,000 positive and 1,000 negative movie reviews from IMDB, so it is now considered too small for serious research and development purposes. However, the text is similar to movies reviews on IMDB today.
 
 \par The file movie-pang02.zip contains a copy of Pang and Lee's Movie Review Data in a csv format that can be imported directly in python. It has two categories: Pos (reviews that express a positive or favorable sentiment) and Neg (reviews that express a negative or unfavorable sentiment). For this assignment, we will assume that all reviews are either positive or negative; there are no neutral reviews. 
@@ -1092,25 +956,37 @@ Negative          & 1000                      \\ \hline
 \end{tabular}
 \end{table}
 
-
+\newpage
 \section{Snapshots}
 
 
 \begin{figure}[!h]
-\includegraphics[width=6.0in,height=4.0in]{screenshot2.png}
+\includegraphics[width=5.5in,height=3.5in]{screenshot2.png}
 \caption{Sample matrix creation with word counts}
 \end{figure}
 
 \begin{figure}[!h]
-\includegraphics[width=6.0in,height=4.0in]{screenshot3.png}
+\includegraphics[width=5.5in,height=3.5in]{screenshot3.png}
 \caption{Sample matrix creation with tf-idf}
 \end{figure}
 
 \begin{figure}[!h]
-\includegraphics[width=6.0in,height=4.0in]{screenshot1.png}
+\includegraphics[width=5.5in,height=3.5in]{screenshot1.png}
 \caption{Review classification with negative and positive percentages}
 \end{figure}
 
+
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=3.3in]{screenshot4.png}
+\caption{Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)}
+\end{figure}
+
+
+
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=3.3in]{screenshot5.png}
+\caption{Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)}
+\end{figure}
 
 
 
@@ -1181,21 +1057,30 @@ Third table shows results with trigram features i.e. 3 words combine are conside
 \end{figure}
 
 
+\begin{figure}[!h]
+\includegraphics[width=5.0in,height=4.0in]{figure_1.png}
+\caption{Variations in classifier accuracies as the no. of features increases}
+\end{figure}
+
 
 
 \chapter{CONCLUSION}
-We proposed a hand gesture based human computer
-interaction system that provides a  natural  way to interact with computer.The hand 
-is first segmented  by using skin color information and then tracked using 'Camshift'
-tracker with Kalman filter, then fingertips are located on the contour of the segmented hand
-and single gestures drawn from fingertips are recognized. For  pointing, click, right click, 
-zoom, drag and window closing various gestures have been allocated.
+In this work, the Dual sentiment analysis technique is used
+to address the polarity shift problem in sentiment classification.
+The idea behind this is to create opposite reviews of the
+original reviews and used them together in Bag of words model
+which will be the feature inputs to various machine learning
+algorithms such as Naive Bayes, SVM and Maximum Entropy. It
+performs better than the methods which were used to address
+the problem of polarity shift due to negation .
 
 \chapter{FUTURE ENHANCEMENTS} 
-The research can be extended to explores the relationship between behaviors and 
-psychological theories to determine candidate's language style or social tendencies.
-The system only fetches 3200 tweets of a candidate for analysis. For more precise 
-profile deviation, more tweets should be fetched for Behavioral Analytics. 
+The research can be extended to include the neutral reviews as well.
+Also antonym can be obtained using words that has opposite polarity in the corpus.
+The corpus-based pseudo-antonym dictionary is also good at obtaining
+more domain-relevant antonym words by learning from the
+corpus.
+
 
 \begin{thebibliography}{20}
 
@@ -1261,8 +1146,12 @@ for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138�
 \bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
 {\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
 
-\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, " An Information Theoretic Approach to Sentiment Polarity
-Classification "{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
+\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, `` An Information Theoretic Approach to Sentiment Polarity
+Classification ''{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
+
+
+\bibitem{valence}L. Polanyi and A. Zaenen, ``Contextual lexical valence shifters,'' in
+{\em Proc. AAAI Spring Symp. Exploring Attitude Affect Text}, pp. 1–10, 2004.
 
 \bibitem{dataset}http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pang02.zip
 \end{thebibliography}
@@ -1288,6 +1177,10 @@ Sentiment Analysis using Original and Reversed Reviews
 
 \newpage
 \subsection{cPGCON Review}
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=7.2in]{6107_reviewsheet.jpg}
+\caption{cPGCON Review Sheet}
+\end{figure}
 
 \chapter{DISSERTATION PLANNER}
 \renewcommand{\arraystretch}{1.5}
@@ -1309,7 +1202,7 @@ T6                  & Identification of Prerequisites and Installation \\ \hline
 T7                  & Configuring python and python package installer pip in the system \\ \hline
 T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
 T9                  & Studying libraries in python required for implementation \\ \hline
-T10                  & Downloading and extracting reviews from IMDb movie datasets provided for research purpose \\ \hline
+T10                  & Downloading and extracting reviews from IMDB movie datasets \\ \hline
 T11                  & Removing stopwords, punctuation marks, numbers etc.\\ \hline
 T12                  & Report Preparation \\ \hline
 T13                  & Dissertation Project Stage I Presentation \\ \hline

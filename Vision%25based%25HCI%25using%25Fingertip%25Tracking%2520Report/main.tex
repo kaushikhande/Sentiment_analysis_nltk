@@ -55,11 +55,11 @@
 
 \begin{document}
 
-\picttitlepage{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{}{Prof. A. G. Phakatkar}
+\picttitlepage{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{6989}{Prof. A. G. Phakatkar}
 
 %\companycertificate{BEHAVIORAL ASSESSMENT OF INTERNAL AND EXTERNAL CANDIDATES OF MULTIPLE ORGANIZATIONS USING SENTIMENT ANALYSIS AND EMOTION MINING}{Sagar S. Patil}{}{Mr. Vijay Kumbhar}{Mr. Vijay Kumbhar}{}
 
-\pictcertificate{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{}{Prof. A. G. Phakatkar}{}
+\pictcertificate{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{6989}{Prof. A. G. Phakatkar}{}
 
 
 
@@ -757,33 +757,14 @@ and rows represents each reviews. Presence of particular word in a review is sho
 A use case represents a particular functionality of a system. Hence, use case diagram is used to describe the relationships among the functionalities and their internal/external actors. This section provides various usage scenarios for the system to be developed.
 
 \subsection{User Profiles}
-Actors of the system are Candidate, Product Administrator, Storage System, Database System and Web Interface.
-\begin{itemize}
-    \item \textbf{Candidate} : Actor registers for a specific organization giving twitter URL and other details to Database using Web Interface.
-    \item \textbf{Product Administrator} : Actor manages registers candidates, downloads tweets of a candidate, manages several behavioral assessment tests, profiles and compares candidates.
-    \item \textbf{Storage System} : Actor stores tweets of candidates downloaded by Product Administrator.
-    \item \textbf{Database System} : Actor stores emotional, polarity scores and other details of candidates.
-    \item \textbf{Web Interface} : Actor displays candidate's emotional and polarity graphs according to year, month and day. It also allows Product Admin to download candidate's data and manage behavioral assessment tests.  
-\end{itemize}
-\newpage
-\subsection{Use Cases}
-Table 7.1 gives Use Cases for system to be developed.
-\renewcommand{\arraystretch}{1.0}
-\begin{table}[h]
-\centering
-\caption{Use Cases}
-\label{my-label}
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-\textbf{Sr. No.} & \textbf{Use Case}                                                 & \textbf{Descriptions}                                                                                                                                                                                                    & \textbf{Actors}                                                                                                          & \textbf{Assumptions}                                                                                                    \\ \hline
-1                & \begin{tabular}[c]{@{}l@{}}Candidate \\ Registration\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate has to \\ registers for a \\ specific organization \\ giving necessary\\ details and saved \\ to Database.\end{tabular}                                                             & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database\\ System\end{tabular}                                                   & \begin{tabular}[c]{@{}l@{}}Provided\\ details \\ are correct\end{tabular}                                               \\ \hline
-2                & \begin{tabular}[c]{@{}l@{}}Candidate Data\\ Download\end{tabular} & \begin{tabular}[c]{@{}l@{}}Product Admin \\ fetches candidate's\\  details from\\  database, Extract \\ screen name\\ from Twitter URL, \\ downloads candidate's \\ data and store it \\ in storage system.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database System, \\ Storage System,\\ Product\\ Admin\end{tabular}               & \begin{tabular}[c]{@{}l@{}}Data\\ is \\ downloaded\\  properly.\end{tabular}                                            \\ \hline
-3                & \begin{tabular}[c]{@{}l@{}}Candidate \\ Comparison\end{tabular}   & \begin{tabular}[c]{@{}l@{}}Product Admin \\ chooses\\ two candidates\\ for comparison\\  based \\ on emotional and\\ polarity values.\end{tabular}                                                                       & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database System, \\ Product Admin, \\ Web Interface\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Comparison\\ between \\ two candidates \\ are \\ shown in the \\ form of graph.\end{tabular} \\ \hline
-4                & \begin{tabular}[c]{@{}l@{}}Candidate \\ Profiling\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Candidate are \\ profiled\\ based on set\\ of rules defined\\ by Product Admin.\end{tabular}                                                                                                  & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Database System, \\ Product Admin, \\ Web Interface\end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Profile\\ results are \\ displayed\\  in the form of \\ column graph.\end{tabular}           \\ \hline
-5                & System                                                            & \begin{tabular}[c]{@{}l@{}}Overall \\ system\\ description\end{tabular}                                                                                                                                                  & \begin{tabular}[c]{@{}l@{}}Candidate,\\ Product Admin,\\ Database System,\\ Web Interface,\\ Storage System\end{tabular} & \begin{tabular}[c]{@{}l@{}}System\\ is\\ functional\end{tabular}                                                        \\ \hline
-\end{tabular}
-\end{table}
-\newpage
+Actors of the system are user and IMDB movie dataset system.
+IMDB dataset provides input to the system. System downloads the 
+dataset from given url. It performs text analysis on each row for that
+stopwords removal, vectorizer and sentiment analysis is used.
+The predicted class of the reviews is accessed by the user.
+
+
+
 \subsection{Use Case Views}
 \subsubsection{System}
 \begin{figure}[h!]
@@ -917,17 +898,13 @@ SentimentClassification class has ClassifyReview method which predicts the polar
 \newpage
 \section{Component Design}
 It is used to model the physical aspects of a system. It is also used to visualize the organization and relationships among components in a system. It does not describe the functionality of the system but it describes the components used to make those functionalities.\\\\
-\textbf{Description} : Figure 8.3 describes primary components of the system. A web application provides candidate's tweets to be fetched and candidates are profiled and compared functionality to Product Administrator. Product Admins are authenticated first before using any of the functionality. To download tweets of a specific candidate, he/she must register for that organization. Tweets are stored in Alluxio data storage in CSV format. Data storage is accessed by Spark application for fetching candidate's tweets for preprocessing and document classification. 
+\textbf{Description} : Figure 8.3 describes primary components of the system.
+Movie dataset is stored in a component which then gives to classifier system.
+Classifier system then preprocess the reviews and does the prediction of polority and sends the output
+to the console subsystem where result evaluation and comparison takes place.
 \begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.2in]{component.jpg}
+\includegraphics[width=5.2in,height=3.2in]{Component_.png}
 \caption{Component Diagram}
-\end{figure}
-\section{Deployment Design}
- It is used visualize the topology of the physical components of a system, where the software components are deployed. It describes the static deployment view of a system, consisting of nodes and their relationships.\\\\
- \textbf{Description} : In figure 8.4, Web application designed in Laravel PHP runs on Apache Tomcat Server. Process component of Symphony is used to run spark application. 4-Node cluster is formed for spark application execution. It requires data from Alluxio data storage system. Alluxio is specifically compiled for Spark for data access. Web application retrieves candidate's emotional and polarity scores from database.
-\begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.2in]{Deployment.jpg}
-\caption{Deployment Diagram}
 \end{figure}
 
 \chapter{IMPLEMENTATION DETAILS}
@@ -1225,7 +1202,7 @@ T6                  & Identification of Prerequisites and Installation \\ \hline
 T7                  & Configuring python and python package installer pip in the system \\ \hline
 T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
 T9                  & Studying libraries in python required for implementation \\ \hline
-T10                  & Downloading and extracting reviews from IMDB movie datasets provided for research purpose \\ \hline
+T10                  & Downloading and extracting reviews from IMDB movie datasets \\ \hline
 T11                  & Removing stopwords, punctuation marks, numbers etc.\\ \hline
 T12                  & Report Preparation \\ \hline
 T13                  & Dissertation Project Stage I Presentation \\ \hline
