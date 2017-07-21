@@ -78,7 +78,7 @@
 \contentsline {chapter}{\numberline {8}DETAILED DESIGN DOCUMENT}{34}{chapter.8}
 \contentsline {section}{\numberline {8.1}Introduction}{35}{section.8.1}
 \contentsline {section}{\numberline {8.2}Architectural Design}{36}{section.8.2}
-\contentsline {section}{\numberline {8.3}Class Design}{37}{section.8.3}
+\contentsline {section}{\numberline {8.3}Class Design}{36}{section.8.3}
 \contentsline {section}{\numberline {8.4}Component Design}{38}{section.8.4}
 \contentsline {chapter}{\numberline {9}IMPLEMENTATION DETAILS}{39}{chapter.9}
 \contentsline {section}{\numberline {9.1}Introduction}{40}{section.9.1}

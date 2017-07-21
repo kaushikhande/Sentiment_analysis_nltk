@@ -55,11 +55,11 @@
 
 \begin{document}
 
-\picttitlepage{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{}{Prof. A. G. Phakatkar}
+\picttitlepage{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{6989}{Prof. A. G. Phakatkar}
 
 %\companycertificate{BEHAVIORAL ASSESSMENT OF INTERNAL AND EXTERNAL CANDIDATES OF MULTIPLE ORGANIZATIONS USING SENTIMENT ANALYSIS AND EMOTION MINING}{Sagar S. Patil}{}{Mr. Vijay Kumbhar}{Mr. Vijay Kumbhar}{}
 
-\pictcertificate{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{}{Prof. A. G. Phakatkar}{}
+\pictcertificate{SENTIMENT ANALYSIS USING ORIGINAL AND REVERSED REVIEWS}{Kaushik S. Hande}{6989}{Prof. A. G. Phakatkar}{}
 
 
 
@@ -609,7 +609,7 @@ The progress of dissertation is reported once in a month.
 Major tasks in the Dissertation stages are - 
 	
 				
-				Task 1 : Requirement
+				\par{}Task 1 : Requirement
 					\begin{enumerate}
 						\item Define problem statement
 						\item Identify scope, requirements
@@ -761,10 +761,10 @@ Actors of the system are user and IMDB movie dataset system.
 IMDB dataset provides input to the system. System downloads the 
 dataset from given url. It performs text analysis on each row for that
 stopwords removal, vectorizer and sentiment analysis is used.
-The predicted class of the reviews is given to the user.
+The predicted class of the reviews is accessed by the user.
 
 
-\newpage
+
 \subsection{Use Case Views}
 \subsubsection{System}
 \begin{figure}[h!]
@@ -824,7 +824,7 @@ performed on the test dataset. Detailed analysis of results obtained by classifi
 
 \subsection{Sequence Diagram}
 \begin{figure}[h!]
-\includegraphics[width=5.0in,height=5.0in]{sequence.png}
+\includegraphics[width=6.0in,height=5.0in]{sequence.png}
 \caption{Sequence Diagram}
 \end{figure}
 
@@ -882,7 +882,7 @@ of data and test data consists of 25 \% of total data. Both are mutually exclusi
 
 
 \begin{figure}[!h]
-\includegraphics[width=5.7in,height=4.0in]{archi.png}
+\includegraphics[width=5.0in,height=3.0in]{archi.png}
 \caption{Proposed System Architecture}
 \end{figure}
 
@@ -892,7 +892,7 @@ It is a static diagram that represents the static view of an application. It is 
 SentimentClassification class has ClassifyReview method which predicts the polarity of review.
 
 \begin{figure}[h!]
-\includegraphics[width=4.5in,height=4.0in]{class.png}
+\includegraphics[width=5.5in,height=4.0in]{class.png}
 \caption{Class Diagram}
 \end{figure}
 \newpage
@@ -1130,7 +1130,7 @@ of Product Reviews '' {\em Natural Language Processing and Chinese Computing 201
 
 \bibitem{xiaco}Xia, Rui and Wang, Cheng and Dai, Xinyu and Li, Tao, 
 `` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation ''
-  {\em Association for Computational Linguistics (ACL 1),} pp. 1054–1063, 2015.
+  {\em Association for Computational Linguistics (ACL 1),} pp. 1054-1063, 2015.
   
 \bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic Processing in Automatic 
 Sentiment Classification of Product Reviews ''{\em Proceedings 
@@ -1141,7 +1141,7 @@ of the Eighth International ISKO Conference
 A three-stage model for document-level sentiment analysis '' {\em  Information Processing \& Management 52, no. 1, } pp. 36 - 45, 2016
 
 \bibitem{ruiEnssemble}Rui Xia, Chengqing Zong and Shoushan Li, `` Ensemble of feature sets and classification algorithms
-for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138–1152, 2011
+for sentiment classification ''{\em  Information Sciences 181, no. 6 } pp. 1138-1152, 2011
 
 \bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
 {\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
