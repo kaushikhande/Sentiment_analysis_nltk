@@ -94,8 +94,43 @@ def main():
 	print predictedProbability2[1]
 	
 	
+	print "------------------------"
 	
-
+	data2 = {"I show this film to university students in speech and media law because its lessons are timeless: Why speaking out against injustice is important and can bring about the changes sought by the oppressed. Why freedom of the press and freedom of speech are essential to democracy. This is a must-see story of how apartheid was brought to the attention of the world through the activism of Steven Biko and the journalism of Donald Woods. It also gives an important lesson of free speech: You can blow out a candle, but you can't blow out a fire. Once the flame begins to catch, the wind will blow it higher. (From Biko by Peter Gabriel, on Shaking the Tree).","I show this film to university students in speech and media law because its lessons are worthless: Why speaking out against injustice is unimportant and can bring about the changes sought by the oppressed. Why freedom of the press and freedom of speech are essential to democracy. This is not a must-see story of how apartheid was brought to the attention of the world through the activism of Steven Biko and the journalism of Donald Woods. It also gives an unimportant lesson of free speech: You can blow out a candle, but you can't blow out a fire. Once the flame begins to catch, the wind will blow it higher. (From Biko by Peter Gabriel, on Shaking the Tree)."}
+	data2 = count_vectorizer.transform(data2)
+	predicted2 = classifier.predict(data2)
+	predictedProbability2 = classifier.predict_proba(data2)
+	print predicted2[0]
+	print predictedProbability2[0]
+	#print data2[0]
+	print predicted2[1]
+	print predictedProbability2[1]
+	print "--------------------------"
+	
+	data2 = {"I loved this film when I was little. Today at 17 it is one of my all time favorite animated films. Beautiful animation and appealing characters are just two of the things to like about this film. Although many people might not enjoy some of the songs, most of them are well-done and go along with the story. It focuses on Charlie, a roguish handsome German Shepard who may seem unlikable to some at first... but eventually will win you over.<br /><br />Not a kiddie film by any means. Often very dark and frightening at times. A treat for Don Bluth fans and animation buffs. But do keep a tissue in handy. ADGTH never fails to make me cry and will do the same for those who are movie sensitive. Arguably one of the greatest non-Disney animated films of all time. Along with Watership Down and My Neighbor Totoro.<br /><br />BOTTOM LINE: A heavenly masterpiece. ","I hated this film when I was little. Today at 17 it is one of my all time unfavorite animated films. Ugly animation and unappealing characters are just two of the things to like about this film. Although many people might  enjoy some of the songs, most of them are poorly done and go along with the story. It focuses on Charlie, a roguish handsome German Shepard who may seem unlikable to some at first... but eventually will not win you over.<br /><br />Not a kiddie film by any means. Often very dark and frightening at times. A treat for Don Bluth fans and animation buffs. But do keep a tissue in handy. ADGTH fails to make me cry and will do the same for those who are movie sensitive. Arguably one of the worst non-Disney animated films of all time. Along with Watership Down and My Neighbor Totoro.<br /><br />BOTTOM LINE: A failure. "}
+	data2 = count_vectorizer.transform(data2)
+	predicted2 = classifier.predict(data2)
+	predictedProbability2 = classifier.predict_proba(data2)
+	print predicted2[0]
+	print predictedProbability2[0]
+	#print data2[0]
+	print predicted2[1]
+	print predictedProbability2[1]
+	
+	
+	print "--------------------------"
+	
+	data2 = {"I have seen the freebird movie and think its great! its laid back fun, about time the British film industry came through with something entertaining!! its good how the guy who met them at the service station gets mentioned way into the film in the news agents, nice touch. The acting was convincing (i am a biker) they reminded me of some good times i have had in the bike scene. It was good to see the film director getting in on the acting, well done jon ! At the end a new crop gets mentioned, in Ireland is this the foundation for a 2nd film? hope so keep them coming. Great film , well written, realistic characters !","I have seen the freebird movie and think its poor! its laid back fun, about time the British film industry came through with something unentertaining!! its good how the guy who met them at the service station gets mentioned way into the film in the news agents, bad touch. The acting was unconvincing (i am a biker) they reminded me of some good times i have had in the bike scene. It was bad to see the film director getting in on the acting, badly done jon ! At the end a new crop gets mentioned, in Ireland is this the foundation for a 2nd film? hope so keep them coming. Poor film , badly written, unrealistic characters !"}
+	data2 = count_vectorizer.transform(data2)
+	predicted2 = classifier.predict(data2)
+	predictedProbability2 = classifier.predict_proba(data2)
+	print predicted2[0]
+	print predictedProbability2[0]
+	#print data2[0]
+	print predicted2[1]
+	print predictedProbability2[1]
+	
+	
 
 
 

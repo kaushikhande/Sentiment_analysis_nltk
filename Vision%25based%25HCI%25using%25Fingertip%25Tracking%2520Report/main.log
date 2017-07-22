@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.17)  22 JUL 2017 13:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.17)  22 JUL 2017 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1103,6 +1103,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 73.
 
+Overfull \hbox (0.32477pt too wide) in paragraph at lines 73--73
+[]\OT1/ptm/m/it/12 I would like to take this op-por-tu-nity to thank my in-ter-
+nal guide \OT1/ptm/b/it/12 Prof. A. G. Phakatkar
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 73--73
 
  []
@@ -1193,7 +1199,7 @@ Chapter 4.
 [10
 
 ] [11]
-Overfull \hbox (26.22902pt too wide) in paragraph at lines 348--402
+Overfull \hbox (26.22902pt too wide) in paragraph at lines 349--403
 [][] 
  []
 
@@ -1206,13 +1212,13 @@ Chapter 6.
 [16
 
 ] [17]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 523.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 524.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 523.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 524.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1230,14 +1236,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [19] [20] [21] <task.jpg, id=757, 412.54124pt x 211.79124pt>
 File: task.jpg Graphic file (type jpg)
  <use task.jpg>
-Package pdftex.def Info: task.jpg used on input line 651.
+Package pdftex.def Info: task.jpg used on input line 652.
 (pdftex.def)             Requested size: 397.48921pt x 231.27122pt.
 
 [22 <./task.jpg>] <timeline.png, id=762, 495.8525pt x 611.28375pt>
 File: timeline.png Graphic file (type png)
 
 <use timeline.png>
-Package pdftex.def Info: timeline.png used on input line 659.
+Package pdftex.def Info: timeline.png used on input line 660.
 (pdftex.def)             Requested size: 397.48454pt x 397.47897pt.
  [23 <./timeline.png>]
 Chapter 7.
@@ -1251,16 +1257,16 @@ Missing character: There is no ô in font ptmr7t!
 File: usecase2.png Graphic file (type png)
 
 <use usecase2.png>
-Package pdftex.def Info: usecase2.png used on input line 775.
+Package pdftex.def Info: usecase2.png used on input line 776.
 (pdftex.def)             Requested size: 375.79544pt x 325.22076pt.
  [29 <./usecase2.png>]
 <Activity.png, id=794, 121.45375pt x 623.32875pt>
 File: Activity.png Graphic file (type png)
  <use Activity.png>
-Package pdftex.def Info: Activity.png used on input line 790.
+Package pdftex.def Info: Activity.png used on input line 791.
 (pdftex.def)             Requested size: 72.26863pt x 433.62596pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 783--795
+Underfull \hbox (badness 10000) in paragraph at lines 784--796
 
  []
 
@@ -1270,19 +1276,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [30] <level_0.png, id=799, 530.98375pt x 61.22874pt>
 File: level_0.png Graphic file (type png)
  <use level_0.png>
-Package pdftex.def Info: level_0.png used on input line 808.
+Package pdftex.def Info: level_0.png used on input line 809.
 (pdftex.def)             Requested size: 325.215pt x 37.50175pt.
  [31 <./Activity.png>] <level_1.png, id=805, 462.72874pt x 161.60374pt>
 File: level_1.png Graphic file (type png)
 
 <use level_1.png>
-Package pdftex.def Info: level_1.png used on input line 817.
+Package pdftex.def Info: level_1.png used on input line 818.
 (pdftex.def)             Requested size: 325.215pt x 113.58049pt.
  <level_2.png, id=806, 573.14125pt x 241.90375pt>
 File: level_2.png Graphic file (type png)
 
 <use level_2.png>
-Package pdftex.def Info: level_2.png used on input line 825.
+Package pdftex.def Info: level_2.png used on input line 826.
 (pdftex.def)             Requested size: 325.215pt x 137.26276pt.
 
 
@@ -1295,10 +1301,10 @@ Chapter 8.
 ] [36] <archi.png, id=837, 693.59125pt x 432.61626pt>
 File: archi.png Graphic file (type png)
  <use archi.png>
-Package pdftex.def Info: archi.png used on input line 886.
+Package pdftex.def Info: archi.png used on input line 887.
 (pdftex.def)             Requested size: 361.35744pt x 216.80928pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 891--894
+Underfull \hbox (badness 10000) in paragraph at lines 892--895
 
  []
 
@@ -1306,16 +1312,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 891--894
 File: class.png Graphic file (type png)
 
 <use class.png>
-Package pdftex.def Info: class.png used on input line 896.
+Package pdftex.def Info: class.png used on input line 897.
 (pdftex.def)             Requested size: 397.47583pt x 289.08998pt.
  [38 <./class.png>]
 <Component_.png, id=850, 628.3475pt x 292.09125pt>
 File: Component_.png Graphic file (type png)
  <use Component_.png>
-Package pdftex.def Info: Component_.png used on input line 907.
+Package pdftex.def Info: Component_.png used on input line 908.
 (pdftex.def)             Requested size: 375.80334pt x 231.271pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 901--910
+Underfull \hbox (badness 10000) in paragraph at lines 902--911
 
  []
 
@@ -1323,10 +1329,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 901--910
 File: sequence.png Graphic file (type png)
 
 <use sequence.png>
-Package pdftex.def Info: sequence.png used on input line 929.
+Package pdftex.def Info: sequence.png used on input line 930.
 (pdftex.def)             Requested size: 433.61894pt x 361.36014pt.
 
-Overfull \hbox (31.23982pt too wide) in paragraph at lines 929--930
+Overfull \hbox (31.23982pt too wide) in paragraph at lines 930--931
 [][] 
  []
 
@@ -1335,7 +1341,7 @@ Chapter 9.
 [41
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 939--941
+Underfull \hbox (badness 10000) in paragraph at lines 940--942
 
  []
 
@@ -1343,19 +1349,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 939--941
 File: screenshot2.png Graphic file (type png)
 
 <use screenshot2.png>
-Package pdftex.def Info: screenshot2.png used on input line 994.
+Package pdftex.def Info: screenshot2.png used on input line 995.
 (pdftex.def)             Requested size: 397.48454pt x 252.945pt.
  <screenshot3.png, id=887, 724.7075pt x 463.7325pt>
 File: screenshot3.png Graphic file (type png)
 
 <use screenshot3.png>
-Package pdftex.def Info: screenshot3.png used on input line 999.
+Package pdftex.def Info: screenshot3.png used on input line 1000.
 (pdftex.def)             Requested size: 397.48454pt x 252.945pt.
  <screenshot1.png, id=888, 724.7075pt x 463.7325pt>
 File: screenshot1.png Graphic file (type png)
 
 <use screenshot1.png>
-Package pdftex.def Info: screenshot1.png used on input line 1004.
+Package pdftex.def Info: screenshot1.png used on input line 1005.
 (pdftex.def)             Requested size: 397.48454pt x 252.945pt.
 
 
@@ -1364,7 +1370,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <screenshot4.png, id=889, 734.745pt x 439.6425pt>
 File: screenshot4.png Graphic file (type png)
  <use screenshot4.png>
-Package pdftex.def Info: screenshot4.png used on input line 1010.
+Package pdftex.def Info: screenshot4.png used on input line 1011.
 (pdftex.def)             Requested size: 397.49632pt x 238.49017pt.
 
 
@@ -1373,7 +1379,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <screenshot5.png, id=890, 734.745pt x 439.6425pt>
 File: screenshot5.png Graphic file (type png)
  <use screenshot5.png>
-Package pdftex.def Info: screenshot5.png used on input line 1017.
+Package pdftex.def Info: screenshot5.png used on input line 1018.
 (pdftex.def)             Requested size: 397.49632pt x 238.49017pt.
 
 
@@ -1382,7 +1388,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <screenshot_1.png, id=891, 734.745pt x 439.6425pt>
 File: screenshot_1.png Graphic file (type png)
  <use screenshot_1.png>
-Package pdftex.def Info: screenshot_1.png used on input line 1023.
+Package pdftex.def Info: screenshot_1.png used on input line 1024.
 (pdftex.def)             Requested size: 397.49632pt x 238.49017pt.
 
 
@@ -1396,13 +1402,13 @@ Chapter 10.
 ] [48] <Comparison.png, id=919, 462.528pt x 346.896pt>
 File: Comparison.png Graphic file (type png)
  <use Comparison.png>
-Package pdftex.def Info: Comparison.png used on input line 1088.
+Package pdftex.def Info: Comparison.png used on input line 1089.
 (pdftex.def)             Requested size: 361.37027pt x 289.0934pt.
 
 <figure_1.png, id=920, 462.528pt x 346.896pt>
 File: figure_1.png Graphic file (type png)
  <use figure_1.png>
-Package pdftex.def Info: figure_1.png used on input line 1094.
+Package pdftex.def Info: figure_1.png used on input line 1095.
 (pdftex.def)             Requested size: 361.37027pt x 289.0934pt.
  [49 <./Comparison.png> <./figure_1.png>]
 Chapter 11.
@@ -1416,25 +1422,12 @@ Chapter 12.
 Chapter 13.
 [54
 
-]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
- [55]pdfTeX warning (ext4): destination with the same identifier (name{cite.bas
-e}) has been already used, duplicate ignored
+] [55]pdfTeX warning (ext4): destination with the same identifier (name{cite.ba
+se}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1164  \bibitem{base}
-                       A Tripathy, A Agrawal, SK Rath , ‚ÄúClassification of...
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
+l.1165  \bibitem{base}
+                       A Tripathy, A Agrawal, SK Rath , ``Classification of ...
 [56]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
@@ -1446,10 +1439,10 @@ Annexure A.
 ] <ijircce.png, id=973, 793.96625pt x 573.14125pt>
 File: ijircce.png Graphic file (type png)
  <use ijircce.png>
-Package pdftex.def Info: ijircce.png used on input line 1205.
+Package pdftex.def Info: ijircce.png used on input line 1206.
 (pdftex.def)             Requested size: 411.94409pt x 339.6721pt.
 
-Overfull \hbox (9.56497pt too wide) in paragraph at lines 1205--1206
+Overfull \hbox (9.56497pt too wide) in paragraph at lines 1206--1207
 [][] 
  []
 
@@ -1457,14 +1450,14 @@ Overfull \hbox (9.56497pt too wide) in paragraph at lines 1205--1206
 File: 6107_certificate.jpg Graphic file (type jpg)
 
 <use 6107_certificate.jpg>
-Package pdftex.def Info: 6107_certificate.jpg used on input line 1214.
+Package pdftex.def Info: 6107_certificate.jpg used on input line 1215.
 (pdftex.def)             Requested size: 397.478pt x 303.51631pt.
  [60 <./6107_certificate.jpg>]
 <6107_reviewsheet.jpg, id=983, 2468.22125pt x 3276.24pt>
 File: 6107_reviewsheet.jpg Graphic file (type jpg)
 
 <use 6107_reviewsheet.jpg>
-Package pdftex.def Info: 6107_reviewsheet.jpg used on input line 1221.
+Package pdftex.def Info: 6107_reviewsheet.jpg used on input line 1222.
 (pdftex.def)             Requested size: 397.48448pt x 520.3098pt.
  [61 <./6107_reviewsheet.jpg>]
 Annexure B.
@@ -1473,19 +1466,19 @@ Annexure B.
 ]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1227.
+               Default added (so using `tbp') on input line 1228.
 
 
-Overfull \hbox (54.7443pt too wide) in paragraph at lines 1231--1268
+Overfull \hbox (54.7443pt too wide) in paragraph at lines 1232--1269
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1269.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1270.
 [63]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1269.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1270.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1269.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1269.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1270.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1270.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A6BA7F5DD68031E6FE7195640A44E4DD;6021.
@@ -1501,7 +1494,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  24798 strings out of 493029
  483782 string characters out of 6136234
- 688156 words of memory out of 5000000
+ 688301 words of memory out of 5000000
  27552 multiletter control sequences out of 15000+600000
  31175 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1515,7 +1508,7 @@ t/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (74 pages, 2972387 bytes).
+Output written on main.pdf (74 pages, 2972904 bytes).
 PDF statistics:
  1092 PDF objects out of 1200 (max. 8388607)
  957 compressed objects within 10 object streams
