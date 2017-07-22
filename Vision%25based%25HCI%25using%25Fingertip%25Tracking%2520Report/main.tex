@@ -290,8 +290,8 @@ absence of extra annotations and linguistic knowledge. However, results are stil
 \section{Motivation of Dissertation}
 Polarity shift is a kind of linguistic phenomenon which can reverse the sentiment polarity of the text. Negation is
 the most important type of polarity shift \cite{xiaOriginal}. For example, by adding a negation word “don’t” to a positive text “I like
-this book” in front of the word “like”, the sentiment of the this book” in front of the word “like”, the sentiment of the
-text will be reversed from positive to negative. However,the two sentiment-opposite texts are considered to be
+this book” in front of the word “like”, the sentiment of the
+text will be reversed from positive to negative. However, the two sentiment-opposite texts are considered to be
 very similar by the BOW representation. This is the main reason why standard machine learning algorithms often
 fail under the circumstance of polarity shift.
 
@@ -327,9 +327,9 @@ learning methods are more widely discussed in the
 sentiment classification literatures. However, it is relatively
 hard to integrate the polarity shift information into the
 BOW model in such methods. For example, Das and
-Chen \cite{yahoo} proposed a method by simply attaching “NOT”
-to words in the scope of negation, so that in the text “I
-don’t like book”, the word “like” becomes a new word “like-NOT”. Yet Pang et al. \cite{pang} reported that this method only
+Chen \cite{yahoo} proposed a method by simply attaching ``NOT``
+to words in the scope of negation, so that in the text ``I
+don't like book, the word ``like'' becomes a new word ``like-NOT''. Yet Pang et al. \cite{pang} reported that this method only
 has slightly negligible effects on improving the sentiment
 classification accuracy.
 \newpage
@@ -429,7 +429,9 @@ Please refer Chapter 1, Section 1.7 on Page 2
 
 \section{Software Context}
 \subsection{Scikit-learn} 
-Scikit-learn (formerly scikits.learn) is a free software machine learning library for the Python programming language. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
+Scikit-learn (formerly scikits.learn) is a free software machine learning library for the 
+Python programming language. It features various classification, regression and clustering
+algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
 \subsection{NumPY}
 
@@ -651,7 +653,7 @@ Major tasks in the Dissertation stages are -
 \end{figure}
 \newpage
 \subsection{Timeline Chart}
-Please refer Annexure B, Table B.1 on Page 66 for all Dissertation Tasks.
+Please refer Annexure B, Table B.1 on Page 61 for all Dissertation Tasks.
 \begin{figure}[!h]
 \centering
 \includegraphics[width=5.5in,height=5.5in]{timeline.png}
@@ -693,9 +695,9 @@ and rows represents each reviews. Presence of particular word in a review is sho
 				\item R version 3.3.2
 				\item Operating Systems:
 					\begin{itemize}
-						\item Windows XP, 7, 8, 10
-						\item Linux(Any flavor)
-						\item Mac OS 
+						
+						\item Ubuntu 14.04, Ubuntu 16.04
+						
 					\end{itemize}
 \end{itemize}
 \subsection{Hardware Requirements}
@@ -760,11 +762,13 @@ A use case represents a particular functionality of a system. Hence, use case di
 
 \newpage
 \subsection{Use Case Views}
-Actors of the system are user and IMDB movie dataset system.
-IMDB dataset provides input to the system. System downloads the 
-dataset from given url. It performs text analysis on each row for that
-stopwords removal, vectorizer and sentiment analysis is used.
-The predicted class of the reviews is accessed by the user.
+Actors of the system are user, IMDB data collector and IMDB website.
+IMDB data collector connects to the IMDB website and downloads the dataset.
+Perform text analysis on each review by using text vectorizer and sentiment 
+analyzer. Stored results of review predictions are accessed by the user.
+
+
+
 \vspace{5mm}
 
 \begin{figure}[h!]
@@ -777,7 +781,7 @@ This section contains details about events and associated behaviour of the syste
 
 \subsection{Activity Diagram}
 Activity diagram is a flow chart to represent the flow form one activity to another activity. The activity can be described as an operation of the system. The control flow is drawn from one operation to another. This flow can be sequential, branched or concurrent. The purpose of activity diagrams is to capture the dynamic behaviour of the system.\\\\
-\textbf{Description} : As shown in figure 8.6, User downloads movie dataset. This dataset is added for processing using csv import 
+\textbf{Description} : As shown in figure 7.2, User downloads movie dataset. This dataset is added for processing using csv import 
 library. Documents are preprocessed to remove stopwords and reviews are converted into matrix. Classifiers are trained after feature extraction. This trained classifiers are used on test dataset to classify.
 \begin{figure}[h!]
 \begin{center}
@@ -794,7 +798,7 @@ This section describes data flow diagrams (DFD) of the proposed system. There ar
 
 \subsection{Data Flow Diagram}
 \subsubsection{Level 0 Data Flow Diagram}
-In the level 0 DFD as shown in figure 7.7, Downloaded reviews are loaded in sentiment analysis system. The sytem analyzes and presents report
+In the level 0 DFD as shown in figure 7.3, Downloaded reviews are loaded in sentiment analysis system. The sytem analyzes and presents report
 through charts to user\\
 \begin{figure}[h!]
 \begin{center}
@@ -807,7 +811,7 @@ through charts to user\\
 \end{figure}
 
 \subsubsection{Level 1 Data Flow Diagram}
-In the level 1 DFD as shown in figure 7.8, Reviews are loaded through csv file loader. Data is preprocessed and model is created.
+In the level 1 DFD as shown in figure 7.4, Reviews are loaded through csv file loader. Data is preprocessed and model is created.
 Analysis done by the system is given to the user.\\
 \begin{figure}[h!]
 \includegraphics[width=4.5in]{level_1.png}
@@ -815,7 +819,7 @@ Analysis done by the system is given to the user.\\
 \end{figure}
 
 \subsubsection{Level 2 Data Flow Diagram}
-In the level 2 DFD as shown in figure 7.9, Reviews are preprocessed to give bag of words features. Classifiers are trained using this model. Classification is 
+In the level 2 DFD as shown in figure 7.5, Reviews are preprocessed to give bag of words features. Classifiers are trained using this model. Classification is 
 performed on the test dataset. Detailed analysis of results obtained by classifiers is done. It is provided to the user.\\
 \begin{figure}[h!]
 \includegraphics[width=4.5in]{level_2.png}
@@ -827,7 +831,8 @@ performed on the test dataset. Detailed analysis of results obtained by classifi
 
 \section{Non-Functional Requirements}
 \subsection{Availability}
-Required libraries must be installed and loaded in the python environment with the required configurations. Dataset must be downloaded from specified url \cite{dataset}.
+Required libraries must be installed and loaded in the python environment with the 
+required configurations. Dataset must be downloaded from specified URL \cite{dataset}.
 
 \subsection{Scalability}
 The system should be scalable to classify reviews even if the training and test data are increased. System can comfortably handle 
@@ -861,7 +866,8 @@ This document specifies the design that is used to fetch movie reviews in CSV fo
    
     \end{itemize}
 \end{itemize}
-Candidate's tweets are collected and classified based on these categories. They are profiled and compared based on emotional and polarity categories.
+IMDB movie dataset id downloaded and classified as positive and negative.
+Results obtained by various classifiers are compared with each other.
 \newpage
 \section{Architectural Design}
 Figure 8.1 shows architectural design of proposed system. Following are important components in the system :
@@ -883,7 +889,7 @@ of data and test data consists of 25\% of total data. Both are mutually exclusiv
 
 \section{Class Design}
 It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
-\textbf{Description} : In figure 9.2, modules and their relationships are shown. Document classifier used for classifying \
+\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying \
 SentimentClassification class has ClassifyReview method which predicts the polarity of review.
 
 \begin{figure}[h!]
@@ -952,10 +958,17 @@ and take predicted labels output in predicted variable
 \item Compare label\_test with predicted vaiable label values
 \item Print the confusion matrix
 \end{enumerate}\section{Dataset}
-\hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets. It contains 1,000 positive and 1,000 negative movie reviews from IMDB, so it is now considered too small for serious research and development purposes. However, the text is similar to movies reviews on IMDB today.
+\hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets.
+It contains 1,000 positive and 1,000 negative movie reviews from IMDB, so it is now considered 
+too small for serious research and development purposes. However, the text is similar to movies reviews on IMDB today.
 
-\par The file movie-pang02.zip contains a copy of Pang and Lee's Movie Review Data in a csv format that can be imported directly in python. It has two categories: Pos (reviews that express a positive or favorable sentiment) and Neg (reviews that express a negative or unfavorable sentiment). For this assignment, we will assume that all reviews are either positive or negative; there are no neutral reviews. 
-\par For document classification, a training and testing dataset is required. Training records for polarity categories are mentioned in Table 9.1
+\par The file movie-pang02.zip contains a copy of Pang and Lee's Movie Review Data in a
+csv format that can be imported directly in python. It has two categories: Pos 
+(reviews that express a positive or favorable sentiment) and Neg (reviews 
+that express a negative or unfavorable sentiment). For this work, we will assume that
+all reviews are either positive or negative; there are no neutral reviews. 
+\par For document classification, a training and testing dataset is required. 
+Training records for polarity categories are mentioned in Table 9.1
 
 \renewcommand{\arraystretch}{1.5}
 
@@ -995,14 +1008,14 @@ Negative          & 1000                      \\ \hline
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.3in]{screenshot4.png}
-\caption{Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)}
+\caption{Three classifiers results(Accuracy, recall, precision, F-measure with confusion matrix)}
 \end{figure}
 
 
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.3in]{screenshot5.png}
-\caption{Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)}
+\caption{Three classifiers results(Accuracy, recall, precision, F-measure with confusion matrix)}
 \end{figure}
 
 
@@ -1011,7 +1024,6 @@ Negative          & 1000                      \\ \hline
 \caption{Results of original and opposite reviews}
 \end{figure}
 
-\chapter{TEST SPECIFICATION}
 
 \chapter{DATA TABLES AND DISCUSSIONS} 
 
@@ -1062,7 +1074,7 @@ Maximum Entropy          & 77.59  & 79.52 & 77.30 & 77.09 \\ \hline
 \end{table}
 
 \vspace{5mm}
-\par The above Table 11.1, Table 11.2, Table 11.3 shows accuracy, precision, recall and f-measure
+\par The above Table 11.1, Table 11.2, Table 11.3 shows accuracy, precision, recall and F-measure
 of three different classifiers. Three different features are used as features.
 First table shows results with unigram features i.e. each words is considered separate features.
 Second table shows results with bigram features i.e. 2 words together are considered as features.
