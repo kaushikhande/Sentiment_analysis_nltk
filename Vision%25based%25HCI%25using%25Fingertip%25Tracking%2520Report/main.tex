@@ -76,15 +76,15 @@
 \listoftables
 		
 \begin{pictabstract}
-Bag of words is used for modeling in machine learning algorithms. 
+Bag of words(BOW) is used for modeling in machine learning algorithms. 
 However, BOW is not able to handle negation well
 because of its fundamental deficiencies . Many ways are used
 to handle the problem of negation which results into polarity
 shift . They require either knowledge about language constructs
 or extra human interventions which eventually increases the
-complexity. In this paper, a data expansion technique, called dual
+complexity. In this work, a data expansion technique, called dual
 sentiment analysis (DSA), is used to address the polarity shift
-problem due to negation in sentiment classification. Original and
+problem due to negation in sentiment classification. Both original and
 reversed training reviews are used for learning in a sentiment
 classifier and prediction is done on test reviews.
 
@@ -355,7 +355,7 @@ one review\cite{xiaOriginal} \end{tabular}
          & \begin{tabular}[c]{@{}l@{}}Dual training and \\
 Dual Prediction \\technique is used.\end{tabular}                                                                                                                                                                                         \\
 \hline
-2   & \begin{tabular}[c]{@{}l@{}}Thumbs up?Sentiment \\
+2   & \begin{tabular}[c]{@{}l@{}}Thumbs up? Sentiment \\
 Classification using\\
 Machine learning\\
 algorithms\cite{pang} \end{tabular} 
@@ -456,8 +456,9 @@ This document specifies and estimates various risks associated with this project
 
 \section{Technical Constraints}
 \begin{itemize}
-\item To build a classification module that distributes data and execution among spark executors.
-\item To fetch candidate's tweets in a CSV format and store it in Alluxio.
+
+\item To download movie reviews dataset in csv format and load it into python environment.
+\item To build a classification module that predicts the polarity of reviews.
 \end{itemize}
 
 \section{Dissertation Estimates}
@@ -641,7 +642,7 @@ Major tasks in the Dissertation stages are -
 
 
 \par Please refer figure 6.1 Task Network.
-
+\newpage
 \subsection{Task Network}
 \begin{figure}[!h]
 \centering
@@ -756,19 +757,18 @@ and rows represents each reviews. Presence of particular word in a review is sho
 \section{Usage Scenario}
 A use case represents a particular functionality of a system. Hence, use case diagram is used to describe the relationships among the functionalities and their internal/external actors. This section provides various usage scenarios for the system to be developed.
 
-\subsection{User Profiles}
+
+\newpage
+\subsection{Use Case Views}
 Actors of the system are user and IMDB movie dataset system.
 IMDB dataset provides input to the system. System downloads the 
 dataset from given url. It performs text analysis on each row for that
 stopwords removal, vectorizer and sentiment analysis is used.
 The predicted class of the reviews is accessed by the user.
-
-
-\newpage
-\subsection{Use Case Views}
+\vspace{5mm}
 
 \begin{figure}[h!]
-\includegraphics[width=5.2in,height=4.5in]{use_case.png}
+\includegraphics[width=5.2in,height=4.5in]{usecase2.png}
 \caption{Use Case : System}
 \end{figure}
 \newpage
@@ -822,11 +822,6 @@ performed on the test dataset. Detailed analysis of results obtained by classifi
 \caption{Level 2 DFD}
 \end{figure}
 
-\subsection{Sequence Diagram}
-\begin{figure}[h!]
-\includegraphics[width=6.0in,height=5.0in]{sequence.png}
-\caption{Sequence Diagram}
-\end{figure}
 
 
 
@@ -873,11 +868,11 @@ Figure 8.1 shows architectural design of proposed system. Following are importan
 \begin{itemize}
 \item Movie reviews data : It contains 1,000 positive and 1,000 negative movie reviews from IMDB.
 \item Preprocessing : It has stopwords removal and vectorizer.
-\item Training data and Test Data : Data is divided into training data and test data. Training data consists of 75 \%
-of data and test data consists of 25 \% of total data. Both are mutually exclusive.
+\item Training data and Test Data : Data is divided into training data and test data. Training data consists of 75\%
+of data and test data consists of 25\% of total data. Both are mutually exclusive.
 \item Classifier : Training data is given as a input to one of the classifier.
 \item Prediction system : It takes test data and applies trained model to it .
-\item Sentiment : It gives the end output of polarity into positive and negative classification.   
+\item Sentiment : It stores the end output of polarity into positive and negative classification.   
 \end{itemize}
 
 
@@ -905,6 +900,28 @@ to the console subsystem where result evaluation and comparison takes place.
 \begin{figure}[h!]
 \includegraphics[width=5.2in,height=3.2in]{Component_.png}
 \caption{Component Diagram}
+\end{figure}
+
+\newpage
+
+\subsection{Sequence Diagram}
+A sequence diagram is an interaction diagram that shows how objects operate
+with one another and in what order. It is a construct of a message sequence chart.
+
+A sequence diagram shows object interactions arranged in time sequence. 
+It depicts the objects and classes involved in the scenario and the sequence
+of messages exchanged between the objects needed to carry out the functionality 
+of the scenario. Sequence diagrams are typically associated with use case 
+realizations in the Logical View of the system under development. 
+Sequence diagrams are sometimes called event diagrams or event scenarios.
+
+\textbf{Description} : Training data sends reviews to feature extraction module.
+It gives input to the classifier module. Testing data is received by learned classifier which 
+returns the opinion type of a particular review.
+\vspace{4mm}
+\begin{figure}[h!]
+\includegraphics[width=6.0in,height=5.0in]{sequence.png}
+\caption{Sequence Diagram}
 \end{figure}
 
 \chapter{IMPLEMENTATION DETAILS}
@@ -989,6 +1006,10 @@ Negative          & 1000                      \\ \hline
 \end{figure}
 
 
+\begin{figure}[!h]
+\includegraphics[width=5.5in,height=3.3in]{screenshot_1.png}
+\caption{Results of original and opposite reviews}
+\end{figure}
 
 \chapter{TEST SPECIFICATION}
 
@@ -1065,7 +1086,7 @@ Third table shows results with trigram features i.e. 3 words combine are conside
 
 
 \chapter{CONCLUSION}
-In this work, the Dual sentiment analysis technique is used
+In this work, the dual sentiment analysis technique is used
 to address the polarity shift problem in sentiment classification.
 The idea behind this is to create opposite reviews of the
 original reviews and used them together in Bag of words model
@@ -1117,9 +1138,9 @@ Language, Information and Computation (PACLIC),}  pp. 307-316, 2009.
   Classification and Polarity Shifting, '' {\em Proceedings of the International Conference on
   Computational Linguistics (COLING),} pp. 635-643, 2010.
   
- \bibitem{base} A Tripathy, A Agrawal, SK Rath , “Classification of sentiment reviews using 
+ \bibitem{base} A Tripathy, A Agrawal and SK Rath , “Classification of sentiment reviews using 
 n-gram machine learning approach”, in Expert Systems with Applications
-Volume 57, 15 September 2016, Pages 117–126.
+Volume 57, pp. 117-126, 2016
   
   \bibitem{turney1}D. Turney and Michael L. Littman, `` Un-supervised learning of semantic orientation from
 a hundred-billion-word corpus. ''{\em Technical Report

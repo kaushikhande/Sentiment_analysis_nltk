@@ -12,28 +12,29 @@
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Level 0 DFD\relax }}{32}{figure.caption.16}
 \contentsline {figure}{\numberline {7.4}{\ignorespaces Level 1 DFD\relax }}{32}{figure.caption.17}
 \contentsline {figure}{\numberline {7.5}{\ignorespaces Level 2 DFD\relax }}{33}{figure.caption.18}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Sequence Diagram\relax }}{33}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Proposed System Architecture\relax }}{37}{figure.caption.20}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Class Diagram\relax }}{38}{figure.caption.21}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Component Diagram\relax }}{39}{figure.caption.22}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Proposed System Architecture\relax }}{37}{figure.caption.19}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Class Diagram\relax }}{38}{figure.caption.20}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Component Diagram\relax }}{39}{figure.caption.21}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Sequence Diagram\relax }}{40}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample matrix creation with word counts\relax }}{43}{figure.caption.24}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample matrix creation with tf-idf\relax }}{43}{figure.caption.25}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Review classification with negative and positive percentages\relax }}{44}{figure.caption.26}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)\relax }}{44}{figure.caption.27}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)\relax }}{45}{figure.caption.28}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Classifiers accuracy score comparison\relax }}{49}{figure.caption.32}
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Variations in classifier accuracies as the no. of features increases\relax }}{49}{figure.caption.33}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample matrix creation with word counts\relax }}{44}{figure.caption.24}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample matrix creation with tf-idf\relax }}{44}{figure.caption.25}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Review classification with negative and positive percentages\relax }}{45}{figure.caption.26}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)\relax }}{45}{figure.caption.27}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Three classifiers results(Accuracy, recall, precision, f-measure with confusion matrix)\relax }}{46}{figure.caption.28}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Results of original and opposite reviews\relax }}{46}{figure.caption.29}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Classifiers accuracy score comparison\relax }}{50}{figure.caption.33}
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Variations in classifier accuracies as the no. of features increases\relax }}{50}{figure.caption.34}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces IJIRCCE Certificate\relax }}{59}{figure.caption.34}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces cPGCON Certificate\relax }}{60}{figure.caption.35}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces cPGCON Review Sheet\relax }}{61}{figure.caption.36}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces IJIRCCE Certificate\relax }}{60}{figure.caption.35}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces cPGCON Certificate\relax }}{61}{figure.caption.36}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces cPGCON Review Sheet\relax }}{62}{figure.caption.37}
 \addvspace {10\p@ }
 \contentsfinish 
 \contentsfinish 
