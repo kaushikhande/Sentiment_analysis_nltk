@@ -111,7 +111,8 @@ Pune 411043 \vspace*{2\baselineskip}}
 \centerline{ #2 \hspace{25 mm}  Exam No: #3}
 \vspace*{1\baselineskip} 
 is a bonafide work carried out by him under the supervision of  #4 and it
-is submitted towards the partial fulfillment of the requirement of Savitribai Phule Pune University, for the award of the degree of Master of Engineering (Computer Engineering) 
+is submitted towards the partial fulfillment of the requirement of 
+Savitribai Phule Pune University, for the award of the degree of Master of Engineering (Computer Engineering) 
 \vspace*{3\baselineskip} 
 
 
@@ -170,7 +171,8 @@ dissertation on {\bfseries \fontsize{12}{12} \selectfont ``#1''}.}
  I also thank \textbf{Dr. P. T. Kulkarni}, Principal, Pune Institute of Computer Technology for his encouragement and providing required resources.}
 \vspace*{1.5\baselineskip}
 
-\textit{In the end my special thanks to \textbf{Mr. Hrishikesh Kasar} for providing various resources such as well-equipped lab with all needed software platforms, continuous Internet connection, for my dissertation work.\\\\}
+\textit{In the end my special thanks to \textbf{Mr. Hrishikesh Kasar} for providing 
+various resources such as well-equipped lab with all needed software platforms, continuous internet connection, for my dissertation work.\\\\}
 \vspace*{1\baselineskip}
 
 Kaushik S. Hande\\
