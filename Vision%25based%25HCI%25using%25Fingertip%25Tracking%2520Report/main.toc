@@ -22,8 +22,8 @@
 \contentsline {section}{\numberline {5.3}Statement of Scope}{14}{section.5.3}
 \contentsline {section}{\numberline {5.4}Software Context}{14}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Scikit-learn}{14}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}NumPY}{15}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Natural language toolkit}{15}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.2}NumPy}{15}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Natural language toolkit (NLTK)}{15}{subsection.5.4.3}
 \contentsline {subsection}{\numberline {5.4.4}Matplotlib}{15}{subsection.5.4.4}
 \contentsline {chapter}{\numberline {6}DISSERTATION PLAN}{16}{chapter.6}
 \contentsline {section}{\numberline {6.1}Purpose of the Document}{17}{section.6.1}
