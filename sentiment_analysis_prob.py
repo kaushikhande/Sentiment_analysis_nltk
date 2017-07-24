@@ -43,7 +43,9 @@ def preprocess():
     count_vectorizer = CountVectorizer(ngram_range=(1,1))
     
     data = count_vectorizer.fit_transform(data)
-    data1 = {"This book is interesting","It is boring and interesting interesting"}
+    data1 = ["This book is interesting","It is boring and interesting interesting"]
+    print data1[0]
+    print data1[1]
     data1 = count_vectorizer.fit_transform(data1)
     print data1
     raw_input('>')
@@ -68,7 +70,7 @@ def learn_model(data,target):
     predicted = classifier.predict(data_test)
     print data1
     #predicted1 = classifier.predict(data1)
-    raw_input('--')
+    #raw_input('--')
     #print data1
     #print predicted1
     for i in predicted:
@@ -142,6 +144,7 @@ def evaluate_model(target_true,target_predicted):
     #print confusion_matrix(target_true,target_predicted)
     cm = confusion_matrix(target_true,target_predicted)
     print cm
+    raw_input('>')
     print "The accuracy score is {:.2%}".format(accuracy_score(target_true,target_predicted))
     
 
@@ -155,11 +158,13 @@ def main():
     data1, target1 = load_file()
     data_train1,data_test1,target_train1,target_test1 = cross_validation.train_test_split(data1,target1,test_size=0.20,random_state=43)
     print np.shape(data_test1)
-    for i in range(0,50):
+    for i in range(0,75):
     	print "==========================="
-    	print data_test1[i],         # ########## test reviews from 0 to range values
-    	print target_test1[i],      ############## correct labeled values for respective test review
-    	print cross_ref[i]     ########### predicted values for respective test review
+    	print data_test1[i]        # ########## test reviews from 0 to range values
+    	print "Actual Label ->",
+    	print target_test1[i]      ############## correct labeled values for respective test review
+    	print "Predicted Label ->",
+    	print cross_ref[i]     ########### predicted label for respective test review
     	print predicted_values[i]  ############ predicted values [ negative %, positive %]
     	
     #print "cross_ref"
