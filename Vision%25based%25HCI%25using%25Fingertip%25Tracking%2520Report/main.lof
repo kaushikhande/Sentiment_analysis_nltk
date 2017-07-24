@@ -18,15 +18,15 @@
 \contentsline {figure}{\numberline {8.3}{\ignorespaces Component Diagram\relax }}{39}{figure.caption.21}
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Sequence Diagram\relax }}{40}{figure.caption.22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample matrix creation with word counts\relax }}{44}{figure.caption.24}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample matrix creation with tf-idf\relax }}{44}{figure.caption.25}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Review classification with negative and positive percentages\relax }}{45}{figure.caption.26}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Three classifiers results (accuracy, recall, precision, F-measure with confusion matrix)\relax }}{45}{figure.caption.27}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Three classifiers results (accuracy, recall, precision, F-measure with confusion matrix)\relax }}{46}{figure.caption.28}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Results of original and opposite reviews\relax }}{46}{figure.caption.29}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Sample Matrix Creation with Word Counts\relax }}{44}{figure.caption.24}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample Matrix Creation with Tf-idf\relax }}{44}{figure.caption.25}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Review Classification with Negative and Positive Percentages\relax }}{45}{figure.caption.26}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Three Classifiers Results (Accuracy, Recall, Precision, F-measure with Confusion Matrix)\relax }}{45}{figure.caption.27}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces Three Classifiers Results (Accuracy, Recall, Precision, F-measure with Confusion Matrix)\relax }}{46}{figure.caption.28}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Results of Original and Opposite Reviews\relax }}{46}{figure.caption.29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Classifiers accuracy score comparison\relax }}{49}{figure.caption.33}
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Variations in classifier accuracies as the no. of features increases\relax }}{50}{figure.caption.34}
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Classifiers Accuracy Score Comparison\relax }}{49}{figure.caption.33}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Variations in Classifier Accuracies as the no. of Features Increases\relax }}{50}{figure.caption.34}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -61,8 +61,28 @@ def main():
 	#print data2[0]
 	print data3[1]
 	print predicted2[1]
-	print predictedProbability2[1]
+	
+	
+	#print predictedProbability2[1]
+	#print predictedProbability2[1][1]
+	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
 	#print data2[1]
+	raw_input('>')
 	
 	
 	data2 =["I really enjoyed this documentary about Kenny and Spencer's attempt to pitch The Dawn. Was a great look at how outsiders try to get to the inside to make it big. <br /><br />The story was put together well and organized in an interesting manner that made the film flow well. Certainly worth a watch. My only complaint is that their appeared to be no closure. Perhaps that is part of the point. We expect it but in reality that is not what happened (or usually happens).<br /><br />The film is also a great way to see the personality of Kenny and Spencer outside of their Canadian television show. You can see a bit of what is yet to come. <br /><br />I look forward to a chance to see The Papal Chase.","I really hated this documentary about Kenny and Spencer's attempt to pitch The Dawn. Was a unenthusiastic look at how outsiders try to get to the inside to make it big. <br /><br />The story was put together badly and unorganized in an uninteresting manner that made the film flow badly. Certainly not worth a watch. My only complaint is that their appeared to be closure. Perhaps that is part of the point. We expect it but in reality that is not what happened (or usually happens).<br /><br />The film is also a unenthusiastic way to see the personality of Kenny and Spencer outside of their Canadian television show. You can see a bit of what is yet to come. <br /><br />I don't look forward to a chance to see The Papal Chase."]
@@ -83,6 +103,26 @@ def main():
 	print predicted2[1]
 	print predictedProbability2[1]
 	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
+	#print data2[1]
+	raw_input('>')
+	
+	
+	
 	print "########################################################"
 	data2 =["From the first scene you are given clues as to what may be going on here. It becomes more and more obvious as the story rolls on. The acting is excellent throughout and these actors touch your soul. Even though I knew what was going to happen I was extremely puzzled by the motive. I'm still puzzled as to why Ben did what he did. We could see in his face second thoughts, but the ultimate sacrifice seemed to go against his emotion and feelings. It was a very interesting and touching story but it left me confused. Maybe that was the point of the film. I did like the film and Wil Smith can wrack up another good film choice. This guy knows how to entertain an audience!","From the first scene you are left guessing as to what may be going on here. It becomes more and more unobvious as the story rolls on. The acting is poor throughout and these actors don't touch your soul. Even though I knew what was going to happen I was extremely puzzled by the motive. I'm still puzzled as to why Ben did what he did. We could see in his face second thoughts, but the ultimate sacrifice seemed to go against his emotion and feelings. It was a very uninteresting and untouching story but it left me confused. Maybe that was the point of the film. I did dislike the film and Wil Smith can wrack up another bad film choice. This guy knows how not to entertain an audience!"]
 	data3 = data2
@@ -97,6 +137,24 @@ def main():
 	print data3[1]
 	print predicted2[1]
 	print predictedProbability2[1]
+	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
+	#print data2[1]
+	raw_input('>')
 	
 	
 	print "########################################################"
@@ -115,6 +173,25 @@ def main():
 	print predictedProbability2[1]
 	
 	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
+	#print data2[1]
+	raw_input('>')
+	
+	
 	print "########################################################"
 	
 	data2 = ["I show this film to university students in speech and media law because its lessons are timeless: Why speaking out against injustice is important and can bring about the changes sought by the oppressed. Why freedom of the press and freedom of speech are essential to democracy. This is a must-see story of how apartheid was brought to the attention of the world through the activism of Steven Biko and the journalism of Donald Woods. It also gives an important lesson of free speech: You can blow out a candle, but you can't blow out a fire. Once the flame begins to catch, the wind will blow it higher. (From Biko by Peter Gabriel, on Shaking the Tree).","I show this film to university students in speech and media law because its lessons are worthless: Why speaking out against injustice is unimportant and can bring about the changes sought by the oppressed. Why freedom of the press and freedom of speech are essential to democracy. This is not a must-see story of how apartheid was brought to the attention of the world through the activism of Steven Biko and the journalism of Donald Woods. It also gives an unimportant lesson of free speech: You can blow out a candle, but you can't blow out a fire. Once the flame begins to catch, the wind will blow it higher. (From Biko by Peter Gabriel, on Shaking the Tree)."]
@@ -130,6 +207,26 @@ def main():
 	print data3[1]
 	print predicted2[1]
 	print predictedProbability2[1]
+	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
+	#print data2[1]
+	raw_input('>')
+	
+	
 	print "########################################################"
 	
 	data2 = ["I loved this film when I was little. Today at 17 it is one of my all time favorite animated films. Beautiful animation and appealing characters are just two of the things to like about this film. Although many people might not enjoy some of the songs, most of them are well-done and go along with the story. It focuses on Charlie, a roguish handsome German Shepard who may seem unlikable to some at first... but eventually will win you over.<br /><br />Not a kiddie film by any means. Often very dark and frightening at times. A treat for Don Bluth fans and animation buffs. But do keep a tissue in handy. ADGTH never fails to make me cry and will do the same for those who are movie sensitive. Arguably one of the greatest non-Disney animated films of all time. Along with Watership Down and My Neighbor Totoro.<br /><br />BOTTOM LINE: A heavenly masterpiece. ","I hated this film when I was little. Today at 17 it is one of my all time unfavorite animated films. Ugly animation and unappealing characters are just two of the things to like about this film. Although many people might  enjoy some of the songs, most of them are poorly done and go along with the story. It focuses on Charlie, a roguish handsome German Shepard who may seem unlikable to some at first... but eventually will not win you over.<br /><br />Not a kiddie film by any means. Often very dark and frightening at times. A treat for Don Bluth fans and animation buffs. But do keep a tissue in handy. ADGTH fails to make me cry and will do the same for those who are movie sensitive. Arguably one of the worst non-Disney animated films of all time. Along with Watership Down and My Neighbor Totoro.<br /><br />BOTTOM LINE: A failure. "]
@@ -144,6 +241,24 @@ def main():
 	print data3[1]
 	print predicted2[1]
 	print predictedProbability2[1]
+	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
+	#print data2[1]
+	raw_input('>')
 	
 	
 	print "########################################################"
@@ -162,6 +277,29 @@ def main():
 	print data3[1]
 	print predicted2[1]
 	print predictedProbability2[1]
+	print predicted[0],
+	print predicted[1]
+	
+	if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+	else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]
+	#print data2[1]
+	raw_input('>')
+		
+		
+		
 	
 	
 

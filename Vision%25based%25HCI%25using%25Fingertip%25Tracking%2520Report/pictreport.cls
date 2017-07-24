@@ -81,10 +81,11 @@ Engineering) \\
 PUNE INSTITUTE OF COMPUTER TECHNOLOGY \\
 Sr.  No. 27, Pune Satara Road, Dhankawadi  \\
 Pune 411043 \vspace*{2\baselineskip}}
+\newpage
 \end{center}}
 
 \newcommand{\pictcertificate}[4] {
-\begin{figure}[ht]
+\begin{figure}[h]
 \centering
 \includegraphics[width=100pt]{pict.png}
 \end{figure}
