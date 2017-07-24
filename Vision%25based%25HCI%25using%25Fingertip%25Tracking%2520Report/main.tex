@@ -5,6 +5,7 @@
 \usepackage{listings}
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{multirow}
 \usepackage{enumitem}
 \setlist[enumerate]{itemsep=0mm}
@@ -994,6 +995,8 @@ This section describes implementation of the system, required libraries and depe
 \section{Algorithm}
 \subsection{Document Classification}
 
+
+
 \textbf{Input} : Movie review dataset in .csv file format \\
 \textbf{Output} : Polarity classification \\
 
@@ -1133,16 +1136,16 @@ Maximum Entropy          & 77.59  & 79.52 & 77.30 & 77.09 \\ \hline
 \end{table}
 
 \vspace{5mm}
-\par The above Table 11.1, Table 11.2, Table 11.3 shows accuracy, precision, recall and F-measure
+\par The above Table 10.1, Table 10.2, Table 10.3 shows accuracy, precision, recall and F-measure
 of three different classifiers. Three different features are used as features.
 First table shows results with unigram features i.e. each words is considered separate features.
 Second table shows results with bigram features i.e. 2 words together are considered as features.
 Third table shows results with trigram features i.e. 3 words combine are considered as features.
 \newpage
-\section{Results Graphs}
+\section{Result Graphs}
 \vspace{5mm}
 
-\par Below fig. 11.1 shows comparison of accuracy scores shown in Table 11.1, Table 11.2, Table 11.3 .
+\par Below fig. 10.1 shows comparison of accuracy scores shown in Table 10.1, Table 10.2, Table 10.3 .
 
 \begin{figure}[!h]
 \includegraphics[width=5.0in,height=4.0in]{Comparison.png}

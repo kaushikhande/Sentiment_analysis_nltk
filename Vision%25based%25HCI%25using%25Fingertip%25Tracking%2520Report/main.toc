@@ -86,7 +86,7 @@
 \contentsline {section}{\numberline {9.4}Snapshots}{44}{section.9.4}
 \contentsline {chapter}{\numberline {10}DATA TABLES AND DISCUSSIONS}{47}{chapter.10}
 \contentsline {section}{\numberline {10.1}Result Tables}{48}{section.10.1}
-\contentsline {section}{\numberline {10.2}Results Graphs}{49}{section.10.2}
+\contentsline {section}{\numberline {10.2}Result Graphs}{49}{section.10.2}
 \contentsline {chapter}{\numberline {11}CONCLUSION}{51}{chapter.11}
 \contentsline {chapter}{\numberline {12}FUTURE ENHANCEMENTS}{53}{chapter.12}
 \contentsline {chapter}{\numberline {13}REFERENCES}{55}{chapter.13}

@@ -438,20 +438,20 @@ def plot_accuracy_curve(maxent_accuracy, svm_accuracy, nb_accuracy , numbers_to_
 
 
 #numbers_to_test = [10, 100, 1000, 10000, 25000]
-#numbers_to_test = np.linspace(1000, 100000, 4)
-#numbers_to_test = numbers_to_test.astype(int)
+numbers_to_test = np.linspace(1000, 100000, 4)
+numbers_to_test = numbers_to_test.astype(int)
 #tries the best_word_features mechanism with each of the numbers_to_test of features
-#for num in numbers_to_test:
-#	print 'evaluating best %d word features' % (num)
-#	best_words = find_best_words(word_scores, num)
-#	evaluate_classifier(best_word_features)
+for num in numbers_to_test:
+	print 'evaluating best %d word features' % (num)
+	best_words = find_best_words(word_scores, num)
+	evaluate_classifier(best_word_features)
 	
 	
-#print maxent_accuracy
-#print svm_accuracy
-#print nb_accuracy
+print maxent_accuracy
+print svm_accuracy
+print nb_accuracy
 
 
 
-#plot_accuracy_curve(maxent_accuracy[4:], svm_accuracy[4:], nb_accuracy[4:], numbers_to_test)
-#plt.show()
+plot_accuracy_curve(maxent_accuracy[3:], svm_accuracy[3:], nb_accuracy[3:], numbers_to_test)
+plt.show()
