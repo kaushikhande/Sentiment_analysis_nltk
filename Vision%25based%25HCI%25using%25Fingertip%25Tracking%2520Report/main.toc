@@ -27,22 +27,21 @@
 \contentsline {subsection}{\numberline {5.4.4}Matplotlib}{15}{subsection.5.4.4}
 \contentsline {chapter}{\numberline {6}DISSERTATION PLAN}{16}{chapter.6}
 \contentsline {section}{\numberline {6.1}Purpose of the Document}{17}{section.6.1}
-\contentsline {section}{\numberline {6.2}Technical Constraints}{17}{section.6.2}
-\contentsline {section}{\numberline {6.3}Dissertation Estimates}{17}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Reconciled Estimates}{17}{subsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.1.1}Cost Estimates}{17}{subsubsection.6.3.1.1}
-\contentsline {subsubsection}{\numberline {6.3.1.2}Time Estimates}{17}{subsubsection.6.3.1.2}
-\contentsline {subsubsection}{\numberline {6.3.1.3}Dissertation Resources}{17}{subsubsection.6.3.1.3}
-\contentsline {section}{\numberline {6.4}Risk Management}{17}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Risk Identification}{17}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Risk Analysis}{18}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Overview of Risk Mitigation, Monitoring and Management}{18}{subsection.6.4.3}
-\contentsline {section}{\numberline {6.5}Staff Organization}{19}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Team Structure}{19}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}Management Reporting and Communication}{20}{subsection.6.5.2}
-\contentsline {subsection}{\numberline {6.5.3}Dissertation Task Set}{20}{subsection.6.5.3}
-\contentsline {subsection}{\numberline {6.5.4}Task Network}{22}{subsection.6.5.4}
-\contentsline {subsection}{\numberline {6.5.5}Timeline Chart}{23}{subsection.6.5.5}
+\contentsline {section}{\numberline {6.2}Dissertation Estimates}{17}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Reconciled Estimates}{17}{subsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Cost Estimates}{17}{subsubsection.6.2.1.1}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Time Estimates}{17}{subsubsection.6.2.1.2}
+\contentsline {subsubsection}{\numberline {6.2.1.3}Dissertation Resources}{17}{subsubsection.6.2.1.3}
+\contentsline {section}{\numberline {6.3}Risk Management}{17}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Risk Identification}{17}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Risk Analysis}{18}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Overview of Risk Mitigation, Monitoring and Management}{18}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Staff Organization}{20}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Team Structure}{20}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Management Reporting and Communication}{20}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Dissertation Task Set}{20}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Task Network}{22}{subsection.6.4.4}
+\contentsline {subsection}{\numberline {6.4.5}Timeline Chart}{23}{subsection.6.4.5}
 \contentsline {chapter}{\numberline {7}SOFTWARE REQUIREMENT SPECIFICATION}{24}{chapter.7}
 \contentsline {section}{\numberline {7.1}Introduction}{25}{section.7.1}
 \contentsline {section}{\numberline {7.2}Purpose and Scope of the Document}{25}{section.7.2}

@@ -3,8 +3,10 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{listings}
+
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{multirow}
 \usepackage{enumitem}
 \setlist[enumerate]{itemsep=0mm}
@@ -114,7 +116,7 @@ analysis.
 
 
 \section{Dissertation Title}
-Sentiment Analysis Using Original and  Reversed Reviews.
+Sentiment Analysis using Original and Reversed Reviews.
 
 %\section{Sponsorship}
 %Webonise Lab, Pune.
@@ -375,7 +377,7 @@ The following table shows the literature survey about different techniques of se
 No. & Reference                                                              & Techniques                                                                & Description                                                                 \\
 \hline
 1   & \begin{tabular}[c]{@{}l@{}}Dual Sentiment Analysis:\\ Considering Two sides of \\ 
-one review\cite{xiaOriginal} \end{tabular}
+one review \cite{xiaOriginal} \end{tabular}
   & \begin{tabular}[c]{@{}l@{}}Support vector machine\\(SVM), Naive bayes,\\ Logistic Regression \end{tabular}   
          & \begin{tabular}[c]{@{}l@{}}Dual training and \\
 Dual Prediction \\technique is used.\end{tabular}                                                                                                                                                                                         \\
@@ -383,7 +385,7 @@ Dual Prediction \\technique is used.\end{tabular}                               
 2   & \begin{tabular}[c]{@{}l@{}}Thumbs up? Sentiment \\
 Classification using\\
 Machine learning\\
-algorithms\cite{pang} \end{tabular} 
+algorithms \cite{pang} \end{tabular} 
  & \begin{tabular}[c]{@{}l@{}}Learning algorithms\\
 and n-gram model\end{tabular}                      
             & \begin{tabular}[c]{@{}l@{}}Classify the dataset\\
@@ -393,7 +395,7 @@ machine.\end{tabular}                                                           
 3   & \begin{tabular}[c]{@{}l@{}}Classification of \\sentiment
 reviews using\\
 N-gram machine \\learning
-approach\cite{base} \end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Support Vector Machine\\
+approach \cite{base} \end{tabular}                 & \begin{tabular}[c]{@{}l@{}}Support Vector Machine\\
 Naive Bayes \end{tabular}            & \begin{tabular}[c]{@{}l@{}}Converting text\\
 reviews into numeric\\
 matrices using\\
@@ -403,7 +405,7 @@ TF-IDF\end{tabular}                                                             
 4   & \begin{tabular}[c]{@{}l@{}}Thumbs up or \\thumbs
 down? Semantic \\orientation
 applied to \\unsupervised
-classification \\of reviews\cite{turney}\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Unsupervised
+classification \\of reviews \cite{turney}\end{tabular}                                          & \begin{tabular}[c]{@{}l@{}}Unsupervised
 learning \\algorithm for\\
 classifying a \\review\end{tabular}                                                         & \begin{tabular}[c]{@{}l@{}}A specific unsupervised\\
 learning technique \\based
@@ -411,7 +413,7 @@ on the\\
 mutual information\end{tabular}                                                                                                                                                                                        \\
 \hline
 5   & \begin{tabular}[c]{@{}l@{}}Automatic Opinion \\polarity
-Classification \\of movie\cite{salvetti}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\
+Classification \\of movie \cite{salvetti}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Naive Bayes\\
 And Markov Model \\(MM) \end{tabular}  & \begin{tabular}[c]{@{}l@{}} Accessed overall \\opinion
 polarity(OVOP)\\
 concept using \\machine
@@ -419,7 +421,7 @@ learning\\ algorithm\end{tabular}                                               
 \hline
 6   & \begin{tabular}[c]{@{}l@{}}Dual Training and \\dual
 prediction for\\ polarity
-classification\cite{xia} \end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} SVM and Naive Bayes\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dual training and\\
+classification \cite{xia} \end{tabular}                                                                                    & \begin{tabular}[c]{@{}l@{}} SVM and Naive Bayes\end{tabular}                                                           & \begin{tabular}[c]{@{}l@{}}Dual training and\\
 dual prediction\\(DTDP)\end{tabular}                                                                                                                                                                          \\
 \hline
 
@@ -469,18 +471,32 @@ NumPy is the fundamental package for scientific computing with Python. It contai
 \item Tools for integrating C/C++ and Fortran code
 \item Useful linear algebra, Fourier transform, and random number capabilities
 \end{itemize}
-Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.
+Besides its obvious scientific uses, NumPy can also be used as
+an efficient multi-dimensional container of generic data.
+Arbitrary data-types can be defined. This allows NumPy to
+seamlessly and speedily integrate with a wide variety of databases.
 
 \subsection{Natural language toolkit (NLTK)}
-NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning, wrappers for industrial-strength NLP libraries, and an active discussion forum.
+NLTK is a leading platform for building Python programs to work with
+human language data. It provides easy-to-use interfaces to over 50 corpora 
+and lexical resources such as WordNet, along with a suite of text processing 
+libraries for classification, tokenization, stemming, tagging, parsing, and 
+semantic reasoning, wrappers for industrial-strength NLP libraries, and an active discussion forum.
 
 \subsection{Matplotlib}
-Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell, the jupyter notebook, web application servers, and four graphical user interface toolkits. You can generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc., with just a few lines of code.
+Matplotlib is a python 2D plotting library which produces publication 
+quality figures in a variety of hardcopy formats and interactive environments 
+across platforms. Matplotlib can be used in python scripts, the Python and IPython 
+shell, the jupyter notebook, web application servers, and four graphical user interface 
+toolkits. You can generate plots, histograms, power spectra, bar 
+charts, errorcharts, scatterplots, etc., with just a few lines of code.
 
 \chapter{DISSERTATION PLAN}
 
 \section{Purpose of the Document}
-This document specifies and estimates various risks associated with this project and states how they are handled. It also states the project plan in terms of task and their dependency.
+This document specifies and estimates various risks
+associated with this project and states how they are handled. 
+It also states the project plan in terms of task and their dependency.
 
 \section{Technical Constraints}
 \begin{itemize}
@@ -497,16 +513,18 @@ No cost is required for tools and software as open source softwares are used.
 Calendar time required: 11 months.
 \subsubsection{Dissertation Resources}
 \begin{itemize}
-\item People : Single Person
+
 \item Software resources used are mentioned in Chapter 7, Section 7.5.1 on Page 26
 \item Hardware resources used are mentioned in Chapter 7, Section 7.5.2 on Page 26
 
 \end{itemize}
 
 \section{Risk Management}
-This section discusses dissertation risks and the approach to managing them.
+This section discusses dissertation risks and the approach to manage them.
 \subsection{Risk Identification}
-For risks identification, review of scope document, requirement specifications and schedule is done. Answers to questionnaire revealed some risks. Following risk identification questionnaire has been referred.
+For risks identification, review of scope document, requirement 
+specifications and schedule is done. Answers to questionnaire revealed 
+some risks. Following risk identification questionnaire has been referred.
 \begin{itemize}
 \item Are requirements fully understood by the software engineering team and its customers?
 \item Have customers been involved fully in the definition of requirements?
@@ -514,7 +532,8 @@ For risks identification, review of scope document, requirement specifications a
 \item Does the software engineering team have the right mix of skills?
 \item Are project requirements stable?
 \item Is the number of people on the project team adequate to do the job?
-\item Do all customer/user constituencies agree on the importance of the project and on the requirements for the system/product to be built?
+\item Do all customer/user constituencies agree on the importance of the project 
+and on the requirements for the system/product to be built?
 \end{itemize}
 
 \subsection{Risk Analysis}
@@ -729,10 +748,11 @@ and rows represents each reviews. Presence of particular word in a review is sho
 \end{itemize}
 \subsection{Hardware Requirements}
 			\begin{itemize}
-				\item Intel(R) Core(TM) i3 CPU @ 2.90GHz or later, width : 64 bits
-				\item Memory : 4 GB DDR3 or more
-				\item Capacity : 1697MHz or more
-				\item Cores : 4 or more
+				\item Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} 
+				i7-4790 CPU @ 3.60GHz x 8 , width : 64 bits
+				\item Memory : 8 GB DDR3 or more
+				
+				\item Cores : 8 or more
 				\item PCI Express Gigabit Ethernet Controller, Size: 100Mbit/s, Capacity: 1Gbit/s, Width: 64 bits
 				\item Hard Disk : 500 GB (EXT4 Primary/Logical Partition)
 			\end{itemize}
@@ -762,6 +782,7 @@ and rows represents each reviews. Presence of particular word in a review is sho
 \section{Output}
 \begin{itemize}
 \item Classification of each test review into positive or negative.
+\item Confusion matrix of classification test data.
 \item Percentage of accuracy achieved in classification.
 \item Comparison of accuracies obtained by each classifier.
 \end{itemize}
@@ -777,14 +798,19 @@ and rows represents each reviews. Presence of particular word in a review is sho
 \section{Applications}
 \begin{itemize}
 \item Businesses and organisations which require consumer opinions to do with products they market and services they produce.
-\item Individuals who make decisions to purchase products or services based upon word of mouth or on-line reviews, or to find public opinion, e.g. concerning politics or local issues.
-\item On-line advertising where in social media, an organisation may place an advertisement in response to a favourable review of a product, or a rival product could be advertised upon receipt of a bad review
+\item Individuals who make decisions to purchase products or services based upon word of mouth 
+or online reviews, or to find public opinion, e.g. concerning politics or local issues.
+\item Online advertising where in social media, an organisation may place an advertisement in response to a 
+favourable review of a product, or a rival product could be advertised upon receipt of a bad review
 \item Opinion retrieval for general searches of opinions
 \item HR Analytics.
 \end{itemize}
 
 \section{Usage Scenario}
-A use case represents a particular functionality of a system. Hence, use case diagram is used to describe the relationships among the functionalities and their internal/external actors. This section provides various usage scenarios for the system to be developed.
+A use case represents a particular functionality of a system.
+Hence, use case diagram is used to describe the relationships among the 
+functionalities and their internal/external actors. This section provides
+various usage scenarios for the system to be developed.
 
 
 \newpage
@@ -825,7 +851,7 @@ This section describes data flow diagrams (DFD) of the proposed system. There ar
 
 \subsection{Data Flow Diagram}
 \subsubsection{Level 0 Data Flow Diagram}
-In the level 0 DFD as shown in figure 7.3, Downloaded reviews are loaded in sentiment analysis system. The sytem analyzes and presents report
+In the level 0 DFD as shown in figure 7.3, downloaded reviews are loaded in sentiment analysis system. The sytem analyzes and presents report
 through charts to user\\
 \begin{figure}[h!]
 \begin{center}
@@ -915,9 +941,17 @@ of data and test data consists of 25\% of total data. Both are mutually exclusiv
 \end{figure}
 
 \section{Class Design}
-It is a static diagram that represents the static view of an application. It is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. It describes the attributes and operations of a class and also the constraints imposed on the system.\\\\
-\textbf{Description} : In figure 8.2, modules and their relationships are shown. Document classifier used for classifying \
+It is a static diagram that represents the static view of an application. 
+It is not only used for visualizing, describing, and documenting different
+aspects of a system but also for constructing executable code of the software 
+application. It describes the attributes and operations of a class and also
+the constraints imposed on the system.
+\\\\
+\textbf{Description} : In figure 8.2, modules and their relationships are shown.
+Document classifier used for classifying.
 SentimentClassification class has ClassifyReview method which predicts the polarity of review.
+The fit method in every classifier
+converts the text data into matrix of word frequency counts.
 \vspace{5mm}
 \begin{figure}[h!]
 \includegraphics[width=5.5in,height=4.0in]{class.png}
@@ -963,6 +997,8 @@ This section describes implementation of the system, required libraries and depe
 \section{Algorithm}
 \subsection{Document Classification}
 
+
+
 \textbf{Input} : Movie review dataset in .csv file format \\
 \textbf{Output} : Polarity classification \\
 
@@ -985,7 +1021,7 @@ and take predicted labels output in predicted variable
 \item Compare label\_test with predicted vaiable label values
 \item Print the confusion matrix
 \end{enumerate}\section{Dataset}
-\hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets.
+\hspace{1.1cm} Pang and Lee's Movie Review Data \cite{dataset} one of the first widely-available sentiment analysis datasets.
 It contains 1,000 positive and 1,000 negative movie reviews from IMDB. The text is similar to movies reviews on IMDB today.
 
 \par The file movie-pang02.zip contains a copy of Pang and Lee's movie review data in a
@@ -1018,36 +1054,36 @@ Negative          & 1000                      \\ \hline
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.5in]{screenshot2.png}
-\caption{Sample matrix creation with word counts}
+\caption{Sample Matrix Creation with Word Counts}
 \end{figure}
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.5in]{screenshot3.png}
-\caption{Sample matrix creation with tf-idf}
+\caption{Sample Matrix Creation with Tf-idf}
 \end{figure}
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.5in]{screenshot1.png}
-\caption{Review classification with negative and positive percentages}
+\caption{Review Classification with Negative and Positive Percentages}
 \end{figure}
 
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.3in]{screenshot4.png}
-\caption{Three classifiers results(Accuracy, recall, precision, F-measure with confusion matrix)}
+\caption{Three Classifiers Results (Accuracy, Recall, Precision, F-measure with Confusion Matrix)}
 \end{figure}
 
 
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.3in]{screenshot5.png}
-\caption{Three classifiers results(Accuracy, recall, precision, F-measure with confusion matrix)}
+\caption{Three Classifiers Results (Accuracy, Recall, Precision, F-measure with Confusion Matrix)}
 \end{figure}
 
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.3in]{screenshot_1.png}
-\caption{Results of original and opposite reviews}
+\caption{Results of Original and Opposite Reviews}
 \end{figure}
 
 
@@ -1102,26 +1138,26 @@ Maximum Entropy          & 77.59  & 79.52 & 77.30 & 77.09 \\ \hline
 \end{table}
 
 \vspace{5mm}
-\par The above Table 11.1, Table 11.2, Table 11.3 shows accuracy, precision, recall and F-measure
+\par The above Table 10.1, Table 10.2, Table 10.3 shows accuracy, precision, recall and F-measure
 of three different classifiers. Three different features are used as features.
 First table shows results with unigram features i.e. each words is considered separate features.
 Second table shows results with bigram features i.e. 2 words together are considered as features.
 Third table shows results with trigram features i.e. 3 words combine are considered as features.
 \newpage
-\section{Results Graphs}
+\section{Result Graphs}
 \vspace{5mm}
 
-\par Below fig. 11.1 shows comparison of accuracy scores shown in Table 11.1, Table 11.2, Table 11.3 .
+\par Below fig. 10.1 shows comparison of accuracy scores shown in Table 10.1, Table 10.2, Table 10.3 .
 
 \begin{figure}[!h]
 \includegraphics[width=5.0in,height=4.0in]{Comparison.png}
-\caption{Classifiers accuracy score comparison}
+\caption{Classifiers Accuracy Score Comparison}
 \end{figure}
 
 
 \begin{figure}[!h]
 \includegraphics[width=5.0in,height=4.0in]{figure_1.png}
-\caption{Variations in classifier accuracies as the no. of features increases}
+\caption{Variations in Classifier Accuracies as the no. of Features Increases}
 \end{figure}
 
 
@@ -1148,12 +1184,14 @@ corpus.
 
 
 
-\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, `` Dual sentiment analysis: Considering  two  sides  of  one 
-review, '' in IEEE transactions on knowledge and data engineering, vol. 27, no. 8, pp. 2120
+\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, `` Dual sentiment analysis
+: Considering  two  sides  of  one 
+review, '' in {\em IEEE transactions on knowledge and data engineering,} vol. 27, no. 8, pp. 2120
 -
 2133, 2015.
 
-  \bibitem{yahoo}S. Das and M. Chen, `` Yahoo! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp. 1375-1388, 2007.
+  \bibitem{yahoo}S. Das and M. Chen, `` Yahoo
+  ! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp. 1375-1388, 2007.
 
   
   
@@ -1182,19 +1220,18 @@ Language, Information and Computation (PACLIC),}  pp. 307-316, 2009.
   Classification and Polarity Shifting, '' {\em Proceedings of the International Conference on
   Computational Linguistics (COLING),} pp. 635-643, 2010.
   
- \bibitem{base} A Tripathy, A Agrawal and SK Rath , `` Classification of sentiment reviews using 
-n-gram machine learning approach, `` in Expert Systems with Applications
-Volume 57, pp. 117-126, 2016
+ 
   
   \bibitem{turney1}D. Turney and Michael L. Littman, `` Un-supervised learning of semantic orientation from
-a hundred-billion-word corpus, ''{\em Technical Report
+a hundred-billion-word corpus, '' {\em Technical Report
 EGB-1094, National Research Council Canada,} arXiv preprint cs/0212012, 2002.
 
   \bibitem{vector}Yuan Wang, Zhaohui Li, Jie Liu, Zhicheng He, Yalou Huang and Dong Li,
  `` Word Vector Modeling for Sentiment Analysis
-of Product Reviews '' {\em Natural Language Processing and Chinese Computing 2014,} pp. 168-180, 2014.
+of Product Reviews, '' {\em Natural Language Processing and Chinese Computing 2014,} pp. 168-180, 2014.
+ 
  \bibitem{base} A Tripathy, A Agrawal, SK Rath , ``Classification of sentiment reviews using 
-n-gram machine learning approach, `` in Expert Systems with Applications
+n-gram machine learning approach, '' in {\em Expert Systems with Applications}
 Volume 57, pp. 117-126, 2016.
 
 \bibitem{salvetti} Salvetti, Franco, Stephen Lewis, and Christoph Reichenbach. 
@@ -1204,28 +1241,33 @@ Volume 57, pp. 117-126, 2016.
 `` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation, ''
   {\em Association for Computational Linguistics (ACL 1),} pp. 1054-1063, 2015.
   
-\bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic Processing in Automatic 
-Sentiment Classification of Product Reviews, ''{\em Proceedings 
+\bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic 
+Processing in Automatic 
+Sentiment Classification of Product Reviews, '' {\em Proceedings 
 of the Eighth International ISKO Conference
  } pp. 49-54, 2004.
  
- \bibitem{rui22}Rui Xia, Feng Xu, Jianfei Yu, Yong Qi and Erik Cambria, `` Polarity shift detection, elimination and ensemble:
-A three-stage model for document-level sentiment analysis, '' {\em  Information Processing \& Management 52, no. 1, } pp. 36 - 45, 2016
+ \bibitem{rui22}Rui Xia, Feng Xu, Jianfei Yu, Yong Qi and Erik Cambria, `` Polarity shift detection, 
+ elimination and ensemble:
+A three-stage model for document-level sentiment analysis, '' {\em  Information Processing \& Management 
+52, no. 1, } pp. 36 - 45, 2016
 
 \bibitem{ruiEnssemble}Rui Xia, Chengqing Zong and Shoushan Li, `` Ensemble of feature sets and classification algorithms
-for sentiment classification, ''{\em  Information Sciences 181, no. 6 } pp. 1138-1152, 2011
+for sentiment classification, '' {\em  Information Sciences 181, no. 6 } pp. 1138-1152, 2011
 
 \bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
 {\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
 
-\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, `` An Information Theoretic Approach to Sentiment Polarity
-Classification, ''{\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, ACM Lyon France }, pp. 35 - 40, 2012
+\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, `` An Information Theoretic 
+Approach to Sentiment Polarity
+Classification, '' {\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, 
+ACM Lyon France }, pp. 35 - 40, 2012
 
 
-\bibitem{valence}L. Polanyi and A. Zaenen, ``Contextual lexical valence shifters,'' in
+\bibitem{valence}L. Polanyi and A. Zaenen, `` Contextual lexical valence shifters, '' in
 {\em Proc. AAAI Spring Symp. Exploring Attitude Affect Text}, pp. 1–10, 2004.
 
-\bibitem{dataset}http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pang02.zip
+\bibitem{dataset} Pang and Lee : Movie Review Dataset,\\\textbf{Available online:} \texttt{http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pa\\ng02.zip}
 \end{thebibliography}
 
 \appendix
@@ -1263,39 +1305,42 @@ Sentiment Analysis using Original and Reversed Reviews
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Task Title} & \textbf{Dissertation Task}                    \\ \hline
-T1                  & Study of Domain - Machine Learning and Natural Language Processing         \\ \hline
+T1                  & Study of Domain - Natural Language Processing         \\ \hline
 T2                  & Identification of problem in existing systems \\ \hline
-T3                  & Review of Literature \\ 
+T3                  & Review of literature \\ 
 \hline
-T4                  & Building Mathematical Model \\ 
+T4                  & Building mathematical model \\ 
 \hline
-T5                  & Report On Scheme of Implementation \\ \hline
-T6                  & Identification of Prerequisites and Installation \\ \hline
+T5                  & Report on scheme of implementation \\ \hline
+T6                  & Identification of prerequisites and installation \\ \hline
 T7                  & Configuring python and python package installer pip in the system \\ \hline
-T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
+T8                  & Study of various machine learning algorithms\\ \hline
 T9                  & Studying libraries in python required for implementation \\ \hline
 T10                  & Downloading and extracting reviews from IMDB movie datasets \\ \hline
 T11                  & Removing stopwords, punctuation marks, numbers etc.\\ \hline
-T12                  & Report Preparation \\ \hline
-T13                  & Dissertation Project Stage I Presentation \\ \hline
-T14                  & Document Preprocessing
+T12                  & Report preparation \\ \hline
+T13                  & Dissertation project stage I presentation \\ \hline
+T14                  & Document preprocessing
  \\ \hline
-T15                  & Creating Bag of words model from movie reviews.
+T15                  & Creating bag of words model from movie reviews.
  \\ \hline
 T16                  & Spliting the dataset into training and test dataset \\ \hline
 T17                  & Train machine learning classifiers using bag of words model.\\ \hline
 T18                  & Create unigram, bigram, trigram variations of model \\ \hline
 T19                  & Train machine learning classifiers using this model.
  \\ \hline
-T20                  & Cpgcon Paper Presentation
+T20                  & cPGCON paper presentation
  \\ \hline
-T21                  & Predictive Model Construction \\ \hline
-T22                  & Model Testing \\ \hline
-T23                  & Experimental results, Analysis and Validation of results \\ \hline
-T24                  &Project Review with Demonstration
+T21                  & Predictive model construction \\ \hline
+T22                  & Model testing \\ \hline
+T23                  & Experimental results, analysis and validation of results \\ \hline
+T24                  & Project review with demonstration
  \\ \hline
-T25                  &Report Validation and Submission, Report Submission
+T25                  &Report Validation 
  \\ \hline
+ T26                  &Report Submission
+ \\ \hline
+
 \end{tabular}
 \end{table}
 \end{document}

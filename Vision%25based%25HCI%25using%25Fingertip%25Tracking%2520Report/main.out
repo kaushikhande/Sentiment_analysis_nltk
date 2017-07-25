@@ -27,67 +27,66 @@
 \BOOKMARK [2][-]{subsection.5.4.4}{Matplotlib}{section.5.4}% 27
 \BOOKMARK [0][-]{chapter.6}{DISSERTATION PLAN}{}% 28
 \BOOKMARK [1][-]{section.6.1}{Purpose of the Document}{chapter.6}% 29
-\BOOKMARK [1][-]{section.6.2}{Technical Constraints}{chapter.6}% 30
-\BOOKMARK [1][-]{section.6.3}{Dissertation Estimates}{chapter.6}% 31
-\BOOKMARK [2][-]{subsection.6.3.1}{Reconciled Estimates}{section.6.3}% 32
-\BOOKMARK [1][-]{section.6.4}{Risk Management}{chapter.6}% 33
-\BOOKMARK [2][-]{subsection.6.4.1}{Risk Identification}{section.6.4}% 34
-\BOOKMARK [2][-]{subsection.6.4.2}{Risk Analysis}{section.6.4}% 35
-\BOOKMARK [2][-]{subsection.6.4.3}{Overview of Risk Mitigation, Monitoring and Management}{section.6.4}% 36
-\BOOKMARK [1][-]{section.6.5}{Staff Organization}{chapter.6}% 37
-\BOOKMARK [2][-]{subsection.6.5.1}{Team Structure}{section.6.5}% 38
-\BOOKMARK [2][-]{subsection.6.5.2}{Management Reporting and Communication}{section.6.5}% 39
-\BOOKMARK [2][-]{subsection.6.5.3}{Dissertation Task Set}{section.6.5}% 40
-\BOOKMARK [2][-]{subsection.6.5.4}{Task Network}{section.6.5}% 41
-\BOOKMARK [2][-]{subsection.6.5.5}{Timeline Chart}{section.6.5}% 42
-\BOOKMARK [0][-]{chapter.7}{SOFTWARE REQUIREMENT SPECIFICATION}{}% 43
-\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 44
-\BOOKMARK [1][-]{section.7.2}{Purpose and Scope of the Document}{chapter.7}% 45
-\BOOKMARK [1][-]{section.7.3}{Overview of Responsibilities of Developer}{chapter.7}% 46
-\BOOKMARK [1][-]{section.7.4}{Product Overview}{chapter.7}% 47
-\BOOKMARK [1][-]{section.7.5}{Hardware Resources Used}{chapter.7}% 48
-\BOOKMARK [2][-]{subsection.7.5.1}{Software Requirements}{section.7.5}% 49
-\BOOKMARK [2][-]{subsection.7.5.2}{Hardware Requirements}{section.7.5}% 50
-\BOOKMARK [1][-]{section.7.6}{Functionality}{chapter.7}% 51
-\BOOKMARK [1][-]{section.7.7}{Input}{chapter.7}% 52
-\BOOKMARK [1][-]{section.7.8}{Output}{chapter.7}% 53
-\BOOKMARK [1][-]{section.7.9}{Major Constraints}{chapter.7}% 54
-\BOOKMARK [1][-]{section.7.10}{Applications}{chapter.7}% 55
-\BOOKMARK [1][-]{section.7.11}{Usage Scenario}{chapter.7}% 56
-\BOOKMARK [2][-]{subsection.7.11.1}{Use Case Views}{section.7.11}% 57
-\BOOKMARK [1][-]{section.7.12}{Model and Description}{chapter.7}% 58
-\BOOKMARK [2][-]{subsection.7.12.1}{Activity Diagram}{section.7.12}% 59
-\BOOKMARK [1][-]{section.7.13}{Functional Model and Description}{chapter.7}% 60
-\BOOKMARK [2][-]{subsection.7.13.1}{Data Flow Diagram}{section.7.13}% 61
-\BOOKMARK [1][-]{section.7.14}{Non-Functional Requirements}{chapter.7}% 62
-\BOOKMARK [2][-]{subsection.7.14.1}{Availability}{section.7.14}% 63
-\BOOKMARK [2][-]{subsection.7.14.2}{Scalability}{section.7.14}% 64
-\BOOKMARK [2][-]{subsection.7.14.3}{Performance}{section.7.14}% 65
-\BOOKMARK [2][-]{subsection.7.14.4}{Usability}{section.7.14}% 66
-\BOOKMARK [2][-]{subsection.7.14.5}{Reliability}{section.7.14}% 67
-\BOOKMARK [2][-]{subsection.7.14.6}{Maintainability and Changeability}{section.7.14}% 68
-\BOOKMARK [0][-]{chapter.8}{DETAILED DESIGN DOCUMENT}{}% 69
-\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 70
-\BOOKMARK [1][-]{section.8.2}{Architectural Design}{chapter.8}% 71
-\BOOKMARK [1][-]{section.8.3}{Class Design}{chapter.8}% 72
-\BOOKMARK [1][-]{section.8.4}{Component Design}{chapter.8}% 73
-\BOOKMARK [2][-]{subsection.8.4.1}{Sequence Diagram}{section.8.4}% 74
-\BOOKMARK [0][-]{chapter.9}{IMPLEMENTATION DETAILS}{}% 75
-\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 76
-\BOOKMARK [1][-]{section.9.2}{Algorithm}{chapter.9}% 77
-\BOOKMARK [2][-]{subsection.9.2.1}{Document Classification}{section.9.2}% 78
-\BOOKMARK [1][-]{section.9.3}{Dataset}{chapter.9}% 79
-\BOOKMARK [1][-]{section.9.4}{Snapshots}{chapter.9}% 80
-\BOOKMARK [0][-]{chapter.10}{DATA TABLES AND DISCUSSIONS}{}% 81
-\BOOKMARK [1][-]{section.10.1}{Result Tables}{chapter.10}% 82
-\BOOKMARK [1][-]{section.10.2}{Result Graphs}{chapter.10}% 83
-\BOOKMARK [0][-]{chapter.11}{CONCLUSION}{}% 84
-\BOOKMARK [0][-]{chapter.12}{FUTURE ENHANCEMENTS}{}% 85
-\BOOKMARK [0][-]{chapter.13}{REFERENCES}{}% 86
-\BOOKMARK [0][-]{appendix.A}{PAPERS PUBLISHED}{}% 87
-\BOOKMARK [1][-]{section.A.1}{Paper Title}{appendix.A}% 88
-\BOOKMARK [2][-]{subsection.A.1.1}{IJIRCCE Certification}{section.A.1}% 89
-\BOOKMARK [1][-]{section.A.2}{Paper Title}{appendix.A}% 90
-\BOOKMARK [2][-]{subsection.A.2.1}{cPGCON Certificate}{section.A.2}% 91
-\BOOKMARK [2][-]{subsection.A.2.2}{cPGCON Review}{section.A.2}% 92
-\BOOKMARK [0][-]{appendix.B}{DISSERTATION PLANNER}{}% 93
+\BOOKMARK [1][-]{section.6.2}{Dissertation Estimates}{chapter.6}% 30
+\BOOKMARK [2][-]{subsection.6.2.1}{Reconciled Estimates}{section.6.2}% 31
+\BOOKMARK [1][-]{section.6.3}{Risk Management}{chapter.6}% 32
+\BOOKMARK [2][-]{subsection.6.3.1}{Risk Identification}{section.6.3}% 33
+\BOOKMARK [2][-]{subsection.6.3.2}{Risk Analysis}{section.6.3}% 34
+\BOOKMARK [2][-]{subsection.6.3.3}{Overview of Risk Mitigation, Monitoring and Management}{section.6.3}% 35
+\BOOKMARK [1][-]{section.6.4}{Staff Organization}{chapter.6}% 36
+\BOOKMARK [2][-]{subsection.6.4.1}{Team Structure}{section.6.4}% 37
+\BOOKMARK [2][-]{subsection.6.4.2}{Management Reporting and Communication}{section.6.4}% 38
+\BOOKMARK [2][-]{subsection.6.4.3}{Dissertation Task Set}{section.6.4}% 39
+\BOOKMARK [2][-]{subsection.6.4.4}{Task Network}{section.6.4}% 40
+\BOOKMARK [2][-]{subsection.6.4.5}{Timeline Chart}{section.6.4}% 41
+\BOOKMARK [0][-]{chapter.7}{SOFTWARE REQUIREMENT SPECIFICATION}{}% 42
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.2}{Purpose and Scope of the Document}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.3}{Overview of Responsibilities of Developer}{chapter.7}% 45
+\BOOKMARK [1][-]{section.7.4}{Product Overview}{chapter.7}% 46
+\BOOKMARK [1][-]{section.7.5}{Hardware Resources Used}{chapter.7}% 47
+\BOOKMARK [2][-]{subsection.7.5.1}{Software Requirements}{section.7.5}% 48
+\BOOKMARK [2][-]{subsection.7.5.2}{Hardware Requirements}{section.7.5}% 49
+\BOOKMARK [1][-]{section.7.6}{Functionality}{chapter.7}% 50
+\BOOKMARK [1][-]{section.7.7}{Input}{chapter.7}% 51
+\BOOKMARK [1][-]{section.7.8}{Output}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.9}{Major Constraints}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.10}{Applications}{chapter.7}% 54
+\BOOKMARK [1][-]{section.7.11}{Usage Scenario}{chapter.7}% 55
+\BOOKMARK [2][-]{subsection.7.11.1}{Use Case Views}{section.7.11}% 56
+\BOOKMARK [1][-]{section.7.12}{Model and Description}{chapter.7}% 57
+\BOOKMARK [2][-]{subsection.7.12.1}{Activity Diagram}{section.7.12}% 58
+\BOOKMARK [1][-]{section.7.13}{Functional Model and Description}{chapter.7}% 59
+\BOOKMARK [2][-]{subsection.7.13.1}{Data Flow Diagram}{section.7.13}% 60
+\BOOKMARK [1][-]{section.7.14}{Non-Functional Requirements}{chapter.7}% 61
+\BOOKMARK [2][-]{subsection.7.14.1}{Availability}{section.7.14}% 62
+\BOOKMARK [2][-]{subsection.7.14.2}{Scalability}{section.7.14}% 63
+\BOOKMARK [2][-]{subsection.7.14.3}{Performance}{section.7.14}% 64
+\BOOKMARK [2][-]{subsection.7.14.4}{Usability}{section.7.14}% 65
+\BOOKMARK [2][-]{subsection.7.14.5}{Reliability}{section.7.14}% 66
+\BOOKMARK [2][-]{subsection.7.14.6}{Maintainability and Changeability}{section.7.14}% 67
+\BOOKMARK [0][-]{chapter.8}{DETAILED DESIGN DOCUMENT}{}% 68
+\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 69
+\BOOKMARK [1][-]{section.8.2}{Architectural Design}{chapter.8}% 70
+\BOOKMARK [1][-]{section.8.3}{Class Design}{chapter.8}% 71
+\BOOKMARK [1][-]{section.8.4}{Component Design}{chapter.8}% 72
+\BOOKMARK [2][-]{subsection.8.4.1}{Sequence Diagram}{section.8.4}% 73
+\BOOKMARK [0][-]{chapter.9}{IMPLEMENTATION DETAILS}{}% 74
+\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 75
+\BOOKMARK [1][-]{section.9.2}{Algorithm}{chapter.9}% 76
+\BOOKMARK [2][-]{subsection.9.2.1}{Document Classification}{section.9.2}% 77
+\BOOKMARK [1][-]{section.9.3}{Dataset}{chapter.9}% 78
+\BOOKMARK [1][-]{section.9.4}{Snapshots}{chapter.9}% 79
+\BOOKMARK [0][-]{chapter.10}{DATA TABLES AND DISCUSSIONS}{}% 80
+\BOOKMARK [1][-]{section.10.1}{Result Tables}{chapter.10}% 81
+\BOOKMARK [1][-]{section.10.2}{Result Graphs}{chapter.10}% 82
+\BOOKMARK [0][-]{chapter.11}{CONCLUSION}{}% 83
+\BOOKMARK [0][-]{chapter.12}{FUTURE ENHANCEMENTS}{}% 84
+\BOOKMARK [0][-]{chapter.13}{REFERENCES}{}% 85
+\BOOKMARK [0][-]{appendix.A}{PAPERS PUBLISHED}{}% 86
+\BOOKMARK [1][-]{section.A.1}{Paper Title}{appendix.A}% 87
+\BOOKMARK [2][-]{subsection.A.1.1}{IJIRCCE Certification}{section.A.1}% 88
+\BOOKMARK [1][-]{section.A.2}{Paper Title}{appendix.A}% 89
+\BOOKMARK [2][-]{subsection.A.2.1}{cPGCON Certificate}{section.A.2}% 90
+\BOOKMARK [2][-]{subsection.A.2.2}{cPGCON Review}{section.A.2}% 91
+\BOOKMARK [0][-]{appendix.B}{DISSERTATION PLANNER}{}% 92

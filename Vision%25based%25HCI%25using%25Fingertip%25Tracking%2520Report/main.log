@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.17)  24 JUL 2017 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.17)  25 JUL 2017 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -147,7 +147,7 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 \f@ncyO@orf=\skip51
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box28
 \beforetitleunit=\skip52
 \aftertitleunit=\skip53
@@ -946,21 +946,21 @@ LaTeX Warning: Label `my-label' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 59.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -1030,7 +1030,7 @@ e
 ABD: EveryShipout initializing macros
 \c@lstlisting=\count167
 \AtBeginShipoutBox=\box77
-Package hyperref Info: Link coloring OFF on input line 58.
+Package hyperref Info: Link coloring OFF on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1040,9 +1040,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count168
 )
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \nameref on input line 59.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1051,61 +1051,61 @@ LaTeX Info: Redefining \nameref on input line 58.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
  <pict.png, id=380, 180.675pt x 180.675pt>
 File: pict.png Graphic file (type png)
 
 <use pict.png>
-Package pdftex.def Info: pict.png used on input line 60.
+Package pdftex.def Info: pict.png used on input line 61.
 (pdftex.def)             Requested size: 100.0pt x 100.0001pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./pict.png>]
 File: pict.png Graphic file (type png)
  <use pict.png>
-Package pdftex.def Info: pict.png used on input line 64.
+Package pdftex.def Info: pict.png used on input line 65.
 (pdftex.def)             Requested size: 100.0pt x 100.0001pt.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 64
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 65
 .
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 64
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 65
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 64
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 65
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 64
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 65
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
  [0]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 75.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 76.
 
-Overfull \hbox (0.32477pt too wide) in paragraph at lines 75--75
+Overfull \hbox (0.32477pt too wide) in paragraph at lines 76--76
 []\OT1/ptm/m/it/12 I would like to take this op-por-tu-nity to thank my in-ter-
 nal guide \OT1/ptm/b/it/12 Prof. A. G. Phakatkar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
 
  []
 
@@ -1113,7 +1113,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--75
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 77.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
  (./main.lof [2
 
 ])
@@ -1135,24 +1135,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
  [9]
 Chapter 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 116.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.115 \chapter{SYNOPSIS}
+l.116 \chapter{SYNOPSIS}
                          [1
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 140.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 141.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 140.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 141.
  [2] [3] [4]
 Chapter 2.
 [5
@@ -1170,7 +1170,7 @@ Chapter 4.
 [10
 
 ] [11]
-Overfull \hbox (28.16124pt too wide) in paragraph at lines 375--429
+Overfull \hbox (28.16124pt too wide) in paragraph at lines 377--431
 [][] 
  []
 
@@ -1183,13 +1183,13 @@ Chapter 6.
 [16
 
 ] [17]
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 568.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 564.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 568.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 564.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1203,20 +1203,17 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[18] [19] [20] [21] <task.jpg, id=766, 412.54124pt x 211.79124pt>
+[18] [19] [20] [21] <task.jpg, id=769, 412.54124pt x 211.79124pt>
 File: task.jpg Graphic file (type jpg)
 
 <use task.jpg>
-Package pdftex.def Info: task.jpg used on input line 696.
+Package pdftex.def Info: task.jpg used on input line 692.
 (pdftex.def)             Requested size: 267.39954pt x 158.99815pt.
  [22 <./task.jpg>]
-<timeline.png, id=771, 495.8525pt x 611.28375pt>
+<timeline.png, id=775, 495.8525pt x 611.28375pt>
 File: timeline.png Graphic file (type png)
  <use timeline.png>
-Package pdftex.def Info: timeline.png used on input line 705.
+Package pdftex.def Info: timeline.png used on input line 701.
 (pdftex.def)             Requested size: 397.48454pt x 397.47897pt.
  [23 <./timeline.png>]
 Chapter 7.
@@ -1228,45 +1225,45 @@ Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
  [25]
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 751.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 747.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 751.
- [26] [27] [28] <usecase2.png, id=798, 712.6625pt x 472.76625pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 747.
+ [26] [27] [28] <usecase2.png, id=803, 712.6625pt x 472.76625pt>
 File: usecase2.png Graphic file (type png)
 
 <use usecase2.png>
-Package pdftex.def Info: usecase2.png used on input line 827.
+Package pdftex.def Info: usecase2.png used on input line 824.
 (pdftex.def)             Requested size: 375.79544pt x 325.22076pt.
  [29 <./usecase2.png>]
-<Activity.png, id=804, 121.45375pt x 623.32875pt>
+<Activity.png, id=809, 121.45375pt x 623.32875pt>
 File: Activity.png Graphic file (type png)
  <use Activity.png>
-Package pdftex.def Info: Activity.png used on input line 842.
+Package pdftex.def Info: Activity.png used on input line 839.
 (pdftex.def)             Requested size: 72.26863pt x 433.62596pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 835--847
+Underfull \hbox (badness 10000) in paragraph at lines 832--844
 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30] <level_0.png, id=809, 530.98375pt x 61.22874pt>
+[30] <level_0.png, id=814, 530.98375pt x 61.22874pt>
 File: level_0.png Graphic file (type png)
  <use level_0.png>
-Package pdftex.def Info: level_0.png used on input line 860.
+Package pdftex.def Info: level_0.png used on input line 857.
 (pdftex.def)             Requested size: 325.215pt x 37.50175pt.
- [31 <./Activity.png>] <level_1.png, id=815, 462.72874pt x 161.60374pt>
+ [31 <./Activity.png>] <level_1.png, id=820, 462.72874pt x 161.60374pt>
 File: level_1.png Graphic file (type png)
 
 <use level_1.png>
-Package pdftex.def Info: level_1.png used on input line 869.
+Package pdftex.def Info: level_1.png used on input line 866.
 (pdftex.def)             Requested size: 325.215pt x 113.58049pt.
- <level_2.png, id=816, 573.14125pt x 241.90375pt>
+ <level_2.png, id=821, 573.14125pt x 241.90375pt>
 File: level_2.png Graphic file (type png)
 
 <use level_2.png>
-Package pdftex.def Info: level_2.png used on input line 877.
+Package pdftex.def Info: level_2.png used on input line 874.
 (pdftex.def)             Requested size: 325.215pt x 137.26276pt.
 
 
@@ -1276,41 +1273,41 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Chapter 8.
 [35
 
-] [36] <archi.png, id=847, 693.59125pt x 432.61626pt>
+] [36] <archi.png, id=852, 693.59125pt x 432.61626pt>
 File: archi.png Graphic file (type png)
  <use archi.png>
-Package pdftex.def Info: archi.png used on input line 938.
+Package pdftex.def Info: archi.png used on input line 935.
 (pdftex.def)             Requested size: 361.35744pt x 216.80928pt.
 
-<class.png, id=848, 703.62875pt x 498.86375pt>
+<class.png, id=853, 703.62875pt x 498.86375pt>
 File: class.png Graphic file (type png)
  <use class.png>
-Package pdftex.def Info: class.png used on input line 956.
+Package pdftex.def Info: class.png used on input line 953.
 (pdftex.def)             Requested size: 397.47583pt x 289.08998pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 943--959
+Underfull \hbox (badness 10000) in paragraph at lines 940--956
 
  []
 
 [37 <./archi.png>] [38 <./class.png>]
-<Component_.png, id=860, 628.3475pt x 292.09125pt>
+<Component_.png, id=865, 628.3475pt x 292.09125pt>
 File: Component_.png Graphic file (type png)
  <use Component_.png>
-Package pdftex.def Info: Component_.png used on input line 967.
+Package pdftex.def Info: Component_.png used on input line 964.
 (pdftex.def)             Requested size: 375.80334pt x 231.271pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 961--970
+Underfull \hbox (badness 10000) in paragraph at lines 958--967
 
  []
 
-[39 <./Component_.png>] <sequence.png, id=866, 770.88pt x 542.025pt>
+[39 <./Component_.png>] <sequence.png, id=871, 770.88pt x 542.025pt>
 File: sequence.png Graphic file (type png)
 
 <use sequence.png>
-Package pdftex.def Info: sequence.png used on input line 989.
+Package pdftex.def Info: sequence.png used on input line 986.
 (pdftex.def)             Requested size: 433.61894pt x 361.36014pt.
 
-Overfull \hbox (31.23982pt too wide) in paragraph at lines 989--990
+Overfull \hbox (31.23982pt too wide) in paragraph at lines 986--987
 [][] 
  []
 
@@ -1319,54 +1316,54 @@ Chapter 9.
 [41
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1001--1003
+Underfull \hbox (badness 10000) in paragraph at lines 998--1000
 
  []
 
-[42] [43] <screenshot2.png, id=896, 724.7075pt x 463.7325pt>
+[42] [43] <screenshot2.png, id=902, 724.7075pt x 463.7325pt>
 File: screenshot2.png Graphic file (type png)
 
 <use screenshot2.png>
-Package pdftex.def Info: screenshot2.png used on input line 1055.
+Package pdftex.def Info: screenshot2.png used on input line 1052.
 (pdftex.def)             Requested size: 397.48454pt x 252.945pt.
- <screenshot3.png, id=897, 724.7075pt x 463.7325pt>
+ <screenshot3.png, id=903, 724.7075pt x 463.7325pt>
 File: screenshot3.png Graphic file (type png)
 
 <use screenshot3.png>
-Package pdftex.def Info: screenshot3.png used on input line 1060.
+Package pdftex.def Info: screenshot3.png used on input line 1057.
 (pdftex.def)             Requested size: 397.48454pt x 252.945pt.
- <screenshot1.png, id=898, 724.7075pt x 463.7325pt>
+ <screenshot1.png, id=904, 724.7075pt x 463.7325pt>
 File: screenshot1.png Graphic file (type png)
 
 <use screenshot1.png>
-Package pdftex.def Info: screenshot1.png used on input line 1065.
+Package pdftex.def Info: screenshot1.png used on input line 1062.
 (pdftex.def)             Requested size: 397.48454pt x 252.945pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<screenshot4.png, id=899, 734.745pt x 439.6425pt>
+<screenshot4.png, id=905, 734.745pt x 439.6425pt>
 File: screenshot4.png Graphic file (type png)
  <use screenshot4.png>
-Package pdftex.def Info: screenshot4.png used on input line 1071.
+Package pdftex.def Info: screenshot4.png used on input line 1068.
 (pdftex.def)             Requested size: 397.49632pt x 238.49017pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<screenshot5.png, id=900, 734.745pt x 439.6425pt>
+<screenshot5.png, id=906, 734.745pt x 439.6425pt>
 File: screenshot5.png Graphic file (type png)
  <use screenshot5.png>
-Package pdftex.def Info: screenshot5.png used on input line 1078.
+Package pdftex.def Info: screenshot5.png used on input line 1075.
 (pdftex.def)             Requested size: 397.49632pt x 238.49017pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<screenshot_1.png, id=901, 734.745pt x 439.6425pt>
+<screenshot_1.png, id=907, 734.745pt x 439.6425pt>
 File: screenshot_1.png Graphic file (type png)
  <use screenshot_1.png>
-Package pdftex.def Info: screenshot_1.png used on input line 1084.
+Package pdftex.def Info: screenshot_1.png used on input line 1081.
 (pdftex.def)             Requested size: 397.49632pt x 238.49017pt.
 
 
@@ -1377,16 +1374,16 @@ hot4.png>] [46 <./screenshot5.png> <./screenshot_1.png>]
 Chapter 10.
 [47
 
-] [48] <Comparison.png, id=929, 462.528pt x 346.896pt>
+] [48] <Comparison.png, id=935, 462.528pt x 346.896pt>
 File: Comparison.png Graphic file (type png)
  <use Comparison.png>
-Package pdftex.def Info: Comparison.png used on input line 1152.
+Package pdftex.def Info: Comparison.png used on input line 1149.
 (pdftex.def)             Requested size: 361.37027pt x 289.0934pt.
 
-<figure_1.png, id=930, 462.528pt x 346.896pt>
+<figure_1.png, id=936, 462.528pt x 346.896pt>
 File: figure_1.png Graphic file (type png)
  <use figure_1.png>
-Package pdftex.def Info: figure_1.png used on input line 1158.
+Package pdftex.def Info: figure_1.png used on input line 1155.
 (pdftex.def)             Requested size: 361.37027pt x 289.0934pt.
 
 
@@ -1408,11 +1405,17 @@ Chapter 13.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [58]
+
+Overfull \hbox (6.61084pt too wide) in paragraph at lines 1266--1268
+\OT1/ptm/m/n/12 Available on-line : \OT1/cmtt/m/n/12 http://boston.lti.cs.cmu.e
+du/classes/95-865-K/HW
+ []
+
+[58]
 Annexure A.
 [59
 
-] <ijircce.png, id=987, 793.96625pt x 573.14125pt>
+] <ijircce.png, id=994, 793.96625pt x 573.14125pt>
 File: ijircce.png Graphic file (type png)
  <use ijircce.png>
 Package pdftex.def Info: ijircce.png used on input line 1276.
@@ -1422,14 +1425,14 @@ Overfull \hbox (9.56497pt too wide) in paragraph at lines 1276--1277
 [][] 
  []
 
-[60 <./ijircce.png>] <6107_certificate.jpg, id=992, 3385.64874pt x 2589.675pt>
+[60 <./ijircce.png>] <6107_certificate.jpg, id=999, 3385.64874pt x 2589.675pt>
 File: 6107_certificate.jpg Graphic file (type jpg)
 
 <use 6107_certificate.jpg>
 Package pdftex.def Info: 6107_certificate.jpg used on input line 1285.
 (pdftex.def)             Requested size: 397.478pt x 303.51631pt.
  [61 <./6107_certificate.jpg>]
-<6107_reviewsheet.jpg, id=997, 2468.22125pt x 3276.24pt>
+<6107_reviewsheet.jpg, id=1004, 2468.22125pt x 3276.24pt>
 File: 6107_reviewsheet.jpg Graphic file (type jpg)
 
 <use 6107_reviewsheet.jpg>
@@ -1444,11 +1447,6 @@ Annexure B.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1298.
 
-
-Overfull \hbox (54.7443pt too wide) in paragraph at lines 1302--1342
- [][] 
- []
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1343.
 [64]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 1343.
@@ -1456,39 +1454,64 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 1343.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1343.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1343.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5816DC3E8ADFC3C08809DB9D5C670D34;6154.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 5816DC3E8ADFC3C08809DB9D5C670D34;6154
+(rerunfilecheck)             After:  6D83814C24CB719CD21EF0EBB5C70DB2;6086.
 
 LaTeX Warning: There were multiply-defined labels.
 
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 64 ({)
+### simple group (level 1) entered at line 65 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 24818 strings out of 493029
- 484035 string characters out of 6136234
+ 24825 strings out of 493029
+ 484136 string characters out of 6136234
  691237 words of memory out of 5000000
- 27567 multiletter control sequences out of 15000+600000
- 36232 words of font info for 74 fonts, out of 8000000 for 9000
+ 27568 multiletter control sequences out of 15000+600000
+ 36401 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,15n,82p,806b,1079s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times
-/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (75 pages, 2973434 bytes).
+ 62i,15n,82p,806b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{subsection.6.5.5} has been referenc
+ed but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.5.4} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.5.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.5.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.6.5.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.6.5} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmri8a.pfb>
+Output written on main.pdf (75 pages, 2981531 bytes).
 PDF statistics:
- 1110 PDF objects out of 1200 (max. 8388607)
- 973 compressed objects within 10 object streams
- 277 named destinations out of 1000 (max. 500000)
+ 1120 PDF objects out of 1200 (max. 8388607)
+ 982 compressed objects within 10 object streams
+ 282 named destinations out of 1000 (max. 500000)
  872 words of extra memory for PDF output out of 10000 (max. 10000000)
 

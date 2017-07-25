@@ -3,6 +3,7 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{listings}
+%\renewcommand\thesection{\arabic{section}}
 
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
@@ -78,7 +79,7 @@
 \listoftables
 		
 \begin{pictabstract}
-Bag of words (BOW) is used for modeling in machine learning algorithms. 
+\noindent Bag of words (BOW) is used for modeling in machine learning algorithms. 
 However, BOW is not able to handle negation well
 because of its fundamental deficiencies. Many ways are used
 to handle the problem of negation which results into polarity
@@ -262,7 +263,7 @@ Natural language processing, machine learning, sentiment analysis, opinion minin
 
 \section{Dissertation Idea}
 
-\par Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
+\hspace{1.1cm} Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
 is also known as opinion mining, it involves studing of people’s sentiments towards 
 certain entities. Internet is a resourceful place with respect to sentiment information. From a
 perspective of a user, people are able to express their views through various social media,
@@ -285,11 +286,11 @@ such as strongly negative, weakly negative, neutral, weakly
 positive and strongly positive.
 \end{enumerate}
 
-In this work we are focusing on second subtask.
 
-\par Besides individuals on social media marketers also need to monitor all media for information related to their brands
-whether it's for public relations activities, fraud violations, or competitive intelligence.
-Thus, aside from individuals, sentiment analysis is also the need of companies which are anxious to understand how
+
+\par In this work we are focusing on second subtask. Besides individuals on social media marketers also need to monitor all media for information related to their brands
+whether it's for public relations activities, fraud violations, or competitive intelligence. Thus, aside 
+from individuals, sentiment analysis is also the need of companies which are anxious to understand how
 their products and services are perceived by the public.
 
 \par The dominating text representation method in
@@ -328,7 +329,8 @@ We studied the related work on sentiment analysis and
 polarity shift.
 
 \section{Sentiment Analysis and Polarity Shift}
-\hspace{1.1cm}According to the levels of granularity, tasks in sentiment
+\hspace{1.1cm}
+According to the levels of granularity, tasks in sentiment
 analysis can be divided into four categorizations: document-
 level, sentence-level, phrase-level, and aspect-level sentiment analysis.
 \par 
@@ -459,7 +461,7 @@ Please refer Chapter 1, Section 1.7 on Page 2
 Scikit-learn (formerly scikits.learn) is a free software machine learning library for the 
 python programming language. It features various classification, regression and clustering
 algorithms including support vector machines, random forests, gradient boosting,
-k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
+k-means and DBSCAN, and is designed to interoperate with the python numerical and scientific libraries NumPy and SciPy.
 
 \subsection{NumPy}
 
@@ -468,8 +470,8 @@ NumPy is the fundamental package for scientific computing with Python. It contai
 \begin{itemize}
 \item A powerful N-dimensional array object
 \item Sophisticated (broadcasting) functions
-\item Tools for integrating C/C++ and Fortran code
-\item Useful linear algebra, Fourier transform, and random number capabilities
+\item Tools for integrating C/C++ and fortran code
+\item Useful linear algebra, fourier transform, and random number capabilities
 \end{itemize}
 Besides its obvious scientific uses, NumPy can also be used as
 an efficient multi-dimensional container of generic data.
@@ -498,12 +500,6 @@ This document specifies and estimates various risks
 associated with this project and states how they are handled. 
 It also states the project plan in terms of task and their dependency.
 
-\section{Technical Constraints}
-\begin{itemize}
-
-\item Review size must be big enough for the classifier to predict.
-A review of length 20-30 words or above is good for the classifier.
-\end{itemize}
 
 \section{Dissertation Estimates}
 \subsection{Reconciled Estimates}
@@ -748,10 +744,11 @@ and rows represents each reviews. Presence of particular word in a review is sho
 \end{itemize}
 \subsection{Hardware Requirements}
 			\begin{itemize}
-				\item Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} i7-4790 CPU @ 3.60GHz x 8 , width : 64 bits
-				\item Memory : 8 GB DDR3 or more
-				\item Capacity : 1697MHz or more
-				\item Cores : 8 or more
+				\item Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} 
+				i7-4790 CPU @ 3.60GHz x 8 , width : 64 bits
+				\item Memory : 8 GB DDR3 
+				
+				\item Cores : 8
 				\item PCI Express Gigabit Ethernet Controller, Size: 100Mbit/s, Capacity: 1Gbit/s, Width: 64 bits
 				\item Hard Disk : 500 GB (EXT4 Primary/Logical Partition)
 			\end{itemize}
@@ -1020,7 +1017,7 @@ and take predicted labels output in predicted variable
 \item Compare label\_test with predicted vaiable label values
 \item Print the confusion matrix
 \end{enumerate}\section{Dataset}
-\hspace{1.1cm} Pang and Lee's Movie Review Data was one of the first widely-available sentiment analysis datasets.
+\hspace{1.1cm} Pang and Lee's Movie Review Data \cite{dataset} one of the first widely-available sentiment analysis datasets.
 It contains 1,000 positive and 1,000 negative movie reviews from IMDB. The text is similar to movies reviews on IMDB today.
 
 \par The file movie-pang02.zip contains a copy of Pang and Lee's movie review data in a
@@ -1183,12 +1180,14 @@ corpus.
 
 
 
-\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, `` Dual sentiment analysis: Considering  two  sides  of  one 
+\bibitem{xiaOriginal}R. Xia, F. Xu, C. Zong, Q. Li, Y. Qi and T. Li, `` Dual sentiment analysis
+: Considering  two  sides  of  one 
 review, '' in {\em IEEE transactions on knowledge and data engineering,} vol. 27, no. 8, pp. 2120
 -
 2133, 2015.
 
-  \bibitem{yahoo}S. Das and M. Chen, `` Yahoo! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp. 1375-1388, 2007.
+  \bibitem{yahoo}S. Das and M. Chen, `` Yahoo
+  ! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp. 1375-1388, 2007.
 
   
   
@@ -1264,7 +1263,8 @@ ACM Lyon France }, pp. 35 - 40, 2012
 \bibitem{valence}L. Polanyi and A. Zaenen, `` Contextual lexical valence shifters, '' in
 {\em Proc. AAAI Spring Symp. Exploring Attitude Affect Text}, pp. 1–10, 2004.
 
-\bibitem{dataset}http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pang02.zip
+\bibitem{dataset} Pang and Lee : Movie Review Dataset,\\Available online : \texttt{http://boston.lti.cs.cmu.edu/classes/95-865-K/HW
+/HW3/movie-pang02.zip}
 \end{thebibliography}
 
 \appendix
@@ -1302,7 +1302,7 @@ Sentiment Analysis using Original and Reversed Reviews
 \begin{tabular}{|l|l|}
 \hline
 \textbf{Task Title} & \textbf{Dissertation Task}                    \\ \hline
-T1                  & Study of Domain - Machine Learning and Natural Language Processing         \\ \hline
+T1                  & Study of Domain - Natural Language Processing         \\ \hline
 T2                  & Identification of problem in existing systems \\ \hline
 T3                  & Review of literature \\ 
 \hline
@@ -1311,7 +1311,7 @@ T4                  & Building mathematical model \\
 T5                  & Report on scheme of implementation \\ \hline
 T6                  & Identification of prerequisites and installation \\ \hline
 T7                  & Configuring python and python package installer pip in the system \\ \hline
-T8                  & Study of various machine learning algorithms and its implementation in python\\ \hline
+T8                  & Study of various machine learning algorithms\\ \hline
 T9                  & Studying libraries in python required for implementation \\ \hline
 T10                  & Downloading and extracting reviews from IMDB movie datasets \\ \hline
 T11                  & Removing stopwords, punctuation marks, numbers etc.\\ \hline

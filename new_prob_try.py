@@ -61,7 +61,7 @@ def main():
 	#print data2[0]
 	print data3[1]
 	print predicted2[1]
-	
+	print predictedProbability2[1]
 	
 	#print predictedProbability2[1]
 	#print predictedProbability2[1][1]
