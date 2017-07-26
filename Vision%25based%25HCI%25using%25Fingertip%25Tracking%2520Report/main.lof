@@ -19,7 +19,7 @@
 \contentsline {figure}{\numberline {8.4}{\ignorespaces Sequence Diagram\relax }}{39}{figure.caption.22}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {9.1}{\ignorespaces Sample Matrix Creation with Word Counts\relax }}{43}{figure.caption.24}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample Matrix Creation with Tf-idf\relax }}{43}{figure.caption.25}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Sample Matrix Creation with TF-IDF\relax }}{43}{figure.caption.25}
 \contentsline {figure}{\numberline {9.3}{\ignorespaces Review Classification with Negative and Positive Percentages\relax }}{44}{figure.caption.26}
 \contentsline {figure}{\numberline {9.4}{\ignorespaces Three Classifiers Results (Accuracy, Recall, Precision, F-measure with Confusion Matrix)\relax }}{44}{figure.caption.27}
 \contentsline {figure}{\numberline {9.5}{\ignorespaces Three Classifiers Results (Accuracy, Recall, Precision, F-measure with Confusion Matrix)\relax }}{45}{figure.caption.28}
