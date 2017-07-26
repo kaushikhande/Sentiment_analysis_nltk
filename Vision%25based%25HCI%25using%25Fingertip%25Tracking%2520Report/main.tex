@@ -2,13 +2,15 @@
 \usepackage{dirtree}
 \usepackage{enumitem}
 \usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
 \usepackage{listings}
 %\renewcommand\thesection{\arabic{section}}
 
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
-\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+%\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{multirow}
 \usepackage{enumitem}
 \setlist[enumerate]{itemsep=0mm}
@@ -55,7 +57,8 @@
 \usepackage{subcaption}
 \usepackage{multirow}
 
-\usepackage[ruled,vlined]{algorithm2e}
+
+
 
 \begin{document}
 
@@ -80,18 +83,21 @@
 \listoftables
 		
 \begin{pictabstract}
-\noindent Bag of words (BOW) is used for modeling in machine learning algorithms. 
+\noindent 
+The reviews and blogs obtained
+from social networking and online marketing sites, act as an important source for analysis and improved decision making.
+These reviews
+are mostly unstructured by nature and thus, need processing.
+Bag of words (BOW) model of features are used for processing in machine learning algorithms. 
 However, BOW is not able to handle negation well
 because of its fundamental deficiencies. Many ways are used
-to handle the problem of negation which results into polarity
-shift. They require either knowledge about language constructs
+to handle the problem of negation. Most of them require either knowledge about language constructs
 or extra human interventions which eventually increases the
 complexity. In this work, a data expansion technique, called dual
 sentiment analysis (DSA), is used to address the polarity shift
 problem due to negation in sentiment classification. Both original and
 reversed reviews are used to classify the test reviews in dual sentiment 
-analysis.
-
+analysis. 
 \end{pictabstract}
 
 
@@ -140,8 +146,8 @@ statistical classifier and make predictions. ''
 \begin{itemize}
 
     \item To train the classifiers using reviews and actual labels.
-    \item To obtain the predictions of labels (positive review or negative review) for test data.
-    \item To use opposite reviews to correctly classify the review class.
+    \item To predict label for test data.
+    \item To classify test data using opposite reviews.
 \end{itemize}
 
 \section{Hypothesis}
@@ -199,28 +205,11 @@ does not classify it as negative.
 
 \par Based on the values obtained from confusion matrix, other 
 parameters such as ``precision'', ``recall'', ``f-measure'', and ``accuracy''
-are found out for evaluating performance of any classifier.
+are used for evaluating performance of the classifiers.
 
 
 \begin{itemize}
-\item \textbf{Precision} : It measures the exactness of the classifier result. It is
-the ratio of number of examples correctly labeled as positive to
-total number of positively classified example.
-\begin{equation}
-\frac{TP}{TP + FP}
-\end{equation}
-\item \textbf{Recall} : It measures the completeness of the classifier result. It is
-the ratio of total number of positively labeled example to total
-examples which are truly positive.
-\begin{equation}
-\frac{TP}{TP + FN}
-\end{equation}
-\item \textbf{F-Measure}: It is the harmonic mean of precision and recall. It
-is required to optimize the system towards either precision or recall, which 
-have more influence on final result.
-\begin{equation}
-\frac{2 \times Precision \times Recall}{Precision + Recall}
-\end{equation}
+
 \item \textbf{Accuracy} : It is the most common measure of classification 
 process. It can be calculated as the ratio of correctly classified 
 example to total number of examples. 
@@ -254,7 +243,7 @@ Natural language processing, machine learning, sentiment analysis, opinion minin
                 \item Supervised learning by classification
                 \begin{enumerate}[label*=.\arabic*]
                     \item Multinomial Naive Bayes
-                    \item Random Forest
+                    
                     \item Support Vector Machines
                 \end{enumerate}
             \end{enumerate}
@@ -265,8 +254,8 @@ Natural language processing, machine learning, sentiment analysis, opinion minin
 \section{Dissertation Idea}
 
 \hspace{1.1cm} Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
-is also known as opinion mining, it involves studing of people’s sentiments towards 
-certain entities. Internet is a resourceful place with respect to sentiment information. From a
+is also known as opinion mining, it involves studying of people’s sentiment towards 
+certain entities. From a
 perspective of a user, people are able to express their views through various social media,
 such as forums, micro-blogs, or online social networking sites \cite{pang2008}.
 
@@ -300,13 +289,8 @@ semi supervised sentiment
 classification is known as the bag-of-words (BOW)
 model \cite{pang}, which is difficult to meet the requirements
 for understanding the review text and dealing with
-complex linguistic structures such as negation. For
-example, the BOW representations of two opposite
-reviews `` It works well'' and `` It doesn't work well''
-are considered to be very similar by most statistical
-learning algorithms \cite{yahoo}.The two sentiment opposite texts are considered to be very similar by the
-BOW representation. This is exactly why standard machine learning algorithms often
-fail under the circumstance of polarity shift due to negation in the sentences of the review text \cite{contrast} \cite{xiaOriginal}.
+complex linguistic structures such as negation \cite{yahoo}. Due to the polarity shift, 
+classifiers predict polarity incorrectly. \cite{xiaOriginal}\cite{contrast}\cite{xiaco} .
 
 \par Several approaches have been proposed in the literature
 to address the polarity shift problem .They require either knowledge about language constructs or
@@ -336,7 +320,7 @@ analysis can be divided into four categorizations: document-
 level, sentence-level, phrase-level, and aspect-level sentiment analysis.
 \par 
 For document and sentence-level sentiment classification, 
-there are two main types of methods in the literature:
+there are two main types of methods :
 term-counting and machine learning methods \cite{yahoo} \cite{pang} \cite{pang2008} \cite{ruiEnssemble}. In 
 term-counting methods, the overall orientation of a text is
 obtained by summing up the orientation scores of content
@@ -345,13 +329,15 @@ lexical resources \cite{turney} \cite{turney1}. In machine learning methods,
 sentiment classification is regarded as a statistical 
 classification problem, where a text is represented by a 
 bag-of-words; then, the supervised machine learning algorithms
-are applied as classifier \cite{pang}. Accordingly, 
+are applied as classifier \cite{pang}. The use of ensembles
+of multiple base classifiers, combined with scores obtained from 
+lexicons, can improve the accuracy of sentiment classification \cite{ruiEnssemble}\cite{rui22}. Accordingly, 
 the way to handle polarity shift also differs in the two types of methods.
 \par
 The term-counting methods can be easily modified to
 include polarity shift. One common way is to directly
 reverse the sentiment of polarity-shifted words, and then
-sum up the sentiment score word by word \cite{valence}. Compared with term counting methods, the machine
+sum up the sentiment score word by word \cite{vector}. Compared with term counting methods, the machine
 learning methods are more widely discussed in the 
 sentiment classification literatures. However, it is relatively
 hard to integrate the polarity shift information into the
@@ -438,11 +424,12 @@ dual prediction\\(DTDP)\end{tabular}                                            
 
 \section{Goals}
 \begin{itemize}
-\item Understanding existing sentiment analysis approaches.
-\item Study corpus based, lexical based and semantic based techniques.
+\item To study existing sentiment analysis approaches.
+\item Study of corpus based, lexical based and semantic based techniques.
 \item Understanding unigram, bigram, trigram and combination of them for modeling purpose.
-\item Training the model with naive bayes, support vector machine, maximum entropy.
-\item Applying this learned model to the test dataset.
+\item To train the model with naive bayes, support vector machine, maximum entropy
+and applying it to the test dataset.
+
 \item Evaluating the results generated by classifiers.
 \end{itemize}
 
@@ -452,9 +439,9 @@ Please refer Chapter 1, Section 1.7 on Page 2
 
 \section{Statement of Scope}
 \begin{itemize}
-\item Preprocessing the reviews.
+\item Preprocessing of the reviews.
 \item Classify reviews into two polarities.
-\item Evaluate the classification accuracy by each classifier.
+\item Evaluate the classification accuracy of each classifier.
 \end{itemize}
 
 \section{Software Context}
@@ -474,7 +461,7 @@ NumPy is the fundamental package for scientific computing with Python. It contai
 \item Tools for integrating C/C++ and fortran code
 \item Useful linear algebra, fourier transform, and random number capabilities
 \end{itemize}
-Besides its obvious scientific uses, NumPy can also be used as
+It can also be used as
 an efficient multi-dimensional container of generic data.
 Arbitrary data-types can be defined. This allows NumPy to
 seamlessly and speedily integrate with a wide variety of databases.
@@ -511,13 +498,13 @@ Calendar time required: 11 months.
 \subsubsection{Dissertation Resources}
 \begin{itemize}
 
-\item Software resources used are mentioned in Chapter 7, Section 7.5.1 on Page 26
-\item Hardware resources used are mentioned in Chapter 7, Section 7.5.2 on Page 26
+\item Software resources used are mentioned in Chapter 7, Section 7.5.1 on Page 25
+\item Hardware resources used are mentioned in Chapter 7, Section 7.5.2 on Page 25
 
 \end{itemize}
 
 \section{Risk Management}
-This section discusses dissertation risks and the approach to manage them.
+This section discusses dissertation risks and the approaches used to manage them.
 \subsection{Risk Identification}
 For risks identification, review of scope document, requirement 
 specifications and schedule is done. Answers to questionnaire revealed 
@@ -700,7 +687,7 @@ Major tasks in the Dissertation stages are -
 \end{figure}
 \newpage
 \subsection{Timeline Chart}
-Please refer Annexure B, Table B.1 on Page 61 for all Dissertation Tasks.
+Please refer Annexure B, Table B.1 on Page 62 for all Dissertation Tasks.
 \vspace{5mm}
 \begin{figure}[!h]
 \centering
@@ -763,7 +750,7 @@ and rows represents each reviews. Presence of particular word in a review is sho
 
 \section{Functionality}
 \begin{itemize}
-\item Download movie reviews from IMDB dataset.
+\item Download IMDB dataset of movie reviews.
 \item Import the movie review dataset into python environment using csv package.
 
 \item Convert the text reviews into matrix form.
@@ -776,17 +763,17 @@ and rows represents each reviews. Presence of particular word in a review is sho
 
 \section{Input}
 \begin{itemize}
-\item Dataset that consists of movie reviews and their corresponding labels.
-\item List of stopwords which play no role in classification.
+\item Movie reviews with labels.
+\item List of stopwords.
 \end{itemize}
 
 
 \section{Output}
 \begin{itemize}
-\item Classification of each test review into positive or negative.
-\item Confusion matrix of classification test data.
-\item Percentage of accuracy achieved in classification.
-\item Comparison of accuracies obtained by each classifier.
+\item Classification of review into positive or negative.
+\item Confusion matrix.
+\item Accuracy of classifiers.
+\item Comparison of classifiers.
 \end{itemize}
 
 \section{Major Constraints}
@@ -1003,25 +990,69 @@ This section describes implementation of the system, required libraries and depe
 \textbf{Input} : Movie review dataset in .csv file format \\
 \textbf{Output} : Polarity classification \\
 
-\begin{enumerate}
-\item Initialize review\_data list to empty
-\item Initialize review\_label list to empty
-\item Read csv file
-\item Put first column of each row in csv in review\_data
-\item Put second column of each row in csv in review\_label
-\item Specify ngram range i.e. unigram, bigram or trigram
-\item Fit the review\_data into matrix form using countvectorizer
-which stores counts of each word in a review.
-\item Transform review\_data to tfidf using tfidftransformer.
-\item Split review\_data and review\_label into review\_train, 
-label\_train, review\_test and label\_test
-\item Give review\_train and label\_train as input to the classifier
-and store learned model in classifier variable.
-\item Apply review\_test on classifier model with predict method
-and take predicted labels output in predicted variable
-\item Compare label\_test with predicted vaiable label values
-\item Print the confusion matrix
-\end{enumerate}\section{Dataset}
+
+
+  
+  \begin{algorithm}
+   \caption{Training the model}\label{Naive Bayes}
+    \begin{algorithmic}[1]
+      \Function{TrainMultinomialNB}{$C,D$}
+
+        
+\State $\textit{V} \gets \textit{ExtractVocabulary(D)}$
+\State $N \gets \textit{CountDocs(D)}$
+\State $\textit{for each c $\in$ C}$
+\While{$\textit{$N_c$ $\gets$ CountDocsInClass(D,C)}$}
+    \State $\textit{prior[c] $\gets$ $\frac{N_c}{N}$} $
+    \State $\textit{$text_c$ $\gets$ ConcatenateTextOfAllDocsInClass(D,c)}$
+    \State $\textit{for each t $\in$ V}$
+    \While{$\textit{$T_{ct}$ $\gets$ CountTokensOfTerm($text_c$,t)}$}
+	\State $\textit{for each t $\in$ V}$
+	\While{$\textit{condprob[t][c] $\gets$ $\frac{T_{ct}}{T_{ct}+1}$}$}
+	\State $\textit{calculate conditional probability}$
+	
+	
+
+	\EndWhile
+	
+    \EndWhile
+  \EndWhile
+\State $\textit{return V, prior, condprob}$
+       \EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
+\vspace{5mm}
+
+  \begin{algorithm}
+   \caption{Testing}\label{Naive Bayes}
+    \begin{algorithmic}[1]
+      \Function{ApplyMultinomialNB}{$C,V,prior,condprob,d$}
+
+        
+\State $\textit{W} \gets \textit{ExtractTokensFromDoc(V,d)}$
+
+\State $\textit{for each c $\in$ C}$
+\While{$\textit{$score[c]$ $\gets$ logprior[C]}$}
+    
+    
+    \State $\textit{for each t $\in$ W}$
+    \State $do\hspace{1mm}\textit{$score[c]$ $+=$ logprior[t][C]}$
+    	\EndWhile
+	
+    
+\State $\textit{return V, prior, condprob}$
+       \EndFunction
+
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
+
+\section{Dataset}
 \hspace{1.1cm} Pang and Lee's Movie Review Data \cite{dataset} one of the first widely-available sentiment analysis datasets.
 It contains 1,000 positive and 1,000 negative movie reviews from IMDB. The text is similar to movies reviews on IMDB today.
 
@@ -1061,7 +1092,7 @@ Negative          & 1000                      \\ \hline
 
 \begin{figure}[!h]
 \includegraphics[width=5.5in,height=3.5in]{screenshot3.png}
-\caption{Sample Matrix Creation with Tf-idf}
+\caption{Sample Matrix Creation with TF-IDF}
 \end{figure}
 
 \begin{figure}[!h]
@@ -1176,8 +1207,8 @@ the problem of polarity shift due to negation .
 
 \chapter{FUTURE ENHANCEMENTS} 
 The research can be extended to include the neutral reviews as well.
-Also antonym can be obtained using words that has opposite polarity in the corpus.
-This corpus-based pseudo-antonym dictionary is also good at obtaining
+Antonym can be obtained using words that has opposite polarity in the corpus.
+This corpus-based pseudo-antonym dictionary is good at obtaining
 more domain-relevant antonym words by learning from the
 corpus.
 
@@ -1243,11 +1274,6 @@ Volume 57, pp. 117-126, 2016.
 `` Co-training for Semi-supervised Sentiment Classification Based on Dual-view Bags-of-words Representation, ''
   {\em Association for Computational Linguistics (ACL 1),} pp. 1054-1063, 2015.
   
-\bibitem{na}Na, J.C., Sui, H., Khoo, C., Chan, S., and Zhou, Y., `` Effectiveness of Simple Linguistic 
-Processing in Automatic 
-Sentiment Classification of Product Reviews, '' {\em Proceedings 
-of the Eighth International ISKO Conference
- } pp. 49-54, 2004.
  
  \bibitem{rui22}Rui Xia, Feng Xu, Jianfei Yu, Yong Qi and Erik Cambria, `` Polarity shift detection, 
  elimination and ensemble:
@@ -1256,14 +1282,6 @@ A three-stage model for document-level sentiment analysis, '' {\em  Information 
 
 \bibitem{ruiEnssemble}Rui Xia, Chengqing Zong and Shoushan Li, `` Ensemble of feature sets and classification algorithms
 for sentiment classification, '' {\em  Information Sciences 181, no. 6 } pp. 1138-1152, 2011
-
-\bibitem{Kauer}Anderson Uilian Kauer and Viviane P. Moreira, `` Information retrieval for sentiment polarity prediction, ''
-{\em Expert Systems With Applications 61,} pp. 282 - 289, 2016
-
-\bibitem{Theory}Yuming Lin, Jingwei Zhang, Xiaoling Wang and Aoying Zhou, `` An Information Theoretic 
-Approach to Sentiment Polarity
-Classification, '' {\em Proceedings of the 2nd joint WICOW/AIRWeb workshop on web quality, 
-ACM Lyon France }, pp. 35 - 40, 2012
 
 
 \bibitem{valence}L. Polanyi and A. Zaenen, `` Contextual lexical valence shifters, '' in

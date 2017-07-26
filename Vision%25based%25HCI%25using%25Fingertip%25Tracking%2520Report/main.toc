@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {5.3}Statement of Scope}{14}{section.5.3}
 \contentsline {section}{\numberline {5.4}Software Context}{14}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Scikit-learn}{14}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}NumPy}{15}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.2}NumPy}{14}{subsection.5.4.2}
 \contentsline {subsection}{\numberline {5.4.3}Natural language toolkit (NLTK)}{15}{subsection.5.4.3}
 \contentsline {subsection}{\numberline {5.4.4}Matplotlib}{15}{subsection.5.4.4}
 \contentsline {chapter}{\numberline {6}DISSERTATION PLAN}{16}{chapter.6}
@@ -81,7 +81,7 @@
 \contentsline {section}{\numberline {9.1}Introduction}{41}{section.9.1}
 \contentsline {section}{\numberline {9.2}Algorithm}{41}{section.9.2}
 \contentsline {subsection}{\numberline {9.2.1}Document Classification}{41}{subsection.9.2.1}
-\contentsline {section}{\numberline {9.3}Dataset}{42}{section.9.3}
+\contentsline {section}{\numberline {9.3}Dataset}{41}{section.9.3}
 \contentsline {section}{\numberline {9.4}Snapshots}{43}{section.9.4}
 \contentsline {chapter}{\numberline {10}DATA TABLES AND DISCUSSIONS}{46}{chapter.10}
 \contentsline {section}{\numberline {10.1}Result Tables}{47}{section.10.1}
@@ -89,11 +89,11 @@
 \contentsline {chapter}{\numberline {11}CONCLUSION}{50}{chapter.11}
 \contentsline {chapter}{\numberline {12}FUTURE ENHANCEMENTS}{52}{chapter.12}
 \contentsline {chapter}{\numberline {13}REFERENCES}{54}{chapter.13}
-\contentsline {chapter}{\numberline {A}PAPERS PUBLISHED}{58}{appendix.A}
-\contentsline {section}{\numberline {A.1}Paper Title}{59}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}IJIRCCE Certification}{59}{subsection.A.1.1}
-\contentsline {section}{\numberline {A.2}Paper Title}{59}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}cPGCON Certificate}{60}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}cPGCON Review}{61}{subsection.A.2.2}
-\contentsline {chapter}{\numberline {B}DISSERTATION PLANNER}{62}{appendix.B}
+\contentsline {chapter}{\numberline {A}PAPERS PUBLISHED}{57}{appendix.A}
+\contentsline {section}{\numberline {A.1}Paper Title}{58}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}IJIRCCE Certification}{58}{subsection.A.1.1}
+\contentsline {section}{\numberline {A.2}Paper Title}{58}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}cPGCON Certificate}{59}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}cPGCON Review}{60}{subsection.A.2.2}
+\contentsline {chapter}{\numberline {B}DISSERTATION PLANNER}{61}{appendix.B}
 \contentsfinish 
