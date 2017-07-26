@@ -3,6 +3,7 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{listings}
+%\renewcommand\thesection{\arabic{section}}
 
 %\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
@@ -78,7 +79,7 @@
 \listoftables
 		
 \begin{pictabstract}
-Bag of words (BOW) is used for modeling in machine learning algorithms. 
+\noindent Bag of words (BOW) is used for modeling in machine learning algorithms. 
 However, BOW is not able to handle negation well
 because of its fundamental deficiencies. Many ways are used
 to handle the problem of negation which results into polarity
@@ -185,8 +186,8 @@ machine learning algorithm is based on the element from a matrix
 known as confusion matrix or contingency table. It is used
 in supervised machine learning algorithm to help in assessing
 performance of any algorithm. From classification point of view,
-terms such as ``True Positive(TP)'', ``False Positive (FP)'', ``True 
-Negative(TN)'', ``False Negative (FP)'' are used to compare label of classes
+terms such as ``True Positive(TP)'', `` False Positive (FP) '', `` True 
+Negative(TN) '', `` False Negative (FP) '' are used to compare label of classes
 in this matrix as shown. True Positive represents the number of reviews those are
 positive and also classified as positive by the classifier, where as
 False Positive indicates positive reviews, but classifier does not
@@ -196,7 +197,7 @@ classifier, where as False Negative are negative reviews but classifier
 does not classify it as negative.
 
 \par Based on the values obtained from confusion matrix, other 
-parameters such as ``precision'', ``recall'', ``f-measure'', and ``accuracy''
+parameters such as `` precision '', `` recall '', `` f-measure '', and `` accuracy ''
 are found out for evaluating performance of any classifier.
 
 
@@ -262,7 +263,7 @@ Natural language processing, machine learning, sentiment analysis, opinion minin
 
 \section{Dissertation Idea}
 
-\par Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
+\hspace{1.1cm} Sentiment is an attitude, thought, or judgement prompted by feeling. Sentiment analysis 
 is also known as opinion mining, it involves studing of people’s sentiments towards 
 certain entities. Internet is a resourceful place with respect to sentiment information. From a
 perspective of a user, people are able to express their views through various social media,
@@ -285,11 +286,11 @@ such as strongly negative, weakly negative, neutral, weakly
 positive and strongly positive.
 \end{enumerate}
 
-In this work we are focusing on second subtask.
 
-\par Besides individuals on social media marketers also need to monitor all media for information related to their brands
-whether it's for public relations activities, fraud violations, or competitive intelligence.
-Thus, aside from individuals, sentiment analysis is also the need of companies which are anxious to understand how
+
+\par In this work we are focusing on second subtask. Besides individuals on social media marketers also need to monitor all media for information related to their brands
+whether it's for public relations activities, fraud violations, or competitive intelligence. Thus, aside 
+from individuals, sentiment analysis is also the need of companies which are anxious to understand how
 their products and services are perceived by the public.
 
 \par The dominating text representation method in
@@ -328,7 +329,8 @@ We studied the related work on sentiment analysis and
 polarity shift.
 
 \section{Sentiment Analysis and Polarity Shift}
-\hspace{1.1cm}According to the levels of granularity, tasks in sentiment
+\hspace{1.1cm}
+According to the levels of granularity, tasks in sentiment
 analysis can be divided into four categorizations: document-
 level, sentence-level, phrase-level, and aspect-level sentiment analysis.
 \par 
@@ -459,7 +461,7 @@ Please refer Chapter 1, Section 1.7 on Page 2
 Scikit-learn (formerly scikits.learn) is a free software machine learning library for the 
 python programming language. It features various classification, regression and clustering
 algorithms including support vector machines, random forests, gradient boosting,
-k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
+k-means and DBSCAN, and is designed to interoperate with the python numerical and scientific libraries NumPy and SciPy.
 
 \subsection{NumPy}
 
@@ -468,8 +470,8 @@ NumPy is the fundamental package for scientific computing with Python. It contai
 \begin{itemize}
 \item A powerful N-dimensional array object
 \item Sophisticated (broadcasting) functions
-\item Tools for integrating C/C++ and Fortran code
-\item Useful linear algebra, Fourier transform, and random number capabilities
+\item Tools for integrating C/C++ and fortran code
+\item Useful linear algebra, fourier transform, and random number capabilities
 \end{itemize}
 Besides its obvious scientific uses, NumPy can also be used as
 an efficient multi-dimensional container of generic data.
@@ -498,12 +500,6 @@ This document specifies and estimates various risks
 associated with this project and states how they are handled. 
 It also states the project plan in terms of task and their dependency.
 
-\section{Technical Constraints}
-\begin{itemize}
-
-\item Review size must be big enough for the classifier to predict.
-A review of length 20-30 words or above is good for the classifier.
-\end{itemize}
 
 \section{Dissertation Estimates}
 \subsection{Reconciled Estimates}
@@ -750,9 +746,9 @@ and rows represents each reviews. Presence of particular word in a review is sho
 			\begin{itemize}
 				\item Intel\textsuperscript{\textregistered} Core\textsuperscript{\texttrademark} 
 				i7-4790 CPU @ 3.60GHz x 8 , width : 64 bits
-				\item Memory : 8 GB DDR3 or more
+				\item Memory : 8 GB DDR3 
 				
-				\item Cores : 8 or more
+				\item Cores : 8
 				\item PCI Express Gigabit Ethernet Controller, Size: 100Mbit/s, Capacity: 1Gbit/s, Width: 64 bits
 				\item Hard Disk : 500 GB (EXT4 Primary/Logical Partition)
 			\end{itemize}
@@ -1267,7 +1263,8 @@ ACM Lyon France }, pp. 35 - 40, 2012
 \bibitem{valence}L. Polanyi and A. Zaenen, `` Contextual lexical valence shifters, '' in
 {\em Proc. AAAI Spring Symp. Exploring Attitude Affect Text}, pp. 1–10, 2004.
 
-\bibitem{dataset} Pang and Lee : Movie Review Dataset,\\\textbf{Available online:} \texttt{http://boston.lti.cs.cmu.edu/classes/95-865-K/HW/HW3/movie-pa\\ng02.zip}
+\bibitem{dataset} Pang and Lee : Movie Review Dataset,\\Available online : \texttt{http://boston.lti.cs.cmu.edu/classes/95-865-K/HW
+/HW3/movie-pang02.zip}
 \end{thebibliography}
 
 \appendix

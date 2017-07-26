@@ -165,15 +165,22 @@ dissertation on {\bfseries \fontsize{12}{12} \selectfont ``#1''}.}
 \vspace*{1.5\baselineskip}
 
  \textit{I would like to take this opportunity to thank my internal guide
- \textbf{Prof. A. G. Phakatkar} for giving me all the help and guidance I needed. I am  really grateful for her kind support throughout the analysis and design phase. Her valuable criticism and suggestions were very helpful.} \vspace*{1.5\baselineskip}
+ \textbf{Prof. A. G. Phakatkar} for giving me all the help and guidance I needed.
+ I am  really grateful for her kind support throughout the analysis and design phase. 
+ Her valuable criticism and suggestions were very helpful.} \vspace*{1.5\baselineskip}
 
  \textit{I am grateful to \textbf{Dr. Rajesh B. Ingle}, Head of Computer
- Engineering Department, Pune Institute of Computer Technology for his indispensable  support, priceless suggestions and for most valuable time lent as and when required.
- I also thank \textbf{Dr. P. T. Kulkarni}, Principal, Pune Institute of Computer Technology for his encouragement and providing required resources.}
+ Engineering Department, Pune Institute of Computer Technology for his 
+ indispensable  support, priceless suggestions and for most valuable 
+ time lent as and when required.}\vspace*{1.5\baselineskip}
+ 
+\textit{I also want to thank \textbf{Dr. P. T. Kulkarni}, Principal, Pune 
+Institute of Computer Technology for his encouragement and providing required resources.}
 \vspace*{1.5\baselineskip}
 
 \textit{In the end my special thanks to \textbf{Mr. Hrishikesh Kasar} for providing 
-various resources such as well-equipped lab with all needed software platforms, continuous internet connection, for my dissertation work.\\\\}
+various resources such as well-equipped lab with all needed software 
+platforms, continuous internet connection, for my dissertation work.\\\\}
 \vspace*{1\baselineskip}
 
 Kaushik S. Hande\\

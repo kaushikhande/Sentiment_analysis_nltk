@@ -2,6 +2,7 @@
 \usepackage{dirtree}
 \usepackage{enumitem}
 \usepackage{amsmath}
+
 \usepackage{listings}
 %\renewcommand\thesection{\arabic{section}}
 
@@ -355,7 +356,7 @@ learning methods are more widely discussed in the
 sentiment classification literatures. However, it is relatively
 hard to integrate the polarity shift information into the
 BOW model in such methods. For example, Das and
-Chen \cite{yahoo} proposed a method by simply attaching ``NOT``
+Chen \cite{yahoo} proposed a method by simply attaching ``NOT''
 to words in the scope of negation, so that in the text ``I
 don't like this book'', the word ``like'' becomes a new word ``like-NOT''.
 Yet Pang et al. \cite{pang} reported that this method only
@@ -428,7 +429,7 @@ dual prediction\\(DTDP)\end{tabular}                                            
 \hline
 
 \end{tabular}
-\caption{Literature Survey} 
+
 \end{table}
 \end{center}
 
@@ -491,7 +492,7 @@ quality figures in a variety of hardcopy formats and interactive environments
 across platforms. Matplotlib can be used in python scripts, the Python and IPython 
 shell, the jupyter notebook, web application servers, and four graphical user interface 
 toolkits. You can generate plots, histograms, power spectra, bar 
-charts, errorcharts, scatterplots, etc., with just a few lines of code.
+charts, errorcharts, scatterplots, etc. with just a few lines of code.
 
 \chapter{DISSERTATION PLAN}
 
@@ -541,6 +542,7 @@ The risks for the dissertation are analyzed within the constraints of time and q
 \item Out of memory error, while predicting on the test dataset.
 \end{itemize}
 Please refer Table 6.1, 6.2 and 6.3 for detail description.
+\vspace{5mm}
 
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[h!]
@@ -554,7 +556,7 @@ Please refer Table 6.1, 6.2 and 6.3 for detail description.
 3           & Out of Memory         & Low               & Medium                   & High                    & High                    \\ \hline
 \end{tabular}
 \end{table}
-
+\vspace{5mm}
 \begin{table}[h!]
 \centering
 \caption{Risk Probability Definitions}
@@ -577,11 +579,15 @@ Very High       & \textgreater 10\% & Schedule impact or unacceptable quality   
 High            & 5\%-10\%          & \begin{tabular}[c]{@{}l@{}} Schedule impact or some parts of \\ the project have low quality  \end{tabular}                                                                                              \\ \hline
 Low             & \textless5\%      & \begin{tabular}[c]{@{}l@{}}Schedule impact or barely noticeable \\degradation in quality low impact on schedule or\\ quality can be incorporated\end{tabular} \\ \hline
 \end{tabular}
+\vspace{5mm}
 \end{table}
 
-\subsection{Overview of Risk Mitigation, Monitoring and Management}
-Please refer Table 6.4, 6.5 and 6.6 for detail description.
+\newpage
 
+\subsection{Overview of Risk Mitigation, Monitoring and Management}
+
+Please refer Table 6.4, 6.5 and 6.6 for detail description.
+\vspace{5mm}
 \begin{table}[h!]
 \centering
 \caption{Risk 1}
@@ -685,7 +691,7 @@ Major tasks in the Dissertation stages are -
 
 
 \par Please refer figure 6.1 Task Network.
-\newpage
+
 \subsection{Task Network}
 \begin{figure}[!h]
 \centering
@@ -888,7 +894,7 @@ The system should be scalable to classify reviews even if the training and test 
 reviews dataset upto 25000 reviews.
 
 \subsection{Performance}
-The system must be interactive and delays involved must be less. There should be no immediate delays for every action and response of the system. Training time increases as the training data increases. It takes 4 to 5 seconds in training the dataset. Training increases further when bigram and trigram models are used.
+The system must be interactive and delays involved must be less. There should be no immediate delays for every action and response of the system. Training time increases as the training data increases. It takes 4 to 5 seconds in training the dataset. Training time increases further when bigram and trigram models are used.
 
 
 \subsection{Usability}
@@ -994,7 +1000,6 @@ This section describes implementation of the system, required libraries and depe
 \subsection{Document Classification}
 
 
-
 \textbf{Input} : Movie review dataset in .csv file format \\
 \textbf{Output} : Polarity classification \\
 
@@ -1027,6 +1032,7 @@ that express a negative or unfavorable sentiment). For this work, we will assume
 all reviews are either positive or negative; there are no neutral reviews. 
 \par For document classification, a training and testing dataset is required. 
 Training records for polarity categories are mentioned in Table 9.1
+\vspace{3mm}
 
 \renewcommand{\arraystretch}{1.5}
 
@@ -1187,7 +1193,7 @@ review, '' in {\em IEEE transactions on knowledge and data engineering,} vol. 27
 2133, 2015.
 
   \bibitem{yahoo}S. Das and M. Chen, `` Yahoo
-  ! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, Issue no.9, pp. 1375-1388, 2007.
+  ! for Amazon: Sentiment extraction from small talk on the web, '' {\em Management science} , Vol.53, issue no.9, pp. 1375-1388, 2007.
 
   
   
