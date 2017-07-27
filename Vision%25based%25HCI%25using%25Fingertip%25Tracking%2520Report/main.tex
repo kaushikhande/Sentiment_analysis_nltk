@@ -951,7 +951,7 @@ converts the text data into matrix of word frequency counts.
 It is used to model the physical aspects of a system. It is also used to visualize the organization and relationships among components in a system. It does not describe the functionality of the system but it describes the components used to make those functionalities.\\\\
 \textbf{Description} : Figure 8.3 describes primary components of the system.
 Movie dataset is stored in a component which then gives to classifier system.
-Classifier system then preprocess the reviews and does the prediction of polority and sends the output
+Classifier system then preprocess the reviews and does the prediction of polarity and sends the output
 to the console subsystem where result evaluation and comparison takes place.
 \begin{figure}[h!]
 \includegraphics[width=5.2in,height=3.2in]{Component_.png}
@@ -1042,7 +1042,7 @@ This section describes implementation of the system, required libraries and depe
     	\EndWhile
 	
     
-\State $\textit{return V, prior, condprob}$
+\State $\textit{return $max_{c \in C}$ score[c]}$
        \EndFunction
 
 \end{algorithmic}
