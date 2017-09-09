@@ -295,12 +295,40 @@ def main():
 		
 		print "Final predicted label is :", 
 		print predicted2[0]
-	#print data2[1]
+	        FinalClass(data2,count_vectorizer)
 	raw_input('>')
 		
 		
 		
-	
+def FinalClass(data2,count_vectorizer):
+    data3 = data2
+    data2 = count_vectorizer.transform(data2)
+    predicted2 = classifier.predict(data2)
+    predictedProbability2 = classifier.predict_proba(data2)
+    print data3[0]
+    print predicted2[0]
+    print predictedProbability2[0]
+    print "------------------------------------------------------"
+    print data3[1]
+    print predicted2[1]
+    print predictedProbability2[1]
+    print predicted[0],
+    print predicted[1]
+    if predicted2[0] == predicted2[1]:
+		if predicted2[0] == "negative":
+			if predictedProbability2[0][0] < predictedProbability2[1][0]:
+				print "Final predicted label is : Positive"
+			else :
+				print "Final predicted label is : Negative"
+		else :
+			if predictedProbability2[0][1] < predictedProbability2[1][1]:
+				print "Final predicted label is : Negative"
+			else :
+				print "Final predicted label is : Positive"
+    else:
+		
+		print "Final predicted label is :", 
+		print predicted2[0]    	
 	
 
 

@@ -6,6 +6,9 @@ Barchart
 A bar plot with errorbars and height labels on individual bars
 """
 import numpy as np
+
+import matplotlib
+#matplotlib.use('agg')
 import matplotlib.pyplot as plt
 
 N = 3

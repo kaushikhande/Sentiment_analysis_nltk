@@ -8,6 +8,8 @@ from sklearn.svm import LinearSVC, SVC
 import random
 from nltk.corpus import stopwords
 import itertools
+import matplotlib
+#matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 from nltk.collocations import BigramCollocationFinder
